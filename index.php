@@ -43,7 +43,7 @@
       <?php
         $heading_styles = ['xxl', 'xl', 'lg', 'md', 'sm', 'xs'];
         foreach ($heading_styles as $heading) {
-          echo '<div class="cru-heading cru-heading-' . $heading . '">Heading ' . strtoupper($heading) . '</div>';
+          echo '<div class="cru-heading cru-heading-' . $heading . '">Heading ' . strtoupper($heading) . '</div>' . "\n";
         }
       ?>
     </fieldset>
@@ -63,15 +63,21 @@
         ];
 
         foreach ($button_styles as $button) {
-      ?>
-      <div class="div-sep <?php if ($button[2]) {echo 'dark-bg';} ?>">
-        <button class="cru-button <?php if ($button[0]) {echo 'cru-button-' . $button[0];} ?>"><?= $button[1]; ?></button>
-        <button class="cru-button <?php if ($button[0]) {echo 'cru-button-' . $button[0];} ?>" disabled><?= $button[1]; ?></button>
-        <br />
-        <button class="cru-button <?php if ($button[0]) {echo 'cru-button-' . $button[0];} ?>"><?= $button[1]; ?> Icon <i class="fal fa-shopping-cart"></i></button>
-        <button class="cru-button <?php if ($button[0]) {echo 'cru-button-' . $button[0];} ?>" disabled><?= $button[1]; ?> Icon <i class="fal fa-shopping-cart"></i></button>
-      </div>
-      <?php
+          $background = ($button[2]) ? ' dark-bg' : '';
+          echo '<div class="div-sep' . $background . '">' . "\n";
+          for ($i = 1; $i <= 5; $i++) {
+            if ($i === 3) {
+              echo '<br />' . "\n";
+              continue;
+            }
+
+            $style = ($button[0]) ? ' cru-button-' . $button[0] : '';
+            $disabled = ($i === 2 || $i === 5) ? ' disabled' : '';
+            $icon = ($i === 4 || $i === 5) ? ' Icon <i class="fal fa-shopping-cart"></i>' : '';
+            
+            echo '<button class="cru-button' . $style . '"' . $disabled . '>' . $button[1] . $icon . '</button>' . "\n";
+          }
+          echo '</div>' . "\n";
         }
       ?>
     </fieldset>
