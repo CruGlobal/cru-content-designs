@@ -6,6 +6,6 @@ The index.php file is just a sample file for demonstrating the current classes. 
 
 ### When used in another repository...
 
-Compilation is done by running `gulp buildCruBranding` on this submodule's directory.
+Compilation is handled by [Gulp](https://www.npmjs.com/package/gulp) by running `gulp buildCruBranding` on this submodule's directory.
 
 To compile these styles for AEM breakpoints, make sure you've changed the value of `$cru-aem-responsive` to `true` in your own SCSS files before compilation.
