@@ -40,72 +40,40 @@
 
     <fieldset>
       <legend>Title</legend>
-      <div class="cru-heading cru-heading-xxl cru-text-serif">Heading XXL</div>
-      <div class="cru-heading cru-heading-xl">Heading XL</div>
-      <div class="cru-heading cru-heading-lg">Heading LG</div>
-      <div class="cru-heading cru-heading-md">Heading MD</div>
-      <div class="cru-heading cru-heading-sm">Heading SM</div>
-      <div class="cru-heading cru-heading-xs">Heading XS</div>
+      <?php
+        $heading_styles = ['xxl', 'xl', 'lg', 'md', 'sm', 'xs'];
+        foreach ($heading_styles as $heading) {
+          echo '<div class="cru-heading cru-heading-' . $heading . '">Heading ' . strtoupper($heading) . '</div>';
+        }
+      ?>
     </fieldset>
 
     <fieldset>
       <legend>Button</legend>
-      <div class="div-sep">
-        <button class="cru-button">Default</button>
-        <button class="cru-button" disabled>Default</button>
+      <?php
+        $button_styles = [
+          ['', 'Default'],
+          ['yellow-gray', 'Yellow Gray'],
+          ['gray-white', 'Gray White'],
+          ['white-gray', 'White Gray', true],
+          ['yellow-gray-outline', 'Yellow Gray Outline'],
+          ['gray-gray-outline', 'Gray Gray Outline'],
+          ['yellow-white-outline', 'Yellow White Outline', true],
+          ['white-white-outline', 'White White Outline', true],
+        ];
+
+        foreach ($button_styles as $button) {
+      ?>
+      <div class="div-sep <?php if ($button[2]) {echo 'dark-bg';} ?>">
+        <button class="cru-button <?php if ($button[0]) {echo 'cru-button-' . $button[0];} ?>"><?= $button[1]; ?></button>
+        <button class="cru-button <?php if ($button[0]) {echo 'cru-button-' . $button[0];} ?>" disabled><?= $button[1]; ?></button>
         <br />
-        <button class="cru-button">Default Icon <i class="fal fa-shopping-cart"></i></button>
-        <button class="cru-button" disabled>Default Icon <i class="fal fa-shopping-cart"></i></button>
+        <button class="cru-button <?php if ($button[0]) {echo 'cru-button-' . $button[0];} ?>"><?= $button[1]; ?> Icon <i class="fal fa-shopping-cart"></i></button>
+        <button class="cru-button <?php if ($button[0]) {echo 'cru-button-' . $button[0];} ?>" disabled><?= $button[1]; ?> Icon <i class="fal fa-shopping-cart"></i></button>
       </div>
-      <div class="div-sep">
-        <button class="cru-button cru-button-yellow-gray">Yellow Gray</button>
-        <button class="cru-button cru-button-yellow-gray" disabled>Disabled</button>
-        <br />
-        <button class="cru-button cru-button-yellow-gray">Yellow Gray Icon <i class="fal fa-shopping-cart"></i></button>
-        <button class="cru-button cru-button-yellow-gray" disabled>Disabled Icon <i class="fal fa-shopping-cart"></i></button>
-      </div>
-      <div class="div-sep">
-        <button class="cru-button cru-button-gray-white">Gray White</button>
-        <button class="cru-button cru-button-gray-white" disabled>Disabled</button>
-        <br />
-        <button class="cru-button cru-button-gray-white">Gray White Icon <i class="fal fa-shopping-cart"></i></button>
-        <button class="cru-button cru-button-gray-white" disabled>Disabled Icon <i class="fal fa-shopping-cart"></i></button>
-      </div>
-      <div class="div-sep dark-bg">
-        <button class="cru-button cru-button-white-gray">White Gray</button>
-        <button class="cru-button cru-button-white-gray" disabled>Disabled</button>
-        <br />
-        <button class="cru-button cru-button-white-gray">White Gray Icon <i class="fal fa-shopping-cart"></i></button>
-        <button class="cru-button cru-button-white-gray" disabled>Disabled Icon <i class="fal fa-shopping-cart"></i></button>
-      </div>
-      <div class="div-sep">
-        <button class="cru-button cru-button-yellow-gray-outline">Yellow Gray Outline</button>
-        <button class="cru-button cru-button-yellow-gray-outline" disabled>Disabled</button>
-        <br />
-        <button class="cru-button cru-button-yellow-gray-outline">Yellow Gray Outline Icon <i class="fal fa-shopping-cart"></i></button>
-        <button class="cru-button cru-button-yellow-gray-outline" disabled>Disabled Icon <i class="fal fa-shopping-cart"></i></button>
-      </div>
-      <div class="div-sep">
-        <button class="cru-button cru-button-gray-gray-outline">Gray Gray Outline</button>
-        <button class="cru-button cru-button-gray-gray-outline" disabled>Disabled</button>
-        <br />
-        <button class="cru-button cru-button-gray-gray-outline">Gray Gray Outline Icon <i class="fal fa-shopping-cart"></i></button>
-        <button class="cru-button cru-button-gray-gray-outline" disabled>Disabled Icon <i class="fal fa-shopping-cart"></i></button>
-      </div>
-      <div class="div-sep dark-bg">
-        <button class="cru-button cru-button-yellow-white-outline">Yellow White Outline</button>
-        <button class="cru-button cru-button-yellow-white-outline" disabled>Disabled</button>
-        <br />
-        <button class="cru-button cru-button-yellow-white-outline">Yellow White Outline Icon <i class="fal fa-shopping-cart"></i></button>
-        <button class="cru-button cru-button-yellow-white-outline" disabled>Disabled Icon <i class="fal fa-shopping-cart"></i></button>
-      </div>
-      <div class="div-sep dark-bg">
-        <button class="cru-button cru-button-white-white-outline">White White Outline</button>
-        <button class="cru-button cru-button-white-white-outline" disabled>Disabled</button>
-        <br />
-        <button class="cru-button cru-button-white-white-outline">White White Outline Icon <i class="fal fa-shopping-cart"></i></button>
-        <button class="cru-button cru-button-white-white-outline" disabled>Disabled Icon <i class="fal fa-shopping-cart"></i></button>
-      </div>
+      <?php
+        }
+      ?>
     </fieldset>
   
   </div>
