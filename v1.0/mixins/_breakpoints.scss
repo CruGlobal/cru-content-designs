@@ -32,22 +32,6 @@
   }
 }
 
-@mixin responsive-styles-old($map, $platform: false) {
-  @each $style, $values in $map {
-    @if $platform == aem {
-      #{$style}: map-get($values, 'desktop');
-      @include media-breakpoint-down($cru-breakpoint-sm) { #{$style}: map-get($values, 'mobile'); }
-      @include media-breakpoint-between($cru-breakpoint-sm, $cru-breakpoint-md) { #{$style}: map-get($values, 'tablet'); }
-      @include media-breakpoint-between($cru-breakpoint-md, $cru-breakpoint-lg) { #{$style}: map-get($values, 'tablet'); }
-    } @else {
-      #{$style}: map-get($values, 'mobile');
-      @include media-breakpoint-up($cru-breakpoint-sm) { #{$style}: map-get($values, 'tablet'); }
-      @include media-breakpoint-up($cru-breakpoint-md) { #{$style}: map-get($values, 'tablet'); }
-      @include media-breakpoint-up($cru-breakpoint-lg) { #{$style}: map-get($values, 'desktop'); }
-    }
-  }
-}
-
 @mixin responsive-styles($map) {
   $mobile: map-get($map, 'mobile');
   $tablet: map-get($map, 'tablet');

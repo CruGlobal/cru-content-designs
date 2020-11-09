@@ -1,15 +1,2 @@
 // All button mixins required for Cru branding
 // v1.0
-
-/* @mixin button-styles($style) {
-  $map: map-get($cru-buttons, $style);
-  @each $cssRule, $cssValue in $map {
-    #{$cssRule}: $cssValue;
-  }
-  $map-hover: map-get($cru-buttons, '#{$style}-hover');
-  &:hover {
-    @each $cssRule, $cssValue in $map-hover {
-      #{$cssRule}: $cssValue;
-    }
-  }
-} */
