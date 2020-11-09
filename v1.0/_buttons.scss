@@ -1,0 +1,55 @@
+// All button classes required for Cru branding
+// v1.0
+
+.cru-button {
+  font-family: $cru-btn-font-family;
+  font-weight: $cru-btn-font-weight;
+  line-height: $cru-btn-line-height;
+  border: $cru-btn-border-width solid transparent;
+  border-radius: $cru-btn-border-radius;
+  cursor: pointer;
+  transition: $cru-btn-transition;
+  letter-spacing: 0.02em;
+  color: $cru-color-gray-dark;
+  background-color: $cru-color-yellow;
+  border-color: $cru-color-yellow;
+  &:hover {
+    color: $cru-color-white;
+    background-color: $cru-color-yellow;
+    border-color: $cru-color-yellow;
+  }
+  &:active, &:focus {
+    outline: none;
+  }
+  &.disabled, &[disabled] {
+    cursor: not-allowed;
+    color: $cru-color-gray-medium;
+    background-color: $cru-color-gray-light;
+    border-color: $cru-color-gray-light;
+  }
+  @include responsive-styles($cru-button-responsive-styles);
+}
+
+@each $style, $values in $cru-button-variations {
+  $default: map-get($values, 'default');
+  $hover: map-get($values, 'hover');
+  $disabled: map-get($values, 'disabled');
+
+  .cru-button-#{$style} {
+    color: map-get($default, 'text');
+    background-color: map-get($default, 'background');
+    border-color: map-get($default, 'border');
+    @if $hover {
+      &:hover {
+        color: map-get($hover, 'text');
+        background-color: map-get($hover, 'background');
+        border-color: map-get($hover, 'border');
+      }
+    }
+    &.disabled, &[disabled] {
+      color: map-get($disabled, 'text');
+      background-color: map-get($disabled, 'background');
+      border-color: map-get($disabled, 'border');
+    }
+  }
+}

@@ -1,0 +1,9 @@
+// All typography mixins required for Cru branding
+// v1.0
+
+/* @mixin heading-styles($heading) {
+  $map: map-get($cru-headings, $heading);
+  @each $cssRule, $cssValue in $map {
+    #{$cssRule}: $cssValue;
+  }
+} */

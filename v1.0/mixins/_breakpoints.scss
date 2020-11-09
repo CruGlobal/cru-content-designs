@@ -1,0 +1,91 @@
+// All breakpoint mixins required for Cru branding
+// v1.0
+
+@mixin media-breakpoint-up($var) {
+  @if $var {
+    @media (min-width: $var) {
+      @content;
+    }
+  } @else {
+    @content;
+  }
+}
+
+@mixin media-breakpoint-down($var) {
+  @if $var {
+    @media (max-width: $var) {
+      @content;
+    }
+  } @else {
+    @content;
+  }
+}
+
+// "Between" is intended to be used in conjunction with "down" as it adds 1 to the minimum width
+@mixin media-breakpoint-between($var1, $var2) {
+  @if $var1 {
+    @media (min-width: $var1 + 1) and (max-width: $var2) {
+      @content;
+    }
+  } @else {
+    @content;
+  }
+}
+
+@mixin responsive-styles-old($map, $platform: false) {
+  @each $style, $values in $map {
+    @if $platform == aem {
+      #{$style}: map-get($values, 'desktop');
+      @include media-breakpoint-down($cru-breakpoint-sm) { #{$style}: map-get($values, 'mobile'); }
+      @include media-breakpoint-between($cru-breakpoint-sm, $cru-breakpoint-md) { #{$style}: map-get($values, 'tablet'); }
+      @include media-breakpoint-between($cru-breakpoint-md, $cru-breakpoint-lg) { #{$style}: map-get($values, 'tablet'); }
+    } @else {
+      #{$style}: map-get($values, 'mobile');
+      @include media-breakpoint-up($cru-breakpoint-sm) { #{$style}: map-get($values, 'tablet'); }
+      @include media-breakpoint-up($cru-breakpoint-md) { #{$style}: map-get($values, 'tablet'); }
+      @include media-breakpoint-up($cru-breakpoint-lg) { #{$style}: map-get($values, 'desktop'); }
+    }
+  }
+}
+
+@mixin responsive-styles($map) {
+  $mobile: map-get($map, 'mobile');
+  $tablet: map-get($map, 'tablet');
+  $desktop: map-get($map, 'desktop');
+
+  @if $cru-aem-responsive == true {
+    @include output-styles-from-map($desktop);
+
+    @include media-breakpoint-down($cru-breakpoint-sm) {
+      @include output-styles-from-map($mobile);
+    }
+    
+    @include media-breakpoint-between($cru-breakpoint-sm, $cru-breakpoint-md) {
+      @include output-styles-from-map($tablet);
+    }
+
+    @include media-breakpoint-between($cru-breakpoint-md, $cru-breakpoint-lg) {
+      @include output-styles-from-map($tablet);
+    }
+  } @else {
+    @include output-styles-from-map($mobile);
+
+    @include media-breakpoint-up($cru-breakpoint-sm) {
+      @include output-styles-from-map($tablet);
+    }
+
+    @include media-breakpoint-up($cru-breakpoint-md) {
+      @include output-styles-from-map($tablet);
+    }
+
+    @include media-breakpoint-up($cru-breakpoint-lg) {
+      @include output-styles-from-map($desktop);
+    }
+  }
+}
+
+@mixin output-styles-from-map($map) {
+  @each $style, $val in $map {
+    #{$style}: $val;
+  }
+}

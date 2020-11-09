@@ -1,0 +1,111 @@
+// All button variables required for Cru branding
+// v1.0
+
+$cru-btn-font-family: $cru-font-family-sans-serif;
+$cru-btn-font-weight: 600;
+$cru-btn-line-height: calc(1em + 4px);
+$cru-btn-border-width: 1px;
+$cru-btn-border-radius: 4px;
+$cru-btn-transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out;
+
+$cru-button-responsive-styles: (
+  'mobile': (
+    'font-size':    $cru-font-size-base * 0.875,
+    'padding':      6px 15px,
+  ),
+  'tablet': (
+    'font-size':    $cru-font-size-base,
+    'padding':      9px 23px,
+  ),
+  'desktop': (
+    'font-size':    $cru-font-size-base,
+    'padding':      9px 23px,
+  ),
+);
+
+$cru-button-variations: (
+  'yellow-gray': (
+    'default': (
+      'text':       $cru-color-gray-dark,
+      'background': $cru-color-yellow,
+      'border':     $cru-color-yellow,
+    ),
+    'disabled': (
+      'text':       $cru-color-gray-medium,
+      'background': $cru-color-gray-light,
+      'border':     $cru-color-gray-light,
+    ),
+  ),
+  'gray-white': (
+    'default': (
+      'text':       $cru-color-white,
+      'background': $cru-color-gray-dark,
+      'border':     $cru-color-gray-dark,
+    ),
+    'disabled': (
+      'text':       $cru-color-gray-medium,
+      'background': $cru-color-gray-light,
+      'border':     $cru-color-gray-light,
+    ),
+  ),
+  'white-gray': (
+    'default': (
+      'text':       $cru-color-gray-dark,
+      'background': $cru-color-white,
+      'border':     $cru-color-white,
+    ),
+    'disabled': (
+      'text':       $cru-color-gray-dark,
+      'background': $cru-color-gray-medium,
+      'border':     $cru-color-gray-medium,
+    ),
+  ),
+  'yellow-gray-outline': (
+    'default': (
+      'text':       $cru-color-gray-dark,
+      'background': transparent,
+      'border':     $cru-color-yellow,
+    ),
+    'disabled': (
+      'text':       $cru-color-gray-medium,
+      'background': transparent,
+      'border':     $cru-color-gray-medium,
+    ),
+  ),
+  'gray-gray-outline': (
+    'default': (
+      'text':       $cru-color-gray-dark,
+      'background': transparent,
+      'border':     $cru-color-gray-dark,
+    ),
+    'disabled': (
+      'text':       $cru-color-gray-medium,
+      'background': transparent,
+      'border':     $cru-color-gray-medium,
+    ),
+  ),
+  'yellow-white-outline': (
+    'default': (
+      'text':       $cru-color-white,
+      'background': transparent,
+      'border':     $cru-color-yellow,
+    ),
+    'disabled': (
+      'text':       $cru-color-gray-medium,
+      'background': transparent,
+      'border':     $cru-color-gray-medium,
+    ),
+  ),
+  'white-white-outline': (
+    'default': (
+      'text':       $cru-color-white,
+      'background': transparent,
+      'border':     $cru-color-white,
+    ),
+    'disabled': (
+      'text':       $cru-color-gray-medium,
+      'background': transparent,
+      'border':     $cru-color-gray-medium,
+    ),
+  ),
+);

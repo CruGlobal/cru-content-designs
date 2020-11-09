@@ -1,0 +1,88 @@
+// All typography variables required for Cru branding
+// v1.0
+
+@if $cru-import-google-fonts {
+  @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Crimson+Text&display=swap');
+}
+
+$cru-font-family-sans-serif: "Source Sans Pro", sans-serif;
+$cru-font-family-serif: "Crimson Text", serif;
+
+$cru-font-size-base: 1rem;
+
+$cru-font-weight-normal: 400;
+$cru-font-weight-semibold: 600;
+$cru-font-weight-bold: 700;
+
+$cru-font-weight-base: $cru-font-weight-normal;
+
+$cru-line-height-base: calc(1em + 8px);
+
+$cru-text-font-size: $cru-font-size-base * 1.125;
+
+$cru-text-responsive-styles: (
+  'mobile': (
+    'font-size':    $cru-font-size-base,
+  ),
+  'tablet': (
+    'font-size':    $cru-font-size-base,
+  ),
+  'desktop': (
+    'font-size':    $cru-text-font-size,
+  ),
+);
+
+$cru-headings-font-family: $cru-font-family-sans-serif;
+$cru-headings-font-style: null;
+$cru-headings-font-weight: $cru-font-weight-bold;
+$cru-headings-line-height: $cru-line-height-base;
+$cru-headings-color: $cru-color-gray-dark;
+
+$cru-heading-xxl-responsive-styles: (
+  'mobile': (
+    'font-size':    $cru-font-size-base * 6,
+  ),
+  'tablet': (
+    'font-size':    $cru-font-size-base * 6,
+  ),
+  'desktop': (
+    'font-size':    $cru-font-size-base * 6,
+  )
+);
+
+$cru-heading-xl-responsive-styles: (
+  'mobile': (
+    'font-size':    $cru-font-size-base * 3,
+  ),
+  'tablet': (
+    'font-size':    $cru-font-size-base * 4,
+  ),
+  'desktop': (
+    'font-size':    $cru-font-size-base * 4,
+  )
+);
+
+$cru-heading-lg-responsive-styles: (
+  'mobile': (
+    'font-size':    $cru-font-size-base * 2,
+  ),
+  'tablet': (
+    'font-size':    $cru-font-size-base * 3,
+  ),
+  'desktop': (
+    'font-size':    $cru-font-size-base * 3,
+  )
+);
+
+$cru-heading-md-responsive-styles: (
+  'mobile': (
+    'font-size':    $cru-font-size-base * 1.125,
+  ),
+  'tablet': (
+    'font-size':    $cru-font-size-base * 2,
+  ),
+  'desktop': (
+    'font-size':    $cru-font-size-base * 2,
+  )
+);
