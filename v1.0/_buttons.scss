@@ -30,6 +30,23 @@
   @include responsive-styles($cru-button-responsive-styles);
 }
 
+.cru-tag {
+  font-weight: $cru-tag-font-weight;
+  font-size: $cru-tag-font-size;
+  line-height: $cru-tag-line-height;
+  padding: $cru-tag-padding-y $cru-tag-padding-x;
+  border-radius: $cru-tag-border-radius;
+  &-icon {
+    padding-right: $cru-tag-padding-x / 2;
+    i {
+      font-size: $cru-font-size-base;
+      position: relative;
+      top: ($cru-font-size-base - $cru-tag-font-size) / 2;
+      margin-left: 2px;
+    }
+  }
+}
+
 @each $style, $values in $cru-button-variations {
   $default: map-get($values, 'default');
   $hover: map-get($values, 'hover');

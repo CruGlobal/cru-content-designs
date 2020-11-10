@@ -2,11 +2,18 @@
 // v1.0
 
 $cru-btn-font-family: $cru-font-family-sans-serif;
-$cru-btn-font-weight: 600;
+$cru-btn-font-weight: $cru-font-weight-semibold;
 $cru-btn-line-height: calc(1em + 4px);
 $cru-btn-border-width: 1px;
 $cru-btn-border-radius: 4px;
 $cru-btn-transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out;
+
+$cru-tag-font-weight: $cru-font-weight-normal;
+$cru-tag-font-size: $cru-font-size-base * 0.875;
+$cru-tag-line-height: $cru-tag-font-size * 1.572;
+$cru-tag-padding-y: 4px;
+$cru-tag-padding-x: 15px;
+$cru-tag-border-radius: 100px;
 
 $cru-button-responsive-styles: (
   'mobile': (

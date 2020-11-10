@@ -141,6 +141,20 @@
       font-size: 1rem;
       padding: 9px 23px; } }
 
+.cru-tag {
+  font-weight: 400;
+  font-size: 0.875rem;
+  line-height: 1.3755rem;
+  padding: 4px 15px;
+  border-radius: 100px; }
+  .cru-tag-icon {
+    padding-right: 7.5px; }
+    .cru-tag-icon i {
+      font-size: 1rem;
+      position: relative;
+      top: 0.0625rem;
+      margin-left: 2px; }
+
 .cru-button-yellow-gray {
   color: #383F43;
   background-color: #FFCF07;

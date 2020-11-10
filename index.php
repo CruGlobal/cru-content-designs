@@ -62,23 +62,45 @@
           ['white-white-outline', 'White White Outline', true],
         ];
 
-        foreach ($button_styles as $button) {
-          $background = ($button[2]) ? ' dark-bg' : '';
-          echo '<div class="div-sep' . $background . '">' . "\n";
-          for ($i = 1; $i <= 5; $i++) {
-            if ($i === 3) {
-              echo '<br />' . "\n";
-              continue;
-            }
+        $tag_styles = [
+          $button_styles[2],
+          $button_styles[3],
+          $button_styles[5],
+          $button_styles[7],
+        ];
 
-            $style = ($button[0]) ? ' cru-button-' . $button[0] : '';
-            $disabled = ($i === 2 || $i === 5) ? ' disabled' : '';
-            $icon = ($i === 4 || $i === 5) ? ' Icon <i class="fal fa-shopping-cart"></i>' : '';
-            
-            echo '<button class="cru-button' . $style . '"' . $disabled . '>' . $button[1] . $icon . '</button>' . "\n";
+        function display_buttons($buttons, $type = 'button') {
+          foreach ($buttons as $button) {
+            $background = ($button[2]) ? ' dark-bg' : '';
+            echo '<div class="div-sep' . $background . '">' . "\n";
+            for ($i = 1; $i <= 5; $i++) {
+              if ($i === 3) {
+                echo '<br />' . "\n";
+                continue;
+              }
+
+              $label = $button[1];
+              $classes = ($button[0]) ? ' cru-button-' . $button[0] : '';
+              $disabled = ($i === 2 || $i === 5) ? ' disabled' : '';
+              $icon = ($i === 4 || $i === 5) ? ' Icon <i class="fal fa-shopping-cart"></i>' : '';
+
+              if ($type == 'tag') {
+                $label = 'Recommended';
+                $classes .= ' cru-tag';
+                $icon = ($icon) ? ' <i class="fas fa-times-circle"></i>' : '';
+                if ($icon) {
+                  $classes .= ' cru-tag-icon';
+                }
+              }
+              
+              echo '<button class="cru-button' . $classes . '"' . $disabled . '>' . $label . $icon . '</button>' . "\n";
+            }
+            echo '</div>' . "\n";
           }
-          echo '</div>' . "\n";
         }
+
+        display_buttons($button_styles);
+        display_buttons($tag_styles, 'tag');
       ?>
     </fieldset>
   
