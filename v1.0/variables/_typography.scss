@@ -10,6 +10,7 @@ $cru-font-family-sans-serif: "Source Sans Pro", sans-serif;
 $cru-font-family-serif: "Crimson Text", serif;
 
 $cru-font-size-base: 1rem;
+$cru-font-size-small: $cru-font-size-base * 0.875;
 
 $cru-font-weight-normal: 400;
 $cru-font-weight-semibold: 600;
@@ -38,6 +39,7 @@ $cru-headings-font-style: null;
 $cru-headings-font-weight: $cru-font-weight-bold;
 $cru-headings-line-height: $cru-line-height-base;
 $cru-headings-color: $cru-color-gray-dark;
+$cru-headings-margin-top: 0;
 
 $cru-heading-xxl-responsive-styles: (
   'mobile': (
@@ -86,3 +88,8 @@ $cru-heading-md-responsive-styles: (
     'font-size':    $cru-font-size-base * 2,
   )
 );
+
+$cru-headings-sm-font-size: $cru-font-size-base * 1.25;
+$cru-headings-sm-line-height: 1.2;
+$cru-headings-sm-text-transform: uppercase;
+$cru-headings-sm-letter-spacing: 0.12em;

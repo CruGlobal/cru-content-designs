@@ -15,8 +15,9 @@
   @media (min-width: 1200px) {
     .cru-text {
       font-size: 1.125rem; } }
-  .cru-text-sm {
-    font-size: 0.875rem; }
+
+.cru-text-sm {
+  font-size: 0.875rem; }
 
 .cru-heading {
   margin-top: 0;
@@ -103,57 +104,144 @@
 .cru-text-serif {
   font-family: "Crimson Text", serif; }
 
-.cru-button {
+.cru-button,
+.test {
   font-family: "Source Sans Pro", sans-serif;
   font-weight: 600;
   line-height: calc(1em + 4px);
-  border: 1px solid transparent;
+  border-width: 1px;
+  border-style: solid;
   border-radius: 4px;
-  cursor: pointer;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+  cursor: pointer;
   letter-spacing: 0.02em;
   color: #383F43;
   background-color: #FFCF07;
   border-color: #FFCF07;
   font-size: 0.875rem;
   padding: 6px 15px; }
-  .cru-button:hover {
+  .cru-button:hover,
+  .test:hover {
     color: #FFFFFF;
     background-color: #FFCF07;
     border-color: #FFCF07; }
-  .cru-button:active, .cru-button:focus {
+  .cru-button:active, .cru-button:focus,
+  .test:active,
+  .test:focus {
     outline: none; }
-  .cru-button.disabled, .cru-button[disabled] {
+  .cru-button.disabled, .cru-button[disabled],
+  .disabled.test,
+  .test[disabled] {
     cursor: not-allowed;
     color: #9C9FA1;
     background-color: #EBECEC;
     border-color: #EBECEC; }
   @media (min-width: 768px) {
-    .cru-button {
+    .cru-button,
+    .test {
       font-size: 1rem;
       padding: 9px 23px; } }
   @media (min-width: 992px) {
-    .cru-button {
+    .cru-button,
+    .test {
       font-size: 1rem;
       padding: 9px 23px; } }
   @media (min-width: 1200px) {
-    .cru-button {
+    .cru-button,
+    .test {
       font-size: 1rem;
       padding: 9px 23px; } }
 
-.cru-tag {
+.cru-tag,
+.test-tag {
+  font-family: "Source Sans Pro", sans-serif;
   font-weight: 400;
   font-size: 0.875rem;
   line-height: 1.3755rem;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 100px;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+  cursor: pointer;
   padding: 4px 15px;
-  border-radius: 100px; }
-  .cru-tag-icon {
+  color: #FFFFFF;
+  background-color: #383F43;
+  border-color: #383F43; }
+  .cru-tag:hover,
+  .test-tag:hover {
+    color: #FFFFFF;
+    background-color: #FFCF07;
+    border-color: #FFCF07; }
+  .cru-tag:active, .cru-tag:focus,
+  .test-tag:active,
+  .test-tag:focus {
+    outline: none; }
+  .cru-tag.disabled, .cru-tag[disabled],
+  .disabled.test-tag,
+  .test-tag[disabled] {
+    cursor: not-allowed;
+    color: #9C9FA1;
+    background-color: #EBECEC;
+    border-color: #EBECEC; }
+  .cru-tag-icon,
+  .test-tag {
     padding-right: 7.5px; }
-    .cru-tag-icon i {
+    .cru-tag-icon i,
+    .test-tag i {
       font-size: 1rem;
       position: relative;
       top: 0.0625rem;
       margin-left: 2px; }
+
+.cru-dot,
+.dot {
+  display: inline-block;
+  width: 31px;
+  height: 31px;
+  line-height: 31px;
+  text-align: center;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 100px;
+  padding: 0;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+  cursor: pointer;
+  box-shadow: 0px 7.5px 20px rgba(0, 0, 0, 0.08);
+  color: #383F43;
+  background-color: #FFFFFF;
+  border-color: #FFFFFF; }
+  .cru-dot:hover,
+  .dot:hover {
+    color: #FFFFFF;
+    background-color: #FFCF07;
+    border-color: #FFCF07; }
+  .cru-dot:active, .cru-dot:focus,
+  .dot:active,
+  .dot:focus {
+    outline: none; }
+  .cru-dot.disabled, .cru-dot[disabled],
+  .disabled.dot,
+  .dot[disabled] {
+    cursor: not-allowed;
+    color: #EBECEC;
+    background-color: #FFFFFF;
+    border-color: #FFFFFF; }
+  .cru-dot.cru-button-white-gray.disabled, .cru-dot.cru-button-white-gray[disabled],
+  .cru-button-white-gray.disabled.dot,
+  .cru-button-white-gray.dot[disabled] {
+    color: #EBECEC;
+    background-color: #FFFFFF;
+    border-color: #FFFFFF; }
+  .cru-dot.cru-button-gray-gray-outline.disabled, .cru-dot.cru-button-gray-gray-outline[disabled],
+  .cru-button-gray-gray-outline.disabled.dot,
+  .cru-button-gray-gray-outline.dot[disabled] {
+    color: #EBECEC;
+    background-color: transparent;
+    border-color: #EBECEC; }
+  .cru-dot.cru-button-gray-gray-outline, .cru-dot.cru-button-white-white-outline,
+  .cru-button-gray-gray-outline.dot,
+  .cru-button-white-white-outline.dot {
+    box-shadow: none; }
 
 .cru-button-yellow-gray {
   color: #383F43;
@@ -191,11 +279,14 @@
     background-color: transparent;
     border-color: #9C9FA1; }
 
-.cru-button-gray-gray-outline {
+.cru-button-gray-gray-outline,
+.dot {
   color: #383F43;
   background-color: transparent;
   border-color: #383F43; }
-  .cru-button-gray-gray-outline.disabled, .cru-button-gray-gray-outline[disabled] {
+  .cru-button-gray-gray-outline.disabled, .cru-button-gray-gray-outline[disabled],
+  .disabled.dot,
+  .dot[disabled] {
     color: #9C9FA1;
     background-color: transparent;
     border-color: #9C9FA1; }

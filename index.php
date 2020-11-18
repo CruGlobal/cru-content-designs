@@ -51,7 +51,7 @@
     <fieldset>
       <legend>Button</legend>
       <?php
-        $button_styles = [
+        $button_variations = [
           ['', 'Default'],
           ['yellow-gray', 'Yellow Gray'],
           ['gray-white', 'Gray White'],
@@ -62,11 +62,11 @@
           ['white-white-outline', 'White White Outline', true],
         ];
 
-        $tag_styles = [
-          $button_styles[2],
-          $button_styles[3],
-          $button_styles[5],
-          $button_styles[7],
+        $tag_variations = [
+          $button_variations[2],
+          $button_variations[3],
+          $button_variations[5],
+          $button_variations[7],
         ];
 
         function display_buttons($buttons, $type = 'button') {
@@ -98,11 +98,55 @@
             echo '</div>' . "\n";
           }
         }
+        display_buttons($button_variations);
+        display_buttons($tag_variations, 'tag');
 
-        display_buttons($button_styles);
-        display_buttons($tag_styles, 'tag');
+        $dot_variations = [
+          $button_variations[3],
+          $button_variations[5],
+          $button_variations[7],
+        ];
+
+        function display_dots($dots) {
+          $arrows = ['up', 'left', 'right', 'down'];
+          foreach ($dots as $dot) {
+            $background = ($dot[2] && $dot[0] != 'white-gray') ? ' dark-bg' : '';
+            echo '<div class="div-sep' . $background . '">' . "\n";
+            foreach ($arrows as $arrow) {
+              echo '<button class="cru-button cru-button-' . $dot[0] . ' cru-dot"><i class="fal fa-arrow-' . $arrow . '"></i></button>' . "\n";
+            }
+            echo '<br />' . "\n";
+            foreach ($arrows as $arrow) {
+              echo '<button class="cru-button cru-button-' . $dot[0] . ' cru-dot disabled"><i class="fal fa-arrow-' . $arrow . '"></i></button>' . "\n";
+            }
+            echo '</div>' . "\n";
+          }
+        }
+        display_dots($dot_variations);
       ?>
+      <!-- <div class="div-sep">
+        <button class="cru-button cru-button-white-gray cru-dot"><i class="fal fa-arrow-up"></i></button>
+        <button class="cru-button cru-button-white-gray cru-dot"><i class="fal fa-arrow-left"></i></button>
+        <button class="cru-button cru-button-white-gray cru-dot"><i class="fal fa-arrow-right"></i></button>
+        <button class="cru-button cru-button-white-gray cru-dot"><i class="fal fa-arrow-down"></i></button>
+      </div>
+      <div class="div-sep">
+        <button class="cru-button cru-button-gray-gray-outline cru-dot"><i class="fal fa-arrow-up"></i></button>
+        <button class="cru-button cru-button-gray-gray-outline cru-dot"><i class="fal fa-arrow-left"></i></button>
+        <button class="cru-button cru-button-gray-gray-outline cru-dot"><i class="fal fa-arrow-right"></i></button>
+        <button class="cru-button cru-button-gray-gray-outline cru-dot"><i class="fal fa-arrow-down"></i></button>
+      </div>
+      <div class="div-sep dark-bg">
+        <button class="cru-button cru-button-white-white-outline cru-dot"><i class="fal fa-arrow-up"></i></button>
+        <button class="cru-button cru-button-white-white-outline cru-dot"><i class="fal fa-arrow-left"></i></button>
+        <button class="cru-button cru-button-white-white-outline cru-dot"><i class="fal fa-arrow-right"></i></button>
+        <button class="cru-button cru-button-white-white-outline cru-dot"><i class="fal fa-arrow-down"></i></button>
+      </div> -->
     </fieldset>
+
+    <button class="test">Hi! I'm a button!</button>
+    <button class="test-tag">Hi! I'm a tag! <i class="fas fa-times-circle"></i></button>
+    <button class="dot"><i class="fal fa-arrow-right"></i></button>
   
   </div>
 </body>

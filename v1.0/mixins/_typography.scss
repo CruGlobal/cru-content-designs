@@ -1,2 +1,53 @@
 // All typography mixins required for Cru branding
 // v1.0
+
+@mixin cru-text {
+  font-family: $cru-font-family-sans-serif;
+  font-weight: $cru-font-weight-base;
+  line-height: $cru-line-height-base;
+  color: $cru-body-color;
+  @include responsive-styles($cru-text-responsive-styles);
+}
+
+@mixin cru-text-sm {
+  font-size: $cru-font-size-small;
+}
+
+@mixin cru-heading {
+  margin-top: $cru-headings-margin-top;
+  font-family: $cru-headings-font-family;
+  font-style: $cru-headings-font-style;
+  font-weight: $cru-headings-font-weight;
+  color: $cru-body-color;
+  line-height: $cru-headings-line-height;
+}
+
+@mixin cru-heading-xxl {
+  @include responsive-styles($cru-heading-xxl-responsive-styles);
+}
+
+@mixin cru-heading-xl {
+  @include responsive-styles($cru-heading-xl-responsive-styles);
+}
+
+@mixin cru-heading-lg {
+  @include responsive-styles($cru-heading-lg-responsive-styles);
+}
+
+@mixin cru-heading-md {
+  @include responsive-styles($cru-heading-md-responsive-styles);
+}
+
+@mixin cru-heading-sm {
+  font-size: $cru-headings-sm-font-size;
+  line-height: 1.2;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+@mixin cru-heading-xs {
+  font-size: $cru-font-size-base * 0.875;
+  line-height: 1.43;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}

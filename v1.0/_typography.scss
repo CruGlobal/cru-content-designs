@@ -2,46 +2,17 @@
 // v1.0
 
 // Basic text
-.cru-text {
-  font-family: $cru-font-family-sans-serif;
-  font-weight: $cru-font-weight-base;
-  line-height: $cru-line-height-base;
-  color: $cru-body-color;
-  @include responsive-styles($cru-text-responsive-styles);
-  &-sm {
-    font-size: $cru-font-size-base * 0.875;
-  }
-}
+.cru-text { @include cru-text; }
+.cru-text-sm { @include cru-text-sm; }
 
 // Headings/titles
-%heading {
-  margin-top: 0;
-  font-family: $cru-headings-font-family;
-  font-style: $cru-headings-font-style;
-  font-weight: $cru-headings-font-weight;
-  color: $cru-body-color;
-  line-height: $cru-headings-line-height;
-}
-
-.cru-heading {
-  @extend %heading;
-  &-xxl { @include responsive-styles($cru-heading-xxl-responsive-styles); }
-  &-xl { @include responsive-styles($cru-heading-xl-responsive-styles); }
-  &-lg { @include responsive-styles($cru-heading-lg-responsive-styles); }
-  &-md { @include responsive-styles($cru-heading-md-responsive-styles); }
-  &-sm {
-    font-size: $cru-font-size-base * 1.25;
-    line-height: 1.2;
-    text-transform: uppercase;
-    letter-spacing: 0.12em;
-  }
-  &-xs {
-    font-size: $cru-font-size-base * 0.875;
-    line-height: 1.43;
-    text-transform: uppercase;
-    letter-spacing: 0.12em;
-  }
-}
+.cru-heading { @include cru-heading; }
+.cru-heading-xxl { @include cru-heading-xxl; }
+.cru-heading-xl { @include cru-heading-xl; }
+.cru-heading-lg { @include cru-heading-lg; }
+.cru-heading-md { @include cru-heading-md; }
+.cru-heading-sm { @include cru-heading-sm; }
+.cru-heading-xs { @include cru-heading-xs; }
 
 // Colored text
 @each $label, $color in $cru-text-colors {
