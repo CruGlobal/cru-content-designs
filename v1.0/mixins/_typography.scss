@@ -20,6 +20,7 @@
   font-weight: $cru-headings-font-weight;
   color: $cru-body-color;
   line-height: $cru-headings-line-height;
+  @include responsive-styles($cru-heading-lg-responsive-styles);
 }
 
 @mixin cru-heading-xxl {

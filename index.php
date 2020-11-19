@@ -124,24 +124,6 @@
         }
         display_dots($dot_variations);
       ?>
-      <!-- <div class="div-sep">
-        <button class="cru-button cru-button-white-gray cru-dot"><i class="fal fa-arrow-up"></i></button>
-        <button class="cru-button cru-button-white-gray cru-dot"><i class="fal fa-arrow-left"></i></button>
-        <button class="cru-button cru-button-white-gray cru-dot"><i class="fal fa-arrow-right"></i></button>
-        <button class="cru-button cru-button-white-gray cru-dot"><i class="fal fa-arrow-down"></i></button>
-      </div>
-      <div class="div-sep">
-        <button class="cru-button cru-button-gray-gray-outline cru-dot"><i class="fal fa-arrow-up"></i></button>
-        <button class="cru-button cru-button-gray-gray-outline cru-dot"><i class="fal fa-arrow-left"></i></button>
-        <button class="cru-button cru-button-gray-gray-outline cru-dot"><i class="fal fa-arrow-right"></i></button>
-        <button class="cru-button cru-button-gray-gray-outline cru-dot"><i class="fal fa-arrow-down"></i></button>
-      </div>
-      <div class="div-sep dark-bg">
-        <button class="cru-button cru-button-white-white-outline cru-dot"><i class="fal fa-arrow-up"></i></button>
-        <button class="cru-button cru-button-white-white-outline cru-dot"><i class="fal fa-arrow-left"></i></button>
-        <button class="cru-button cru-button-white-white-outline cru-dot"><i class="fal fa-arrow-right"></i></button>
-        <button class="cru-button cru-button-white-white-outline cru-dot"><i class="fal fa-arrow-down"></i></button>
-      </div> -->
     </fieldset>
 
     <button class="test">Hi! I'm a button!</button>
