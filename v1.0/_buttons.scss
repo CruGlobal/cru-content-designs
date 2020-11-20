@@ -1,163 +1,35 @@
 // All button classes required for Cru branding
 // v1.0
 
-.cru-button,
-%cru-button {
-  font-family: $cru-btn-font-family;
-  font-weight: $cru-btn-font-weight;
-  line-height: $cru-btn-line-height;
-  border-width: $cru-btn-border-width;
-  border-style: $cru-btn-border-style;
-  border-radius: $cru-btn-border-radius;
-  transition: $cru-btn-transition;
-  cursor: $cru-btn-cursor;
-  letter-spacing: $cru-btn-letter-spacing;
-  color: $cru-btn-color-default;
-  background-color: $cru-btn-background-color-default;
-  border-color: $cru-btn-border-color-default;
-  &:hover {
-    color: $cru-btn-color-default-hover;
-    background-color: $cru-btn-background-color-default-hover;
-    border-color: $cru-btn-border-color-default-hover;
-  }
-  &:active, &:focus {
-    outline: $cru-btn-active-focus-outline;
-  }
-  &.disabled, &[disabled] {
-    cursor: $cru-btn-cursor-disabled;
-    color: $cru-btn-color-default-disabled;
-    background-color: $cru-btn-background-color-default-disabled;
-    border-color: $cru-btn-border-color-default-disabled;
-  }
-  @include responsive-styles($cru-button-responsive-styles);
+.cru-button {
+  @include cru-button;
 }
 
-.cru-tag,
-%cru-tag {
-  font-family: $cru-tag-font-family;
-  font-weight: $cru-tag-font-weight;
-  font-size: $cru-tag-font-size;
-  line-height: $cru-tag-line-height;
-  border-width: $cru-tag-border-width;
-  border-style: $cru-tag-border-style;
-  border-radius: $cru-tag-border-radius;
-  transition: $cru-tag-transition;
-  cursor: $cru-tag-cursor;
-  padding: $cru-tag-padding-y $cru-tag-padding-x;
-  color: $cru-tag-color-default;
-  background-color: $cru-tag-background-color-default;
-  border-color: $cru-tag-border-color-default;
-  &:hover {
-    color: $cru-tag-color-default-hover;
-    background-color: $cru-tag-background-color-default-hover;
-    border-color: $cru-tag-border-color-default-hover;
-  }
-  &:active, &:focus {
-    outline: $cru-tag-active-focus-outline;
-  }
-  &.disabled, &[disabled] {
-    cursor: $cru-tag-cursor-disabled;
-    color: $cru-tag-color-default-disabled;
-    background-color: $cru-tag-background-color-default-disabled;
-    border-color: $cru-tag-border-color-default-disabled;
-  }
-  &-icon {
-    padding-right: $cru-tag-icon-padding-right;
-    i {
-      font-size: $cru-tag-icon-font-size;
-      position: $cru-tag-icon-position;
-      top: $cru-tag-icon-top;
-      margin-left: $cru-tag-icon-margin-left;
-    }
-  }
+.cru-tag {
+  @include cru-tag;
 }
 
-.cru-dot,
-%cru-dot {
-  display: $cru-dot-display;
-  width: $cru-dot-dimensions;
-  height: $cru-dot-dimensions;
-  line-height: $cru-dot-dimensions;
-  text-align: $cru-dot-text-align;
-  border-width: $cru-dot-border-width;
-  border-style: $cru-dot-border-style;
-  border-radius: $cru-dot-border-radius;
-  padding: $cru-dot-padding;
-  transition: $cru-dot-transition;
-  cursor: $cru-dot-cursor;
-  box-shadow: $cru-dot-shadow;
-  color: $cru-dot-color-default;
-  background-color: $cru-dot-background-color-default;
-  border-color: $cru-dot-border-color-default;
-  &:hover {
-    color: $cru-dot-color-default-hover;
-    background-color: $cru-dot-background-color-default-hover;
-    border-color: $cru-dot-border-color-default-hover;
-  }
-  &:active, &:focus {
-    outline: $cru-dot-active-focus-outline;
-  }
-  &.disabled, &[disabled] {
-    cursor: $cru-tag-cursor-disabled;
-    color: $cru-dot-color-default-disabled;
-    background-color: $cru-dot-background-color-default-disabled;
-    border-color: $cru-dot-border-color-default-disabled;
-  }
-  &.cru-button-white-gray {
-    &.disabled, &[disabled] {
-      color: $cru-dot-color-default-disabled;
-      background-color: $cru-dot-background-color-default-disabled;
-      border-color: $cru-dot-border-color-default-disabled;
-    }
-  }
-  &.cru-button-gray-gray-outline {
-    &.disabled, &[disabled] {
-      color: $cru-color-gray-light;
-      background-color: transparent;
-      border-color: $cru-color-gray-light;
-    }
-  }
-  &.cru-button-gray-gray-outline,
-  &.cru-button-white-white-outline {
-    box-shadow: none;
-  }
+.cru-tag-icon {
+  @include cru-tag-icon;
 }
 
-@each $style, $values in $cru-button-variations {
-  $default: map-get($values, 'default');
-  $hover: map-get($values, 'hover');
-  $disabled: map-get($values, 'disabled');
-
-  .cru-button-#{$style},
-  %cru-button-#{$style} {
-    color: map-get($default, 'text');
-    background-color: map-get($default, 'background');
-    border-color: map-get($default, 'border');
-    @if $hover {
-      &:hover {
-        color: map-get($hover, 'text');
-        background-color: map-get($hover, 'background');
-        border-color: map-get($hover, 'border');
-      }
-    }
-    &.disabled, &[disabled] {
-      color: map-get($disabled, 'text');
-      background-color: map-get($disabled, 'background');
-      border-color: map-get($disabled, 'border');
-    }
-  }
+.cru-dot {
+  @include cru-dot;
 }
 
-.test {
-  @extend %cru-button;
-}
+.cru-button-yellow-gray { @include cru-button-yellow-gray; }
+.cru-button-gray-white { @include cru-button-gray-white; }
+.cru-button-white-gray { @include cru-button-white-gray; }
+.cru-button-yellow-gray-outline { @include cru-button-yellow-gray-outline; }
+.cru-button-gray-gray-outline { @include cru-button-gray-gray-outline; }
+.cru-button-yellow-white-outline { @include cru-button-yellow-white-outline; }
+.cru-button-white-white-outline { @include cru-button-white-white-outline; }
 
-.test-tag {
-  @extend %cru-tag;
-  @extend %cru-tag-icon;
-}
+.cru-tag-gray-white { @include cru-tag-gray-white; }
+.cru-tag-white-gray { @include cru-tag-white-gray; }
+.cru-tag-gray-gray-outline { @include cru-tag-gray-gray-outline; }
+.cru-tag-white-white-outline { @include cru-tag-white-white-outline; }
 
-.dot {
-  @extend %cru-dot;
-  @extend %cru-button-gray-gray-outline;
-}
+.cru-dot-white-gray { @include cru-dot-white-gray; }
+.cru-dot-gray-gray-outline { @include cru-dot-gray-gray-outline; }
+.cru-dot-white-white-outline { @include cru-dot-white-white-outline; }

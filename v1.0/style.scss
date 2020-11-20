@@ -9,3 +9,17 @@
 // Layouts & components
 @import 'typography';
 @import 'buttons';
+
+// Testing stuff
+.button-test {
+  @include cru-button;
+}
+
+.tag-test {
+  @include cru-tag;
+  @include cru-tag-icon;
+}
+
+.dot-test {
+  @include cru-dot;
+}
