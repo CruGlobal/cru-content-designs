@@ -120,32 +120,32 @@
       </div>
       <!-- Tag-style buttons -->
       <div class="div-sep">
-        <button class="cru-tag cru-tag-gray-white">Recommended</button>
-        <button class="cru-tag cru-tag-gray-white" disabled>Recommended</button>
+        <button class="cru-tag cru-tag-gray-white">Gray White</button>
+        <button class="cru-tag cru-tag-gray-white" disabled>Gray White</button>
         <br>
-        <button class="cru-tag cru-tag-gray-white cru-tag-icon">Recommended <i class="fas fa-times-circle"></i></button>
-        <button class="cru-tag cru-tag-gray-white cru-tag-icon" disabled>Recommended <i class="fas fa-times-circle"></i></button>
+        <button class="cru-tag cru-tag-gray-white cru-tag-icon">Gray White <i class="fas fa-times-circle"></i></button>
+        <button class="cru-tag cru-tag-gray-white cru-tag-icon" disabled>Gray White <i class="fas fa-times-circle"></i></button>
       </div>
       <div class="div-sep dark-bg">
-        <button class="cru-tag cru-tag-white-gray">Recommended</button>
-        <button class="cru-tag cru-tag-white-gray" disabled>Recommended</button>
+        <button class="cru-tag cru-tag-white-gray">White Gray</button>
+        <button class="cru-tag cru-tag-white-gray" disabled>White Gray</button>
         <br>
-        <button class="cru-tag cru-tag-white-gray cru-tag-icon">Recommended <i class="fas fa-times-circle"></i></button>
-        <button class="cru-tag cru-tag-white-gray cru-tag-icon" disabled>Recommended <i class="fas fa-times-circle"></i></button>
+        <button class="cru-tag cru-tag-white-gray cru-tag-icon">White Gray <i class="fas fa-times-circle"></i></button>
+        <button class="cru-tag cru-tag-white-gray cru-tag-icon" disabled>White Gray <i class="fas fa-times-circle"></i></button>
       </div>
       <div class="div-sep">
-        <button class="cru-tag cru-tag-gray-gray-outline">Recommended</button>
-        <button class="cru-tag cru-tag-gray-gray-outline" disabled>Recommended</button>
+        <button class="cru-tag cru-tag-gray-gray-outline">Gray Gray Outline</button>
+        <button class="cru-tag cru-tag-gray-gray-outline" disabled>Gray Gray Outline</button>
         <br>
-        <button class="cru-tag cru-tag-gray-gray-outline cru-tag-icon">Recommended <i class="fas fa-times-circle"></i></button>
-        <button class="cru-tag cru-tag-gray-gray-outline cru-tag-icon" disabled>Recommended <i class="fas fa-times-circle"></i></button>
+        <button class="cru-tag cru-tag-gray-gray-outline cru-tag-icon">Gray Gray Outline <i class="fas fa-times-circle"></i></button>
+        <button class="cru-tag cru-tag-gray-gray-outline cru-tag-icon" disabled>Gray Gray Outline <i class="fas fa-times-circle"></i></button>
       </div>
       <div class="div-sep dark-bg">
-        <button class="cru-tag cru-tag-white-white-outline">Recommended</button>
-        <button class="cru-tag cru-tag-white-white-outline" disabled>Recommended</button>
+        <button class="cru-tag cru-tag-white-white-outline">White White Outline</button>
+        <button class="cru-tag cru-tag-white-white-outline" disabled>White White Outline</button>
         <br>
-        <button class="cru-tag cru-tag-white-white-outline cru-tag-icon">Recommended <i class="fas fa-times-circle"></i></button>
-        <button class="cru-tag cru-tag-white-white-outline cru-tag-icon" disabled>Recommended <i class="fas fa-times-circle"></i></button>
+        <button class="cru-tag cru-tag-white-white-outline cru-tag-icon">White White Outline <i class="fas fa-times-circle"></i></button>
+        <button class="cru-tag cru-tag-white-white-outline cru-tag-icon" disabled>White White Outline <i class="fas fa-times-circle"></i></button>
       </div>
       <!-- Dot-style buttons -->
       <div class="div-sep">
