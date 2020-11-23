@@ -181,6 +181,16 @@
         <button class="cru-dot cru-dot-white-white-outline disabled"><i class="fal fa-arrow-right"></i></button>
         <button class="cru-dot cru-dot-white-white-outline disabled"><i class="fal fa-arrow-down"></i></button>
       </div>
+      <!-- Dot-style buttons -->
+      <div class="div-sep">
+        <button class="cru-button-combo cru-button-combo-gray-gray">Gray Gray <i class="fal fa-arrow-right"></i></button>
+      </div>
+      <div class="div-sep">
+        <button class="cru-button-combo cru-button-combo-gray-yellow">Gray Yellow <i class="fal fa-arrow-right"></i></button>
+      </div>
+      <div class="div-sep dark-bg">
+        <button class="cru-button-combo cru-button-combo-white-yellow">White Yellow <i class="fal fa-arrow-right"></i></button>
+      </div>
     </fieldset>
 
     <button class="button-test">Hi! I'm a button!</button>

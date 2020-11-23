@@ -71,7 +71,7 @@
   }
 }
 
-@mixin cru-dot {
+@mixin cru-dot-and-combo {
   display: $cru-dot-display;
   width: $cru-dot-dimensions;
   height: $cru-dot-dimensions;
@@ -81,6 +81,10 @@
   border-style: $cru-dot-border-style;
   border-radius: $cru-dot-border-radius;
   padding: $cru-dot-padding;
+}
+
+@mixin cru-dot {
+  @include cru-dot-and-combo;
   transition: $cru-dot-transition;
   cursor: $cru-dot-cursor;
   box-shadow: $cru-dot-shadow;
@@ -125,19 +129,23 @@
   $hover: map-get($variation, 'hover');
   $disabled: map-get($variation, 'disabled');
 
-  color: map-get($default, 'text');
-  background-color: map-get($default, 'background');
-  border-color: map-get($default, 'border');
+  @if map-get($default, 'text') { color: map-get($default, 'text'); }
+  @if map-get($default, 'background') { background-color: map-get($default, 'background'); }
+  @if map-get($default, 'border') { border-color: map-get($default, 'border'); }
+
   @if $hover {
     &:hover {
-      color: map-get($hover, 'text');
-      background-color: map-get($hover, 'background');
-      border-color: map-get($hover, 'border');
+      @if map-get($hover, 'text') { color: map-get($hover, 'text'); }
+      @if map-get($hover, 'background') { background-color: map-get($hover, 'background'); }
+      @if map-get($hover, 'border') { border-color: map-get($hover, 'border'); }
     }
   }
-  &.disabled, &[disabled] {
-    color: map-get($disabled, 'text');
-    background-color: map-get($disabled, 'background');
-    border-color: map-get($disabled, 'border');
+  
+  @if $disabled {
+    &.disabled, &[disabled] {
+      @if map-get($disabled, 'text') { color: map-get($disabled, 'text'); }
+      @if map-get($disabled, 'background') { background-color: map-get($disabled, 'background'); }
+      @if map-get($disabled, 'border') { border-color: map-get($disabled, 'border'); }
+    }
   }
 }
