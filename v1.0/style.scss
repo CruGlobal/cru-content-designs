@@ -2,24 +2,9 @@
 // v1.0
 
 // Configuration
-@import 'options';
-@import 'variables';
-@import 'mixins';
+@import 'variables/variables';
+@import 'mixins/mixins';
 
 // Layouts & components
 @import 'typography';
 @import 'buttons';
-
-// Testing stuff
-.button-test {
-  @include cru-button;
-}
-
-.tag-test {
-  @include cru-tag;
-  @include cru-tag-icon;
-}
-
-.dot-test {
-  @include cru-dot;
-}
