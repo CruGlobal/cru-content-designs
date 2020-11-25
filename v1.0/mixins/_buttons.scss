@@ -14,7 +14,7 @@
   color: $cru-btn-color-default;
   background-color: $cru-btn-background-color-default;
   border-color: $cru-btn-border-color-default;
-  @include responsive-styles($cru-button-responsive-styles);
+  @include cru-responsive-styles($cru-button-responsive-styles);
   &:hover {
     color: $cru-btn-color-default-hover;
     background-color: $cru-btn-background-color-default-hover;

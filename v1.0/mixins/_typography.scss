@@ -6,7 +6,7 @@
   font-weight: $cru-font-weight-base;
   line-height: $cru-line-height-base;
   color: $cru-body-color;
-  @include responsive-styles($cru-text-responsive-styles);
+  @include cru-responsive-styles($cru-text-responsive-styles);
 }
 
 @mixin cru-text-sm {
@@ -20,23 +20,23 @@
   font-weight: $cru-headings-font-weight;
   color: $cru-body-color;
   line-height: $cru-headings-line-height;
-  @include responsive-styles($cru-heading-lg-responsive-styles);
+  @include cru-responsive-styles($cru-heading-lg-responsive-styles);
 }
 
 @mixin cru-heading-xxl {
-  @include responsive-styles($cru-heading-xxl-responsive-styles);
+  @include cru-responsive-styles($cru-heading-xxl-responsive-styles);
 }
 
 @mixin cru-heading-xl {
-  @include responsive-styles($cru-heading-xl-responsive-styles);
+  @include cru-responsive-styles($cru-heading-xl-responsive-styles);
 }
 
 @mixin cru-heading-lg {
-  @include responsive-styles($cru-heading-lg-responsive-styles);
+  @include cru-responsive-styles($cru-heading-lg-responsive-styles);
 }
 
 @mixin cru-heading-md {
-  @include responsive-styles($cru-heading-md-responsive-styles);
+  @include cru-responsive-styles($cru-heading-md-responsive-styles);
 }
 
 @mixin cru-heading-sm {
