@@ -115,6 +115,7 @@
   font-family: "Crimson Text", serif; }
 
 .cru-button {
+  display: inline-block;
   font-family: "Source Sans Pro", sans-serif;
   font-weight: 600;
   line-height: calc(1em + 4px);
@@ -217,6 +218,7 @@
     border-color: #9C9FA1; }
 
 .cru-tag {
+  display: inline-block;
   font-family: "Source Sans Pro", sans-serif;
   font-weight: 400;
   font-size: 0.875rem;

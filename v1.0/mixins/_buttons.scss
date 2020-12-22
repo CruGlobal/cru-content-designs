@@ -2,6 +2,7 @@
 // v1.0
 
 @mixin cru-button {
+  display: $cru-btn-display;
   font-family: $cru-btn-font-family;
   font-weight: $cru-btn-font-weight;
   line-height: $cru-btn-line-height;
@@ -32,6 +33,7 @@
 }
 
 @mixin cru-tag {
+  display: $cru-tag-display;
   font-family: $cru-tag-font-family;
   font-weight: $cru-tag-font-weight;
   font-size: $cru-tag-font-size;

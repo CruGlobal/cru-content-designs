@@ -2,6 +2,7 @@
 // v1.0
 
 // Standard buttons
+$cru-btn-display:                           inline-block;
 $cru-btn-font-family:                       $cru-font-family-sans-serif;
 $cru-btn-font-weight:                       $cru-font-weight-semibold;
 $cru-btn-line-height:                       calc(1em + 4px);
@@ -127,6 +128,7 @@ $cru-button-variations: (
 );
 
 // Tag-style buttons
+$cru-tag-display:                           inline-block;
 $cru-tag-font-family:                       $cru-btn-font-family;
 $cru-tag-font-weight:                       $cru-font-weight-normal;
 $cru-tag-font-size:                         $cru-font-size-base * 0.875;

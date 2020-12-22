@@ -40,29 +40,29 @@
   @if $cru-aem-responsive == true {
     @include cru-output-styles-from-map($desktop);
 
-    @include cru-media-breakpoint-down($cru-breakpoint-sm) {
+    @include cru-media-breakpoint-down($cru-breakpoint-md) {
       @include cru-output-styles-from-map($mobile);
     }
     
-    @include cru-media-breakpoint-between($cru-breakpoint-sm, $cru-breakpoint-md) {
+    @include cru-media-breakpoint-between($cru-breakpoint-md, $cru-breakpoint-lg) {
       @include cru-output-styles-from-map($tablet);
     }
 
-    @include cru-media-breakpoint-between($cru-breakpoint-md, $cru-breakpoint-lg) {
+    @include cru-media-breakpoint-between($cru-breakpoint-lg, $cru-breakpoint-xl) {
       @include cru-output-styles-from-map($tablet);
     }
   } @else {
     @include cru-output-styles-from-map($mobile);
-
-    @include cru-media-breakpoint-up($cru-breakpoint-sm) {
-      @include cru-output-styles-from-map($tablet);
-    }
 
     @include cru-media-breakpoint-up($cru-breakpoint-md) {
       @include cru-output-styles-from-map($tablet);
     }
 
     @include cru-media-breakpoint-up($cru-breakpoint-lg) {
+      @include cru-output-styles-from-map($tablet);
+    }
+
+    @include cru-media-breakpoint-up($cru-breakpoint-xl) {
       @include cru-output-styles-from-map($desktop);
     }
   }
