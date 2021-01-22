@@ -43,10 +43,10 @@ $cru-headings-margin-top: 0;
 
 $cru-heading-xxl-responsive-styles: (
   'mobile': (
-    'font-size':    $cru-font-size-base * 6,
+    'font-size':    $cru-font-size-base * 4,
   ),
   'tablet': (
-    'font-size':    $cru-font-size-base * 6,
+    'font-size':    $cru-font-size-base * 4,
   ),
   'desktop': (
     'font-size':    $cru-font-size-base * 6,
@@ -58,7 +58,7 @@ $cru-heading-xl-responsive-styles: (
     'font-size':    $cru-font-size-base * 3,
   ),
   'tablet': (
-    'font-size':    $cru-font-size-base * 4,
+    'font-size':    $cru-font-size-base * 3,
   ),
   'desktop': (
     'font-size':    $cru-font-size-base * 4,
@@ -70,7 +70,7 @@ $cru-heading-lg-responsive-styles: (
     'font-size':    $cru-font-size-base * 2,
   ),
   'tablet': (
-    'font-size':    $cru-font-size-base * 3,
+    'font-size':    $cru-font-size-base * 2,
   ),
   'desktop': (
     'font-size':    $cru-font-size-base * 3,
@@ -79,22 +79,20 @@ $cru-heading-lg-responsive-styles: (
 
 $cru-heading-md-responsive-styles: (
   'mobile': (
-    'font-size':    $cru-font-size-base * 1.125,
+    'font-size':    $cru-font-size-base * 1.5,
   ),
   'tablet': (
-    'font-size':    $cru-font-size-base * 2,
+    'font-size':    $cru-font-size-base * 1.5,
   ),
   'desktop': (
     'font-size':    $cru-font-size-base * 2,
   )
 );
 
-$cru-headings-sm-font-size: $cru-font-size-base * 1.25;
-$cru-headings-sm-line-height: 1.2;
-$cru-headings-sm-text-transform: uppercase;
-$cru-headings-sm-letter-spacing: 0.12em;
+$cru-headings-sm-font-size: $cru-font-size-base * 1.5;
 
-$cru-headings-xs-font-size: $cru-font-size-base * 0.875;
-$cru-headings-xs-line-height: 1.43;
-$cru-headings-xs-text-transform: uppercase;
-$cru-headings-xs-letter-spacing: 0.12em;
+$cru-headings-xs-font-size: $cru-font-size-base * 1.25;
+$cru-headings-xs-line-height: 1.2;
+
+$cru-headings-xxs-font-size: $cru-font-size-base * 0.875;
+$cru-headings-xxs-line-height: 1.43;

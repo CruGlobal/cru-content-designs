@@ -135,11 +135,15 @@
   @if map-get($default, 'background') { background-color: map-get($default, 'background'); }
   @if map-get($default, 'border') { border-color: map-get($default, 'border'); }
 
-  @if $hover {
-    &:hover {
+  &:hover {
+    @if $hover {
       @if map-get($hover, 'text') { color: map-get($hover, 'text'); }
       @if map-get($hover, 'background') { background-color: map-get($hover, 'background'); }
       @if map-get($hover, 'border') { border-color: map-get($hover, 'border'); }
+    } @else {
+      color: $cru-btn-color-default-hover;
+      background-color: $cru-btn-background-color-default-hover;
+      border-color: $cru-btn-border-color-default-hover;
     }
   }
   

@@ -22,6 +22,11 @@
   line-height: $cru-headings-line-height;
 }
 
+@mixin cru-heading-uppercase {
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
 @mixin cru-heading-xxl {
   @include cru-responsive-styles($cru-heading-xxl-responsive-styles);
 }
@@ -40,14 +45,16 @@
 
 @mixin cru-heading-sm {
   font-size: $cru-headings-sm-font-size;
-  line-height: $cru-headings-sm-line-height;
-  text-transform: $cru-headings-sm-text-transform;
-  letter-spacing: $cru-headings-sm-letter-spacing;
 }
 
 @mixin cru-heading-xs {
   font-size: $cru-headings-xs-font-size;
   line-height: $cru-headings-xs-line-height;
-  text-transform: $cru-headings-xs-text-transform;
-  letter-spacing: $cru-headings-xs-letter-spacing;
+  @include cru-heading-uppercase;
+}
+
+@mixin cru-heading-xxs {
+  font-size: $cru-headings-xxs-font-size;
+  line-height: $cru-headings-xxs-line-height;
+  @include cru-heading-uppercase;
 }
