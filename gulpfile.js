@@ -4,7 +4,7 @@ var notify = require('gulp-notify');
 
 sass.compiler = require('node-sass');
 
-var currentVersion = '1.0';
+var currentVersion = '0.1';
 
 function compile() {
   return src(`./v${currentVersion}/**/*.scss`)
