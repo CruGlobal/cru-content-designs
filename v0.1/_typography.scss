@@ -13,6 +13,7 @@
 .cru-heading-md   { @include cru-heading-md; }
 .cru-heading-sm   { @include cru-heading-sm; }
 .cru-heading-xs   { @include cru-heading-xs; }
+.cru-heading-xxs  { @include cru-heading-xxs; }
 
 // Colored text
 @each $label, $color in $cru-text-colors {

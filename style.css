@@ -83,6 +83,12 @@
   text-transform: uppercase;
   letter-spacing: 0.12em; }
 
+.cru-heading-xxs {
+  font-size: 0.875rem;
+  line-height: 1.43;
+  text-transform: uppercase;
+  letter-spacing: 0.12em; }
+
 .cru-text-yellow {
   color: #FFCF07; }
 
