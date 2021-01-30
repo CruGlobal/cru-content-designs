@@ -1,0 +1,380 @@
+/**
+  Official branding for Cru web properties
+  Version: 0.2
+**/
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Crimson+Text&display=swap");
+.cru-text {
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: 400;
+  line-height: calc(1em + 8px);
+  color: #383F43;
+  font-size: 1rem; }
+  @media (min-width: 768px) {
+    .cru-text {
+      font-size: 1rem; } }
+  @media (min-width: 1200px) {
+    .cru-text {
+      font-size: 1.125rem; } }
+
+.cru-text-sm {
+  font-size: 0.875rem; }
+
+.cru-heading {
+  margin-top: 0;
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: 700;
+  color: #383F43;
+  line-height: calc(1em + 8px); }
+
+.cru-heading-xxl {
+  font-size: 4rem; }
+  @media (min-width: 768px) {
+    .cru-heading-xxl {
+      font-size: 4rem; } }
+  @media (min-width: 1200px) {
+    .cru-heading-xxl {
+      font-size: 6rem; } }
+
+.cru-heading-xl {
+  font-size: 3rem; }
+  @media (min-width: 768px) {
+    .cru-heading-xl {
+      font-size: 3rem; } }
+  @media (min-width: 1200px) {
+    .cru-heading-xl {
+      font-size: 4rem; } }
+
+.cru-heading-lg {
+  font-size: 2rem; }
+  @media (min-width: 768px) {
+    .cru-heading-lg {
+      font-size: 2rem; } }
+  @media (min-width: 1200px) {
+    .cru-heading-lg {
+      font-size: 3rem; } }
+
+.cru-heading-md {
+  font-size: 1.5rem; }
+  @media (min-width: 768px) {
+    .cru-heading-md {
+      font-size: 1.5rem; } }
+  @media (min-width: 1200px) {
+    .cru-heading-md {
+      font-size: 2rem; } }
+
+.cru-heading-sm {
+  font-size: 1.5rem; }
+
+.cru-heading-xs {
+  font-size: 1.25rem;
+  line-height: 1.2;
+  text-transform: uppercase;
+  letter-spacing: 0.12em; }
+
+.cru-heading-xxs {
+  font-size: 0.875rem;
+  line-height: 1.43;
+  text-transform: uppercase;
+  letter-spacing: 0.12em; }
+
+.cru-text-yellow {
+  color: #FFCF07; }
+
+.cru-text-gray-dark {
+  color: #383F43; }
+
+.cru-text-gray-medium {
+  color: #9C9FA1; }
+
+.cru-text-gray-light {
+  color: #EBECEC; }
+
+.cru-text-white {
+  color: #FFFFFF; }
+
+.cru-text-serif {
+  font-family: "Crimson Text", serif; }
+
+.cru-button {
+  display: inline-block;
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: 600;
+  line-height: calc(1em + 4px);
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 4px;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+  cursor: pointer;
+  letter-spacing: 0.02em;
+  color: #383F43;
+  background-color: #FFCF07;
+  border-color: #FFCF07;
+  font-size: 0.875rem;
+  padding: 6px 15px; }
+  @media (min-width: 768px) {
+    .cru-button {
+      font-size: 1rem;
+      padding: 9px 23px; } }
+  @media (min-width: 1200px) {
+    .cru-button {
+      font-size: 1rem;
+      padding: 9px 23px; } }
+  .cru-button:hover {
+    color: #FFFFFF;
+    background-color: #FFCF07;
+    border-color: #FFCF07; }
+  .cru-button:active, .cru-button:focus {
+    outline: none; }
+  .cru-button.disabled, .cru-button[disabled] {
+    cursor: not-allowed;
+    color: #9C9FA1;
+    background-color: #EBECEC;
+    border-color: #EBECEC; }
+
+.cru-button-yellow-gray {
+  color: #383F43;
+  background-color: #FFCF07;
+  border-color: #FFCF07; }
+  .cru-button-yellow-gray:hover {
+    color: #FFFFFF;
+    background-color: #FFCF07;
+    border-color: #FFCF07; }
+  .cru-button-yellow-gray.disabled, .cru-button-yellow-gray[disabled] {
+    color: #9C9FA1;
+    background-color: #EBECEC;
+    border-color: #EBECEC; }
+
+.cru-button-gray-white {
+  color: #FFFFFF;
+  background-color: #383F43;
+  border-color: #383F43; }
+  .cru-button-gray-white:hover {
+    color: #FFFFFF;
+    background-color: #FFCF07;
+    border-color: #FFCF07; }
+  .cru-button-gray-white.disabled, .cru-button-gray-white[disabled] {
+    color: #9C9FA1;
+    background-color: #EBECEC;
+    border-color: #EBECEC; }
+
+.cru-button-white-gray {
+  color: #383F43;
+  background-color: #FFFFFF;
+  border-color: #FFFFFF; }
+  .cru-button-white-gray:hover {
+    color: #FFFFFF;
+    background-color: #FFCF07;
+    border-color: #FFCF07; }
+  .cru-button-white-gray.disabled, .cru-button-white-gray[disabled] {
+    color: #383F43;
+    background-color: #9C9FA1;
+    border-color: #9C9FA1; }
+
+.cru-button-yellow-gray-outline {
+  color: #383F43;
+  background-color: transparent;
+  border-color: #FFCF07; }
+  .cru-button-yellow-gray-outline:hover {
+    color: #FFFFFF;
+    background-color: #FFCF07;
+    border-color: #FFCF07; }
+  .cru-button-yellow-gray-outline.disabled, .cru-button-yellow-gray-outline[disabled] {
+    color: #9C9FA1;
+    background-color: transparent;
+    border-color: #9C9FA1; }
+
+.cru-button-gray-gray-outline {
+  color: #383F43;
+  background-color: transparent;
+  border-color: #383F43; }
+  .cru-button-gray-gray-outline:hover {
+    color: #FFFFFF;
+    background-color: #FFCF07;
+    border-color: #FFCF07; }
+  .cru-button-gray-gray-outline.disabled, .cru-button-gray-gray-outline[disabled] {
+    color: #9C9FA1;
+    background-color: transparent;
+    border-color: #9C9FA1; }
+
+.cru-button-yellow-white-outline {
+  color: #FFFFFF;
+  background-color: transparent;
+  border-color: #FFCF07; }
+  .cru-button-yellow-white-outline:hover {
+    color: #FFFFFF;
+    background-color: #FFCF07;
+    border-color: #FFCF07; }
+  .cru-button-yellow-white-outline.disabled, .cru-button-yellow-white-outline[disabled] {
+    color: #9C9FA1;
+    background-color: transparent;
+    border-color: #9C9FA1; }
+
+.cru-button-white-white-outline {
+  color: #FFFFFF;
+  background-color: transparent;
+  border-color: #FFFFFF; }
+  .cru-button-white-white-outline:hover {
+    color: #FFFFFF;
+    background-color: #FFCF07;
+    border-color: #FFCF07; }
+  .cru-button-white-white-outline.disabled, .cru-button-white-white-outline[disabled] {
+    color: #9C9FA1;
+    background-color: transparent;
+    border-color: #9C9FA1; }
+
+.cru-tag {
+  display: inline-block;
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: 400;
+  font-size: 0.875rem;
+  line-height: 1.3755rem;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 100px;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+  cursor: pointer;
+  padding: 4px 15px;
+  color: #FFFFFF;
+  background-color: #383F43;
+  border-color: #383F43; }
+  .cru-tag:hover {
+    color: #FFFFFF;
+    background-color: #FFCF07;
+    border-color: #FFCF07; }
+  .cru-tag:active, .cru-tag:focus {
+    outline: none; }
+  .cru-tag.disabled, .cru-tag[disabled] {
+    cursor: not-allowed;
+    color: #9C9FA1;
+    background-color: #EBECEC;
+    border-color: #EBECEC; }
+
+.cru-tag-icon {
+  padding-right: 7.5px; }
+  .cru-tag-icon i {
+    font-size: 1rem;
+    position: relative;
+    top: 0.0625rem;
+    margin-left: 2px; }
+
+.cru-tag-gray-white {
+  color: #FFFFFF;
+  background-color: #383F43;
+  border-color: #383F43; }
+  .cru-tag-gray-white:hover {
+    color: #FFFFFF;
+    background-color: #FFCF07;
+    border-color: #FFCF07; }
+  .cru-tag-gray-white.disabled, .cru-tag-gray-white[disabled] {
+    color: #9C9FA1;
+    background-color: #EBECEC;
+    border-color: #EBECEC; }
+
+.cru-tag-white-gray {
+  color: #383F43;
+  background-color: #FFFFFF;
+  border-color: #FFFFFF; }
+  .cru-tag-white-gray:hover {
+    color: #FFFFFF;
+    background-color: #FFCF07;
+    border-color: #FFCF07; }
+  .cru-tag-white-gray.disabled, .cru-tag-white-gray[disabled] {
+    color: #383F43;
+    background-color: #9C9FA1;
+    border-color: #9C9FA1; }
+
+.cru-tag-gray-gray-outline {
+  color: #383F43;
+  background-color: transparent;
+  border-color: #383F43; }
+  .cru-tag-gray-gray-outline:hover {
+    color: #FFFFFF;
+    background-color: #FFCF07;
+    border-color: #FFCF07; }
+  .cru-tag-gray-gray-outline.disabled, .cru-tag-gray-gray-outline[disabled] {
+    color: #9C9FA1;
+    background-color: transparent;
+    border-color: #9C9FA1; }
+
+.cru-tag-white-white-outline {
+  color: #FFFFFF;
+  background-color: transparent;
+  border-color: #FFFFFF; }
+  .cru-tag-white-white-outline:hover {
+    color: #FFFFFF;
+    background-color: #FFCF07;
+    border-color: #FFCF07; }
+  .cru-tag-white-white-outline.disabled, .cru-tag-white-white-outline[disabled] {
+    color: #9C9FA1;
+    background-color: transparent;
+    border-color: #9C9FA1; }
+
+.cru-dot {
+  display: inline-block;
+  width: 31px;
+  height: 31px;
+  line-height: 31px;
+  text-align: center;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 100px;
+  padding: 0;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+  cursor: pointer;
+  box-shadow: 0px 7.5px 20px rgba(0, 0, 0, 0.08);
+  color: #383F43;
+  background-color: #FFFFFF;
+  border-color: #FFFFFF; }
+  .cru-dot:hover {
+    color: #FFFFFF;
+    background-color: #FFCF07;
+    border-color: #FFCF07; }
+  .cru-dot:active, .cru-dot:focus {
+    outline: none; }
+  .cru-dot.disabled, .cru-dot[disabled] {
+    cursor: not-allowed;
+    color: #EBECEC;
+    background-color: #FFFFFF;
+    border-color: #FFFFFF; }
+
+.cru-dot-white-gray {
+  color: #383F43;
+  background-color: #FFFFFF;
+  border-color: #FFFFFF; }
+  .cru-dot-white-gray:hover {
+    color: #FFFFFF;
+    background-color: #FFCF07;
+    border-color: #FFCF07; }
+  .cru-dot-white-gray.disabled, .cru-dot-white-gray[disabled] {
+    color: #EBECEC;
+    background-color: #FFFFFF;
+    border-color: #FFFFFF; }
+
+.cru-dot-gray-gray-outline {
+  color: #383F43;
+  background-color: transparent;
+  border-color: #383F43;
+  box-shadow: none; }
+  .cru-dot-gray-gray-outline:hover {
+    color: #FFFFFF;
+    background-color: #FFCF07;
+    border-color: #FFCF07; }
+  .cru-dot-gray-gray-outline.disabled, .cru-dot-gray-gray-outline[disabled] {
+    color: #EBECEC;
+    background-color: transparent;
+    border-color: #EBECEC; }
+
+.cru-dot-white-white-outline {
+  color: #FFFFFF;
+  background-color: transparent;
+  border-color: #FFFFFF;
+  box-shadow: none; }
+  .cru-dot-white-white-outline:hover {
+    color: #FFFFFF;
+    background-color: #FFCF07;
+    border-color: #FFCF07; }
+  .cru-dot-white-white-outline.disabled, .cru-dot-white-white-outline[disabled] {
+    color: #9C9FA1;
+    background-color: transparent;
+    border-color: #9C9FA1; }

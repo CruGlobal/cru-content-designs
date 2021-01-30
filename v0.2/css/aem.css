@@ -1,3 +1,7 @@
+/**
+  Official branding for Cru web properties
+  Version: 0.2
+**/
 @import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Crimson+Text&display=swap");
 .cru-text {
@@ -5,16 +9,16 @@
   font-weight: 400;
   line-height: calc(1em + 8px);
   color: #383F43;
-  font-size: 1rem; }
-  @media (min-width: 768px) {
+  font-size: 1.125rem; }
+  @media (max-width: 768px) {
     .cru-text {
       font-size: 1rem; } }
-  @media (min-width: 992px) {
+  @media (min-width: 769px) and (max-width: 992px) {
     .cru-text {
       font-size: 1rem; } }
-  @media (min-width: 1200px) {
+  @media (min-width: 993px) and (max-width: 1200px) {
     .cru-text {
-      font-size: 1.125rem; } }
+      font-size: 1rem; } }
 
 .cru-text-sm {
   font-size: 0.875rem; }
@@ -27,52 +31,52 @@
   line-height: calc(1em + 8px); }
 
 .cru-heading-xxl {
-  font-size: 4rem; }
-  @media (min-width: 768px) {
+  font-size: 6rem; }
+  @media (max-width: 768px) {
     .cru-heading-xxl {
       font-size: 4rem; } }
-  @media (min-width: 992px) {
+  @media (min-width: 769px) and (max-width: 992px) {
     .cru-heading-xxl {
       font-size: 4rem; } }
-  @media (min-width: 1200px) {
+  @media (min-width: 993px) and (max-width: 1200px) {
     .cru-heading-xxl {
-      font-size: 6rem; } }
+      font-size: 4rem; } }
 
 .cru-heading-xl {
-  font-size: 3rem; }
-  @media (min-width: 768px) {
+  font-size: 4rem; }
+  @media (max-width: 768px) {
     .cru-heading-xl {
       font-size: 3rem; } }
-  @media (min-width: 992px) {
+  @media (min-width: 769px) and (max-width: 992px) {
     .cru-heading-xl {
       font-size: 3rem; } }
-  @media (min-width: 1200px) {
+  @media (min-width: 993px) and (max-width: 1200px) {
     .cru-heading-xl {
-      font-size: 4rem; } }
+      font-size: 3rem; } }
 
 .cru-heading-lg {
-  font-size: 2rem; }
-  @media (min-width: 768px) {
+  font-size: 3rem; }
+  @media (max-width: 768px) {
     .cru-heading-lg {
       font-size: 2rem; } }
-  @media (min-width: 992px) {
+  @media (min-width: 769px) and (max-width: 992px) {
     .cru-heading-lg {
       font-size: 2rem; } }
-  @media (min-width: 1200px) {
+  @media (min-width: 993px) and (max-width: 1200px) {
     .cru-heading-lg {
-      font-size: 3rem; } }
+      font-size: 2rem; } }
 
 .cru-heading-md {
-  font-size: 1.5rem; }
-  @media (min-width: 768px) {
+  font-size: 2rem; }
+  @media (max-width: 768px) {
     .cru-heading-md {
       font-size: 1.5rem; } }
-  @media (min-width: 992px) {
+  @media (min-width: 769px) and (max-width: 992px) {
     .cru-heading-md {
       font-size: 1.5rem; } }
-  @media (min-width: 1200px) {
+  @media (min-width: 993px) and (max-width: 1200px) {
     .cru-heading-md {
-      font-size: 2rem; } }
+      font-size: 1.5rem; } }
 
 .cru-heading-sm {
   font-size: 1.5rem; }
@@ -121,17 +125,17 @@
   color: #383F43;
   background-color: #FFCF07;
   border-color: #FFCF07;
-  font-size: 0.875rem;
-  padding: 6px 15px; }
-  @media (min-width: 768px) {
+  font-size: 1rem;
+  padding: 9px 23px; }
+  @media (max-width: 768px) {
+    .cru-button {
+      font-size: 0.875rem;
+      padding: 6px 15px; } }
+  @media (min-width: 769px) and (max-width: 992px) {
     .cru-button {
       font-size: 1rem;
       padding: 9px 23px; } }
-  @media (min-width: 992px) {
-    .cru-button {
-      font-size: 1rem;
-      padding: 9px 23px; } }
-  @media (min-width: 1200px) {
+  @media (min-width: 993px) and (max-width: 1200px) {
     .cru-button {
       font-size: 1rem;
       padding: 9px 23px; } }

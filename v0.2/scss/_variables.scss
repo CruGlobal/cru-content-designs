@@ -1,0 +1,16 @@
+// All variables required for Cru branding
+// v0.2
+
+// Import Google fonts?
+$cru-import-google-fonts: true !default;
+$cru-import-google-fonts-sans-serif-only: false !default;
+$cru-import-google-fonts-serif-only: false !default;
+
+// Use AEM media queries?
+$cru-aem-media-queries: false !default;
+
+@import 'variables/colors';
+@import 'variables/spacers';
+@import 'variables/breakpoints';
+@import 'variables/typography';
+@import 'variables/buttons';
