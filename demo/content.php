@@ -201,10 +201,7 @@
 
     <hr style="margin: 32px 0;" />
 
-    <?php
-    include_once 'nestor.php';
-    include_once 'mariano.php';
-    ?>
+    <?php include_once 'contractors/contractors.php'; ?>
   
   </div>
 </body>
