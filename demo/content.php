@@ -198,6 +198,13 @@
     <button class="button-test">Hi! I'm a button!</button>
     <button class="tag-test">Hi! I'm a tag! <i class="fas fa-times-circle"></i></button>
     <button class="dot-test"><i class="fal fa-arrow-right"></i></button>
+
+    <hr style="margin: 32px 0;" />
+
+    <?php
+    include_once 'nestor.php';
+    include_once 'mariano.php';
+    ?>
   
   </div>
 </body>
