@@ -126,6 +126,8 @@ body {                                                      body {
 }                                                           }
 ```
 
+*The mixins look like more work than regular media queries. Do I have to use them?* No, but the mixins help ensure consistency in how the queries are written, easability of changing breakpoint values, and automatically making adjustments to the breakpoint values in cases of `cru-media-breakpoint-between()`, so their use is encouraged.
+
 ## Previewing this Submodule
 
 Demo files have been created to show how the styles look and react to both the mobile-first and AEM responsive strategies. Currently, those files are written in PHP, so you'll need to be running a local server to view them. I recommend using [MAMP](https://www.mamp.info/).
