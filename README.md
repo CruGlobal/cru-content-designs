@@ -126,7 +126,7 @@ body {                                                      body {
 }                                                           }
 ```
 
-*The mixins look like more work than regular media queries. Do I have to use them?* No, but the mixins help ensure consistency in how the queries are written, easability of changing breakpoint values, and automatically making adjustments to the breakpoint values in cases of `cru-media-breakpoint-between()`, so their use is encouraged.
+*The mixins look like more work than regular media queries. Do I have to use them?* No, but the mixins help ensure consistency in how the queries are written, easability of changing breakpoint values, and automatically making adjustments to the breakpoint values when a +/- 1px is needed, so their use is encouraged.
 
 ## Previewing this Submodule
 
