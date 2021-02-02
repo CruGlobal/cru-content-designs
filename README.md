@@ -71,6 +71,14 @@ A few things to note:
 3. You can label your maps' keys whatever you want as long as they're consistent between the two maps.
 4. The submodule's default styles are set for three browser sizes, essentially mobile, tablet, and desktop, so if you change the number of breakpoints or change the map keys, you need to tell it at what breakpoints you want the default styles to apply to. In the `$cru-breakpoints-mapping` map, we're telling the compiler to map the smallest styles (1) to the smallest breakpoint, the medium styles (2) to the middle two breakpoints, and the largest styles (3) to the largest breakpoint.
 
+You might notice that there are also some variable overrides in `aem.scss` that pull in the updated values of the breakpoints. You'll want to create your own variables if you've modified the breakpoints maps. Here are what come default with the submodule:
+
+```
+$cru-breakpoint-xs: // equates to 0
+$cru-breakpoint-md: // equates to 768px
+$cru-breakpoint-xl: // equates to 1200px
+```
+
 ### Importing the SCSS
 
 If you're looking at this section of the documentation, that probably means you just need the SCSS variables and mixins rather than all the compiled CSS classes. Here's what you need:
@@ -80,9 +88,43 @@ If you're looking at this section of the documentation, that probably means you 
 @import '{local-path-to-submodule-directory}/{version-directory}/scss/mixins';
 ```
 
-You might notice that there are also some variable overrides in `aem.scss` that pull in the updated values of the breakpoints. You'll want to create your own variables if you've modified the breakpoints maps.
-
 If you're overriding any variables or modifying the breakpoints, you must do that **before** you import these two files. Notice how `aem.scss` did all its magic before it imported `styles`.
+
+### Important Media Query Mixins
+
+There are three important mixins that anyone using this submodule to be aware of. These auto-create the media queries necessary based on the breakpoints you're using and adjusts for whether you're using AEM or mobile-first. Remember what we said about making yourself breakpoint variables? This is where they come in really handy.
+
+* `cru-media-breakpoint-down($var)` runs a `max-width` query, targeting everything at or below the variable given.
+* `cru-media-breakpoint-between($var1, $var2)` runs a `min-width` and `max-width` query, targeting everything between the variables given.
+* `cru-media-breakpoint-up($var)` runs a `min-width` query, targeting everything at or above the variable given.
+
+Here's an example using that same background-color demo from above.
+
+```
+Mobile-first (original)             Mobile-first (w/ mixins)
+
+body {                              body {
+  background-color: red;              background-color: red;
+  @media (min-width: 768px) {         @include cru-media-breakpoint-up($cru-breakpoint-md) {
+    background-color: green;            background-color: green;
+  }                                   }
+  @media (min-width: 1200px) {        @include cru-media-breakpoint-up($cru-breakpoint-xl) {
+    background-color: blue;             background-color: blue;
+  }                                   }
+}                                   }
+
+AEM (original)                                              AEM (w/ mixins)
+
+body {                                                      body {
+  background-color: blue;                                     background-color: blue;
+  @media (max-width: 768px) {                                 @include cru-media-breakpoint-down($cru-breakpoint-md) {
+    background-color: red;                                      background-color: red;
+  }                                                           }
+  @media (min-width: 769px) and (max-width: 1200px) {         @include cru-media-breakpoint-between($cru-breakpoint-md, $cru-breakpoint-xl) {
+    background-color: green;                                    background-color: green;
+  }                                                           }
+}                                                           }
+```
 
 ## Previewing this Submodule
 
