@@ -23,9 +23,9 @@ This is the more complex, but much more powerful, way to use this submodule. All
 
 The primary way that this submodule supports multiple platforms comes down to how it handles media queries for responsive styling. Much of the web development world uses a mobile-first approach, writing CSS for mobile browser sizes first and then working their way up. Style rules not defined in any media query will apply to the smallest browser size. As the browser gets bigger, only `min-width` media queries will be needed where the defined breakpoint is the first time you see that style rule set until you expand your browser enough to get to the next breakpoint.
 
-AEM, on the other hand, uses more of a desktop-first approach to its responsive CSS. This means that AEM's default style rules (no media query) will be used for the largest browser size. The smallest defined breakpoint will be used in a `max-width` media query to target the smallest browser size. In-between browser sizes will use a media query utilizing both `min-width` and `max-with` of adjacent breakpoints but without any overlap.
+AEM, on the other hand, uses more of a desktop-first approach to its responsive CSS. This means that AEM's default style rules (no media query) will be used for the largest browser size. The smallest defined breakpoint will be used in a `max-width` media query to target the smallest browser size. In-between browser sizes will use a media query utilizing both `min-width` and `max-width` of adjacent breakpoints but without any overlap.
 
-It's important to note that if your browser is going from small to large, when you hit breakpoints that are part of a `max-width` media query, the styles are going to change as soon as your brower grows one pixel larger. `max-width` targets browser sizes of the given breakpoint and smaller whereas `min-width` targets browser sizes of the given breakpoint and larger.
+It's important to note that if your browser is going from small to large, when you hit breakpoints that are part of a `max-width` media query, the styles are going to change as soon as your browser grows one pixel larger. `max-width` targets browser sizes of the given breakpoint and smaller whereas `min-width` targets browser sizes of the given breakpoint and larger.
 
 Here's a comparison of the two responsive strategies using the default breakpoints used in this submodule: 768px and 1200px. We're going to set three different background colors to `body` (red, green, and blue) ordered from smallest browser to largest.
 
@@ -69,7 +69,7 @@ A few things to note:
 1. The `!default` flag is only needed on the default map because that's what indicates it's available for override.
 2. The first breakpoint **must** have a value of 0 for computational purposes.
 3. You can label your maps' keys whatever you want as long as they're consistent between the two maps.
-4. The submodule's default styles are set for three browser sizes, essentially mobile, tablet, and desktop, so if you change the number of breakpoints or change the map keys, you need to tell it at what breakpoints you want the default styles to apply to. In the `$cru-breakpoints-mapping` map, we're telling the compiler to map the smallest styles (1) to the smallest breakpoint, the medium styles (2) to the middle two breakpoints, and the largest styles (3) to the largest breakpoint.
+4. The submodule's default styles are set for three browser sizes, essentially mobile, tablet, and desktop, so if you change the number of breakpoints or change the map keys, you need to tell it at what breakpoints you want the default styles to apply to. In the `$cru-breakpoints-mapping` map, we're telling the compiler to map the mobile styles (1) to the smallest breakpoint, the tablet styles (2) to the middle two breakpoints, and the desktop styles (3) to the largest breakpoint.
 
 You might notice that there are also some variable overrides in `aem.scss` that pull in the updated values of the breakpoints. You'll want to create your own variables if you've modified the breakpoints maps. Here are what come default with the submodule:
 
@@ -92,7 +92,7 @@ If you're overriding any variables or modifying the breakpoints, you must do tha
 
 ### Important Media Query Mixins
 
-There are three important mixins that anyone using this submodule to be aware of. These auto-create the media queries necessary based on the breakpoints you're using and adjusts for whether you're using AEM or mobile-first. Remember what we said about making yourself breakpoint variables? This is where they come in really handy.
+There are three important mixins that anyone using this submodule to be aware of. These auto-create the media queries necessary based on the breakpoints you're using and adjusts for whether you're using AEM or mobile-first. Remember what I said about making yourself breakpoint variables? This is where they come in really handy.
 
 * `cru-media-breakpoint-down($var)` runs a `max-width` query, targeting everything at or below the variable given.
 * `cru-media-breakpoint-between($var1, $var2)` runs a `min-width` and `max-width` query, targeting everything between the variables given.
@@ -134,7 +134,7 @@ Demo files have been created to show how the styles look and react to both the m
 
 ## Editing this Submodule
 
-Please realize that this submodule has the potential to impact numerous web properties, so please edit with caution. Create your own branch, submit a pull request, and tag John Plastow for review/approval. This project uses [Node.js](https://nodejs.org/), [Node Package Manager](https://www.npmjs.com/), and [Gulp](https://www.npmjs.com/package/gulp). You'll first need to open a terminal to the submodule's location and run `npm install` to download all the necessary packages. Then run `gulp buildCruBranding` to recompile the stylesheets whenever a change is made.
+Please realize that this submodule has the potential to impact numerous web properties, so please edit with caution. Create your own branch, submit a pull request, and tag John Plastow for review/approval. This project uses [Node.js](https://nodejs.org/), [Node Package Manager](https://www.npmjs.com/), and [Gulp](https://www.npmjs.com/package/gulp). You'll first need to open a terminal to the submodule's location and run `npm install` to download all the necessary packages. Then run `gulp buildCruBranding` to automatically recompile the stylesheets whenever a change is made.
 
 ### Contractors
 
