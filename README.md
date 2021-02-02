@@ -6,14 +6,18 @@ The purpose of this submodule is to provide consistent branding for Cru online p
 
 ## Disclaimer
 
-This submodule is still in its infantcy. Variables, mixins, functions, and classes will continue to change regularly right now. A very basic versioning system is in place using separate version directories. Use at your own risk. Please contact John Plastow with any questions.
+This submodule is still in its infantcy. Variables, mixins, functions, and classes will continue to change regularly right now. Use at your own risk. Please contact John Plastow with any questions.
+
+## Versioning
+
+The criteria for what amount of changes necessitate a bump in version number are still being ironed out as is how to keep all versions available. Currently, we're using a simple directory system with a separate directory for each version.
 
 ## How to Incorporate into Your Project
 
 There are a couple different ways this submodule can be incorporated into a project.
 
-1. Use the CSS files located in `{version-directory}/css` in the `<link>` element in your HTML file's `<head>` section. Inside those files you'll find lots of pre-defined classes that your web project can utilize.
-2. Import the SCSS files located in `{version-directory}/scss` into your own SCSS project and compile everything together for a custom stylesheet.
+1. Use the CSS files located in `/{version-directory}/css` in the `<link>` element in your HTML file's `<head>` section. Inside those files you'll find lots of pre-defined classes that your web project can utilize.
+2. Import the SCSS files located in `/{version-directory}/scss` into your own SCSS project and compile everything together for a custom stylesheet.
 
 ## Using the SCSS Files
 
@@ -45,7 +49,7 @@ body {                              body {
 
 ### Variable overrides and modifying breakpoints
 
-Inside `{version-directory}/scss` you'll find two non-underscored files: `aem.scss` and `mobile-first.scss`. These two files get compiled into their corresponding CSS files in `{version-directory}/css`. Both files import the `_styles.scss` file and thus all the other files that `_styles.scss` imports itself, but `aem.scss` contains some variable overrides as well. The submodule defaults to a mobile-first responsive strategy, so we have to tell it we want AEM media queries instead. We do that by setting the variable `$cru-aem-media-queries` to `true`. AEM also uses an additional breakpoint to what's in this submodule, 992px, so we need to add it to the [variable map](https://sass-lang.com/documentation/values/maps) that's used to create the media queries. Non-AEM projects may also find themselves needing to add or modify the breakpoints used, so this example applies to everyone.
+Inside `/{version-directory}/scss` you'll find two non-underscored files: `aem.scss` and `mobile-first.scss`. These two files get compiled into their corresponding CSS files in `/{version-directory}/css`. Both files import the `_styles.scss` file and thus all the other files that `_styles.scss` imports itself, but `aem.scss` contains some variable overrides as well. The submodule defaults to a mobile-first responsive strategy, so we have to tell it we want AEM media queries instead. We do that by setting the variable `$cru-aem-media-queries` to `true`. AEM also uses an additional breakpoint to what's in this submodule, 992px, so we need to add it to the [variable map](https://sass-lang.com/documentation/values/maps) that's used to create the media queries. Non-AEM projects may also find themselves needing to add or modify the breakpoints used, so this example applies to everyone.
 
 ```
 Default                             AEM
@@ -69,7 +73,7 @@ A few things to note:
 1. The `!default` flag is only needed on the default map because that's what indicates it's available for override.
 2. The first breakpoint **must** have a value of 0 for computational purposes.
 3. You can label your maps' keys whatever you want as long as they're consistent between the two maps.
-4. The submodule's default styles are set for three browser sizes, essentially mobile, tablet, and desktop, so if you change the number of breakpoints or change the map keys, you need to tell it at what breakpoints you want the default styles to apply to. In the `$cru-breakpoints-mapping` map, we're telling the compiler to map the mobile styles (1) to the smallest breakpoint, the tablet styles (2) to the middle two breakpoints, and the desktop styles (3) to the largest breakpoint.
+4. The submodule's default styles are set for three browser sizes, essentially mobile, tablet, and desktop, so if you change the number of breakpoints or change the map keys, you need to tell it which breakpoints you want the default styles to apply to. In the `$cru-breakpoints-mapping` map, we're telling the compiler to map the mobile styles (1) to the smallest breakpoint, the tablet styles (2) to the middle two breakpoints, and the desktop styles (3) to the largest breakpoint.
 
 You might notice that there are also some variable overrides in `aem.scss` that pull in the updated values of the breakpoints. You'll want to create your own variables if you've modified the breakpoints maps. Here are what come default with the submodule:
 
@@ -126,11 +130,11 @@ body {                                                      body {
 }                                                           }
 ```
 
-*The mixins look like more work than regular media queries. Do I have to use them?* No, but the mixins help ensure consistency in how the queries are written, easability of changing breakpoint values, and automatically making adjustments to the breakpoint values when a +/- 1px is needed, so their use is encouraged.
+*The mixins look like more work than regular media queries. Do I have to use them?* No, but the mixins help ensure consistency in how the queries are written, easability of changing breakpoint values, and automatically make adjustments to the breakpoint values when a +/- 1px is needed, so their use is encouraged.
 
 ## Previewing this Submodule
 
-Demo files have been created to show how the styles look and react to both the mobile-first and AEM responsive strategies. Currently, those files are written in PHP, so you'll need to be running a local server to view them. I recommend using [MAMP](https://www.mamp.info/).
+Demo files have been created to show how the styles look and react to both the mobile-first and AEM responsive strategies. Currently, those files are written in PHP, so you'll need to be running a local server to view them. I recommend using [MAMP](https://www.mamp.info/). The `index.php` file in the root of the submodule contains links to both the mobile-first and AEM demo pages, or you can open them directly from the `demo` directory. `/demo/content.php` contains the shared content of the two demo pages.
 
 ## Editing this Submodule
 
@@ -138,7 +142,7 @@ Please realize that this submodule has the potential to impact numerous web prop
 
 ### Contractors
 
-We appreciate your help! At this time, individual SCSS files have been created for our contractors to use in `{version-directory}/scss/contractors/{first-name}.scss`. Please put everything you need (variables, mixins, functions, etc.) in this one file and it'll be separated out into its proper place in the larger submodule after approval. Similarly, there are PHP files for you to add HTML to the demo files located at `demo/contractors/{first-name}.php`.
+We appreciate your help! At this time, individual SCSS files have been created for our contractors to use in `/{version-directory}/scss/contractors/{first-name}.scss`. Please put everything you need (variables, mixins, functions, etc.) in this one file and it'll be separated out into its proper place in the larger submodule after approval. Similarly, there are PHP files for you to add HTML to the demo files located at `/demo/contractors/{first-name}.php`.
 
 ## Currently Used By
 
