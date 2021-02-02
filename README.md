@@ -134,7 +134,7 @@ body {                                                      body {
 
 ## Previewing this Submodule
 
-Demo files have been created to show how the styles look and react to both the mobile-first and AEM responsive strategies. Currently, those files are written in PHP, so you'll need to be running a local server to view them. I recommend using [MAMP](https://www.mamp.info/). The `index.php` file in the root of the submodule contains links to both the mobile-first and AEM demo pages, or you can open them directly from the `demo` directory. `/demo/content.php` contains the shared content of the two demo pages.
+Demo pages have been created to show how the styles look and react to both the mobile-first and AEM responsive strategies. Currently, those files are written in PHP, so you'll need to be running a local server to view them. I recommend using [MAMP](https://www.mamp.info/). The `/index.php` file contains links to both the mobile-first and AEM demo pages, or you can open them directly from within `/demo`. `/demo/content.php` contains the shared content of the two demo pages.
 
 ## Editing this Submodule
 
