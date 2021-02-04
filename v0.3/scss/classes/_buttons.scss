@@ -1,0 +1,23 @@
+// All button classes required for Cru branding
+// v0.3
+
+.cru-button                       { @include cru-button; }
+.cru-button-yellow-gray           { @include cru-button-yellow-gray; }
+.cru-button-gray-white            { @include cru-button-gray-white; }
+.cru-button-white-gray            { @include cru-button-white-gray; }
+.cru-button-yellow-gray-outline   { @include cru-button-yellow-gray-outline; }
+.cru-button-gray-gray-outline     { @include cru-button-gray-gray-outline; }
+.cru-button-yellow-white-outline  { @include cru-button-yellow-white-outline; }
+.cru-button-white-white-outline   { @include cru-button-white-white-outline; }
+
+.cru-tag                          { @include cru-tag; }
+.cru-tag-icon                     { @include cru-tag-icon; }
+.cru-tag-gray-white               { @include cru-tag-gray-white; }
+.cru-tag-white-gray               { @include cru-tag-white-gray; }
+.cru-tag-gray-gray-outline        { @include cru-tag-gray-gray-outline; }
+.cru-tag-white-white-outline      { @include cru-tag-white-white-outline; }
+
+.cru-dot                          { @include cru-dot; }
+.cru-dot-white-gray               { @include cru-dot-white-gray; }
+.cru-dot-gray-gray-outline        { @include cru-dot-gray-gray-outline; }
+.cru-dot-white-white-outline      { @include cru-dot-white-white-outline; }

@@ -1,11 +1,10 @@
-<?php function display_content($title = '', $stylesheet = '') { ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta name="viewport" content="width=device-width, minimum-scale=1.0">
-  <title>Cru Branding - <?= $title; ?></title>
+  <title>Cru Branding - Mobile First</title>
   <script src="https://kit.fontawesome.com/a93b69849a.js" crossorigin="anonymous"></script>
-  <link href="/v0.2/css/<?= $stylesheet; ?>.css" type="text/css" rel="stylesheet">
+  <link href="../css/mobile-first.css" type="text/css" rel="stylesheet">
   <style>
     .container {
       max-width: 1200px;
@@ -198,12 +197,7 @@
     <button class="button-test">Hi! I'm a button!</button>
     <button class="tag-test">Hi! I'm a tag! <i class="fas fa-times-circle"></i></button>
     <button class="dot-test"><i class="fal fa-arrow-right"></i></button>
-
-    <hr style="margin: 32px 0;" />
-
-    <?php include_once 'contractors/contractors.php'; ?>
   
   </div>
 </body>
 </html>
-<?php }

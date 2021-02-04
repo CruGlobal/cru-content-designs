@@ -1,0 +1,40 @@
+/* Button styles */
+.cmp-button {
+  display: inline-block;
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: 600;
+  line-height: calc(1em + 4px);
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 4px;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+  cursor: pointer;
+  letter-spacing: 0.02em;
+  color: #383F43;
+  background-color: #FFCF07;
+  border-color: #FFCF07;
+  font-size: 1rem;
+  padding: 9px 23px; }
+  @media (max-width: 768px) {
+    .cmp-button {
+      font-size: 0.875rem;
+      padding: 6px 15px; } }
+  @media (min-width: 769px) and (max-width: 992px) {
+    .cmp-button {
+      font-size: 1rem;
+      padding: 9px 23px; } }
+  @media (min-width: 993px) and (max-width: 1200px) {
+    .cmp-button {
+      font-size: 1rem;
+      padding: 9px 23px; } }
+  .cmp-button:hover {
+    color: #FFFFFF;
+    background-color: #FFCF07;
+    border-color: #FFCF07; }
+  .cmp-button:active, .cmp-button:focus {
+    outline: none; }
+  .cmp-button.disabled, .cmp-button[disabled] {
+    cursor: not-allowed;
+    color: #9C9FA1;
+    background-color: #EBECEC;
+    border-color: #EBECEC; }

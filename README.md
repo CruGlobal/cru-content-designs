@@ -1,12 +1,12 @@
 # Cru Branding Submodule
 
-**LATEST VERSION: v0.2**
+**LATEST VERSION: v0.3**
 
 The purpose of this submodule is to provide consistent branding for Cru online properties, beginning with [cru.org](https://cru.org) which currently runs on [Adobe Experience Manager (AEM)](https://www.adobe.com/marketing/experience-manager.html). However, this submodule also provides stylesheets and SCSS tools that can be imported and used by other systems (e.g., [WordPress](https://wordpress.org)).
 
 ## Disclaimer
 
-This submodule is still in its infantcy. Variables, mixins, functions, and classes will continue to change regularly right now. Use at your own risk. Please contact John Plastow with any questions.
+This submodule is still in its infantcy. Variables, mixins, functions, and classes will continue to change periodically right now. Use at your own risk. Please contact John Plastow with any questions.
 
 ## Versioning
 
@@ -21,7 +21,7 @@ There are a couple different ways this submodule can be incorporated into a proj
 
 ## Using the SCSS Files
 
-This is the more complex, but much more powerful, way to use this submodule. All the compiled CSS is originally written in SCSS (a syntax variation of the CSS preprocessing language [SASS](https://sass-lang.com/)), broken out according to [AEM's core components](https://www.aemcomponents.dev/). The files have also largely been sorted into sub-directories according to the type of data they contain, namely variables, mixins, and classes. There is also a contractors sub-directory that will be explained [further down](#contractors) in this document.
+This is the more complex, but much more powerful, way to use this submodule. All the compiled CSS was originally written in SCSS (a syntax variation of the CSS preprocessing language [SASS](https://sass-lang.com/)) and have largely been sorted into sub-directories according to the type of data they contain, namely variables, mixins, and classes. There is also a contractors sub-directory that will be explained [further down](#contractors) in this document.
 
 ### Strategy for supporting multiple platforms
 
@@ -49,7 +49,7 @@ body {                              body {
 
 ### Variable overrides and modifying breakpoints
 
-Inside `/{version-directory}/scss` you'll find two non-underscored files: `aem.scss` and `mobile-first.scss`. These two files get compiled into their corresponding CSS files in `/{version-directory}/css`. Both files import the `_styles.scss` file and thus all the other files that `_styles.scss` imports itself, but `aem.scss` contains some variable overrides as well. The submodule defaults to a mobile-first responsive strategy, so we have to tell it we want AEM media queries instead. We do that by setting the variable `$cru-aem-media-queries` to `true`. AEM also uses an additional breakpoint to what's in this submodule, 992px, so we need to add it to the [variable map](https://sass-lang.com/documentation/values/maps) that's used to create the media queries. Non-AEM projects may also find themselves needing to add or modify the breakpoints used, so this example applies to everyone.
+Inside `/{version-directory}/scss` you'll find two non-underscored files: `aem.scss` and `mobile-first.scss`. These two files get compiled into their corresponding CSS files in `/{version-directory}/css`. Both files import the `_styles.scss` file and thus all the other files that `_styles.scss` imports itself, but `aem.scss` imports `_aem-overrides.scss` which contains variables whoae values will override those in `_variables.scss`. The submodule defaults to a mobile-first responsive strategy, so we have to tell it we want AEM media queries instead. We do that by setting the variable `$cru-aem-media-queries` to `true`. AEM also uses an additional breakpoint to what's in this submodule, 992px, so we need to add it to the [variable map](https://sass-lang.com/documentation/values/maps) that's used to create the media queries. Non-AEM projects may also find themselves needing to add or modify the breakpoints used, so this example applies to everyone.
 
 ```
 Default                             AEM
@@ -75,7 +75,7 @@ A few things to note:
 3. You can label your maps' keys whatever you want as long as they're consistent between the two maps.
 4. The submodule's default styles are set for three browser sizes, essentially mobile, tablet, and desktop, so if you change the number of breakpoints or change the map keys, you need to tell it which breakpoints you want the default styles to apply to. In the `$cru-breakpoints-mapping` map, we're telling the compiler to map the mobile styles (1) to the smallest breakpoint, the tablet styles (2) to the middle two breakpoints, and the desktop styles (3) to the largest breakpoint.
 
-You might notice that there are also some variable overrides in `aem.scss` that pull in the updated values of the breakpoints. You'll want to create your own variables if you've modified the breakpoints maps. Here are what come default with the submodule:
+You might notice that there are also some variable overrides that pull in the updated values of the breakpoints. You'll want to create your own variables if you've modified the breakpoints maps. Here are what come default with the submodule:
 
 ```
 $cru-breakpoint-xs: // equates to 0
@@ -92,7 +92,7 @@ If you're looking at this section of the documentation, that probably means you 
 @import '{local-path-to-submodule-directory}/{version-directory}/scss/mixins';
 ```
 
-If you're overriding any variables or modifying the breakpoints, you must do that **before** you import these two files. Notice how `aem.scss` did all its magic before it imported `styles`.
+If you're overriding any variables or modifying the breakpoints, you must do that **before** you import these two files. Notice how `aem.scss` imported the overrides before it imported `styles`.
 
 ### Important Media Query Mixins
 
@@ -134,15 +134,25 @@ body {                                                      body {
 
 ## Previewing this Submodule
 
-Demo pages have been created to show how the styles look and react to both the mobile-first and AEM responsive strategies. Currently, those files are written in PHP, so you'll need to be running a local server to view them. I recommend using [MAMP](https://www.mamp.info/). The `/index.php` file contains links to both the mobile-first and AEM demo pages, or you can open them directly from within `/demo`. `/demo/content.php` contains the shared content of the two demo pages.
+A demo page has been created to show how the styles look and react in the mobile-first responsive strategy. Currently, that file is written in PHP, so you'll need to be running a local server to view it. I recommend using [MAMP](https://www.mamp.info/). The page can be found at `/{version-directory}/demo` starting at v0.3.
+
+## Cru.org Styles
+
+As you poked around the v0.3 (and later) directories, you probably noticed a directory called "cruorg". This submodule doesn't just serve as a host to the universal branding styles Cru uses, but also as a development area for the AEM core components that are used on cru.org. This is that development area.
 
 ## Editing this Submodule
 
-Please realize that this submodule has the potential to impact numerous web properties, so please edit with caution. Create your own branch, submit a pull request, and tag John Plastow for review/approval. This project uses [Node.js](https://nodejs.org/), [Node Package Manager](https://www.npmjs.com/), and [Gulp](https://www.npmjs.com/package/gulp). You'll first need to open a terminal to the submodule's location and run `npm install` to download all the necessary packages. Then run `gulp buildCruBranding` to automatically recompile the stylesheets whenever a change is made.
+Please realize that this submodule has the potential to impact numerous web properties, so please edit with caution. Create your own branch, submit a pull request, and tag John Plastow for review/approval. This project uses [Node.js](https://nodejs.org/), [Node Package Manager](https://www.npmjs.com/), and [Gulp](https://www.npmjs.com/package/gulp). You'll first need to open a terminal to the submodule's location and run `npm install` to download all the necessary packages. Then there are three commands you can run depending on what SCSS you're needing to compile:
+
+```
+`gulp` = Compiles everything from either section of the submodule
+`gulp buildBranding` = Compiles only the styles for Cru branding
+`gulp buildCruorg` = Compiles only the styles for Cru.org core components
+```
 
 ### Contractors
 
-We appreciate your help! At this time, individual SCSS files have been created for our contractors to use in `/{version-directory}/scss/contractors/{first-name}.scss`. Please put everything you need (variables, mixins, functions, etc.) in this one file and it'll be separated out into its proper place in the larger submodule after approval. Similarly, there are PHP files for you to add HTML to the demo files located at `/demo/contractors/{first-name}.php`.
+We appreciate your help! As you work on the core components for cru.org found in the respective directories and files in `/{version-directory}/cruorg`, please put everything you need for each component in the component-specific SCSS and PHP files and it'll be separated out into its proper place in the larger submodule after approval. The gulp processes are already setup to compile all the styling from the component SCSS files. You have access to all the mixins and variables from the branding SCSS files, so please use them. This is exactly what they're designed to do. Similarly, `/{version-directory}/cruorg/index.php` is ready to show you the HTML you've written in the component PHP files. You just have to uncomment the component you're working on in the array on lines 55-72. I recommend starting by copy/pasting the HTML output from the components listed [here](https://www.aemcomponents.dev/) and then make any edits you need. If you need to add a class, place it on the outermost `<div>`. I've also created an `info` class to be used on the component PHP pages where you can write notes about any edits to the original HTML you made or special SCSS decisions. For an example of how these SCSS and PHP files work together, check out what I've already done for the title component. Remember to uncomment the title component from the array in order to preview it in the browser.
 
 ## Currently Used By
 

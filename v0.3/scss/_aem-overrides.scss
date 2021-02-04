@@ -1,0 +1,25 @@
+// Variables overrides required for AEM Cru branding
+// v0.3
+
+// Use AEM media queries
+$cru-aem-media-queries: true;
+
+// Custom breakpoints
+$cru-breakpoints: (
+  xs: 0,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+);
+
+$cru-breakpoints-mapping: (
+  xs: 1,
+  md: 2,
+  lg: 2,
+  xl: 3,
+);
+
+$cru-breakpoint-xs: map-get($cru-breakpoints, xs);
+$cru-breakpoint-md: map-get($cru-breakpoints, md);
+$cru-breakpoint-lg: map-get($cru-breakpoints, lg);
+$cru-breakpoint-xl: map-get($cru-breakpoints, xl);

@@ -1,0 +1,24 @@
+// All color variables required for Cru branding
+// v0.3
+
+$cru-color-white:       #FFFFFF;
+$cru-color-black:       #000000;
+
+$cru-color-yellow:      #FFCF07;
+$cru-color-blue:        #007BC6;
+$cru-color-blue-light:  #00C7E2;
+$cru-color-orange:      #FF9700;
+
+$cru-color-gray-dark:   #383F43;
+$cru-color-gray-medium: #9C9FA1;
+$cru-color-gray-light:  #EBECEC;
+
+$cru-text-colors: (
+  'yellow':             $cru-color-yellow,
+  'gray-dark':          $cru-color-gray-dark,
+  'gray-medium':        $cru-color-gray-medium,
+  'gray-light':         $cru-color-gray-light,
+  'white':              $cru-color-white
+);
+
+$cru-body-color: $cru-color-gray-dark;

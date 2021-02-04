@@ -1,0 +1,7 @@
+// Branding imports
+@import '../../branding-imports';
+
+/* Button styles */
+.cmp-button {
+  @include cru-button;
+}

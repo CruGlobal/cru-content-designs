@@ -1,0 +1,24 @@
+// Branding imports
+@import 'branding-imports';
+
+// Import Source Sans Pro
+$cru-import-google-fonts-sans-serif-only: true;
+@import '../scss/fonts';
+
+// Import component styles
+@import 'components/accordion/accordion.scss';
+@import 'components/breadcrumb/breadcrumb.scss';
+@import 'components/button/button.scss';
+@import 'components/carousel/carousel.scss';
+@import 'components/container/container.scss';
+@import 'components/download/download.scss';
+@import 'components/embed/embed.scss';
+@import 'components/form/form.scss';
+@import 'components/image/image.scss';
+@import 'components/list/list.scss';
+@import 'components/separator/separator.scss';
+@import 'components/sharing/sharing.scss';
+@import 'components/tabs/tabs.scss';
+@import 'components/teaser/teaser.scss';
+@import 'components/text/text.scss';
+@import 'components/title/title.scss';
