@@ -21,7 +21,7 @@ There are a couple different ways this submodule can be incorporated into a proj
 
 ## Using the SCSS Files
 
-This is the more complex, but much more powerful, way to use this submodule. All the compiled CSS was originally written in SCSS (a syntax variation of the CSS preprocessing language [SASS](https://sass-lang.com/)) and have largely been sorted into sub-directories according to the type of data they contain, namely variables, mixins, and classes. There is also a contractors sub-directory that will be explained [further down](#contractors) in this document.
+This is the more complex, but much more powerful, way to use this submodule. All the compiled CSS was originally written in SCSS (a syntax variation of the CSS preprocessing language [SASS](https://sass-lang.com/)) and have largely been sorted into sub-directories according to the type of data they contain, namely variables, mixins, and classes.
 
 ### Strategy for supporting multiple platforms
 
