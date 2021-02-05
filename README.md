@@ -41,7 +41,7 @@ The power of the SCSS is found in the variables and mixins. If you use the varia
 
 ### Two media query strategies
 
-Much of the web development world uses a mobile-first responsive web development approach, writing CSS for mobile browser sizes first and then working their way up. AEM, on the other hand, uses a desktop-first-ish strategy, writing CSS for the largest browser size first and then covering the rest with a combination of `min-width` and `max-width` definitions, never overriding any styles accept the largest.
+Much of the web development world uses a mobile-first responsive web development approach, writing CSS for mobile browser sizes first and then working their way up. AEM, on the other hand, uses a desktop-first-ish strategy, writing CSS for the largest browser size first and then covering the rest with a combination of `min-width` and `max-width` definitions, never overriding any styles except the largest.
 
 Here's a comparison of the two responsive strategies using this submodule's default breakpoints: 768px and 1200px. We're going to set three different background colors to `body` - red on mobile, green on tablet, and blue on desktop.
 
