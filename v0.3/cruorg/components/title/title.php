@@ -27,11 +27,11 @@
       <td>cru-heading-sm</td>
     </tr>
     <tr>
-      <td>Extra Small</td>
+      <td>Extra Small (uppercase)</td>
       <td>cru-heading-xs</td>
     </tr>
     <tr>
-      <td>XX Small</td>
+      <td>XX Small (uppercase)</td>
       <td>cru-heading-xxs</td>
     </tr>
   </table>
@@ -56,7 +56,6 @@ foreach ($heading_sizes as $size) {
   output_heading($size);
 }
 ?>
-
 <div class="title cru-heading-lg">
   <div class="cmp-title">
     <h1 class="cmp-title__text"><a class="cmp-title__link" href="#">Heading Link</a></h1>
