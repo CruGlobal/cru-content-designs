@@ -60,6 +60,9 @@
     </ol>
   </div>
 </div>
+<div class="info">
+  <span>Grab styles from list component.</span>
+</div>
 
 <h2>Table</h2>
 <div class="text">

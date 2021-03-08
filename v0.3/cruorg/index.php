@@ -18,7 +18,6 @@
     }
     legend {text-transform: capitalize;}
     .info {
-      color: #383F43;
       background-color: #cfe2ff;
       border: #9ec5fe 1px solid;
       padding: 10px;
@@ -68,7 +67,7 @@
         // 'tabs',
         // 'teaser',
         'text',
-        // 'title',
+        'title',
       );
 
       foreach ($components as $component) {
