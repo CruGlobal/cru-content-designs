@@ -16,20 +16,29 @@
   background-color: $cru-btn-background-color-default;
   border-color: $cru-btn-border-color-default;
   @include cru-responsive-styles($cru-button-responsive-styles);
+  &:active, &:focus {
+    outline: $cru-btn-outline-active-focus;
+  }
   &:hover {
     color: $cru-btn-color-default-hover;
     background-color: $cru-btn-background-color-default-hover;
     border-color: $cru-btn-border-color-default-hover;
   }
-  &:active, &:focus {
-    outline: $cru-btn-active-focus-outline;
-  }
   &.disabled, &[disabled] {
     cursor: $cru-btn-cursor-disabled;
-    color: $cru-btn-color-default-disabled;
-    background-color: $cru-btn-background-color-default-disabled;
-    border-color: $cru-btn-border-color-default-disabled;
+    @include cru-button-disabled-default;
+    &[class*="outline"] {
+      color: $cru-btn-outline-color-default-disabled;
+      background-color: $cru-btn-outline-background-color-default-disabled;
+      border-color: $cru-btn-outline-border-color-default-disabled;
+    }
   }
+}
+
+@mixin cru-button-disabled-default {
+  color: $cru-btn-color-default-disabled;
+  background-color: $cru-btn-background-color-default-disabled;
+  border-color: $cru-btn-border-color-default-disabled;
 }
 
 @mixin cru-tag {
@@ -130,28 +139,40 @@
   $default: map-get($variation, 'default');
   $hover: map-get($variation, 'hover');
   $disabled: map-get($variation, 'disabled');
+  $outline: map-get($variation, 'outline');
 
   @if map-get($default, 'text') { color: map-get($default, 'text'); }
   @if map-get($default, 'background') { background-color: map-get($default, 'background'); }
   @if map-get($default, 'border') { border-color: map-get($default, 'border'); }
 
-  &:hover {
-    @if $hover {
+  @if $hover {
+    &:hover {
       @if map-get($hover, 'text') { color: map-get($hover, 'text'); }
       @if map-get($hover, 'background') { background-color: map-get($hover, 'background'); }
       @if map-get($hover, 'border') { border-color: map-get($hover, 'border'); }
-    } @else {
-      color: $cru-btn-color-default-hover;
-      background-color: $cru-btn-background-color-default-hover;
-      border-color: $cru-btn-border-color-default-hover;
+    }
+    @if $disabled == null {
+      &.disabled, &[disabled] {
+        @include cru-button-disabled-default;
+      }
     }
   }
   
   @if $disabled {
-    &.disabled, &[disabled] {
-      @if map-get($disabled, 'text') { color: map-get($disabled, 'text'); }
-      @if map-get($disabled, 'background') { background-color: map-get($disabled, 'background'); }
-      @if map-get($disabled, 'border') { border-color: map-get($disabled, 'border'); }
+    @if $outline {
+      &.disabled, &[disabled] {
+        &[class*="outline"] {
+          @if map-get($disabled, 'text') { color: map-get($disabled, 'text'); }
+          @if map-get($disabled, 'background') { background-color: map-get($disabled, 'background'); }
+          @if map-get($disabled, 'border') { border-color: map-get($disabled, 'border'); }
+        }
+      }
+    } @else {
+      &.disabled, &[disabled] {
+        @if map-get($disabled, 'text') { color: map-get($disabled, 'text'); }
+        @if map-get($disabled, 'background') { background-color: map-get($disabled, 'background'); }
+        @if map-get($disabled, 'border') { border-color: map-get($disabled, 'border'); }
+      }
     }
   }
 }

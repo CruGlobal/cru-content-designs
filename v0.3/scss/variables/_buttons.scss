@@ -2,28 +2,31 @@
 // v0.3
 
 // Standard buttons
-$cru-btn-display:                           inline-block;
-$cru-btn-font-family:                       $cru-font-family-sans-serif;
-$cru-btn-font-weight:                       $cru-font-weight-semibold;
-$cru-btn-line-height:                       calc(1em + 4px);
-$cru-btn-border-width:                      1px;
-$cru-btn-border-style:                      solid;
-$cru-btn-border-color:                      transparent;
-$cru-btn-border-radius:                     4px;
-$cru-btn-transition:                        color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out;
-$cru-btn-letter-spacing:                    0.02em;
-$cru-btn-cursor:                            pointer;
-$cru-btn-cursor-disabled:                   not-allowed;
-$cru-btn-color-default:                     $cru-color-gray-dark;
-$cru-btn-background-color-default:          $cru-color-yellow;
-$cru-btn-border-color-default:              $cru-color-yellow;
-$cru-btn-color-default-hover:               $cru-color-white;
-$cru-btn-background-color-default-hover:    $cru-color-yellow;
-$cru-btn-border-color-default-hover:        $cru-color-yellow;
-$cru-btn-color-default-disabled:            $cru-color-gray-medium;
-$cru-btn-background-color-default-disabled: $cru-color-gray-light;
-$cru-btn-border-color-default-disabled:     $cru-color-gray-light;
-$cru-btn-active-focus-outline: none;
+$cru-btn-display:                                   inline-block;
+$cru-btn-font-family:                               $cru-font-family-sans-serif;
+$cru-btn-font-weight:                               $cru-font-weight-semibold;
+$cru-btn-line-height:                               calc(1em + 4px);
+$cru-btn-border-width:                              1px;
+$cru-btn-border-style:                              solid;
+$cru-btn-border-color:                              transparent;
+$cru-btn-border-radius:                             4px;
+$cru-btn-transition:                                color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out;
+$cru-btn-letter-spacing:                            0.02em;
+$cru-btn-cursor:                                    pointer;
+$cru-btn-color-default:                             $cru-color-gray-dark;
+$cru-btn-background-color-default:                  $cru-color-yellow;
+$cru-btn-border-color-default:                      $cru-color-yellow;
+$cru-btn-color-default-hover:                       $cru-color-white;
+$cru-btn-background-color-default-hover:            $cru-color-yellow;
+$cru-btn-border-color-default-hover:                $cru-color-yellow;
+$cru-btn-cursor-disabled:                           not-allowed;
+$cru-btn-color-default-disabled:                    $cru-color-gray-medium;
+$cru-btn-background-color-default-disabled:         $cru-color-gray-light;
+$cru-btn-border-color-default-disabled:             $cru-color-gray-light;
+$cru-btn-outline-color-default-disabled:            $cru-btn-color-default-disabled;
+$cru-btn-outline-background-color-default-disabled: transparent;
+$cru-btn-outline-border-color-default-disabled:     $cru-color-gray-medium;
+$cru-btn-outline-active-focus:                      none;
 
 $cru-button-responsive-styles: (
   font-size: (
@@ -40,87 +43,64 @@ $cru-button-responsive-styles: (
 
 $cru-button-variations: (
   'yellow-gray': (
+    'outline':      false,
     'default': (
       'text':       $cru-color-gray-dark,
       'background': $cru-color-yellow,
       'border':     $cru-color-yellow,
     ),
-    'disabled': (
-      'text':       $cru-color-gray-medium,
-      'background': $cru-color-gray-light,
-      'border':     $cru-color-gray-light,
-    ),
   ),
   'gray-white': (
+    'outline':      false,
     'default': (
       'text':       $cru-color-white,
       'background': $cru-color-gray-dark,
       'border':     $cru-color-gray-dark,
     ),
-    'disabled': (
-      'text':       $cru-color-gray-medium,
-      'background': $cru-color-gray-light,
-      'border':     $cru-color-gray-light,
-    ),
   ),
   'white-gray': (
+    'outline':      false,
     'default': (
       'text':       $cru-color-gray-dark,
       'background': $cru-color-white,
       'border':     $cru-color-white,
     ),
-    'disabled': (
-      'text':       $cru-color-gray-dark,
-      'background': $cru-color-gray-medium,
-      'border':     $cru-color-gray-medium,
-    ),
   ),
   'yellow-gray-outline': (
+    'outline':      true,
     'default': (
       'text':       $cru-color-gray-dark,
       'background': transparent,
       'border':     $cru-color-yellow,
     ),
-    'disabled': (
-      'text':       $cru-color-gray-medium,
-      'background': transparent,
-      'border':     $cru-color-gray-medium,
-    ),
   ),
   'gray-gray-outline': (
+    'outline':      true,
     'default': (
       'text':       $cru-color-gray-dark,
       'background': transparent,
       'border':     $cru-color-gray-dark,
     ),
-    'disabled': (
-      'text':       $cru-color-gray-medium,
-      'background': transparent,
-      'border':     $cru-color-gray-medium,
-    ),
   ),
   'yellow-white-outline': (
+    'outline':      true,
     'default': (
       'text':       $cru-color-white,
       'background': transparent,
       'border':     $cru-color-yellow,
     ),
-    'disabled': (
-      'text':       $cru-color-gray-medium,
-      'background': transparent,
-      'border':     $cru-color-gray-medium,
-    ),
   ),
   'white-white-outline': (
+    'outline':      true,
     'default': (
       'text':       $cru-color-white,
       'background': transparent,
       'border':     $cru-color-white,
     ),
-    'disabled': (
-      'text':       $cru-color-gray-medium,
-      'background': transparent,
-      'border':     $cru-color-gray-medium,
+    'hover': (
+      'text':       $cru-color-gray-dark,
+      'background': $cru-color-white,
+      'border':     $cru-color-white,
     ),
   ),
 );
@@ -148,7 +128,7 @@ $cru-tag-border-color-default-hover:        $cru-btn-border-color-default-hover;
 $cru-tag-color-default-disabled:            $cru-color-gray-medium;
 $cru-tag-background-color-default-disabled: $cru-color-gray-light;
 $cru-tag-border-color-default-disabled:     $cru-color-gray-light;
-$cru-tag-active-focus-outline:              $cru-btn-active-focus-outline;
+$cru-tag-active-focus-outline:              $cru-btn-outline-active-focus;
 $cru-tag-icon-font-size:                    $cru-font-size-base;
 $cru-tag-icon-position:                     relative;
 $cru-tag-icon-top:                          ($cru-tag-icon-font-size - $cru-tag-font-size) / 2;
@@ -227,7 +207,7 @@ $cru-dot-border-color-default-hover:        $cru-btn-border-color-default-hover;
 $cru-dot-color-default-disabled:            $cru-color-gray-light;
 $cru-dot-background-color-default-disabled: $cru-color-white;
 $cru-dot-border-color-default-disabled:     $cru-color-white;
-$cru-dot-active-focus-outline:              $cru-btn-active-focus-outline;
+$cru-dot-active-focus-outline:              $cru-btn-outline-active-focus;
 
 $cru-dot-variations: (
   'white-gray': (
