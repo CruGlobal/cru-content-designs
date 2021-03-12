@@ -1,1 +1,6 @@
 /* Separator styles */
+.separator .cmp-separator__horizontal-rule {
+  margin: 8%; }
+
+.separator .cru-separator-white .cmp-separator__horizontal-rule {
+  border-color: #FFFFFF; }

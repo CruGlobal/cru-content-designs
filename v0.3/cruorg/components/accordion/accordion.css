@@ -1,1 +1,104 @@
 /* Accordion styles */
+.accordion {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 5% 3%; }
+  .accordion .cmp-accordion {
+    width: 100%; }
+    .accordion .cmp-accordion__header {
+      margin: 0; }
+    .accordion .cmp-accordion__icon::before {
+      content: 'expand_more';
+      position: absolute;
+      top: .625rem;
+      right: .5rem;
+      font-family: 'Material Icons';
+      font-weight: normal;
+      font-style: normal;
+      font-size: 1.125rem;
+      text-transform: none;
+      letter-spacing: normal;
+      word-wrap: normal;
+      white-space: nowrap;
+      direction: ltr;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+      -moz-osx-font-smoothing: grayscale;
+      font-feature-settings: 'liga'; }
+    .accordion .cmp-accordion__button {
+      display: inline-block;
+      font-family: "Source Sans Pro", sans-serif;
+      font-weight: 600;
+      line-height: calc(1em + 4px);
+      border-width: 1px;
+      border-style: solid;
+      border-radius: 4px;
+      transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+      cursor: pointer;
+      letter-spacing: 0.02em;
+      color: #383F43;
+      background-color: #FFCF07;
+      border-color: #FFCF07;
+      font-size: 1rem;
+      padding: 9px 23px;
+      background-color: transparent;
+      border-right: transparent;
+      border-left: transparent;
+      border-color: #EBECEC;
+      text-align: left;
+      width: 100%;
+      padding-left: 0;
+      padding-right: 0;
+      margin-bottom: -1px;
+      position: relative; }
+      @media (max-width: 768px) {
+        .accordion .cmp-accordion__button {
+          font-size: 0.875rem;
+          padding: 6px 15px; } }
+      @media (min-width: 769px) and (max-width: 992px) {
+        .accordion .cmp-accordion__button {
+          font-size: 1rem;
+          padding: 9px 23px; } }
+      @media (min-width: 993px) and (max-width: 1200px) {
+        .accordion .cmp-accordion__button {
+          font-size: 1rem;
+          padding: 9px 23px; } }
+      .accordion .cmp-accordion__button:hover {
+        color: #FFFFFF;
+        background-color: #FFCF07;
+        border-color: #FFCF07; }
+      .accordion .cmp-accordion__button:active, .accordion .cmp-accordion__button:focus {
+        outline: none; }
+      .accordion .cmp-accordion__button.disabled, .accordion .cmp-accordion__button[disabled] {
+        cursor: not-allowed;
+        color: #9C9FA1;
+        background-color: #EBECEC;
+        border-color: #EBECEC; }
+      .accordion .cmp-accordion__button:hover {
+        background-color: transparent;
+        color: #383F43;
+        border-color: #EBECEC; }
+      .accordion .cmp-accordion__button--expanded {
+        color: #FFCF07;
+        font-weight: 700; }
+        .accordion .cmp-accordion__button--expanded .cmp-accordion__icon::before {
+          content: 'expand_less'; }
+    .accordion .cmp-accordion__panel--hidden {
+      display: none; }
+  @media (min-width: 769px) {
+    .accordion {
+      flex-direction: row;
+      padding: 5% 10%; }
+      .accordion .cmp-accordion {
+        width: 48%; } }
+  .accordion.cru-accordion-black {
+    background-color: #383F43; }
+    .accordion.cru-accordion-black .cmp-accordion__button {
+      color: #FFFFFF;
+      border-color: #EBECEC; }
+      .accordion.cru-accordion-black .cmp-accordion__button--expanded {
+        color: #FFCF07;
+        font-weight: 700; }
+    .accordion.cru-accordion-black .cmp-accordion__panel {
+      color: #FFFFFF; }

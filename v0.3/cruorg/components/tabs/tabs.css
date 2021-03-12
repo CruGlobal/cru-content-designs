@@ -1,1 +1,43 @@
 /* Tabs styles */
+.tabs .cmp-tabs {
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: 400;
+  line-height: calc(1em + 8px);
+  color: #383F43;
+  font-size: 1.125rem;
+  font-size: 1rem; }
+  @media (max-width: 768px) {
+    .tabs .cmp-tabs {
+      font-size: 1rem; } }
+  @media (min-width: 769px) and (max-width: 992px) {
+    .tabs .cmp-tabs {
+      font-size: 1rem; } }
+  @media (min-width: 993px) and (max-width: 1200px) {
+    .tabs .cmp-tabs {
+      font-size: 1rem; } }
+  .tabs .cmp-tabs__tablist {
+    display: flex;
+    border-bottom: 2px solid #EBECEC;
+    color: #9C9FA1; }
+  .tabs .cmp-tabs__tab {
+    list-style: none;
+    padding: 8px 16px;
+    white-space: nowrap; }
+  .tabs .cmp-tabs__tab--active {
+    border-bottom: 2px solid #FFCF07;
+    margin-bottom: -2px;
+    color: #383F43; }
+
+.tabs .cru-tablist-icon li::before {
+  content: "\2022";
+  color: #9C9FA1;
+  display: inline-block;
+  font-size: 3.5rem;
+  vertical-align: sub;
+  padding-right: 8px; }
+
+.tabs .cru-tablist-icon li span {
+  vertical-align: super; }
+
+.tabs .cru-tablist-icon li.cmp-tabs__tab--active::before {
+  color: #FFCF07; }
