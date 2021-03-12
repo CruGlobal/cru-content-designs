@@ -1,10 +1,8 @@
 // Branding imports
 @import 'branding-imports';
-
 // Import Source Sans Pro
 $cru-import-google-fonts-sans-serif-only: true;
 @import '../scss/fonts';
-
 // Import component styles
 @import 'components/accordion/accordion.scss';
 @import 'components/breadcrumb/breadcrumb.scss';
@@ -22,3 +20,9 @@ $cru-import-google-fonts-sans-serif-only: true;
 @import 'components/teaser/teaser.scss';
 @import 'components/text/text.scss';
 @import 'components/title/title.scss';
+@font-face {
+    font-family: 'Material Icons';
+    font-style: normal;
+    font-weight: 500;
+    src: local('Material Icons'), local('MaterialIcons-Regular'), url('../../material-icons.woff2') format('woff2'), url('../../material-icons.woff') format('woff'), url('../../material-icons.ttf') format('truetype');
+}
