@@ -2,3 +2,61 @@
 @import '../../branding-imports';
 
 /* Tabs styles */
+
+@mixin cru-tablist {
+    display: flex;
+    border-bottom: $cru-btn-border-width*2 $cru-btn-border-style $cru-color-gray-light;
+    color: $cru-color-gray-medium;
+}
+
+@mixin cru-tab {
+    list-style: none;
+    padding: $cru-spacer-base $cru-spacer;
+    white-space: nowrap;
+}
+
+@mixin cru-tab-active {
+    border-bottom: $cru-btn-border-width*2 $cru-btn-border-style $cru-color-yellow;
+    margin-bottom: -$cru-btn-border-width*2;
+    color: $cru-color-gray-dark;
+}
+
+@mixin cru-tablist-icon {
+    content: "\2022"; 
+    color: $cru-color-gray-medium;
+    display: inline-block; 
+    font-size: $cru-font-size-base * 3.5;
+    vertical-align: sub;
+    padding-right: $cru-spacer-base;
+}
+
+@mixin  cru-tablist-icon-active {
+    color: $cru-color-yellow;
+}
+
+.tabs {
+    .cmp-tabs {
+        @include cru-text;
+        font-size: $cru-font-size-base;
+        &__tablist {
+            @include cru-tablist;
+        }
+        &__tab {
+            @include cru-tab;
+        }
+        &__tab--active {
+            @include cru-tab-active;
+        }
+    }
+    .cru-tablist-icon {
+            li::before {
+                @include cru-tablist-icon;
+            }
+            li span {
+                vertical-align: super;
+            }
+            li.cmp-tabs__tab--active::before  {
+                @include cru-tablist-icon-active;
+            }
+        }
+}

@@ -2,3 +2,112 @@
 @import '../../branding-imports';
 
 /* Accordion styles */
+
+@mixin cru-accordion-icon {
+    content: 'expand_more';
+    position: absolute;
+    top: .625rem;
+    right: .5rem;
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: $cru-font-size-lg;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    -moz-osx-font-smoothing: grayscale;
+    font-feature-settings: 'liga';
+}
+
+@mixin cru-accordion-button {
+    @include cru-button;
+    background-color: transparent;
+    border-right: transparent;
+    border-left: transparent;
+    border-color: $cru-color-gray-light;
+    text-align: left;
+    width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+    margin-bottom: -1px;
+    position: relative;
+}
+
+@mixin cru-accordion-button-hover {
+    background-color: transparent;
+    color: $cru-color-gray-dark;
+    border-color: $cru-color-gray-light;
+}
+
+@mixin cru-accordion-button-expanded {
+    color: $cru-color-yellow;
+    font-weight: $cru-font-weight-bold;
+}
+
+@mixin cru-accordion-button-expanded-icon {
+    content: 'expand_less';
+}
+
+@mixin cru-accordion-black-button {
+    color: $cru-color-white;
+    border-color: $cru-color-gray-light;
+}
+
+.accordion {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 5% 3%;
+    .cmp-accordion {
+        width: 100%;
+        &__header { margin: 0 }
+        &__icon {
+            &::before {
+                @include cru-accordion-icon;
+            }
+        }
+        &__button { 
+            @include cru-accordion-button;
+            &:hover {
+                @include cru-accordion-button-hover;
+            }
+            &--expanded {
+                @include cru-accordion-button-expanded;
+                .cmp-accordion__icon::before {
+                    @include cru-accordion-button-expanded-icon;
+                }
+            }
+        }
+        &__panel { 
+            &--hidden { 
+                display: none;
+            }
+        }
+    }
+    @include cru-media-breakpoint-up($cru-breakpoint-md) {
+        flex-direction: row;
+        padding: 5% 10%;
+        .cmp-accordion {
+            width: 48%;
+        }
+    }
+    &.cru-accordion-black {
+        background-color: $cru-color-gray-dark;
+        .cmp-accordion {
+            &__button {
+                @include cru-accordion-black-button;
+                &--expanded {
+                    @include cru-accordion-button-expanded;
+                }
+            }
+            &__panel {
+                color: $cru-color-white;
+            }
+        }
+    }
+}
+

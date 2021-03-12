@@ -2,3 +2,20 @@
 @import '../../branding-imports';
 
 /* Separator styles */
+
+@mixin cru-separator-white {
+    border-color: $cru-color-white;
+}
+
+.separator {
+    .cmp-separator {
+        &__horizontal-rule {
+            margin: 8%;
+        }
+    }
+    .cru-separator-white .cmp-separator {
+        &__horizontal-rule {
+            @include cru-separator-white;
+        }
+    }
+}
