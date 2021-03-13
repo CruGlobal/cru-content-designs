@@ -53,7 +53,7 @@
     <?php
 
       $components = array(
-        // 'accordion',
+        'accordion',
         // 'breadcrumb',
         // 'button',
         // 'carousel',
@@ -62,13 +62,13 @@
         // 'embed',
         // 'form',
         // 'image',
-        // 'list',
-        // 'separator',
+        'list',
+        'separator',
         // 'sharing',
-        // 'tabs',
+        'tabs',
         // 'teaser',
         // 'text',
-        'title',
+        // 'title',
       );
 
       foreach ($components as $component) {

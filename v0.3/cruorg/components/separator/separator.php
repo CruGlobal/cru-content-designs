@@ -1,14 +1,22 @@
-<div style="border: 1px solid black; margin: 30px 0">
-    <div class="separator cru-separator-ligth">
-      <div id="separator-cc11e67e10" class="cmp-separator">
-        <hr class="cmp-separator__horizontal-rule">
-      </div>
-    </div>
+<?php function cru_separator($color = false) { ?>
+<div class="separator<?php if ( $color == true ) { echo ' cru-separator-' . $color; } ?>">
+  <div class="cmp-separator">
+    <hr class="cmp-separator__horizontal-rule">
+  </div>
 </div>
-<div style="border: 1px solid white; margin: 30px 0; background: #383F43">
-    <div class="separator">
-      <div id="separator-cc11e67e10" class="cmp-separator cru-separator-white">
-        <hr class="cmp-separator__horizontal-rule">
-      </div>
-    </div>
+<?php } ?>
+
+<?php
+cru_separator('yellow');
+cru_separator('gray-dark');
+cru_separator('gray-medium');
+cru_separator('gray-light');
+?>
+
+<div style="background-color: #383F43; padding: 1px 0;">
+  <?php
+  cru_separator('yellow');
+  cru_separator('gray-medium');
+  cru_separator('white');
+  ?>
 </div>

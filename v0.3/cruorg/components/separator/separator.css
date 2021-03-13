@@ -1,6 +1,18 @@
 /* Separator styles */
-.separator .cmp-separator__horizontal-rule {
-  margin: 8%; }
-
-.separator .cru-separator-white .cmp-separator__horizontal-rule {
-  border-color: #FFFFFF; }
+.separator {
+  margin: 48px 0; }
+  .separator .cmp-separator__horizontal-rule {
+    border-color: #9C9FA1;
+    border-style: solid;
+    border-width: 1px 0;
+    margin: 0; }
+  .separator.cru-separator-yellow .cmp-separator__horizontal-rule {
+    border-color: #FFCF07; }
+  .separator.cru-separator-gray-dark .cmp-separator__horizontal-rule {
+    border-color: #383F43; }
+  .separator.cru-separator-gray-medium .cmp-separator__horizontal-rule {
+    border-color: #9C9FA1; }
+  .separator.cru-separator-gray-light .cmp-separator__horizontal-rule {
+    border-color: #EBECEC; }
+  .separator.cru-separator-white .cmp-separator__horizontal-rule {
+    border-color: #FFFFFF; }
