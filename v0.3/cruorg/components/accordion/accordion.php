@@ -1,222 +1,69 @@
-<?php function cru_accordion($dark = false) { ?>
-<div class="accordion<?php if ( $dark == true ) { echo ' cru-accordion-black'; } ?>">
-  <div class="cmp-accordion">
-    <?php for ($i = 1; $i <= 3; $i++) : $state = $i == 1 ? 'expanded' : 'hidden'; ?>
-      <div class="cmp-accordion__item">
-        <h3 class="cmp-accordion__header">
-          <button class="cmp-accordion__button<?php if ( $i == 1 ) { echo ' cmp-accordion__button--expanded'; } ?>">
-            <span class="cmp-accordion__title">Item <?= $i ?></span>
-            <span class="cmp-accordion__icon"></span>
-          </button>
-        </h3>
-        <div class="cmp-accordion__panel cmp-accordion__panel--<?= $state ?>">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Eu mi bibendum neque egestas congue quisque egestas. Varius morbi enim nunc faucibus a pellentesque. Scelerisque eleifend donec pretium vulputate sapien nec sagittis.
+<?php function cru_accordion($color)
+{ ?>
+  <div class="accordion cru-accordion-<?= $color; ?>">
+    <div class="cmp-accordion">
+      <?php for ($i = 1; $i <= 3; $i++) : $state = $i == 1 ? 'expanded' : 'hidden'; ?>
+        <div class="cmp-accordion__item">
+          <h3 class="cmp-accordion__header">
+            <button class="cmp-accordion__button<?php if ($i == 1) {
+                                                  echo ' cmp-accordion__button--expanded';
+                                                } ?>">
+              <span class="cmp-accordion__title">Item <?= $i ?></span>
+              <span class="cmp-accordion__icon"></span>
+            </button>
+          </h3>
+          <div class="cmp-accordion__panel cmp-accordion__panel--<?= $state ?>">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Eu mi bibendum neque egestas congue quisque egestas. Varius morbi enim nunc faucibus a pellentesque. Scelerisque eleifend donec pretium vulputate sapien nec sagittis.
+          </div>
         </div>
-      </div>
-    <?php endfor; ?>
+      <?php endfor; ?>
+    </div>
   </div>
-</div>
 <?php } ?>
 
-<?php cru_accordion(); ?>
+<?php cru_accordion('white'); ?>
 
 <div style="background-color: #383F43">
-  <?php cru_accordion(true); ?>
+  <?php cru_accordion('black'); ?>
 </div>
 
-<div>
-  <div class="t-cmp-clean accordion">
-    <div id="accordion-78c7838df5" class="cmp-accordion" data-cmp-data-layer="{&quot;accordion-78c7838df5&quot;:{&quot;shownItems&quot;:[&quot;accordion-78c7838df5-item-ab0d3a9f0d&quot;],&quot;@type&quot;:&quot;core-components-examples/components/accordion&quot;,&quot;repo:modifyDate&quot;:&quot;2018-12-07T12:12:10Z&quot;}}" data-placeholder-text="false">
-      <div class="cmp-accordion__item" data-cmp-hook-accordion="item" data-cmp-data-layer="{&quot;accordion-78c7838df5-item-ab0d3a9f0d&quot;:{&quot;@type&quot;:&quot;core-components-examples/components/accordion/item&quot;,&quot;repo:modifyDate&quot;:&quot;2019-01-22T11:45:56Z&quot;,&quot;dc:title&quot;:&quot;Item 1&quot;}}" id="accordion-78c7838df5-item-ab0d3a9f0d" data-cmp-expanded="">
-        <h3 class="cmp-accordion__header">
-        <button id="accordion-78c7838df5-item-d20284d12d-button" class="cmp-accordion__button" aria-controls="accordion-78c7838df5-item-d20284d12d-panel" data-cmp-hook-accordion="button" aria-expanded="false">
-            <span class="cmp-accordion__title">Item 1</span>
-            <span class="cmp-accordion__icon"></span>
-          </button>
-        </h3>
-        <div data-cmp-hook-accordion="panel" id="accordion-78c7838df5-item-d20284d12d-panel" class="cmp-accordion__panel cmp-accordion__panel--hidden" role="region" aria-labelledby="accordion-78c7838df5-item-d20284d12d-button" aria-hidden="true">
-          <div class="text">
-            <div data-cmp-data-layer="{&quot;text-ab0d3a9f0d&quot;:{&quot;@type&quot;:&quot;core/wcm/components/text/v2/text&quot;,&quot;repo:modifyDate&quot;:&quot;2019-01-22T11:45:56Z&quot;,&quot;xdm:text&quot;:&quot;<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Eu mi bibendum neque egestas congue quisque egestas. Varius morbi enim nunc faucibus a pellentesque. Scelerisque eleifend donec pretium vulputate sapien nec sagittis.</p>\n&quot;}}" id="text-ab0d3a9f0d" class="cmp-text">
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Eu mi bibendum neque egestas congue quisque egestas. Varius morbi enim nunc faucibus a pellentesque. Scelerisque eleifend donec pretium vulputate sapien nec sagittis.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="cmp-accordion__item" data-cmp-hook-accordion="item" data-cmp-data-layer="{&quot;accordion-78c7838df5-item-d20284d12d&quot;:{&quot;@type&quot;:&quot;core-components-examples/components/accordion/item&quot;,&quot;repo:modifyDate&quot;:&quot;2019-01-22T11:46:55Z&quot;,&quot;dc:title&quot;:&quot;Item 2&quot;}}" id="accordion-78c7838df5-item-d20284d12d">
-        <h3 class="cmp-accordion__header">
-          <button id="accordion-78c7838df5-item-d20284d12d-button" class="cmp-accordion__button" aria-controls="accordion-78c7838df5-item-d20284d12d-panel" data-cmp-hook-accordion="button" aria-expanded="false">
-            <span class="cmp-accordion__title">Item 2</span>
-            <span class="cmp-accordion__icon"></span>
-          </button>
-        </h3>
-        <div data-cmp-hook-accordion="panel" id="accordion-78c7838df5-item-d20284d12d-panel" class="cmp-accordion__panel cmp-accordion__panel--hidden" role="region" aria-labelledby="accordion-78c7838df5-item-d20284d12d-button" aria-hidden="true">
-          <div class="text">
-            <div data-cmp-data-layer="{&quot;text-d20284d12d&quot;:{&quot;@type&quot;:&quot;core/wcm/components/text/v2/text&quot;,&quot;repo:modifyDate&quot;:&quot;2019-01-22T11:46:55Z&quot;,&quot;xdm:text&quot;:&quot;<p>Hac habitasse platea dictumst quisque sagittis purus. At risus viverra adipiscing at in tellus integer. Sit amet consectetur adipiscing elit duis tristique sollicitudin. Leo vel orci porta non pulvinar neque laoreet suspendisse. Volutpat diam ut venenatis tellus in metus vulputate eu.</p>\n&quot;}}" id="text-d20284d12d" class="cmp-text">
-              <p>Hac habitasse platea dictumst quisque sagittis purus. At risus viverra adipiscing at in tellus integer. Sit amet consectetur adipiscing elit duis tristique sollicitudin. Leo vel orci porta non pulvinar neque laoreet suspendisse. Volutpat diam ut venenatis tellus in metus vulputate eu.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="cmp-accordion__item" data-cmp-hook-accordion="item" data-cmp-data-layer="{&quot;accordion-78c7838df5-item-6b23edcf7a&quot;:{&quot;@type&quot;:&quot;core-components-examples/components/accordion/item&quot;,&quot;repo:modifyDate&quot;:&quot;2019-01-22T11:47:15Z&quot;,&quot;dc:title&quot;:&quot;Item 3&quot;}}" id="accordion-78c7838df5-item-6b23edcf7a">
-        <h3 class="cmp-accordion__header">
-          <button id="accordion-78c7838df5-item-6b23edcf7a-button" class="cmp-accordion__button" aria-controls="accordion-78c7838df5-item-6b23edcf7a-panel" data-cmp-hook-accordion="button" aria-expanded="false">
-            <span class="cmp-accordion__title">Item 3</span>
-            <span class="cmp-accordion__icon"></span>
-          </button>
-        </h3>
-        <div data-cmp-hook-accordion="panel" id="accordion-78c7838df5-item-6b23edcf7a-panel" class="cmp-accordion__panel cmp-accordion__panel--hidden" role="region" aria-labelledby="accordion-78c7838df5-item-6b23edcf7a-button" aria-hidden="true">
-          <div class="text">
-            <div data-cmp-data-layer="{&quot;text-6b23edcf7a&quot;:{&quot;@type&quot;:&quot;core/wcm/components/text/v2/text&quot;,&quot;repo:modifyDate&quot;:&quot;2019-01-22T11:47:15Z&quot;,&quot;xdm:text&quot;:&quot;<p>Libero id faucibus nisl tincidunt eget nullam non nisi. Hac habitasse platea dictumst vestibulum. Viverra orci sagittis eu volutpat odio facilisis mauris. Velit aliquet sagittis id consectetur purus ut. Orci phasellus egestas tellus rutrum tellus pellentesque eu tincidunt.</p>\n&quot;}}" id="text-6b23edcf7a" class="cmp-text">
-              <p>Libero id faucibus nisl tincidunt eget nullam non nisi. Hac habitasse platea dictumst vestibulum. Viverra orci sagittis eu volutpat odio facilisis mauris. Velit aliquet sagittis id consectetur purus ut. Orci phasellus egestas tellus rutrum tellus pellentesque eu tincidunt.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div id="accordion-78c7838df5" class="cmp-accordion" data-cmp-data-layer="{&quot;accordion-78c7838df5&quot;:{&quot;shownItems&quot;:[&quot;accordion-78c7838df5-item-ab0d3a9f0d&quot;],&quot;@type&quot;:&quot;core-components-examples/components/accordion&quot;,&quot;repo:modifyDate&quot;:&quot;2018-12-07T12:12:10Z&quot;}}" data-placeholder-text="false">
-      <div class="cmp-accordion__item" data-cmp-hook-accordion="item" data-cmp-data-layer="{&quot;accordion-78c7838df5-item-ab0d3a9f0d&quot;:{&quot;@type&quot;:&quot;core-components-examples/components/accordion/item&quot;,&quot;repo:modifyDate&quot;:&quot;2019-01-22T11:45:56Z&quot;,&quot;dc:title&quot;:&quot;Item 1&quot;}}" id="accordion-78c7838df5-item-ab0d3a9f0d" data-cmp-expanded="">
-        <h3 class="cmp-accordion__header">
-          <button id="accordion-78c7838df5-item-ab0d3a9f0d-button" class="cmp-accordion__button cmp-accordion__button--expanded" aria-controls="accordion-78c7838df5-item-ab0d3a9f0d-panel" data-cmp-hook-accordion="button" aria-expanded="true">
-            <span class="cmp-accordion__title">Item 1</span>
-            <span class="cmp-accordion__icon"></span>
-          </button>
-        </h3>
-        <div data-cmp-hook-accordion="panel" id="accordion-78c7838df5-item-ab0d3a9f0d-panel" class="cmp-accordion__panel cmp-accordion__panel--expanded" role="region" aria-labelledby="accordion-78c7838df5-item-ab0d3a9f0d-button" aria-hidden="false">
-          <div class="text">
-            <div data-cmp-data-layer="{&quot;text-ab0d3a9f0d&quot;:{&quot;@type&quot;:&quot;core/wcm/components/text/v2/text&quot;,&quot;repo:modifyDate&quot;:&quot;2019-01-22T11:45:56Z&quot;,&quot;xdm:text&quot;:&quot;<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Eu mi bibendum neque egestas congue quisque egestas. Varius morbi enim nunc faucibus a pellentesque. Scelerisque eleifend donec pretium vulputate sapien nec sagittis.</p>\n&quot;}}" id="text-ab0d3a9f0d" class="cmp-text">
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Eu mi bibendum neque egestas congue quisque egestas. Varius morbi enim nunc faucibus a pellentesque. Scelerisque eleifend donec pretium vulputate sapien nec sagittis.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="cmp-accordion__item" data-cmp-hook-accordion="item" data-cmp-data-layer="{&quot;accordion-78c7838df5-item-d20284d12d&quot;:{&quot;@type&quot;:&quot;core-components-examples/components/accordion/item&quot;,&quot;repo:modifyDate&quot;:&quot;2019-01-22T11:46:55Z&quot;,&quot;dc:title&quot;:&quot;Item 2&quot;}}" id="accordion-78c7838df5-item-d20284d12d">
-        <h3 class="cmp-accordion__header">
-          <button id="accordion-78c7838df5-item-d20284d12d-button" class="cmp-accordion__button" aria-controls="accordion-78c7838df5-item-d20284d12d-panel" data-cmp-hook-accordion="button" aria-expanded="false">
-            <span class="cmp-accordion__title">Item 2</span>
-            <span class="cmp-accordion__icon"></span>
-          </button>
-        </h3>
-        <div data-cmp-hook-accordion="panel" id="accordion-78c7838df5-item-d20284d12d-panel" class="cmp-accordion__panel cmp-accordion__panel--hidden" role="region" aria-labelledby="accordion-78c7838df5-item-d20284d12d-button" aria-hidden="true">
-          <div class="text">
-            <div data-cmp-data-layer="{&quot;text-d20284d12d&quot;:{&quot;@type&quot;:&quot;core/wcm/components/text/v2/text&quot;,&quot;repo:modifyDate&quot;:&quot;2019-01-22T11:46:55Z&quot;,&quot;xdm:text&quot;:&quot;<p>Hac habitasse platea dictumst quisque sagittis purus. At risus viverra adipiscing at in tellus integer. Sit amet consectetur adipiscing elit duis tristique sollicitudin. Leo vel orci porta non pulvinar neque laoreet suspendisse. Volutpat diam ut venenatis tellus in metus vulputate eu.</p>\n&quot;}}" id="text-d20284d12d" class="cmp-text">
-              <p>Hac habitasse platea dictumst quisque sagittis purus. At risus viverra adipiscing at in tellus integer. Sit amet consectetur adipiscing elit duis tristique sollicitudin. Leo vel orci porta non pulvinar neque laoreet suspendisse. Volutpat diam ut venenatis tellus in metus vulputate eu.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="cmp-accordion__item" data-cmp-hook-accordion="item" data-cmp-data-layer="{&quot;accordion-78c7838df5-item-6b23edcf7a&quot;:{&quot;@type&quot;:&quot;core-components-examples/components/accordion/item&quot;,&quot;repo:modifyDate&quot;:&quot;2019-01-22T11:47:15Z&quot;,&quot;dc:title&quot;:&quot;Item 3&quot;}}" id="accordion-78c7838df5-item-6b23edcf7a">
-        <h3 class="cmp-accordion__header">
-          <button id="accordion-78c7838df5-item-6b23edcf7a-button" class="cmp-accordion__button" aria-controls="accordion-78c7838df5-item-6b23edcf7a-panel" data-cmp-hook-accordion="button" aria-expanded="false">
-            <span class="cmp-accordion__title">Item 3</span>
-            <span class="cmp-accordion__icon"></span>
-          </button>
-        </h3>
-        <div data-cmp-hook-accordion="panel" id="accordion-78c7838df5-item-6b23edcf7a-panel" class="cmp-accordion__panel cmp-accordion__panel--hidden" role="region" aria-labelledby="accordion-78c7838df5-item-6b23edcf7a-button" aria-hidden="true">
-          <div class="text">
-            <div data-cmp-data-layer="{&quot;text-6b23edcf7a&quot;:{&quot;@type&quot;:&quot;core/wcm/components/text/v2/text&quot;,&quot;repo:modifyDate&quot;:&quot;2019-01-22T11:47:15Z&quot;,&quot;xdm:text&quot;:&quot;<p>Libero id faucibus nisl tincidunt eget nullam non nisi. Hac habitasse platea dictumst vestibulum. Viverra orci sagittis eu volutpat odio facilisis mauris. Velit aliquet sagittis id consectetur purus ut. Orci phasellus egestas tellus rutrum tellus pellentesque eu tincidunt.</p>\n&quot;}}" id="text-6b23edcf7a" class="cmp-text">
-              <p>Libero id faucibus nisl tincidunt eget nullam non nisi. Hac habitasse platea dictumst vestibulum. Viverra orci sagittis eu volutpat odio facilisis mauris. Velit aliquet sagittis id consectetur purus ut. Orci phasellus egestas tellus rutrum tellus pellentesque eu tincidunt.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+<?php cru_accordion_links('white'); ?>
+
 <div style="background-color: #383F43">
-  <div class="t-cmp-clean accordion cru-accordion-black">
-    <div id="accordion-78c7838df5" class="cmp-accordion" data-cmp-data-layer="{&quot;accordion-78c7838df5&quot;:{&quot;shownItems&quot;:[&quot;accordion-78c7838df5-item-ab0d3a9f0d&quot;],&quot;@type&quot;:&quot;core-components-examples/components/accordion&quot;,&quot;repo:modifyDate&quot;:&quot;2018-12-07T12:12:10Z&quot;}}" data-placeholder-text="false">
-      <div class="cmp-accordion__item" data-cmp-hook-accordion="item" data-cmp-data-layer="{&quot;accordion-78c7838df5-item-ab0d3a9f0d&quot;:{&quot;@type&quot;:&quot;core-components-examples/components/accordion/item&quot;,&quot;repo:modifyDate&quot;:&quot;2019-01-22T11:45:56Z&quot;,&quot;dc:title&quot;:&quot;Item 1&quot;}}" id="accordion-78c7838df5-item-ab0d3a9f0d" data-cmp-expanded="">
-        <h3 class="cmp-accordion__header">
-        <button id="accordion-78c7838df5-item-d20284d12d-button" class="cmp-accordion__button" aria-controls="accordion-78c7838df5-item-d20284d12d-panel" data-cmp-hook-accordion="button" aria-expanded="false">
-            <span class="cmp-accordion__title">Item 1</span>
-            <span class="cmp-accordion__icon"></span>
-          </button>
-        </h3>
-        <div data-cmp-hook-accordion="panel" id="accordion-78c7838df5-item-d20284d12d-panel" class="cmp-accordion__panel cmp-accordion__panel--hidden" role="region" aria-labelledby="accordion-78c7838df5-item-d20284d12d-button" aria-hidden="true">
-          <div class="text">
-            <div data-cmp-data-layer="{&quot;text-ab0d3a9f0d&quot;:{&quot;@type&quot;:&quot;core/wcm/components/text/v2/text&quot;,&quot;repo:modifyDate&quot;:&quot;2019-01-22T11:45:56Z&quot;,&quot;xdm:text&quot;:&quot;<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Eu mi bibendum neque egestas congue quisque egestas. Varius morbi enim nunc faucibus a pellentesque. Scelerisque eleifend donec pretium vulputate sapien nec sagittis.</p>\n&quot;}}" id="text-ab0d3a9f0d" class="cmp-text">
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Eu mi bibendum neque egestas congue quisque egestas. Varius morbi enim nunc faucibus a pellentesque. Scelerisque eleifend donec pretium vulputate sapien nec sagittis.</p>
-            </div>
+  <?php cru_accordion_links('black'); ?>
+</div>
+
+<?php function cru_accordion_links($color)
+{ ?>
+  <div class="accordion cru-accordion-links cru-accordion-<?=$color; ?>">
+    <div class="cmp-accordion">
+      <?php for ($i = 1; $i <= 2; $i++) : $state = $i == 1 ? 'expanded' : 'hidden'; ?>
+        <div class="cmp-accordion__item">
+          <h3 class="cmp-accordion__header">
+            <button class="cmp-accordion__button<?php if ($i == 1) {
+                                                  echo ' cmp-accordion__button--expanded';
+                                                } ?>">
+              <span class="cmp-accordion__title">QUICK LINKS <?= $i ?></span>
+              <span class="cmp-accordion__icon">
+                <svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M9 0.988281L5.236 4.66802C5.17349 4.72911 5.08872 4.76343 5.00033 4.76343C4.91195 4.76343 4.82718 4.72911 4.76467 4.66802L1 0.988281" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+
+              </span>
+            </button>
+          </h3>
+          <div class="cmp-accordion__panel cmp-accordion__panel--<?= $state ?>">
+            <?php for ($j = 1; $j <= 4; $j++) : ?>
+              <div class="cru-accordion-column">
+                <h3>Category</h3>
+                <?php for ($k = 1; $k <= 3; $k++) : ?>
+                  <p>Category</p>
+                <?php endfor; ?>
+              </div>
+            <?php endfor; ?>
           </div>
         </div>
-      </div>
-      <div class="cmp-accordion__item" data-cmp-hook-accordion="item" data-cmp-data-layer="{&quot;accordion-78c7838df5-item-d20284d12d&quot;:{&quot;@type&quot;:&quot;core-components-examples/components/accordion/item&quot;,&quot;repo:modifyDate&quot;:&quot;2019-01-22T11:46:55Z&quot;,&quot;dc:title&quot;:&quot;Item 2&quot;}}" id="accordion-78c7838df5-item-d20284d12d">
-        <h3 class="cmp-accordion__header">
-          <button id="accordion-78c7838df5-item-d20284d12d-button" class="cmp-accordion__button" aria-controls="accordion-78c7838df5-item-d20284d12d-panel" data-cmp-hook-accordion="button" aria-expanded="false">
-            <span class="cmp-accordion__title">Item 2</span>
-            <span class="cmp-accordion__icon"></span>
-          </button>
-        </h3>
-        <div data-cmp-hook-accordion="panel" id="accordion-78c7838df5-item-d20284d12d-panel" class="cmp-accordion__panel cmp-accordion__panel--hidden" role="region" aria-labelledby="accordion-78c7838df5-item-d20284d12d-button" aria-hidden="true">
-          <div class="text">
-            <div data-cmp-data-layer="{&quot;text-d20284d12d&quot;:{&quot;@type&quot;:&quot;core/wcm/components/text/v2/text&quot;,&quot;repo:modifyDate&quot;:&quot;2019-01-22T11:46:55Z&quot;,&quot;xdm:text&quot;:&quot;<p>Hac habitasse platea dictumst quisque sagittis purus. At risus viverra adipiscing at in tellus integer. Sit amet consectetur adipiscing elit duis tristique sollicitudin. Leo vel orci porta non pulvinar neque laoreet suspendisse. Volutpat diam ut venenatis tellus in metus vulputate eu.</p>\n&quot;}}" id="text-d20284d12d" class="cmp-text">
-              <p>Hac habitasse platea dictumst quisque sagittis purus. At risus viverra adipiscing at in tellus integer. Sit amet consectetur adipiscing elit duis tristique sollicitudin. Leo vel orci porta non pulvinar neque laoreet suspendisse. Volutpat diam ut venenatis tellus in metus vulputate eu.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="cmp-accordion__item" data-cmp-hook-accordion="item" data-cmp-data-layer="{&quot;accordion-78c7838df5-item-6b23edcf7a&quot;:{&quot;@type&quot;:&quot;core-components-examples/components/accordion/item&quot;,&quot;repo:modifyDate&quot;:&quot;2019-01-22T11:47:15Z&quot;,&quot;dc:title&quot;:&quot;Item 3&quot;}}" id="accordion-78c7838df5-item-6b23edcf7a">
-        <h3 class="cmp-accordion__header">
-          <button id="accordion-78c7838df5-item-6b23edcf7a-button" class="cmp-accordion__button" aria-controls="accordion-78c7838df5-item-6b23edcf7a-panel" data-cmp-hook-accordion="button" aria-expanded="false">
-            <span class="cmp-accordion__title">Item 3</span>
-            <span class="cmp-accordion__icon"></span>
-          </button>
-        </h3>
-        <div data-cmp-hook-accordion="panel" id="accordion-78c7838df5-item-6b23edcf7a-panel" class="cmp-accordion__panel cmp-accordion__panel--hidden" role="region" aria-labelledby="accordion-78c7838df5-item-6b23edcf7a-button" aria-hidden="true">
-          <div class="text">
-            <div data-cmp-data-layer="{&quot;text-6b23edcf7a&quot;:{&quot;@type&quot;:&quot;core/wcm/components/text/v2/text&quot;,&quot;repo:modifyDate&quot;:&quot;2019-01-22T11:47:15Z&quot;,&quot;xdm:text&quot;:&quot;<p>Libero id faucibus nisl tincidunt eget nullam non nisi. Hac habitasse platea dictumst vestibulum. Viverra orci sagittis eu volutpat odio facilisis mauris. Velit aliquet sagittis id consectetur purus ut. Orci phasellus egestas tellus rutrum tellus pellentesque eu tincidunt.</p>\n&quot;}}" id="text-6b23edcf7a" class="cmp-text">
-              <p>Libero id faucibus nisl tincidunt eget nullam non nisi. Hac habitasse platea dictumst vestibulum. Viverra orci sagittis eu volutpat odio facilisis mauris. Velit aliquet sagittis id consectetur purus ut. Orci phasellus egestas tellus rutrum tellus pellentesque eu tincidunt.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div id="accordion-78c7838df5" class="cmp-accordion" data-cmp-data-layer="{&quot;accordion-78c7838df5&quot;:{&quot;shownItems&quot;:[&quot;accordion-78c7838df5-item-ab0d3a9f0d&quot;],&quot;@type&quot;:&quot;core-components-examples/components/accordion&quot;,&quot;repo:modifyDate&quot;:&quot;2018-12-07T12:12:10Z&quot;}}" data-placeholder-text="false">
-      <div class="cmp-accordion__item" data-cmp-hook-accordion="item" data-cmp-data-layer="{&quot;accordion-78c7838df5-item-ab0d3a9f0d&quot;:{&quot;@type&quot;:&quot;core-components-examples/components/accordion/item&quot;,&quot;repo:modifyDate&quot;:&quot;2019-01-22T11:45:56Z&quot;,&quot;dc:title&quot;:&quot;Item 1&quot;}}" id="accordion-78c7838df5-item-ab0d3a9f0d" data-cmp-expanded="">
-        <h3 class="cmp-accordion__header">
-          <button id="accordion-78c7838df5-item-ab0d3a9f0d-button" class="cmp-accordion__button cmp-accordion__button--expanded" aria-controls="accordion-78c7838df5-item-ab0d3a9f0d-panel" data-cmp-hook-accordion="button" aria-expanded="true">
-            <span class="cmp-accordion__title">Item 1</span>
-            <span class="cmp-accordion__icon"></span>
-          </button>
-        </h3>
-        <div data-cmp-hook-accordion="panel" id="accordion-78c7838df5-item-ab0d3a9f0d-panel" class="cmp-accordion__panel cmp-accordion__panel--expanded" role="region" aria-labelledby="accordion-78c7838df5-item-ab0d3a9f0d-button" aria-hidden="false">
-          <div class="text">
-            <div data-cmp-data-layer="{&quot;text-ab0d3a9f0d&quot;:{&quot;@type&quot;:&quot;core/wcm/components/text/v2/text&quot;,&quot;repo:modifyDate&quot;:&quot;2019-01-22T11:45:56Z&quot;,&quot;xdm:text&quot;:&quot;<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Eu mi bibendum neque egestas congue quisque egestas. Varius morbi enim nunc faucibus a pellentesque. Scelerisque eleifend donec pretium vulputate sapien nec sagittis.</p>\n&quot;}}" id="text-ab0d3a9f0d" class="cmp-text">
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Eu mi bibendum neque egestas congue quisque egestas. Varius morbi enim nunc faucibus a pellentesque. Scelerisque eleifend donec pretium vulputate sapien nec sagittis.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="cmp-accordion__item" data-cmp-hook-accordion="item" data-cmp-data-layer="{&quot;accordion-78c7838df5-item-d20284d12d&quot;:{&quot;@type&quot;:&quot;core-components-examples/components/accordion/item&quot;,&quot;repo:modifyDate&quot;:&quot;2019-01-22T11:46:55Z&quot;,&quot;dc:title&quot;:&quot;Item 2&quot;}}" id="accordion-78c7838df5-item-d20284d12d">
-        <h3 class="cmp-accordion__header">
-          <button id="accordion-78c7838df5-item-d20284d12d-button" class="cmp-accordion__button" aria-controls="accordion-78c7838df5-item-d20284d12d-panel" data-cmp-hook-accordion="button" aria-expanded="false">
-            <span class="cmp-accordion__title">Item 2</span>
-            <span class="cmp-accordion__icon"></span>
-          </button>
-        </h3>
-        <div data-cmp-hook-accordion="panel" id="accordion-78c7838df5-item-d20284d12d-panel" class="cmp-accordion__panel cmp-accordion__panel--hidden" role="region" aria-labelledby="accordion-78c7838df5-item-d20284d12d-button" aria-hidden="true">
-          <div class="text">
-            <div data-cmp-data-layer="{&quot;text-d20284d12d&quot;:{&quot;@type&quot;:&quot;core/wcm/components/text/v2/text&quot;,&quot;repo:modifyDate&quot;:&quot;2019-01-22T11:46:55Z&quot;,&quot;xdm:text&quot;:&quot;<p>Hac habitasse platea dictumst quisque sagittis purus. At risus viverra adipiscing at in tellus integer. Sit amet consectetur adipiscing elit duis tristique sollicitudin. Leo vel orci porta non pulvinar neque laoreet suspendisse. Volutpat diam ut venenatis tellus in metus vulputate eu.</p>\n&quot;}}" id="text-d20284d12d" class="cmp-text">
-              <p>Hac habitasse platea dictumst quisque sagittis purus. At risus viverra adipiscing at in tellus integer. Sit amet consectetur adipiscing elit duis tristique sollicitudin. Leo vel orci porta non pulvinar neque laoreet suspendisse. Volutpat diam ut venenatis tellus in metus vulputate eu.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="cmp-accordion__item" data-cmp-hook-accordion="item" data-cmp-data-layer="{&quot;accordion-78c7838df5-item-6b23edcf7a&quot;:{&quot;@type&quot;:&quot;core-components-examples/components/accordion/item&quot;,&quot;repo:modifyDate&quot;:&quot;2019-01-22T11:47:15Z&quot;,&quot;dc:title&quot;:&quot;Item 3&quot;}}" id="accordion-78c7838df5-item-6b23edcf7a">
-        <h3 class="cmp-accordion__header">
-          <button id="accordion-78c7838df5-item-6b23edcf7a-button" class="cmp-accordion__button" aria-controls="accordion-78c7838df5-item-6b23edcf7a-panel" data-cmp-hook-accordion="button" aria-expanded="false">
-            <span class="cmp-accordion__title">Item 3</span>
-            <span class="cmp-accordion__icon"></span>
-          </button>
-        </h3>
-        <div data-cmp-hook-accordion="panel" id="accordion-78c7838df5-item-6b23edcf7a-panel" class="cmp-accordion__panel cmp-accordion__panel--hidden" role="region" aria-labelledby="accordion-78c7838df5-item-6b23edcf7a-button" aria-hidden="true">
-          <div class="text">
-            <div data-cmp-data-layer="{&quot;text-6b23edcf7a&quot;:{&quot;@type&quot;:&quot;core/wcm/components/text/v2/text&quot;,&quot;repo:modifyDate&quot;:&quot;2019-01-22T11:47:15Z&quot;,&quot;xdm:text&quot;:&quot;<p>Libero id faucibus nisl tincidunt eget nullam non nisi. Hac habitasse platea dictumst vestibulum. Viverra orci sagittis eu volutpat odio facilisis mauris. Velit aliquet sagittis id consectetur purus ut. Orci phasellus egestas tellus rutrum tellus pellentesque eu tincidunt.</p>\n&quot;}}" id="text-6b23edcf7a" class="cmp-text">
-              <p>Libero id faucibus nisl tincidunt eget nullam non nisi. Hac habitasse platea dictumst vestibulum. Viverra orci sagittis eu volutpat odio facilisis mauris. Velit aliquet sagittis id consectetur purus ut. Orci phasellus egestas tellus rutrum tellus pellentesque eu tincidunt.</p>
-            </div>
-          </div>
-        </div>
-      </div>
+      <?php endfor; ?>
     </div>
   </div>
-</div>
+<?php } ?>

@@ -77,7 +77,6 @@
         border-color: #EBECEC; }
       .accordion .cmp-accordion__button:hover {
         background-color: transparent;
-        color: #383F43;
         border-color: #EBECEC; }
       .accordion .cmp-accordion__button--expanded {
         color: #FFCF07;
@@ -91,14 +90,48 @@
       flex-direction: row;
       padding: 5% 10%; }
       .accordion .cmp-accordion {
-        width: 48%; } }
+        width: 48%; }
+        .accordion .cmp-accordion__button {
+          padding-left: 0; } }
   .accordion.cru-accordion-black {
     background-color: #383F43; }
     .accordion.cru-accordion-black .cmp-accordion__button {
-      color: #FFFFFF;
-      border-color: #EBECEC; }
+      color: #FFFFFF; }
       .accordion.cru-accordion-black .cmp-accordion__button--expanded {
         color: #FFCF07;
         font-weight: 700; }
     .accordion.cru-accordion-black .cmp-accordion__panel {
       color: #FFFFFF; }
+  .accordion.cru-accordion-white .cmp-accordion__button {
+    color: #383F43; }
+    .accordion.cru-accordion-white .cmp-accordion__button--expanded {
+      color: #FFCF07;
+      font-weight: 700; }
+  .accordion.cru-accordion-links.cru-accordion-black .cmp-accordion__button {
+    color: #FFFFFF; }
+  .accordion.cru-accordion-links .cmp-accordion {
+    width: 100%; }
+    .accordion.cru-accordion-links .cmp-accordion__icon::before {
+      color: #FFCF07;
+      border: 1px solid #FFCF07;
+      border-radius: 50%;
+      margin-left: 8px;
+      right: auto;
+      font-size: 2rem; }
+    .accordion.cru-accordion-links .cmp-accordion__button {
+      background-image: linear-gradient(#FFCF07, #FFCF07);
+      background-repeat: no-repeat;
+      background-size: 5% 4px;
+      background-position: top left, 4px 0;
+      border: none;
+      margin: 8px;
+      line-height: 2rem;
+      color: #383F43;
+      font-weight: 700; }
+    .accordion.cru-accordion-links .cmp-accordion__panel {
+      display: flex; }
+      .accordion.cru-accordion-links .cmp-accordion__panel--hidden {
+        display: none; }
+  .accordion.cru-accordion-links .cru-accordion-column {
+    width: 25%;
+    margin: auto 8px; }
