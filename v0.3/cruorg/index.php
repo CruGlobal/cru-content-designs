@@ -62,6 +62,7 @@
         // 'embed',
         // 'form',
         // 'image',
+        'input',
         // 'list',
         // 'separator',
         // 'sharing',

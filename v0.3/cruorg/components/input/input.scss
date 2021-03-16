@@ -1,0 +1,170 @@
+// Branding imports
+@import '../../branding-imports';
+
+/* Input styles */
+
+
+@mixin cru-form-text {
+    border: $cru-btn-border-width $cru-btn-border-style $cru-color-gray-dark;
+    padding: $cru-spacer-base;
+    padding-right: $cru-spacer-base * 3;
+    border-radius: $cru-spacer-base / 2;
+    box-sizing: border-box;
+}
+
+@mixin cru-form-text-focus {
+    outline: none;
+    border: none;
+    box-shadow: 0 $cru-spacer-base $cru-spacer * 2 rgba(0, 0, 0, 0.08);
+    caret-color: $cru-color-yellow;
+}
+
+@mixin cru-form-text-disabled {
+    border: $cru-btn-border-width $cru-btn-border-style $cru-color-gray-light;
+}
+
+@mixin cru-form-text-alert {
+    border: $cru-btn-border-width $cru-btn-border-style $cru-color-yellow;
+}
+
+@mixin cru-form-text-alert-focus {
+    border: none;
+}
+
+@mixin cru-form-without-border {
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-radius: 0;
+}
+
+@mixin cru-form-text-alert-icon {
+    width: 100%;
+    position: relative;
+    left: 160px;
+    bottom: 25px;
+}
+
+@mixin cru-form-text-without-border-text-active {
+    border-bottom: $cru-btn-border-width $cru-btn-border-style $cru-color-yellow;
+}
+
+@mixin cru-form-black-without-border-text-active {
+    background-color: $cru-color-gray-dark;
+    color: $cru-color-white;
+}
+
+@mixin cru-form-black-text-active {
+    border-color: $cru-color-yellow;
+}
+
+@mixin cru-form-black-text-disabled {
+    border-color: $cru-color-gray-medium;
+    color: $cru-color-gray-medium;
+}
+
+.cmp-form {
+    .text {
+        @include cru-text;
+        margin: $cru-spacer-base;
+        width: 352px;
+        .cmp-form-text {
+            label, span {
+                @include cru-text-sm;
+                display: block;
+            }
+            &__text {
+                @include cru-form-text;
+                width: 100%;
+                &::placeholder {
+                    color: $cru-color-gray-dark;
+                }
+                &:focus {
+                    @include cru-form-text-focus;
+                }
+            }
+        }
+        .cru-form-text-disabled {
+            .cmp-form-text {
+                &__text {
+                    @include cru-form-text-disabled;
+                }
+            }
+        }
+        .cru-form-text-alert {
+            position: relative;
+            .cru-alert-icon {
+                svg {
+                    @include cru-form-text-alert-icon;
+                }
+            }
+            .cmp-form-text {
+                &__text {
+                    @include cru-form-text-alert;
+                    &:focus {
+                        @include cru-form-text-alert-focus;
+                    }
+                }
+            }
+        }
+    }
+    &.cru-form-without-borders {
+        .text {
+            .cmp-form-text {
+                &__text {
+                    @include cru-form-without-border;
+                    &:focus {
+                        @include cru-form-text-without-border-text-active;
+                    }
+                }
+            }
+        }
+        &.cru-form-black {
+            .text {
+                .cmp-form-text {
+                    &__text:focus, &__text:focus::placeholder {
+                        @include cru-form-black-without-border-text-active;
+                    }
+                }
+            }
+        }
+    }
+    &.cru-form-black {
+        .text {
+            .cmp-form-text {
+                label, span {
+                    color: $cru-color-white;
+                }
+                &__text {
+                    color: $cru-color-white;
+                    background-color: $cru-color-gray-dark;
+                    border-color: $cru-color-white;
+                    &::placeholder {
+                        color: $cru-color-white;
+                    }
+                    &:focus, &:focus::placeholder {
+                        background-color: $cru-color-white;
+                        color: $cru-color-gray-dark;
+                    }
+                }
+            }
+            .cru-form-text-disabled {
+                label {
+                    color: $cru-color-gray-light;
+                }
+                .cmp-form-text {
+                    &__text, &__text::placeholder {
+                        @include cru-form-black-text-disabled;
+                    }
+                }
+            }
+            .cru-form-text-alert {
+                .cmp-form-text {
+                    &__text {
+                        @include cru-form-black-text-active;
+                    }
+                }
+            }
+        }
+    }
+}
