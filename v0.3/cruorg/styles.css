@@ -326,6 +326,9 @@
   top: 10px;
   right: 42px; }
 
+.searchbar .searchBar__root:focus-within .fieldIcons__root .icon__root svg circle {
+  fill: #FFCF07; }
+
 .searchbar.cru-searchbar-black .searchBar__root .fieldIcons__root .field__input {
   background-color: #383F43;
   color: #FFFFFF; }
@@ -335,9 +338,6 @@
 
 .searchbar.cru-searchbar-black .searchBar__root .fieldIcons__root .field__input::placeholder {
   color: #FFFFFF; }
-
-.searchbar .searchBar__root:focus-within .fieldIcons__root .icon__root svg circle {
-  fill: #FFCF07; }
 
 /* Separator styles */
 .separator {

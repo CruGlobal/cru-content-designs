@@ -1,0 +1,44 @@
+/* Searchbar styles */
+.searchbar .searchBar__root .fieldIcons__root .field__input {
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: 400;
+  line-height: calc(1em + 8px);
+  color: #383F43;
+  font-size: 1.125rem;
+  margin: 8px 0;
+  border: 1px solid #EBECEC;
+  border-radius: 24px;
+  width: 352px;
+  padding: 8px; }
+  @media (max-width: 768px) {
+    .searchbar .searchBar__root .fieldIcons__root .field__input {
+      font-size: 1rem; } }
+  @media (min-width: 769px) and (max-width: 992px) {
+    .searchbar .searchBar__root .fieldIcons__root .field__input {
+      font-size: 1rem; } }
+  @media (min-width: 993px) and (max-width: 1200px) {
+    .searchbar .searchBar__root .fieldIcons__root .field__input {
+      font-size: 1rem; } }
+  .searchbar .searchBar__root .fieldIcons__root .field__input:focus {
+    outline: none;
+    border: none;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+    caret-color: #FFCF07; }
+
+.searchbar .searchBar__root .fieldIcons__root .icon__root svg {
+  position: relative;
+  top: 10px;
+  right: 42px; }
+
+.searchbar .searchBar__root:focus-within .fieldIcons__root .icon__root svg circle {
+  fill: #FFCF07; }
+
+.searchbar.cru-searchbar-black .searchBar__root .fieldIcons__root .field__input {
+  background-color: #383F43;
+  color: #FFFFFF; }
+  .searchbar.cru-searchbar-black .searchBar__root .fieldIcons__root .field__input:focus, .searchbar.cru-searchbar-black .searchBar__root .fieldIcons__root .field__input:focus::placeholder {
+    background-color: #FFFFFF;
+    color: #383F43; }
+
+.searchbar.cru-searchbar-black .searchBar__root .fieldIcons__root .field__input::placeholder {
+  color: #FFFFFF; }

@@ -64,6 +64,7 @@
         // 'image',
         'input',
         // 'list',
+        'searchbar',
         // 'separator',
         // 'sharing',
         // 'tabs',

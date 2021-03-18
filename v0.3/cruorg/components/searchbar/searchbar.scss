@@ -1,0 +1,74 @@
+// Branding imports
+@import '../../branding-imports';
+
+/* Searchbar styles */
+
+@mixin cru-searchbar {
+    .fieldIcons {
+        &__root {
+            .field__input {
+                @include cru-text;
+                margin: $cru-spacer-base 0;
+                border: $cru-btn-border-width $cru-btn-border-style $cru-color-gray-light;
+                border-radius: ($cru-spacer-base * 3);
+                width: 352px;
+                padding: $cru-spacer-base;
+                &:focus {
+                    outline: none;
+                    border: none;
+                    box-shadow: 0 $cru-spacer-base ($cru-spacer * 2) rgba(0, 0, 0, 0.08);
+                    caret-color: $cru-color-yellow;
+                }
+            }
+            .icon__root {
+                svg {
+                    position: relative;
+                    top: 10px;
+                    right: 42px;
+                }
+            }
+        }
+    }
+}
+
+@mixin cru-searchbar-active {
+    .fieldIcons {
+        &__root {
+            .icon__root {
+                svg circle {
+                        fill: $cru-color-yellow;
+                }
+            }
+        }
+    }
+}
+
+@mixin cru-searchbar-black {
+    .fieldIcons {
+        &__root {
+            .field__input {
+                background-color: $cru-color-gray-dark;
+                color: $cru-color-white;
+                &:focus, &:focus::placeholder {
+                    background-color: $cru-color-white;
+                    color: $cru-color-gray-dark;
+                }
+            }
+            .field__input::placeholder {
+                color: $cru-color-white;
+            }
+        }
+    }
+}
+
+.searchbar {
+    .searchBar__root {
+        @include cru-searchbar;
+    }
+    .searchBar__root:focus-within {
+        @include cru-searchbar-active;
+    }
+    &.cru-searchbar-black .searchBar__root {
+        @include cru-searchbar-black;
+    }
+}
