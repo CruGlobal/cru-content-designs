@@ -10,24 +10,10 @@
     width: 100%; }
     .accordion .cmp-accordion__header {
       margin: 0; }
-    .accordion .cmp-accordion__icon::before {
-      content: 'expand_more';
+    .accordion .cmp-accordion__icon svg {
       position: absolute;
-      top: .625rem;
-      right: .5rem;
-      font-family: 'Material Icons';
-      font-weight: normal;
-      font-style: normal;
-      font-size: 1.125rem;
-      text-transform: none;
-      letter-spacing: normal;
-      word-wrap: normal;
-      white-space: nowrap;
-      direction: ltr;
-      -webkit-font-smoothing: antialiased;
-      text-rendering: optimizeLegibility;
-      -moz-osx-font-smoothing: grayscale;
-      font-feature-settings: 'liga'; }
+      right: 8px;
+      top: 18px; }
     .accordion .cmp-accordion__button {
       display: inline-block;
       font-family: "Source Sans Pro", sans-serif;
@@ -83,8 +69,9 @@
       .accordion .cmp-accordion__button--expanded {
         color: #FFCF07;
         font-weight: 700; }
-        .accordion .cmp-accordion__button--expanded .cmp-accordion__icon::before {
-          content: 'expand_less'; }
+        .accordion .cmp-accordion__button--expanded .cmp-accordion__icon svg path {
+          d: path("M1 4.86914L4.764 1.18942C4.82651 1.12833 4.91128 1.09401 4.99967 1.09401C5.08806 1.09401 5.17282 1.12833 5.23533 1.18942L9 4.86914");
+          stroke: #FFCF07; }
     .accordion .cmp-accordion__panel--hidden {
       display: none; }
   @media (min-width: 769px) {
@@ -97,11 +84,15 @@
           padding-left: 0; } }
   .accordion.cru-accordion-black {
     background-color: #383F43; }
+    .accordion.cru-accordion-black .cmp-accordion__icon svg path {
+      stroke: #FFFFFF; }
     .accordion.cru-accordion-black .cmp-accordion__button {
       color: #FFFFFF; }
       .accordion.cru-accordion-black .cmp-accordion__button--expanded {
         color: #FFCF07;
         font-weight: 700; }
+        .accordion.cru-accordion-black .cmp-accordion__button--expanded .cmp-accordion__icon svg path {
+          stroke: #FFCF07; }
     .accordion.cru-accordion-black .cmp-accordion__panel {
       color: #FFFFFF; }
   .accordion.cru-accordion-white .cmp-accordion__button {
@@ -113,13 +104,6 @@
     color: #FFFFFF; }
   .accordion.cru-accordion-links .cmp-accordion {
     width: 100%; }
-    .accordion.cru-accordion-links .cmp-accordion__icon::before {
-      color: #FFCF07;
-      border: 1px solid #FFCF07;
-      border-radius: 50%;
-      margin-left: 8px;
-      right: auto;
-      font-size: 2rem; }
     .accordion.cru-accordion-links .cmp-accordion__button {
       background-image: linear-gradient(#FFCF07, #FFCF07);
       background-repeat: no-repeat;
@@ -194,7 +178,8 @@
   color: #383F43;
   font-size: 1.125rem;
   margin: 8px;
-  width: 352px; }
+  width: 352px;
+  position: relative; }
   @media (max-width: 768px) {
     .cmp-form .text {
       font-size: 1rem; } }
@@ -207,11 +192,17 @@
   .cmp-form .text .cmp-form-text label, .cmp-form .text .cmp-form-text span {
     font-size: 0.875rem;
     display: block; }
+  .cmp-form .text .cmp-form-text svg {
+    position: absolute;
+    right: 4px;
+    bottom: 34px; }
   .cmp-form .text .cmp-form-text__text {
-    border: 1px solid #383F43;
-    padding: 8px;
-    padding-right: 24px;
+    color: #383F43;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #383F43;
     border-radius: 4px;
+    padding: 8px;
     box-sizing: border-box;
     width: 100%; }
     .cmp-form .text .cmp-form-text__text::placeholder {
@@ -221,54 +212,65 @@
       border: none;
       box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
       caret-color: #FFCF07; }
-  .cmp-form .text .cru-form-text-disabled .cmp-form-text__text {
-    border: 1px solid #EBECEC; }
-  .cmp-form .text .cru-form-text-alert {
-    position: relative; }
-    .cmp-form .text .cru-form-text-alert .cru-alert-icon svg {
-      width: 100%;
-      position: relative;
-      left: 160px;
-      bottom: 25px; }
-    .cmp-form .text .cru-form-text-alert .cmp-form-text__text {
-      border: 1px solid #FFCF07; }
-      .cmp-form .text .cru-form-text-alert .cmp-form-text__text:focus {
-        border: none; }
-
-.cmp-form.cru-form-without-borders .text .cmp-form-text__text {
-  border-top: none;
-  border-left: none;
-  border-right: none;
-  border-radius: 0; }
-  .cmp-form.cru-form-without-borders .text .cmp-form-text__text:focus {
-    border-bottom: 1px solid #FFCF07; }
-
-.cmp-form.cru-form-without-borders.cru-form-black .text .cmp-form-text__text:focus, .cmp-form.cru-form-without-borders.cru-form-black .text .cmp-form-text__text:focus::placeholder {
-  background-color: #383F43;
-  color: #FFFFFF; }
-
-.cmp-form.cru-form-black .text .cmp-form-text label, .cmp-form.cru-form-black .text .cmp-form-text span {
-  color: #FFFFFF; }
-
-.cmp-form.cru-form-black .text .cmp-form-text__text {
-  color: #FFFFFF;
-  background-color: #383F43;
-  border-color: #FFFFFF; }
-  .cmp-form.cru-form-black .text .cmp-form-text__text::placeholder {
+    .cmp-form .text .cmp-form-text__text:focus::placeholder {
+      color: transparent; }
+    .cmp-form .text .cmp-form-text__text:disabled {
+      border-width: 1px;
+      border-style: solid;
+      border-color: #EBECEC;
+      color: #EBECEC;
+      font-weight: 400; }
+    .cmp-form .text .cmp-form-text__text:invalid {
+      border-color: #FFCF07; }
+  .cmp-form .text.cru-form-text-without-borders .cmp-form-text__text {
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-radius: 0; }
+    .cmp-form .text.cru-form-text-without-borders .cmp-form-text__text:focus {
+      box-shadow: none;
+      border-bottom: 1px solid #FFCF07; }
+  .cmp-form .text.cru-form-text-black .cmp-form-text label, .cmp-form .text.cru-form-text-black .cmp-form-text span {
     color: #FFFFFF; }
-  .cmp-form.cru-form-black .text .cmp-form-text__text:focus, .cmp-form.cru-form-black .text .cmp-form-text__text:focus::placeholder {
-    background-color: #FFFFFF;
-    color: #383F43; }
-
-.cmp-form.cru-form-black .text .cru-form-text-disabled label {
-  color: #EBECEC; }
-
-.cmp-form.cru-form-black .text .cru-form-text-disabled .cmp-form-text__text, .cmp-form.cru-form-black .text .cru-form-text-disabled .cmp-form-text__text::placeholder {
-  border-color: #9C9FA1;
-  color: #9C9FA1; }
-
-.cmp-form.cru-form-black .text .cru-form-text-alert .cmp-form-text__text {
-  border-color: #FFCF07; }
+  .cmp-form .text.cru-form-text-black .cmp-form-text__text {
+    background-color: #383F43;
+    border-color: #FFFFFF;
+    color: #FFFFFF; }
+    .cmp-form .text.cru-form-text-black .cmp-form-text__text::placeholder {
+      color: #FFFFFF; }
+    .cmp-form .text.cru-form-text-black .cmp-form-text__text:focus {
+      background-color: #FFFFFF;
+      color: #383F43; }
+    .cmp-form .text.cru-form-text-black .cmp-form-text__text:disabled, .cmp-form .text.cru-form-text-black .cmp-form-text__text:disabled::placeholder {
+      border-color: #9C9FA1;
+      color: #9C9FA1; }
+  .cmp-form .text.cru-form-text-black-without-borders .cmp-form-text__text {
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-radius: 0; }
+    .cmp-form .text.cru-form-text-black-without-borders .cmp-form-text__text:focus {
+      box-shadow: none;
+      border-bottom: 1px solid #FFCF07; }
+  .cmp-form .text.cru-form-text-black-without-borders .cmp-form-text label, .cmp-form .text.cru-form-text-black-without-borders .cmp-form-text span {
+    color: #FFFFFF; }
+  .cmp-form .text.cru-form-text-black-without-borders .cmp-form-text__text {
+    background-color: #383F43;
+    border-color: #FFFFFF;
+    color: #FFFFFF; }
+    .cmp-form .text.cru-form-text-black-without-borders .cmp-form-text__text::placeholder {
+      color: #FFFFFF; }
+    .cmp-form .text.cru-form-text-black-without-borders .cmp-form-text__text:focus {
+      background-color: #FFFFFF;
+      color: #383F43; }
+    .cmp-form .text.cru-form-text-black-without-borders .cmp-form-text__text:disabled, .cmp-form .text.cru-form-text-black-without-borders .cmp-form-text__text:disabled::placeholder {
+      border-color: #9C9FA1;
+      color: #9C9FA1; }
+  .cmp-form .text.cru-form-text-black-without-borders .cmp-form-text__text:focus {
+    background-color: #383F43;
+    color: #FFFFFF; }
+  .cmp-form .text.cru-form-text-black-without-borders .cmp-form-text__text:focus::placeholder {
+    color: transparent; }
 
 /* List styles */
 .list .cmp-list__item {
@@ -291,6 +293,51 @@
 
 .list.cru-list-extra-spacing .cmp-list__item {
   margin-bottom: 16px; }
+
+/* Searchbar styles */
+.searchbar .searchBar__root .fieldIcons__root .field__input {
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: 400;
+  line-height: calc(1em + 8px);
+  color: #383F43;
+  font-size: 1.125rem;
+  margin: 8px 0;
+  border: 1px solid #EBECEC;
+  border-radius: 24px;
+  width: 352px;
+  padding: 8px; }
+  @media (max-width: 768px) {
+    .searchbar .searchBar__root .fieldIcons__root .field__input {
+      font-size: 1rem; } }
+  @media (min-width: 769px) and (max-width: 992px) {
+    .searchbar .searchBar__root .fieldIcons__root .field__input {
+      font-size: 1rem; } }
+  @media (min-width: 993px) and (max-width: 1200px) {
+    .searchbar .searchBar__root .fieldIcons__root .field__input {
+      font-size: 1rem; } }
+  .searchbar .searchBar__root .fieldIcons__root .field__input:focus {
+    outline: none;
+    border: none;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+    caret-color: #FFCF07; }
+
+.searchbar .searchBar__root .fieldIcons__root .icon__root svg {
+  position: relative;
+  top: 10px;
+  right: 42px; }
+
+.searchbar.cru-searchbar-black .searchBar__root .fieldIcons__root .field__input {
+  background-color: #383F43;
+  color: #FFFFFF; }
+  .searchbar.cru-searchbar-black .searchBar__root .fieldIcons__root .field__input:focus, .searchbar.cru-searchbar-black .searchBar__root .fieldIcons__root .field__input:focus::placeholder {
+    background-color: #FFFFFF;
+    color: #383F43; }
+
+.searchbar.cru-searchbar-black .searchBar__root .fieldIcons__root .field__input::placeholder {
+  color: #FFFFFF; }
+
+.searchbar .searchBar__root:focus-within .fieldIcons__root .icon__root svg circle {
+  fill: #FFCF07; }
 
 /* Separator styles */
 .separator {

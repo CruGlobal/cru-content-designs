@@ -53,7 +53,7 @@
     <?php
 
       $components = array(
-        'accordion',
+        // 'accordion',
         // 'breadcrumb',
         // 'button',
         // 'carousel',
