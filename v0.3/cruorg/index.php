@@ -53,7 +53,7 @@
     <?php
 
       $components = array(
-        // 'accordion',
+        'accordion',
         // 'breadcrumb',
         // 'button',
         // 'carousel',
@@ -62,9 +62,9 @@
         // 'embed',
         // 'form',
         // 'image',
-        'input',
+        // 'input',
         // 'list',
-        'searchbar',
+        // 'searchbar',
         // 'separator',
         // 'sharing',
         // 'tabs',

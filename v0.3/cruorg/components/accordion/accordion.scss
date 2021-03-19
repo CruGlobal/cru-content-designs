@@ -3,86 +3,110 @@
 
 /* Accordion styles */
 
-@mixin cru-accordion-icon {
-    content: 'expand_more';
-    position: absolute;
-    top: .625rem;
-    right: .5rem;
-    font-family: 'Material Icons';
-    font-weight: normal;
-    font-style: normal;
-    font-size: $cru-font-size-lg;
-    text-transform: none;
-    letter-spacing: normal;
-    word-wrap: normal;
-    white-space: nowrap;
-    direction: ltr;
-    -webkit-font-smoothing: antialiased;
-    text-rendering: optimizeLegibility;
-    -moz-osx-font-smoothing: grayscale;
-    font-feature-settings: 'liga';
+@mixin cru-accordion {
+    &__button { 
+        @include cru-button;
+        background-color: transparent;
+        border-right: transparent;
+        border-left: transparent;
+        border-color: $cru-color-gray-light;
+        text-align: left;
+        width: 100%;
+        padding-left: 0;
+        padding-right: 0;
+        margin-bottom: -1px;
+        position: relative;
+        &:hover {
+            background-color: transparent;
+            border-color: $cru-color-gray-light;
+        }
+        &--expanded {
+            color: $cru-color-yellow;
+            font-weight: $cru-font-weight-bold;
+            .cmp-accordion__icon svg path {
+                d: path('M1 4.76367L4.764 1.08394C4.82651 1.02285 4.91128 0.988526 4.99967 0.988526C5.08806 0.988526 5.17282 1.02285 5.23533 1.08394L9 4.76367');
+                stroke: $cru-color-yellow;
+            }
+        }
+    }
+    &__panel { 
+        &--hidden { 
+            display: none;
+        }
+    }
 }
 
-@mixin cru-accordion-button {
-    @include cru-button;
-    background-color: transparent;
-    border-right: transparent;
-    border-left: transparent;
-    border-color: $cru-color-gray-light;
-    text-align: left;
+@mixin cru-accordion-black {
+    &__icon {
+        svg path {
+            stroke: $cru-color-white;
+        }
+    }
+    &__button {
+        color: $cru-color-white;
+        &--expanded {
+            color: $cru-color-yellow;
+            font-weight: $cru-font-weight-bold;
+            .cmp-accordion__icon svg path {
+                stroke: $cru-color-yellow;
+            }
+        }
+    }
+    &__panel {
+        color: $cru-color-white;
+    }
+}
+
+@mixin cru-accordion-white {
+    &__button {
+        color: $cru-color-gray-dark;
+        &--expanded {
+            color: $cru-color-yellow;
+            font-weight: $cru-font-weight-bold;
+        }
+    }
+}
+
+@mixin cru-accordion-links {
     width: 100%;
-    padding-left: 0;
-    padding-right: 0;
-    margin-bottom: -1px;
-    position: relative;
+    &__icon svg {
+        position: relative;
+        top: 10px;
+        left: 2px;
+        path {
+            stroke: $cru-color-yellow;
+        }
+    }
+    &__button {
+        background-image: linear-gradient($cru-color-yellow, $cru-color-yellow);
+        background-repeat: no-repeat;
+        background-size: 5% $cru-spacer-base / 2;
+        background-position: top left, 4px 0;
+        border: none;
+        margin: $cru-spacer-base;
+        line-height: 2rem;
+        color: $cru-color-gray-dark;
+        font-weight: $cru-font-weight-bold;
+        &--expanded {
+            .cmp-accordion__icon svg path {
+                d: path('M12 17L15.764 13.1011C15.8265 13.0364 15.9113 13 15.9997 13C16.0881 13 16.1728 13.0364 16.2353 13.1011L20 17');
+            }
+        }
+    }
+    &__panel { 
+        display: flex;
+        flex-wrap: wrap;
+        padding-left: $cru-spacer-base;
+        &--hidden {
+            display: none;
+        }
+    }
 }
 
-@mixin cru-accordion-button-hover {
-    background-color: transparent;
-    border-color: $cru-color-gray-light;
-}
-
-@mixin cru-accordion-button-expanded {
-    color: $cru-color-yellow;
-    font-weight: $cru-font-weight-bold;
-}
-
-@mixin cru-accordion-button-expanded-icon {
-    content: 'expand_less';
-}
-
-@mixin cru-accordion-black-button {
-    color: $cru-color-white;
-}
-
-@mixin cru-accordion-white-button {
-    color: $cru-color-gray-dark;
-}
-
-@mixin cru-accordion-link-icon {
-    color: $cru-color-yellow;
-    border: $cru-btn-border-width $cru-btn-border-style $cru-color-yellow;
-    border-radius: 50%;
-    margin-left: $cru-spacer-base;
-    right: auto;
-    font-size: 2rem;
-}
-
-@mixin cru-accordion-link-button {
-    background-image: linear-gradient($cru-color-yellow, $cru-color-yellow);
-    background-repeat: no-repeat;
-    background-size: 5% $cru-spacer-base / 2;
-    background-position: top left, 4px 0;
-    border: none;
-    margin: $cru-spacer-base;
-    line-height: 2rem;
-    color: $cru-color-gray-dark;
-    font-weight: $cru-font-weight-bold;
-}
-
-@mixin cru-accordion-column {
-    width: 25%;
-    margin: auto $cru-spacer-base;
+@mixin cru-accordion-links-black {
+    &__button {
+        color: $cru-color-white;
+    }
 }
 
 .accordion {
@@ -90,93 +114,45 @@
     flex-direction: column;
     justify-content: space-around;
     padding: 5% 3%;
-    .cmp-accordion {
-        width: 100%;
-        &__header { margin: 0 }
-        &__icon {
-            &::before {
-                @include cru-accordion-icon;
-            }
-        }
-        &__button { 
-            @include cru-accordion-button;
-            &:hover {
-                @include cru-accordion-button-hover;
-            }
-            &--expanded {
-                @include cru-accordion-button-expanded;
-                .cmp-accordion__icon::before {
-                    @include cru-accordion-button-expanded-icon;
-                }
-            }
-        }
-        &__panel { 
-            &--hidden { 
-                display: none;
-            }
-        }
-    }
     @include cru-media-breakpoint-up($cru-breakpoint-md) {
         flex-direction: row;
         padding: 5% 10%;
         .cmp-accordion {
-            width: 48%;
             &__button {
                 padding-left: 0;
             }
         }
     }
-    &.cru-accordion-black {
-        background-color: $cru-color-gray-dark;
-        .cmp-accordion {
-            &__button {
-                @include cru-accordion-black-button;
-                &--expanded {
-                    @include cru-accordion-button-expanded;
-                }
-            }
-            &__panel {
-                color: $cru-color-white;
+    .cmp-accordion {
+        width: 100%;
+        &__header { margin: 0 }
+        &__icon {
+            svg {
+                position: absolute;
+                right: 8px;
+                top: 18px;
             }
         }
+        @include cru-accordion;
     }
-    &.cru-accordion-white {
-        .cmp-accordion {
-            &__button {
-                @include cru-accordion-white-button;
-                &--expanded {
-                    @include cru-accordion-button-expanded;
-                }
-            }
-        }
+    &.cru-accordion-black  .cmp-accordion {
+        @include cru-accordion-black;
+    }
+    &.cru-accordion-white .cmp-accordion {
+        @include cru-accordion-white;
     }
     &.cru-accordion-links {
-        &.cru-accordion-black {
-            .cmp-accordion {
-                &__button {
-                    color: $cru-color-white;
-                }
-            }
-        }
         .cmp-accordion {
-            width: 100%;
-            &__icon {
-                &::before {
-                    @include cru-accordion-link-icon;
-                }
-            }
-            &__button {
-                @include cru-accordion-link-button;
-            }
-            &__panel { 
-                display: flex;
-                &--hidden { 
-                    display: none;
-                }
-            }
+            @include cru-accordion-links;
         }
         .cru-accordion-column {
-            @include cru-accordion-column;
+            width: 100%;
+            @include cru-media-breakpoint-up($cru-breakpoint-md) {
+                width: 25%;
+            }
+        }
+        &.cru-accordion-black .cmp-accordion {
+            @include cru-accordion-links-black;
         }
     }
 }

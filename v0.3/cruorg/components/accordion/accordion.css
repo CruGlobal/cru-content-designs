@@ -4,28 +4,20 @@
   flex-direction: column;
   justify-content: space-around;
   padding: 5% 3%; }
+  @media (min-width: 769px) {
+    .accordion {
+      flex-direction: row;
+      padding: 5% 10%; }
+      .accordion .cmp-accordion__button {
+        padding-left: 0; } }
   .accordion .cmp-accordion {
     width: 100%; }
     .accordion .cmp-accordion__header {
       margin: 0; }
-    .accordion .cmp-accordion__icon::before {
-      content: 'expand_more';
+    .accordion .cmp-accordion__icon svg {
       position: absolute;
-      top: .625rem;
-      right: .5rem;
-      font-family: 'Material Icons';
-      font-weight: normal;
-      font-style: normal;
-      font-size: 1.125rem;
-      text-transform: none;
-      letter-spacing: normal;
-      word-wrap: normal;
-      white-space: nowrap;
-      direction: ltr;
-      -webkit-font-smoothing: antialiased;
-      text-rendering: optimizeLegibility;
-      -moz-osx-font-smoothing: grayscale;
-      font-feature-settings: 'liga'; }
+      right: 8px;
+      top: 18px; }
     .accordion .cmp-accordion__button {
       display: inline-block;
       font-family: "Source Sans Pro", sans-serif;
@@ -81,43 +73,35 @@
       .accordion .cmp-accordion__button--expanded {
         color: #FFCF07;
         font-weight: 700; }
-        .accordion .cmp-accordion__button--expanded .cmp-accordion__icon::before {
-          content: 'expand_less'; }
+        .accordion .cmp-accordion__button--expanded .cmp-accordion__icon svg path {
+          d: path("M1 4.76367L4.764 1.08394C4.82651 1.02285 4.91128 0.988526 4.99967 0.988526C5.08806 0.988526 5.17282 1.02285 5.23533 1.08394L9 4.76367");
+          stroke: #FFCF07; }
     .accordion .cmp-accordion__panel--hidden {
       display: none; }
-  @media (min-width: 769px) {
-    .accordion {
-      flex-direction: row;
-      padding: 5% 10%; }
-      .accordion .cmp-accordion {
-        width: 48%; }
-        .accordion .cmp-accordion__button {
-          padding-left: 0; } }
-  .accordion.cru-accordion-black {
-    background-color: #383F43; }
-    .accordion.cru-accordion-black .cmp-accordion__button {
-      color: #FFFFFF; }
-      .accordion.cru-accordion-black .cmp-accordion__button--expanded {
-        color: #FFCF07;
-        font-weight: 700; }
-    .accordion.cru-accordion-black .cmp-accordion__panel {
-      color: #FFFFFF; }
+  .accordion.cru-accordion-black .cmp-accordion__icon svg path {
+    stroke: #FFFFFF; }
+  .accordion.cru-accordion-black .cmp-accordion__button {
+    color: #FFFFFF; }
+    .accordion.cru-accordion-black .cmp-accordion__button--expanded {
+      color: #FFCF07;
+      font-weight: 700; }
+      .accordion.cru-accordion-black .cmp-accordion__button--expanded .cmp-accordion__icon svg path {
+        stroke: #FFCF07; }
+  .accordion.cru-accordion-black .cmp-accordion__panel {
+    color: #FFFFFF; }
   .accordion.cru-accordion-white .cmp-accordion__button {
     color: #383F43; }
     .accordion.cru-accordion-white .cmp-accordion__button--expanded {
       color: #FFCF07;
       font-weight: 700; }
-  .accordion.cru-accordion-links.cru-accordion-black .cmp-accordion__button {
-    color: #FFFFFF; }
   .accordion.cru-accordion-links .cmp-accordion {
     width: 100%; }
-    .accordion.cru-accordion-links .cmp-accordion__icon::before {
-      color: #FFCF07;
-      border: 1px solid #FFCF07;
-      border-radius: 50%;
-      margin-left: 8px;
-      right: auto;
-      font-size: 2rem; }
+    .accordion.cru-accordion-links .cmp-accordion__icon svg {
+      position: relative;
+      top: 10px;
+      left: 2px; }
+      .accordion.cru-accordion-links .cmp-accordion__icon svg path {
+        stroke: #FFCF07; }
     .accordion.cru-accordion-links .cmp-accordion__button {
       background-image: linear-gradient(#FFCF07, #FFCF07);
       background-repeat: no-repeat;
@@ -128,10 +112,18 @@
       line-height: 2rem;
       color: #383F43;
       font-weight: 700; }
+      .accordion.cru-accordion-links .cmp-accordion__button--expanded .cmp-accordion__icon svg path {
+        d: path("M12 17L15.764 13.1011C15.8265 13.0364 15.9113 13 15.9997 13C16.0881 13 16.1728 13.0364 16.2353 13.1011L20 17"); }
     .accordion.cru-accordion-links .cmp-accordion__panel {
-      display: flex; }
+      display: flex;
+      flex-wrap: wrap;
+      padding-left: 8px; }
       .accordion.cru-accordion-links .cmp-accordion__panel--hidden {
         display: none; }
   .accordion.cru-accordion-links .cru-accordion-column {
-    width: 25%;
-    margin: auto 8px; }
+    width: 100%; }
+    @media (min-width: 769px) {
+      .accordion.cru-accordion-links .cru-accordion-column {
+        width: 25%; } }
+  .accordion.cru-accordion-links.cru-accordion-black .cmp-accordion__button {
+    color: #FFFFFF; }
