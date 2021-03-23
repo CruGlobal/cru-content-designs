@@ -7,12 +7,12 @@
     .fieldIcons {
         &__root {
             .field__input {
-                @include cru-text;
-                margin: $cru-spacer-base 0;
                 border: $cru-btn-border-width $cru-btn-border-style $cru-color-gray-light;
                 border-radius: ($cru-spacer-base * 3);
                 width: 352px;
-                padding: $cru-spacer-base;
+                font-size: 16px;
+                height: 48px;
+                box-sizing: border-box;
                 &:focus {
                     outline: none;
                     border: none;
@@ -20,11 +20,14 @@
                     caret-color: $cru-color-yellow;
                 }
             }
-            .icon__root {
-                svg {
-                    position: relative;
-                    top: 10px;
-                    right: 42px;
+            .icon__root svg {
+                position: relative;
+                width: 32px;
+                height: 32px;
+                top: 10px;
+                right: 44px;
+                circle, line {
+                    stroke: $cru-color-gray-dark;
                 }
             }
         }
@@ -34,16 +37,18 @@
 @mixin cru-searchbar-active {
     .fieldIcons {
         &__root {
-            .icon__root {
-                svg circle {
-                        fill: $cru-color-yellow;
+            .icon__root svg {
+                background-color: $cru-color-yellow;
+                border-radius: 50%;
+                circle, line {
+                    stroke: $cru-color-white;
                 }
             }
         }
     }
 }
 
-@mixin cru-searchbar-black {
+@mixin cru-searchbar-dark {
     .fieldIcons {
         &__root {
             .field__input {
@@ -57,6 +62,11 @@
             .field__input::placeholder {
                 color: $cru-color-white;
             }
+            .icon__root svg {
+                circle, line {
+                    stroke: $cru-color-white;
+                }
+            }
         }
     }
 }
@@ -68,7 +78,7 @@
     .searchBar__root:focus-within {
         @include cru-searchbar-active;
     }
-    &.cru-searchbar-black .searchBar__root {
-        @include cru-searchbar-black;
+    &.cru-searchbar-dark .searchBar__root {
+        @include cru-searchbar-dark;
     }
 }

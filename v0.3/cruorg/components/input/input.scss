@@ -5,6 +5,7 @@
 
 $cru-input-color:                       $cru-color-gray-dark;
 $cru-input-border-width:                1px;
+$cru-input-height:                      48px;
 $cru-input-border-style:                solid;
 $cru-input-border-color:                $cru-color-gray-dark;
 $cru-input-padding:                     $cru-spacer-base;
@@ -26,6 +27,8 @@ $cru-input-invalid-border-color:        $cru-color-yellow;
 
 @mixin cru-form-input {
     &__text {
+        font-size: $cru-font-size-base;
+        height: $cru-input-height;
         color: $cru-input-color;
         border-width: $cru-input-border-width;
         border-style: $cru-input-border-style;
@@ -37,23 +40,37 @@ $cru-input-invalid-border-color:        $cru-color-yellow;
         &::placeholder {
             color: $cru-input-placeholder-color;
         }
-        &:focus {
+    }
+    &.cru-text-active {
+        .cmp-form-text__text {
             outline: $cru-input-focus-outline;
             border: $cru-input-focus-border;
             box-shadow: $cru-input-focus-box-shadow;
             caret-color: $cru-input-focus-caret-color;
         }
-        &:focus::placeholder {
+    }
+    &.cru-text-active {
+        .cmp-form-text__text::placeholder {
             color: transparent;
+        }   
+    }
+    &.cru-text-disabled {
+        label {
+            color: $cru-color-gray-light;
         }
-        &:disabled {
+        .cmp-form-text__text {
             border-width: $cru-input-disabled-border-width;
             border-style: $cru-input-disabled-border-style;
             border-color: $cru-input-disabled-border-color;
             color: $cru-input-disabled-color;
             font-weight: $cru-input-disabled-font-weight;
+            &::placeholder {
+                color: $cru-input-disabled-color;
+            }
         }
-        &:invalid {
+    }
+    &.cru-text-alert {
+        .cmp-form-text__text {
             border-color: $cru-input-invalid-border-color;
         }
     }
@@ -65,14 +82,26 @@ $cru-input-invalid-border-color:        $cru-color-yellow;
         border-left: none;
         border-right: none;
         border-radius: 0;
-        &:focus {
+    }
+    &.cru-text-active {
+        .cmp-form-text__text {
             box-shadow: none;
             border-bottom: $cru-input-border-width $cru-input-border-style $cru-color-yellow;
         }
     }
+    &.cru-text-disabled {
+        label {
+            color: transparent;
+        }
+        .cmp-form-text__text {
+            border-top: none;
+            border-left: none;
+            border-right: none;
+        }
+    }
 }
 
-@mixin cru-form-input-black {
+@mixin cru-form-input-dark {
     label, span {
         color: $cru-color-white;
     }
@@ -83,27 +112,41 @@ $cru-input-invalid-border-color:        $cru-color-yellow;
         &::placeholder {
             color: $cru-color-white;
         }
-        &:focus {
+    }
+    &.cru-text-active {
+        .cmp-form-text__text {
             background-color: $cru-color-white;
             color: $cru-color-gray-dark;
         }
-        &:disabled, &:disabled::placeholder {
+    }
+    &.cru-text-active::placeholder {
+        .cmp-form-text__text {
+            color: transparent;
+        }
+    }
+    &.cru-text-disabled {
+        label {
+            color: $cru-color-gray-medium;
+        }
+        .cmp-form-text__text, .cmp-form-text__text::placeholder {
             border-color: $cru-color-gray-medium;
             color: $cru-color-gray-medium;
         }
     }
 }
 
-@mixin cru-form-input-black-without-borders {
+@mixin cru-form-input-dark-without-borders {
     @include cru-form-input-without-borders;
-    @include cru-form-input-black;
+    @include cru-form-input-dark;
     &__text{
-        &:focus {
-            background-color: $cru-color-gray-dark;
-            color: $cru-color-white;
-        }
         &:focus::placeholder {
             color: transparent;
+        }
+    }
+    &.cru-text-active {
+        .cmp-form-text__text {
+            background-color: $cru-color-gray-dark;
+            color: $cru-color-white;
         }
     }
 }
@@ -121,19 +164,19 @@ $cru-input-invalid-border-color:        $cru-color-yellow;
             }
             svg {
                 position: absolute;
-                right: 4px;
-                bottom: 34px;
+                right: 6px;
+                bottom: 40px;
             }
             @include cru-form-input;
         }
         &.cru-form-text-without-borders .cmp-form-text {
             @include cru-form-input-without-borders;
         }
-        &.cru-form-text-black .cmp-form-text {
-            @include cru-form-input-black;
+        &.cru-form-text-dark .cmp-form-text {
+            @include cru-form-input-dark;
         }
-        &.cru-form-text-black-without-borders .cmp-form-text {
-            @include cru-form-input-black-without-borders;
+        &.cru-form-text-dark-without-borders .cmp-form-text {
+            @include cru-form-input-dark-without-borders;
         }
     }
 }

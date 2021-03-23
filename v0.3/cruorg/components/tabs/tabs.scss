@@ -3,60 +3,46 @@
 
 /* Tabs styles */
 
-@mixin cru-tablist {
-    display: flex;
-    border-bottom: $cru-btn-border-width*2 $cru-btn-border-style $cru-color-gray-light;
-    color: $cru-color-gray-medium;
-}
-
-@mixin cru-tab {
-    list-style: none;
-    padding: $cru-spacer-base $cru-spacer;
-    white-space: nowrap;
-}
-
-@mixin cru-tab-active {
-    border-bottom: $cru-btn-border-width*2 $cru-btn-border-style $cru-color-yellow;
-    margin-bottom: -$cru-btn-border-width*2;
-    color: $cru-color-gray-dark;
-}
-
-@mixin cru-tablist-icon {
-    content: "\2022"; 
-    color: $cru-color-gray-medium;
-    display: inline-block; 
-    font-size: $cru-font-size-base * 3.5;
-    vertical-align: sub;
-    padding-right: $cru-spacer-base;
-}
-
-@mixin  cru-tablist-icon-active {
-    color: $cru-color-yellow;
-}
-
 .tabs {
     .cmp-tabs {
         @include cru-text;
         font-size: $cru-font-size-base;
         &__tablist {
-            @include cru-tablist;
+            display: flex;
+            margin-top: 0;
+            border-bottom: 2px $cru-btn-border-style $cru-color-gray-light;
+            color: $cru-color-gray-medium;
         }
         &__tab {
-            @include cru-tab;
+            list-style: none;
+            padding: ($cru-spacer-base * 1.5) ($cru-spacer-base * 3);
+            line-height: ($cru-spacer-base * 3);
+            white-space: nowrap;
+            &--active {
+                border-bottom: 2px $cru-btn-border-style $cru-color-yellow;
+                margin-bottom: -2px;
+                color: $cru-color-gray-dark;
+            }
         }
-        &__tab--active {
-            @include cru-tab-active;
+        &__tabpanel {
+            display: none;
+            &--active {
+                display: block;
+            }
         }
     }
-    .cru-tablist-icon {
-            li::before {
-                @include cru-tablist-icon;
-            }
-            li span {
-                vertical-align: super;
-            }
-            li.cmp-tabs__tab--active::before  {
-                @include cru-tablist-icon-active;
-            }
+    &.cru-tablist-icon .cmp-tabs {
+        li::before {
+            content: "\2022"; 
+            color: $cru-color-gray-medium;
+            display: inline-block; 
+            font-size: $cru-font-size-base * 3.5;
+            vertical-align: text-bottom;
+            height: 100%;
+            margin-right: $cru-spacer-base;
         }
+        li.cmp-tabs__tab--active::before  {
+            color: $cru-color-yellow;
+        }
+    }
 }

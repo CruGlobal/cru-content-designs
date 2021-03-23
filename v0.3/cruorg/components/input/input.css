@@ -22,9 +22,11 @@
     display: block; }
   .cmp-form .text .cmp-form-text svg {
     position: absolute;
-    right: 4px;
-    bottom: 34px; }
+    right: 6px;
+    bottom: 40px; }
   .cmp-form .text .cmp-form-text__text {
+    font-size: 1rem;
+    height: 48px;
     color: #383F43;
     border-width: 1px;
     border-style: solid;
@@ -35,67 +37,91 @@
     width: 100%; }
     .cmp-form .text .cmp-form-text__text::placeholder {
       color: #383F43; }
-    .cmp-form .text .cmp-form-text__text:focus {
-      outline: none;
-      border: none;
-      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
-      caret-color: #FFCF07; }
-    .cmp-form .text .cmp-form-text__text:focus::placeholder {
-      color: transparent; }
-    .cmp-form .text .cmp-form-text__text:disabled {
-      border-width: 1px;
-      border-style: solid;
-      border-color: #EBECEC;
-      color: #EBECEC;
-      font-weight: 400; }
-    .cmp-form .text .cmp-form-text__text:invalid {
-      border-color: #FFCF07; }
+  .cmp-form .text .cmp-form-text.cru-text-active .cmp-form-text__text {
+    outline: none;
+    border: none;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+    caret-color: #FFCF07; }
+  .cmp-form .text .cmp-form-text.cru-text-active .cmp-form-text__text::placeholder {
+    color: transparent; }
+  .cmp-form .text .cmp-form-text.cru-text-disabled label {
+    color: #EBECEC; }
+  .cmp-form .text .cmp-form-text.cru-text-disabled .cmp-form-text__text {
+    border-width: 1px;
+    border-style: solid;
+    border-color: #EBECEC;
+    color: #EBECEC;
+    font-weight: 400; }
+    .cmp-form .text .cmp-form-text.cru-text-disabled .cmp-form-text__text::placeholder {
+      color: #EBECEC; }
+  .cmp-form .text .cmp-form-text.cru-text-alert .cmp-form-text__text {
+    border-color: #FFCF07; }
   .cmp-form .text.cru-form-text-without-borders .cmp-form-text__text {
     border-top: none;
     border-left: none;
     border-right: none;
     border-radius: 0; }
-    .cmp-form .text.cru-form-text-without-borders .cmp-form-text__text:focus {
-      box-shadow: none;
-      border-bottom: 1px solid #FFCF07; }
-  .cmp-form .text.cru-form-text-black .cmp-form-text label, .cmp-form .text.cru-form-text-black .cmp-form-text span {
+  .cmp-form .text.cru-form-text-without-borders .cmp-form-text.cru-text-active .cmp-form-text__text {
+    box-shadow: none;
+    border-bottom: 1px solid #FFCF07; }
+  .cmp-form .text.cru-form-text-without-borders .cmp-form-text.cru-text-disabled label {
+    color: transparent; }
+  .cmp-form .text.cru-form-text-without-borders .cmp-form-text.cru-text-disabled .cmp-form-text__text {
+    border-top: none;
+    border-left: none;
+    border-right: none; }
+  .cmp-form .text.cru-form-text-dark .cmp-form-text label, .cmp-form .text.cru-form-text-dark .cmp-form-text span {
     color: #FFFFFF; }
-  .cmp-form .text.cru-form-text-black .cmp-form-text__text {
+  .cmp-form .text.cru-form-text-dark .cmp-form-text__text {
     background-color: #383F43;
     border-color: #FFFFFF;
     color: #FFFFFF; }
-    .cmp-form .text.cru-form-text-black .cmp-form-text__text::placeholder {
+    .cmp-form .text.cru-form-text-dark .cmp-form-text__text::placeholder {
       color: #FFFFFF; }
-    .cmp-form .text.cru-form-text-black .cmp-form-text__text:focus {
-      background-color: #FFFFFF;
-      color: #383F43; }
-    .cmp-form .text.cru-form-text-black .cmp-form-text__text:disabled, .cmp-form .text.cru-form-text-black .cmp-form-text__text:disabled::placeholder {
-      border-color: #9C9FA1;
-      color: #9C9FA1; }
-  .cmp-form .text.cru-form-text-black-without-borders .cmp-form-text__text {
+  .cmp-form .text.cru-form-text-dark .cmp-form-text.cru-text-active .cmp-form-text__text {
+    background-color: #FFFFFF;
+    color: #383F43; }
+  .cmp-form .text.cru-form-text-dark .cmp-form-text.cru-text-active::placeholder .cmp-form-text__text {
+    color: transparent; }
+  .cmp-form .text.cru-form-text-dark .cmp-form-text.cru-text-disabled label {
+    color: #9C9FA1; }
+  .cmp-form .text.cru-form-text-dark .cmp-form-text.cru-text-disabled .cmp-form-text__text, .cmp-form .text.cru-form-text-dark .cmp-form-text.cru-text-disabled .cmp-form-text__text::placeholder {
+    border-color: #9C9FA1;
+    color: #9C9FA1; }
+  .cmp-form .text.cru-form-text-dark-without-borders .cmp-form-text__text {
     border-top: none;
     border-left: none;
     border-right: none;
     border-radius: 0; }
-    .cmp-form .text.cru-form-text-black-without-borders .cmp-form-text__text:focus {
-      box-shadow: none;
-      border-bottom: 1px solid #FFCF07; }
-  .cmp-form .text.cru-form-text-black-without-borders .cmp-form-text label, .cmp-form .text.cru-form-text-black-without-borders .cmp-form-text span {
+  .cmp-form .text.cru-form-text-dark-without-borders .cmp-form-text.cru-text-active .cmp-form-text__text {
+    box-shadow: none;
+    border-bottom: 1px solid #FFCF07; }
+  .cmp-form .text.cru-form-text-dark-without-borders .cmp-form-text.cru-text-disabled label {
+    color: transparent; }
+  .cmp-form .text.cru-form-text-dark-without-borders .cmp-form-text.cru-text-disabled .cmp-form-text__text {
+    border-top: none;
+    border-left: none;
+    border-right: none; }
+  .cmp-form .text.cru-form-text-dark-without-borders .cmp-form-text label, .cmp-form .text.cru-form-text-dark-without-borders .cmp-form-text span {
     color: #FFFFFF; }
-  .cmp-form .text.cru-form-text-black-without-borders .cmp-form-text__text {
+  .cmp-form .text.cru-form-text-dark-without-borders .cmp-form-text__text {
     background-color: #383F43;
     border-color: #FFFFFF;
     color: #FFFFFF; }
-    .cmp-form .text.cru-form-text-black-without-borders .cmp-form-text__text::placeholder {
+    .cmp-form .text.cru-form-text-dark-without-borders .cmp-form-text__text::placeholder {
       color: #FFFFFF; }
-    .cmp-form .text.cru-form-text-black-without-borders .cmp-form-text__text:focus {
-      background-color: #FFFFFF;
-      color: #383F43; }
-    .cmp-form .text.cru-form-text-black-without-borders .cmp-form-text__text:disabled, .cmp-form .text.cru-form-text-black-without-borders .cmp-form-text__text:disabled::placeholder {
-      border-color: #9C9FA1;
-      color: #9C9FA1; }
-  .cmp-form .text.cru-form-text-black-without-borders .cmp-form-text__text:focus {
+  .cmp-form .text.cru-form-text-dark-without-borders .cmp-form-text.cru-text-active .cmp-form-text__text {
+    background-color: #FFFFFF;
+    color: #383F43; }
+  .cmp-form .text.cru-form-text-dark-without-borders .cmp-form-text.cru-text-active::placeholder .cmp-form-text__text {
+    color: transparent; }
+  .cmp-form .text.cru-form-text-dark-without-borders .cmp-form-text.cru-text-disabled label {
+    color: #9C9FA1; }
+  .cmp-form .text.cru-form-text-dark-without-borders .cmp-form-text.cru-text-disabled .cmp-form-text__text, .cmp-form .text.cru-form-text-dark-without-borders .cmp-form-text.cru-text-disabled .cmp-form-text__text::placeholder {
+    border-color: #9C9FA1;
+    color: #9C9FA1; }
+  .cmp-form .text.cru-form-text-dark-without-borders .cmp-form-text__text:focus::placeholder {
+    color: transparent; }
+  .cmp-form .text.cru-form-text-dark-without-borders .cmp-form-text.cru-text-active .cmp-form-text__text {
     background-color: #383F43;
     color: #FFFFFF; }
-  .cmp-form .text.cru-form-text-black-without-borders .cmp-form-text__text:focus::placeholder {
-    color: transparent; }

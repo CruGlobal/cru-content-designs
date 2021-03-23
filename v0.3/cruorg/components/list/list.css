@@ -5,7 +5,6 @@
   line-height: calc(1em + 8px);
   color: #383F43;
   font-size: 1.125rem;
-  font-size: 1rem;
   padding-left: 12px; }
   @media (max-width: 768px) {
     .list .cmp-list__item {

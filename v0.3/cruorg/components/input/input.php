@@ -1,15 +1,13 @@
 <?php
 
-function output_form($form_type, $input_types, $backgroundBlack = false)
+function output_form($form_type, $input_types)
 {
 ?>
-  <div <?php if ($backgroundBlack) echo 'style="background-color: #383F43; padding-bottom: 8px"' ?>>
-    <form class="cmp-form">
-      <?php foreach ($input_types as $type) : ?>
-        <?= output_input($type, $form_type) ?>
-      <?php endforeach ?>
-    </form>
-  </div>
+  <form class="cmp-form">
+    <?php foreach ($input_types as $type) : ?>
+      <?= output_input($type, $form_type) ?>
+    <?php endforeach ?>
+  </form>
 <?php
 }
 
@@ -18,14 +16,10 @@ function output_input($input_type, $form_type)
 {
 ?>
   <div class="text cru-form-text-<?= $form_type; ?>">
-    <div class="cmp-form-text">
+    <div class="cmp-form-text cru-text-<?= $input_type ?>">
       <label>Name</label>
-      <input class="cmp-form-text__text" <?php if ($input_type == 'disabled') {
-                                            echo 'disabled';
-                                          } else if ($input_type == 'invalid') {
-                                            echo 'required';
-                                          } ?> type="text" id="form-text-1673594539" placeholder="First Name" name="firstName">
-      <?php if ($input_type == 'invalid') {
+      <input class="cmp-form-text__text" type="text" placeholder="Text goes here..." name="firstName">
+      <?php if ($input_type == 'alert') {
         echo '<span>
         Error message...
         <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -40,10 +34,15 @@ function output_input($input_type, $form_type)
 <?php
 }
 
-$input_types = ['default', 'disabled', 'invalid'];
+$input_types = ['', 'active', 'disabled', 'alert'];
 output_form('default', $input_types);
 output_form('without-borders', $input_types);
-output_form('black', $input_types, true);
-output_form('black-without-borders', $input_types, true);
-
 ?>
+
+<div style="background-color: #383F43;">
+  <?php output_form('dark', $input_types); ?>
+</div>
+
+<div style="background-color: #383F43;">
+  <?php output_form('dark-without-borders', $input_types); ?>
+</div>

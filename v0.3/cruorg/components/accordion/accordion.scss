@@ -5,15 +5,22 @@
 
 @mixin cru-accordion {
     &__button { 
-        @include cru-button;
-        background-color: transparent;
-        border-right: transparent;
+        display: inline-block;
+        font-family: $cru-font-family-sans-serif;
+        font-weight: $cru-font-weight-bold;
+        text-transform: uppercase;
+        line-height: calc($cru-font-size-sm + 6px);
+        border: 1px solid $cru-color-gray-light;
         border-left: transparent;
-        border-color: $cru-color-gray-light;
+        border-right: transparent;
+        cursor: pointer;
+        letter-spacing: 0.02em;
+        color: $cru-color-gray-dark;
+        font-size: $cru-font-size-sm;
+        padding: 9px 0;
+        background-color: transparent;
         text-align: left;
         width: 100%;
-        padding-left: 0;
-        padding-right: 0;
         margin-bottom: -1px;
         position: relative;
         &:hover {
@@ -22,21 +29,22 @@
         }
         &--expanded {
             color: $cru-color-yellow;
-            font-weight: $cru-font-weight-bold;
-            .cmp-accordion__icon svg path {
-                d: path('M1 4.76367L4.764 1.08394C4.82651 1.02285 4.91128 0.988526 4.99967 0.988526C5.08806 0.988526 5.17282 1.02285 5.23533 1.08394L9 4.76367');
-                stroke: $cru-color-yellow;
+            .cmp-accordion__icon::before {
+                content: 'expand_less';
             }
         }
     }
     &__panel { 
+        padding: $cru-spacer 0;
+        font-size: $cru-font-size-lg;
+        line-height: calc($cru-font-size-lg + 8px);
         &--hidden { 
             display: none;
         }
     }
 }
 
-@mixin cru-accordion-black {
+@mixin cru-accordion-dark {
     &__icon {
         svg path {
             stroke: $cru-color-white;
@@ -57,25 +65,11 @@
     }
 }
 
-@mixin cru-accordion-white {
-    &__button {
-        color: $cru-color-gray-dark;
-        &--expanded {
-            color: $cru-color-yellow;
-            font-weight: $cru-font-weight-bold;
-        }
-    }
-}
-
 @mixin cru-accordion-links {
-    width: 100%;
-    &__icon svg {
+    &__icon::before {
         position: relative;
         top: 10px;
         left: 2px;
-        path {
-            stroke: $cru-color-yellow;
-        }
     }
     &__button {
         background-image: linear-gradient($cru-color-yellow, $cru-color-yellow);
@@ -87,10 +81,13 @@
         line-height: 2rem;
         color: $cru-color-gray-dark;
         font-weight: $cru-font-weight-bold;
-        &--expanded {
-            .cmp-accordion__icon svg path {
-                d: path('M12 17L15.764 13.1011C15.8265 13.0364 15.9113 13 15.9997 13C16.0881 13 16.1728 13.0364 16.2353 13.1011L20 17');
-            }
+        .cmp-accordion__icon::before {
+            border: $cru-btn-border-width $cru-btn-border-style $cru-color-yellow;
+            color: $cru-color-yellow;
+            border-radius: 50%;
+            margin-left: $cru-spacer-base;
+            right: auto;
+            font-size: 2rem;
         }
     }
     &__panel { 
@@ -103,17 +100,7 @@
     }
 }
 
-@mixin cru-accordion-links-black {
-    &__button {
-        color: $cru-color-white;
-    }
-}
-
 .accordion {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    padding: 5% 3%;
     @include cru-media-breakpoint-up($cru-breakpoint-md) {
         flex-direction: row;
         padding: 5% 10%;
@@ -126,34 +113,38 @@
     .cmp-accordion {
         width: 100%;
         &__header { margin: 0 }
-        &__icon {
-            svg {
-                position: absolute;
-                right: 8px;
-                top: 18px;
-            }
+        &__icon::before {
+            content: 'expand_more';
+            position: absolute;
+            top: .625rem;
+            right: .5rem;
+            font-family: 'Material Icons';
+            font-weight: normal;
+            font-style: normal;
+            font-size: $cru-font-size-lg;
+            text-transform: none;
+            letter-spacing: normal;
+            word-wrap: normal;
+            white-space: nowrap;
+            direction: ltr;
+            -webkit-font-smoothing: antialiased;
+            text-rendering: optimizeLegibility;
+            -moz-osx-font-smoothing: grayscale;
+            font-feature-settings: 'liga';        
         }
         @include cru-accordion;
     }
-    &.cru-accordion-black  .cmp-accordion {
-        @include cru-accordion-black;
-    }
-    &.cru-accordion-white .cmp-accordion {
-        @include cru-accordion-white;
+    &.cru-accordion-dark  .cmp-accordion {
+        @include cru-accordion-dark;
     }
     &.cru-accordion-links {
         .cmp-accordion {
             @include cru-accordion-links;
         }
-        .cru-accordion-column {
-            width: 100%;
-            @include cru-media-breakpoint-up($cru-breakpoint-md) {
-                width: 25%;
+        &.cru-accordion-dark .cmp-accordion {
+            &__button {
+                color: $cru-color-white;
             }
-        }
-        &.cru-accordion-black .cmp-accordion {
-            @include cru-accordion-links-black;
         }
     }
 }
-

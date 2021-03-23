@@ -17,27 +17,31 @@
       font-size: 1rem; } }
   .tabs .cmp-tabs__tablist {
     display: flex;
+    margin-top: 0;
     border-bottom: 2px solid #EBECEC;
     color: #9C9FA1; }
   .tabs .cmp-tabs__tab {
     list-style: none;
-    padding: 8px 16px;
+    padding: 12px 24px;
+    line-height: 24px;
     white-space: nowrap; }
-  .tabs .cmp-tabs__tab--active {
-    border-bottom: 2px solid #FFCF07;
-    margin-bottom: -2px;
-    color: #383F43; }
+    .tabs .cmp-tabs__tab--active {
+      border-bottom: 2px solid #FFCF07;
+      margin-bottom: -2px;
+      color: #383F43; }
+  .tabs .cmp-tabs__tabpanel {
+    display: none; }
+    .tabs .cmp-tabs__tabpanel--active {
+      display: block; }
 
-.tabs .cru-tablist-icon li::before {
+.tabs.cru-tablist-icon .cmp-tabs li::before {
   content: "\2022";
   color: #9C9FA1;
   display: inline-block;
   font-size: 3.5rem;
-  vertical-align: sub;
-  padding-right: 8px; }
+  vertical-align: text-bottom;
+  height: 100%;
+  margin-right: 8px; }
 
-.tabs .cru-tablist-icon li span {
-  vertical-align: super; }
-
-.tabs .cru-tablist-icon li.cmp-tabs__tab--active::before {
+.tabs.cru-tablist-icon .cmp-tabs li.cmp-tabs__tab--active::before {
   color: #FFCF07; }

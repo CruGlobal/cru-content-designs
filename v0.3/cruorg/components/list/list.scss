@@ -3,17 +3,12 @@
 
 /* List styles */
 
-@mixin cru-list-extra-spacing {
-    margin-bottom: $cru-spacer;
-}
-
 .list {
     .cmp-list__item {
         @include cru-text;
-        font-size: $cru-font-size-base;
         padding-left: $cru-spacer-base * 1.5;
     }
     &.cru-list-extra-spacing .cmp-list__item {
-        @include cru-list-extra-spacing;
+        margin-bottom: $cru-spacer;
     }
 }
