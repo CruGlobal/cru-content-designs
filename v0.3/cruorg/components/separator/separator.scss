@@ -13,17 +13,17 @@ $cru-separator-colors: (
 
 .separator {
   margin: ($cru-spacer * 3) 0;
-  .cmp-separator__horizontal-rule {
-    border-color: $cru-color-gray-medium;
-    border-style: solid;
-    border-width: 1px 0;
-    margin: 0;
-  }
-  @each $label, $color in $cru-separator-colors {
-    &.cru-separator-#{$label} {
-      .cmp-separator__horizontal-rule {
-        border-color: $color;
-      }
+}
+.cmp-separator__horizontal-rule {
+  border-color: $cru-color-gray-medium;
+  border-style: solid;
+  border-width: 1px 0;
+  margin: 0;
+}
+@each $label, $color in $cru-separator-colors {
+  &.cru-separator-#{$label} {
+    .cmp-separator__horizontal-rule {
+      border-color: $color;
     }
   }
 }
