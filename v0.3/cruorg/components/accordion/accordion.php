@@ -1,7 +1,7 @@
-<?php function cru_accordion($dark = false, $link = false) { ?>
+<?php function cru_accordion($dark = false, $link = false, $items = 3) { ?>
 <div class="accordion<?php if ( $dark == true ) { echo ' cru-accordion-dark'; } ?> <?php if ( $link == true ) { echo 'cru-accordion-links'; } ?>">
   <div class="cmp-accordion">
-    <?php for ($i = 1; $i <= 3; $i++) : $state = $i == 1 ? 'expanded' : 'hidden'; ?>
+    <?php for ($i = 1; $i <= $items; $i++) : $state = $i == 1 ? 'expanded' : 'hidden'; ?>
       <div class="cmp-accordion__item">
         <h3 class="cmp-accordion__header">
           <button class="cmp-accordion__button<?php if ( $i == 1 ) { echo ' cmp-accordion__button--expanded'; } ?>">
@@ -18,14 +18,18 @@
   </div>
 <?php } ?>
 
-<?php cru_accordion(); ?>
+<div class="comp-wrapper">
+  <?php cru_accordion(); ?>
+</div>
 
-<div style="background-color: #383F43">
+<div class="comp-wrapper comp-dark-bg">
   <?php cru_accordion(true); ?>
 </div>
 
-<?php cru_accordion(false, true); ?>
+<div class="comp-wrapper">
+  <?php cru_accordion(false, true, 2); ?>
+</div>
 
-<div style="background-color: #383F43">
-  <?php cru_accordion(true, true); ?>
+<div class="comp-wrapper comp-dark-bg">
+  <?php cru_accordion(true, true, 2); ?>
 </div>

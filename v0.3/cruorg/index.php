@@ -17,6 +17,20 @@
       border-color: #383F43;
     }
     legend {text-transform: capitalize;}
+    .comp-wrapper {
+      margin: 25px -12px;
+      padding: 0 12px;
+    }
+    .comp-wrapper:nth-child(2) {
+      margin-top: 0;
+    }
+    .comp-wrapper:last-child {
+      margin-bottom: 0;
+    }
+    .comp-dark-bg {
+      padding: 25px 12px;
+      background-color: #383F43;
+    }
     .info {
       color: #383F43;
       background-color: #cfe2ff;
