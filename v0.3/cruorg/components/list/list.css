@@ -1,5 +1,5 @@
 /* List styles */
-.list .cmp-list__item {
+.cmp-list__item {
   font-family: "Source Sans Pro", sans-serif;
   font-weight: 400;
   line-height: calc(1em + 8px);
@@ -7,14 +7,16 @@
   font-size: 1.125rem;
   padding-left: 12px; }
   @media (max-width: 768px) {
-    .list .cmp-list__item {
+    .cmp-list__item {
       font-size: 1rem; } }
   @media (min-width: 769px) and (max-width: 992px) {
-    .list .cmp-list__item {
+    .cmp-list__item {
       font-size: 1rem; } }
   @media (min-width: 993px) and (max-width: 1200px) {
-    .list .cmp-list__item {
+    .cmp-list__item {
       font-size: 1rem; } }
+  .cmp-list__item-link {
+    color: inherit; }
 
-.list.cru-list-extra-spacing .cmp-list__item {
+.cru-list-extra-spacing .cmp-list__item {
   margin-bottom: 16px; }

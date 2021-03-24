@@ -9,10 +9,7 @@ function cru_list($extra_spacing = false, $links = false) {
         <li class="cmp-list__item">
           <article>
             <?php if ( $links == true ) { ?>
-              <a class="cmp-list__item-link" href="#">
-                <span class="cmp-list__item-title">Title</span>
-                <span class="cmp-list__item-date">Date</span>
-              </a>
+              <a class="cmp-list__item-link" href="#"><span class="cmp-list__item-title">Title</span><span class="cmp-list__item-date">Date</span></a>
               <span class="cmp-list__item-description">Display a page heading</span>
             <?php } else { ?>
               <span class="cmp-list__item-title">Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor.</span>
