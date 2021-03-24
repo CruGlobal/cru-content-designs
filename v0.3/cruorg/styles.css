@@ -387,52 +387,57 @@
 
 /* Sharing styles */
 /* Tabs styles */
-.tabs .cmp-tabs {
+.cmp-tabs__tablist {
+  margin-top: 0;
+  margin-bottom: 16px;
+  padding: 0;
+  border-bottom: #EBECEC 2px solid; }
+
+.cmp-tabs__tab {
   font-family: "Source Sans Pro", sans-serif;
   font-weight: 400;
   line-height: calc(1em + 8px);
   color: #383F43;
   font-size: 1.125rem;
-  font-size: 1rem; }
+  font-size: 1rem;
+  list-style: none;
+  color: #9C9FA1;
+  padding: 12px 24px;
+  line-height: calc(1em + 8px);
+  display: inline-block;
+  border-bottom: #EBECEC 2px solid;
+  margin-bottom: -2px;
+  white-space: nowrap; }
   @media (max-width: 768px) {
-    .tabs .cmp-tabs {
+    .cmp-tabs__tab {
       font-size: 1rem; } }
   @media (min-width: 769px) and (max-width: 992px) {
-    .tabs .cmp-tabs {
+    .cmp-tabs__tab {
       font-size: 1rem; } }
   @media (min-width: 993px) and (max-width: 1200px) {
-    .tabs .cmp-tabs {
+    .cmp-tabs__tab {
       font-size: 1rem; } }
-  .tabs .cmp-tabs__tablist {
-    display: flex;
-    margin-top: 0;
-    border-bottom: 2px solid #EBECEC;
-    color: #9C9FA1; }
-  .tabs .cmp-tabs__tab {
-    list-style: none;
-    padding: 12px 24px;
-    line-height: 24px;
-    white-space: nowrap; }
-    .tabs .cmp-tabs__tab--active {
-      border-bottom: 2px solid #FFCF07;
-      margin-bottom: -2px;
-      color: #383F43; }
-  .tabs .cmp-tabs__tabpanel {
-    display: none; }
-    .tabs .cmp-tabs__tabpanel--active {
-      display: block; }
+  .cmp-tabs__tab--active {
+    border-color: #FFCF07;
+    color: #383F43; }
 
-.tabs.cru-tablist-icon .cmp-tabs li::before {
-  content: "\2022";
-  color: #9C9FA1;
+.cmp-tabs__tabpanel {
+  display: none; }
+  .cmp-tabs__tabpanel--active {
+    display: block; }
+
+.cru-tablist-icon .cmp-tabs__tab::before {
+  content: '';
   display: inline-block;
-  font-size: 3.5rem;
+  width: 16px;
+  height: 16px;
+  border-radius: 8px;
+  background-color: #9C9FA1;
   vertical-align: text-bottom;
-  height: 100%;
   margin-right: 8px; }
 
-.tabs.cru-tablist-icon .cmp-tabs li.cmp-tabs__tab--active::before {
-  color: #FFCF07; }
+.cru-tablist-icon .cmp-tabs__tab--active::before {
+  background-color: #FFCF07; }
 
 /* Teaser styles */
 /* Text styles */

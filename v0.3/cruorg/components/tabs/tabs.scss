@@ -3,46 +3,49 @@
 
 /* Tabs styles */
 
-.tabs {
-    .cmp-tabs {
+.cmp-tabs {
+    &__tablist {
+        margin-top: 0;
+        margin-bottom: $cru-spacer;
+        padding: 0;
+        border-bottom: $cru-color-gray-light 2px $cru-btn-border-style;
+    }
+    &__tab {
         @include cru-text;
         font-size: $cru-font-size-base;
-        &__tablist {
-            display: flex;
-            margin-top: 0;
-            border-bottom: 2px $cru-btn-border-style $cru-color-gray-light;
-            color: $cru-color-gray-medium;
-        }
-        &__tab {
-            list-style: none;
-            padding: ($cru-spacer-base * 1.5) ($cru-spacer-base * 3);
-            line-height: ($cru-spacer-base * 3);
-            white-space: nowrap;
-            &--active {
-                border-bottom: 2px $cru-btn-border-style $cru-color-yellow;
-                margin-bottom: -2px;
-                color: $cru-color-gray-dark;
-            }
-        }
-        &__tabpanel {
-            display: none;
-            &--active {
-                display: block;
-            }
+        list-style: none;
+        color: $cru-color-gray-medium;
+        padding: ($cru-spacer-base * 1.5) ($cru-spacer-base * 3);
+        line-height: $cru-line-height-base;
+        display: inline-block;
+        border-bottom: $cru-color-gray-light 2px $cru-btn-border-style;
+        margin-bottom: -2px;
+        white-space: nowrap;
+        &--active {
+            border-color: $cru-color-yellow;
+            color: $cru-color-gray-dark;
         }
     }
-    &.cru-tablist-icon .cmp-tabs {
-        li::before {
-            content: "\2022"; 
-            color: $cru-color-gray-medium;
-            display: inline-block; 
-            font-size: $cru-font-size-base * 3.5;
-            vertical-align: text-bottom;
-            height: 100%;
-            margin-right: $cru-spacer-base;
+    &__tabpanel {
+        display: none;
+        &--active {
+            display: block;
         }
-        li.cmp-tabs__tab--active::before  {
-            color: $cru-color-yellow;
-        }
+    }
+}
+
+.cru-tablist-icon {
+    .cmp-tabs__tab::before {
+        content: '';
+        display: inline-block; 
+        width: 16px;
+        height: 16px;
+        border-radius: 8px;
+        background-color: $cru-color-gray-medium;
+        vertical-align: text-bottom;
+        margin-right: $cru-spacer-base;
+    }
+    .cmp-tabs__tab--active::before  {
+        background-color: $cru-color-yellow;
     }
 }

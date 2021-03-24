@@ -15,5 +15,10 @@
 </div>
 <?php } ?>
 
-<?php cru_tabs(); ?>
-<?php cru_tabs(true); ?>
+<div class="comp-wrapper">
+  <?php cru_tabs(); ?>
+</div>
+
+<div class="comp-wrapper">
+  <?php cru_tabs(true); ?>
+</div>
