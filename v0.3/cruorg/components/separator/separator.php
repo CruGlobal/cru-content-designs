@@ -13,7 +13,7 @@ cru_separator('gray-medium');
 cru_separator('gray-light');
 ?>
 
-<div style="background-color: #383F43; padding: 1px 0;">
+<div class="comp-wrapper comp-dark-bg">
   <?php
   cru_separator('yellow');
   cru_separator('gray-medium');
