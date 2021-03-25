@@ -40,6 +40,9 @@ $cru-input-invalid-border-color:        $cru-color-yellow;
         &::placeholder {
             color: $cru-input-placeholder-color;
         }
+        &:focus {
+            outline: none;
+        }
     }
     &.cru-text-active {
         .cmp-form-text__text {
@@ -151,32 +154,30 @@ $cru-input-invalid-border-color:        $cru-color-yellow;
     }
 }
 
-.cmp-form {
-    .text {
-        @include cru-text;
-        margin: $cru-spacer-base;
-        width: 352px;
-        position: relative;
-        .cmp-form-text {
-            label, span {
-                @include cru-text-sm;
-                display: block;
-            }
-            svg {
-                position: absolute;
-                right: 6px;
-                bottom: 40px;
-            }
-            @include cru-form-input;
+.text {
+    @include cru-text;
+    margin: $cru-spacer-base;
+    width: 352px;
+    position: relative;
+    .cmp-form-text {
+        label, span {
+            @include cru-text-sm;
+            display: block;
         }
-        &.cru-form-text-without-borders .cmp-form-text {
-            @include cru-form-input-without-borders;
+        svg {
+            position: absolute;
+            right: 6px;
+            bottom: 40px;
         }
-        &.cru-form-text-dark .cmp-form-text {
-            @include cru-form-input-dark;
-        }
-        &.cru-form-text-dark-without-borders .cmp-form-text {
-            @include cru-form-input-dark-without-borders;
-        }
+        @include cru-form-input;
+    }
+    &.cru-form-text-without-borders .cmp-form-text {
+        @include cru-form-input-without-borders;
+    }
+    &.cru-form-text-dark .cmp-form-text {
+        @include cru-form-input-dark;
+    }
+    &.cru-form-text-dark-without-borders .cmp-form-text {
+        @include cru-form-input-dark-without-borders;
     }
 }

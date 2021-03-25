@@ -35,14 +35,14 @@ function output_input($input_type, $form_type)
 }
 
 $input_types = ['', 'active', 'disabled', 'alert'];
-output_form('default', $input_types);
+output_form('', $input_types);
 output_form('without-borders', $input_types);
 ?>
 
-<div style="background-color: #383F43;">
+<div class="comp-wrapper comp-dark-bg">
   <?php output_form('dark', $input_types); ?>
 </div>
 
-<div style="background-color: #383F43;">
+<div class="comp-wrapper comp-dark-bg">
   <?php output_form('dark-without-borders', $input_types); ?>
 </div>
