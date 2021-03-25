@@ -74,6 +74,8 @@ $cru-input-invalid-border-color:        $cru-color-yellow;
     }
     &.cru-text-alert {
         .cmp-form-text__text {
+            padding-right: 28px;
+            text-overflow: ellipsis;
             border-color: $cru-input-invalid-border-color;
             background: url('svg/warning.svg') no-repeat;
             background-position: 98%;
