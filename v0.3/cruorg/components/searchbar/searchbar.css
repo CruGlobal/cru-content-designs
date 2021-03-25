@@ -66,6 +66,10 @@
 .searchBar__form:focus-within .icon__root svg circle, .searchBar__form:focus-within .icon__root svg line {
   stroke: #FFFFFF; }
 
+.searchBar__form .message__root {
+  margin-top: 0;
+  margin-bottom: 0; }
+
 .cru-searchbar-dark .field__input {
   border-color: #FFFFFF;
   background-color: transparent; }
