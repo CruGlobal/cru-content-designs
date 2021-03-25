@@ -75,6 +75,8 @@ $cru-input-invalid-border-color:        $cru-color-yellow;
     &.cru-text-alert {
         .cmp-form-text__text {
             border-color: $cru-input-invalid-border-color;
+            background: url('svg/warning.svg') no-repeat;
+            background-position: 98%;
         }
     }
 }
@@ -163,11 +165,6 @@ $cru-input-invalid-border-color:        $cru-color-yellow;
         label, span {
             @include cru-text-sm;
             display: block;
-        }
-        svg {
-            position: absolute;
-            right: 6px;
-            bottom: 40px;
         }
         @include cru-form-input;
     }
