@@ -1,41 +1,88 @@
 /* Searchbar styles */
-.searchbar .searchBar__root .fieldIcons__root .field__input {
-  border: 1px solid #EBECEC;
+.searchBar__form .fieldIcons__root,
+.searchBar__form .fieldIcons__input {
+  display: block; }
+
+.searchBar__form .fieldIcons__root {
+  position: relative; }
+
+.searchBar__form .field__input {
+  border: #EBECEC 1px solid;
   border-radius: 24px;
-  width: 352px;
-  font-size: 16px;
-  height: 48px;
+  font-size: 1rem;
+  line-height: calc(1em + 8px);
+  background-color: #FFFFFF;
+  transition: box-shadow .15s ease-in-out, background-color .15s ease-in-out;
+  padding: 12px 64px 12px 24px;
+  width: 100%;
   box-sizing: border-box; }
-  .searchbar .searchBar__root .fieldIcons__root .field__input:focus {
-    outline: none;
-    border: none;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
-    caret-color: #FFCF07; }
-
-.searchbar .searchBar__root .fieldIcons__root .icon__root svg {
-  position: relative;
-  width: 32px;
-  height: 32px;
-  top: 10px;
-  right: 44px; }
-  .searchbar .searchBar__root .fieldIcons__root .icon__root svg circle, .searchbar .searchBar__root .fieldIcons__root .icon__root svg line {
-    stroke: #383F43; }
-
-.searchbar .searchBar__root:focus-within .fieldIcons__root .icon__root svg {
-  background-color: #FFCF07;
-  border-radius: 50%; }
-  .searchbar .searchBar__root:focus-within .fieldIcons__root .icon__root svg circle, .searchbar .searchBar__root:focus-within .fieldIcons__root .icon__root svg line {
-    stroke: #FFFFFF; }
-
-.searchbar.cru-searchbar-dark .searchBar__root .fieldIcons__root .field__input {
-  background-color: #383F43;
-  color: #FFFFFF; }
-  .searchbar.cru-searchbar-dark .searchBar__root .fieldIcons__root .field__input:focus, .searchbar.cru-searchbar-dark .searchBar__root .fieldIcons__root .field__input:focus::placeholder {
-    background-color: #FFFFFF;
+  .searchBar__form .field__input::-webkit-input-placeholder {
+    color: #383F43; }
+  .searchBar__form .field__input::-moz-placeholder {
+    color: #383F43; }
+  .searchBar__form .field__input:-ms-input-placeholder {
+    color: #383F43; }
+  .searchBar__form .field__input:-moz-placeholder {
     color: #383F43; }
 
-.searchbar.cru-searchbar-dark .searchBar__root .fieldIcons__root .field__input::placeholder {
-  color: #FFFFFF; }
+.searchBar__form .fieldIcons__before {
+  position: absolute;
+  top: 50%;
+  right: 8px;
+  transform: translateY(-50%);
+  font-size: 0;
+  width: 32px;
+  height: 32px;
+  border-radius: 16px;
+  background-color: #EBECEC;
+  text-align: center;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out; }
 
-.searchbar.cru-searchbar-dark .searchBar__root .fieldIcons__root .icon__root svg circle, .searchbar.cru-searchbar-dark .searchBar__root .fieldIcons__root .icon__root svg line {
+.searchBar__form .icon__root {
+  position: relative;
+  display: block;
+  height: 100%; }
+  .searchBar__form .icon__root svg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 14px;
+    height: 14px; }
+    .searchBar__form .icon__root svg circle, .searchBar__form .icon__root svg line {
+      stroke: #383F43; }
+
+.searchBar__form:focus-within .field__input {
+  outline: none;
+  border-color: #FFFFFF;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+  caret-color: #FFCF07; }
+  .searchBar__form:focus-within .field__input::placeholder {
+    color: #FFFFFF; }
+
+.searchBar__form:focus-within .fieldIcons__before {
+  background-color: #FFCF07; }
+
+.searchBar__form:focus-within .icon__root svg circle, .searchBar__form:focus-within .icon__root svg line {
   stroke: #FFFFFF; }
+
+.cru-searchbar-dark .field__input {
+  border-color: #FFFFFF;
+  background-color: transparent; }
+  .cru-searchbar-dark .field__input::-webkit-input-placeholder {
+    color: #FFFFFF; }
+  .cru-searchbar-dark .field__input::-moz-placeholder {
+    color: #FFFFFF; }
+  .cru-searchbar-dark .field__input:-ms-input-placeholder {
+    color: #FFFFFF; }
+  .cru-searchbar-dark .field__input:-moz-placeholder {
+    color: #FFFFFF; }
+
+.cru-searchbar-dark .fieldIcons__before {
+  background-color: #FFFFFF; }
+
+.cru-searchbar-dark .icon__root svg circle, .cru-searchbar-dark .icon__root svg line {
+  stroke: #383F43; }
+
+.cru-searchbar-dark:focus-within .field__input {
+  background-color: #FFFFFF; }

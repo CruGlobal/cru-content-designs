@@ -1,9 +1,5 @@
-<?php
-
-function output_searchbar($searchbar_type)
-{
-?>
-  <div class="searchbar cru-searchbar-<?= $searchbar_type ?>">
+<?php function output_searchbar($dark = false) {?>
+  <div class="searchbar<?php if ( $dark == true ) { echo ' cru-searchbar-dark'; } ?>">
     <div class="searchBar__root">
       <div class="searchBar__searchInner">
         <form class="searchBar__form">
@@ -16,19 +12,21 @@ function output_searchbar($searchbar_type)
                   <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
                 </svg>
               </span>
-              <span class="fieldIcons__after"></span>
             </span>
-            <p class="message__root"></p>
-            <div class="searchBar__SearchAutocompleteWrapper"></div>
+            <span class="fieldIcons__after"></span>
+          </span>
+          <p class="message__root"></p>
+          <div class="searchBar__SearchAutocompleteWrapper"></div>
         </form>
       </div>
     </div>
   </div>
-<?php
-}
+<?php } ?>
 
-output_searchbar('');
-?>
-<div style="background-color: #383F43">
-  <?php output_searchbar('dark'); ?>
+<div class="comp-wrapper">
+  <?php output_searchbar(); ?>
+</div>
+
+<div class="comp-wrapper comp-dark-bg">
+  <?php output_searchbar(true); ?>
 </div>

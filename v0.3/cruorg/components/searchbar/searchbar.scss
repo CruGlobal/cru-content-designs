@@ -3,82 +3,102 @@
 
 /* Searchbar styles */
 
-@mixin cru-searchbar {
-    .fieldIcons {
-        &__root {
-            .field__input {
-                border: $cru-btn-border-width $cru-btn-border-style $cru-color-gray-light;
-                border-radius: ($cru-spacer-base * 3);
-                width: 352px;
-                font-size: 16px;
-                height: 48px;
-                box-sizing: border-box;
-                &:focus {
-                    outline: none;
-                    border: none;
-                    box-shadow: 0 $cru-spacer-base ($cru-spacer * 2) rgba(0, 0, 0, 0.08);
-                    caret-color: $cru-color-yellow;
-                }
-            }
-            .icon__root svg {
-                position: relative;
-                width: 32px;
-                height: 32px;
-                top: 10px;
-                right: 44px;
-                circle, line {
-                    stroke: $cru-color-gray-dark;
-                }
+$cru-searchbar-icon-size: 14px;
+$cru-searchbar-icon-wrapper-size: 32px;
+
+.searchBar__form {
+    .fieldIcons__root,
+    .fieldIcons__input {
+        display: block;
+    }
+    .fieldIcons__root {
+        position: relative;
+    }
+    .field__input {
+        border: $cru-color-gray-light $cru-btn-border-width $cru-btn-border-style;
+        border-radius: ($cru-spacer-base * 3);
+        font-size: $cru-font-size-base;
+        line-height: $cru-line-height-base;
+        background-color: $cru-color-white;
+        transition: box-shadow .15s ease-in-out, background-color .15s ease-in-out;
+        padding: ($cru-spacer-base * 1.5) ($cru-spacer-base * 8) ($cru-spacer-base * 1.5) ($cru-spacer-base * 3);
+        width: 100%;
+        box-sizing: border-box;
+        &::-webkit-input-placeholder { color: $cru-color-gray-dark; }
+        &::-moz-placeholder { color: $cru-color-gray-dark; }
+        &:-ms-input-placeholder { color: $cru-color-gray-dark; }
+        &:-moz-placeholder { color: $cru-color-gray-dark; }
+    }
+    .fieldIcons__before {
+        position: absolute;
+        top: 50%;
+        right: $cru-spacer-base;
+        transform: translateY(-50%);
+        font-size: 0;
+        width: $cru-searchbar-icon-wrapper-size;
+        height: $cru-searchbar-icon-wrapper-size;
+        border-radius: $cru-searchbar-icon-wrapper-size / 2;
+        background-color: $cru-color-gray-light;
+        text-align: center;
+        transition: $cru-btn-transition;
+    }
+    .icon__root {
+        position: relative;
+        display: block;
+        height: 100%;
+        svg {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: $cru-searchbar-icon-size;
+            height: $cru-searchbar-icon-size;
+            circle, line {
+                stroke: $cru-color-gray-dark;
             }
         }
     }
-}
-
-@mixin cru-searchbar-active {
-    .fieldIcons {
-        &__root {
-            .icon__root svg {
-                background-color: $cru-color-yellow;
-                border-radius: 50%;
-                circle, line {
-                    stroke: $cru-color-white;
-                }
-            }
-        }
-    }
-}
-
-@mixin cru-searchbar-dark {
-    .fieldIcons {
-        &__root {
-            .field__input {
-                background-color: $cru-color-gray-dark;
+    &:focus-within {
+        .field__input {
+            outline: none;
+            border-color: $cru-color-white;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+            caret-color: $cru-color-yellow;
+            &::placeholder {
                 color: $cru-color-white;
-                &:focus, &:focus::placeholder {
-                    background-color: $cru-color-white;
-                    color: $cru-color-gray-dark;
-                }
             }
-            .field__input::placeholder {
-                color: $cru-color-white;
-            }
-            .icon__root svg {
-                circle, line {
-                    stroke: $cru-color-white;
-                }
+        }
+        .fieldIcons__before {
+            background-color: $cru-color-yellow;
+        }
+        .icon__root svg {
+            circle, line {
+                stroke: $cru-color-white;
             }
         }
     }
 }
 
-.searchbar {
-    .searchBar__root {
-        @include cru-searchbar;
+.cru-searchbar-dark {
+    .field__input {
+        border-color: $cru-color-white;
+        background-color: transparent;
+        &::-webkit-input-placeholder { color: $cru-color-white; }
+        &::-moz-placeholder { color: $cru-color-white; }
+        &:-ms-input-placeholder { color: $cru-color-white; }
+        &:-moz-placeholder { color: $cru-color-white; }
     }
-    .searchBar__root:focus-within {
-        @include cru-searchbar-active;
+    .fieldIcons__before {
+        background-color: $cru-color-white;
     }
-    &.cru-searchbar-dark .searchBar__root {
-        @include cru-searchbar-dark;
+    .icon__root svg {
+        circle, line {
+            stroke: $cru-color-gray-dark;
+        }
+    }
+    &:focus-within {
+        .field__input {
+            background-color: $cru-color-white;
+        }
     }
 }
