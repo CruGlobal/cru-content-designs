@@ -45,7 +45,8 @@
   height: 16px;
   border-radius: 8px;
   background-color: #9C9FA1;
-  vertical-align: text-bottom;
+  vertical-align: top;
+  margin-top: 5px;
   margin-right: 8px; }
 
 .cru-tablist-icon .cmp-tabs__tab--active::before {

@@ -42,7 +42,8 @@
         height: 16px;
         border-radius: 8px;
         background-color: $cru-color-gray-medium;
-        vertical-align: text-bottom;
+        vertical-align: top;
+        margin-top: 5px;
         margin-right: $cru-spacer-base;
     }
     .cmp-tabs__tab--active::before  {

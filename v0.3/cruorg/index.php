@@ -81,7 +81,7 @@
         'searchbar',
         // 'separator',
         // 'sharing',
-        // 'tabs',
+        'tabs',
         // 'teaser',
         // 'text',
         // 'title',
