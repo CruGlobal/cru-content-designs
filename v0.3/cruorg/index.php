@@ -7,7 +7,7 @@
   <link href="styles.css" type="text/css" rel="stylesheet">
   <style>
     body {font-family: "Source Sans Pro";}
-    .container {
+    .comp-container {
       max-width: 1200px;
       margin: 0 auto;
     }
@@ -63,7 +63,7 @@
 </head>
 
 <body>
-  <div class="container">
+  <div class="comp-container">
     <?php
 
       $components = array(
@@ -81,7 +81,7 @@
         'searchbar',
         // 'separator',
         // 'sharing',
-        'tabs',
+        // 'tabs',
         // 'teaser',
         // 'text',
         // 'title',

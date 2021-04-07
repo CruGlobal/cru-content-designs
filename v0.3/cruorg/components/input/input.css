@@ -1,129 +1,210 @@
 /* Input styles */
-.text {
-  font-family: "Source Sans Pro", sans-serif;
-  font-weight: 400;
-  line-height: calc(1em + 8px);
+/* .text {
+    @include cru-text;
+    margin: $cru-spacer-base;
+    width: 352px;
+    position: relative;
+    .cmp-form-text {
+        label, span {
+            @include cru-text-sm;
+            display: block;
+        }
+        @include cru-form-input;
+    }
+    &.cru-form-text-without-borders .cmp-form-text {
+        @include cru-form-input-without-borders;
+    }
+    &.cru-form-text-dark .cmp-form-text {
+        @include cru-form-input-dark;
+    }
+    &.cru-form-text-dark-without-borders .cmp-form-text {
+        @include cru-form-input-dark-without-borders;
+    }
+} */
+.cmp-form .text + .text,
+.cmp-form .text + .option,
+.cmp-form .text + .button,
+.cmp-form .option + .text,
+.cmp-form .option + .option,
+.cmp-form .option + .button,
+.cmp-form .button + .text,
+.cmp-form .button + .option,
+.cmp-form .button + .button {
+  margin-top: 16px; }
+
+.cmp-form .cmp-form-text label {
+  display: block;
+  margin-bottom: 8px;
   color: #383F43;
-  font-size: 1.125rem;
-  margin: 8px;
-  width: 352px;
-  position: relative; }
-  @media (max-width: 768px) {
-    .text {
-      font-size: 1rem; } }
-  @media (min-width: 769px) and (max-width: 992px) {
-    .text {
-      font-size: 1rem; } }
-  @media (min-width: 993px) and (max-width: 1200px) {
-    .text {
-      font-size: 1rem; } }
-  .text .cmp-form-text label, .text .cmp-form-text span {
-    font-size: 0.875rem;
-    display: block; }
-  .text .cmp-form-text__text {
-    font-size: 1rem;
-    height: 48px;
+  font-size: 0.875rem;
+  line-height: calc(1em + 8px); }
+
+.cmp-form .cmp-form-text__text {
+  width: 100%;
+  color: #383F43;
+  font-size: 1rem;
+  line-height: calc(1em + 8px);
+  padding: 11px 16px;
+  background-color: #FFFFFF;
+  border: #383F43 1px solid;
+  border-radius: 4px;
+  transition: box-shadow .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out; }
+  .cmp-form .cmp-form-text__text::placeholder {
+    color: #383F43; }
+  .cmp-form .cmp-form-text__text::-webkit-input-placeholder {
+    color: #383F43; }
+  .cmp-form .cmp-form-text__text::-moz-placeholder {
     color: #383F43;
-    border-width: 1px;
-    border-style: solid;
-    border-color: #383F43;
-    border-radius: 4px;
-    padding: 8px;
-    box-sizing: border-box;
-    width: 100%; }
-    .text .cmp-form-text__text::placeholder {
-      color: #383F43; }
-    .text .cmp-form-text__text:focus {
-      outline: none; }
-  .text .cmp-form-text.cru-text-active .cmp-form-text__text {
+    opacity: 1; }
+  .cmp-form .cmp-form-text__text:-ms-input-placeholder {
+    color: #383F43; }
+  .cmp-form .cmp-form-text__text:-moz-placeholder {
+    color: #383F43; }
+  .cmp-form .cmp-form-text__text:focus {
     outline: none;
-    border: none;
+    border-color: transparent;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
     caret-color: #FFCF07; }
-  .text .cmp-form-text.cru-text-active .cmp-form-text__text::placeholder {
-    color: transparent; }
-  .text .cmp-form-text.cru-text-disabled label {
+    .cmp-form .cmp-form-text__text:focus::placeholder {
+      color: transparent; }
+    .cmp-form .cmp-form-text__text:focus::-webkit-input-placeholder {
+      color: transparent; }
+    .cmp-form .cmp-form-text__text:focus::-moz-placeholder {
+      color: transparent;
+      opacity: 1; }
+    .cmp-form .cmp-form-text__text:focus:-ms-input-placeholder {
+      color: transparent; }
+    .cmp-form .cmp-form-text__text:focus:-moz-placeholder {
+      color: transparent; }
+
+.cmp-form .cru-form-text-disabled label {
+  color: #EBECEC; }
+
+.cmp-form .cru-form-text-disabled .cmp-form-text__text,
+.cmp-form .cmp-form-text__text[disabled] {
+  cursor: not-allowed;
+  border-color: #EBECEC; }
+  .cmp-form .cru-form-text-disabled .cmp-form-text__text::placeholder,
+  .cmp-form .cmp-form-text__text[disabled]::placeholder {
     color: #EBECEC; }
-  .text .cmp-form-text.cru-text-disabled .cmp-form-text__text {
-    border-width: 1px;
-    border-style: solid;
-    border-color: #EBECEC;
+  .cmp-form .cru-form-text-disabled .cmp-form-text__text::-webkit-input-placeholder,
+  .cmp-form .cmp-form-text__text[disabled]::-webkit-input-placeholder {
+    color: #EBECEC; }
+  .cmp-form .cru-form-text-disabled .cmp-form-text__text::-moz-placeholder,
+  .cmp-form .cmp-form-text__text[disabled]::-moz-placeholder {
     color: #EBECEC;
-    font-weight: 400; }
-    .text .cmp-form-text.cru-text-disabled .cmp-form-text__text::placeholder {
-      color: #EBECEC; }
-  .text .cmp-form-text.cru-text-alert .cmp-form-text__text {
-    padding-right: 28px;
-    text-overflow: ellipsis;
+    opacity: 1; }
+  .cmp-form .cru-form-text-disabled .cmp-form-text__text:-ms-input-placeholder,
+  .cmp-form .cmp-form-text__text[disabled]:-ms-input-placeholder {
+    color: #EBECEC; }
+  .cmp-form .cru-form-text-disabled .cmp-form-text__text:-moz-placeholder,
+  .cmp-form .cmp-form-text__text[disabled]:-moz-placeholder {
+    color: #EBECEC; }
+  .cmp-form .cru-form-text-disabled .cmp-form-text__text:focus,
+  .cmp-form .cmp-form-text__text[disabled]:focus {
+    border-color: transparent; }
+    .cmp-form .cru-form-text-disabled .cmp-form-text__text:focus::placeholder,
+    .cmp-form .cmp-form-text__text[disabled]:focus::placeholder {
+      color: transparent; }
+    .cmp-form .cru-form-text-disabled .cmp-form-text__text:focus::-webkit-input-placeholder,
+    .cmp-form .cmp-form-text__text[disabled]:focus::-webkit-input-placeholder {
+      color: transparent; }
+    .cmp-form .cru-form-text-disabled .cmp-form-text__text:focus::-moz-placeholder,
+    .cmp-form .cmp-form-text__text[disabled]:focus::-moz-placeholder {
+      color: transparent;
+      opacity: 1; }
+    .cmp-form .cru-form-text-disabled .cmp-form-text__text:focus:-ms-input-placeholder,
+    .cmp-form .cmp-form-text__text[disabled]:focus:-ms-input-placeholder {
+      color: transparent; }
+    .cmp-form .cru-form-text-disabled .cmp-form-text__text:focus:-moz-placeholder,
+    .cmp-form .cmp-form-text__text[disabled]:focus:-moz-placeholder {
+      color: transparent; }
+
+.cmp-form .cru-form-text-alert {
+  position: relative; }
+  .cmp-form .cru-form-text-alert .cmp-form-text::before {
+    font-family: "Material Icons Round";
+    font-size: 24px;
+    display: inline-block;
+    line-height: 1;
+    content: 'warning_amber';
+    position: absolute;
+    bottom: 12px;
+    left: 17px;
+    color: #FFCF07; }
+  .cmp-form .cru-form-text-alert .cmp-form-text__text {
     border-color: #FFCF07;
-    background: url("svg/warning.svg") no-repeat;
-    background-position: 98%; }
-  .text.cru-form-text-without-borders .cmp-form-text__text {
-    border-top: none;
-    border-left: none;
-    border-right: none;
-    border-radius: 0; }
-  .text.cru-form-text-without-borders .cmp-form-text.cru-text-active .cmp-form-text__text {
+    padding-left: 56px; }
+
+.cru-form-dark .cmp-form-text label {
+  color: #FFFFFF; }
+
+.cru-form-dark .cmp-form-text__text {
+  border-color: #FFFFFF;
+  background-color: transparent; }
+  .cru-form-dark .cmp-form-text__text::placeholder {
+    color: #FFFFFF; }
+  .cru-form-dark .cmp-form-text__text::-webkit-input-placeholder {
+    color: #FFFFFF; }
+  .cru-form-dark .cmp-form-text__text::-moz-placeholder {
+    color: #FFFFFF;
+    opacity: 1; }
+  .cru-form-dark .cmp-form-text__text:-ms-input-placeholder {
+    color: #FFFFFF; }
+  .cru-form-dark .cmp-form-text__text:-moz-placeholder {
+    color: #FFFFFF; }
+  .cru-form-dark .cmp-form-text__text:focus {
+    background-color: #FFFFFF; }
+
+.cru-form-dark .cru-form-text-disabled label {
+  color: #9C9FA1; }
+
+.cru-form-dark .cru-form-text-disabled .cmp-form-text__text,
+.cru-form-dark .cmp-form-text__text[disabled] {
+  border-color: #9C9FA1; }
+  .cru-form-dark .cru-form-text-disabled .cmp-form-text__text::placeholder,
+  .cru-form-dark .cmp-form-text__text[disabled]::placeholder {
+    color: #9C9FA1; }
+  .cru-form-dark .cru-form-text-disabled .cmp-form-text__text::-webkit-input-placeholder,
+  .cru-form-dark .cmp-form-text__text[disabled]::-webkit-input-placeholder {
+    color: #9C9FA1; }
+  .cru-form-dark .cru-form-text-disabled .cmp-form-text__text::-moz-placeholder,
+  .cru-form-dark .cmp-form-text__text[disabled]::-moz-placeholder {
+    color: #9C9FA1;
+    opacity: 1; }
+  .cru-form-dark .cru-form-text-disabled .cmp-form-text__text:-ms-input-placeholder,
+  .cru-form-dark .cmp-form-text__text[disabled]:-ms-input-placeholder {
+    color: #9C9FA1; }
+  .cru-form-dark .cru-form-text-disabled .cmp-form-text__text:-moz-placeholder,
+  .cru-form-dark .cmp-form-text__text[disabled]:-moz-placeholder {
+    color: #9C9FA1; }
+
+.cru-form-underline .cmp-form-text label {
+  visibility: hidden;
+  margin-bottom: 0; }
+
+.cru-form-underline .cmp-form-text:focus-within label {
+  visibility: visible; }
+
+.cru-form-underline .cmp-form-text__text {
+  border-width: 0 0 1px;
+  border-radius: 0;
+  padding: 6px 0;
+  background-color: transparent; }
+  .cru-form-underline .cmp-form-text__text:focus {
     box-shadow: none;
-    border-bottom: 1px solid #FFCF07; }
-  .text.cru-form-text-without-borders .cmp-form-text.cru-text-disabled label {
-    color: transparent; }
-  .text.cru-form-text-without-borders .cmp-form-text.cru-text-disabled .cmp-form-text__text {
-    border-top: none;
-    border-left: none;
-    border-right: none; }
-  .text.cru-form-text-dark .cmp-form-text label, .text.cru-form-text-dark .cmp-form-text span {
-    color: #FFFFFF; }
-  .text.cru-form-text-dark .cmp-form-text__text {
-    background-color: #383F43;
-    border-color: #FFFFFF;
-    color: #FFFFFF; }
-    .text.cru-form-text-dark .cmp-form-text__text::placeholder {
-      color: #FFFFFF; }
-  .text.cru-form-text-dark .cmp-form-text.cru-text-active .cmp-form-text__text {
-    background-color: #FFFFFF;
-    color: #383F43; }
-  .text.cru-form-text-dark .cmp-form-text.cru-text-active::placeholder .cmp-form-text__text {
-    color: transparent; }
-  .text.cru-form-text-dark .cmp-form-text.cru-text-disabled label {
-    color: #9C9FA1; }
-  .text.cru-form-text-dark .cmp-form-text.cru-text-disabled .cmp-form-text__text, .text.cru-form-text-dark .cmp-form-text.cru-text-disabled .cmp-form-text__text::placeholder {
-    border-color: #9C9FA1;
-    color: #9C9FA1; }
-  .text.cru-form-text-dark-without-borders .cmp-form-text__text {
-    border-top: none;
-    border-left: none;
-    border-right: none;
-    border-radius: 0; }
-  .text.cru-form-text-dark-without-borders .cmp-form-text.cru-text-active .cmp-form-text__text {
-    box-shadow: none;
-    border-bottom: 1px solid #FFCF07; }
-  .text.cru-form-text-dark-without-borders .cmp-form-text.cru-text-disabled label {
-    color: transparent; }
-  .text.cru-form-text-dark-without-borders .cmp-form-text.cru-text-disabled .cmp-form-text__text {
-    border-top: none;
-    border-left: none;
-    border-right: none; }
-  .text.cru-form-text-dark-without-borders .cmp-form-text label, .text.cru-form-text-dark-without-borders .cmp-form-text span {
-    color: #FFFFFF; }
-  .text.cru-form-text-dark-without-borders .cmp-form-text__text {
-    background-color: #383F43;
-    border-color: #FFFFFF;
-    color: #FFFFFF; }
-    .text.cru-form-text-dark-without-borders .cmp-form-text__text::placeholder {
-      color: #FFFFFF; }
-  .text.cru-form-text-dark-without-borders .cmp-form-text.cru-text-active .cmp-form-text__text {
-    background-color: #FFFFFF;
-    color: #383F43; }
-  .text.cru-form-text-dark-without-borders .cmp-form-text.cru-text-active::placeholder .cmp-form-text__text {
-    color: transparent; }
-  .text.cru-form-text-dark-without-borders .cmp-form-text.cru-text-disabled label {
-    color: #9C9FA1; }
-  .text.cru-form-text-dark-without-borders .cmp-form-text.cru-text-disabled .cmp-form-text__text, .text.cru-form-text-dark-without-borders .cmp-form-text.cru-text-disabled .cmp-form-text__text::placeholder {
-    border-color: #9C9FA1;
-    color: #9C9FA1; }
-  .text.cru-form-text-dark-without-borders .cmp-form-text__text:focus::placeholder {
-    color: transparent; }
-  .text.cru-form-text-dark-without-borders .cmp-form-text.cru-text-active .cmp-form-text__text {
-    background-color: #383F43;
-    color: #FFFFFF; }
+    border-color: #FFCF07; }
+
+.cru-form-underline .cru-form-text-disabled .cmp-form-text__text:focus,
+.cru-form-underline .cmp-form-text__text[disabled]:focus {
+  border-color: #FFCF07; }
+
+.cru-form-underline .cru-form-text-alert .cmp-form-text::before {
+  bottom: 7px;
+  left: 0; }
+
+.cru-form-underline .cru-form-text-alert .cmp-form-text__text {
+  padding-left: 40px; }
+
+.cru-form-dark.cru-form-underline .cmp-form-text__text:focus {
+  background-color: transparent; }

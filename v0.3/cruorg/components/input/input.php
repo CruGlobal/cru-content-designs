@@ -1,41 +1,48 @@
 <?php
-
-function output_form($form_type, $input_types)
-{
+function cru_form($dark = false, $underline = false) {
 ?>
-  <form class="cmp-form">
-    <?php foreach ($input_types as $type) : ?>
-      <?= output_input($type, $form_type) ?>
-    <?php endforeach ?>
-  </form>
+  <div class="container<?php if ( $dark == true ) { echo ' cru-form-dark'; } ?><?php if ( $underline == true ) { echo ' cru-form-underline'; } ?>">
+    <form class="cmp-form">
+      <?php
+        $input_types = ['', 'disabled', 'alert'];
+        foreach ($input_types as $type) :
+          echo cru_form_input($type);
+        endforeach;
+      ?>
+    </form>
+  </div>
 <?php
 }
 
 
-function output_input($input_type, $form_type)
+function cru_form_input($input_type)
 {
 ?>
-  <div class="text cru-form-text-<?= $form_type; ?>">
-    <div class="cmp-form-text cru-text-<?= $input_type ?>">
-      <label>Name</label>
+  <div class="text <?php if ( $input_type !== '' ) { echo 'cru-form-text-' . $input_type; } ?>">
+    <div class="cmp-form-text">
+      <label>Label</label>
       <input class="cmp-form-text__text" type="text" placeholder="Text goes here..." name="firstName">
       <?php if ($input_type == 'alert') {
-        echo '<span>Error message...</span>';
+        // echo '<span>Error message...</span>';
       } ?>
     </div>
   </div>
 <?php
 }
-
-$input_types = ['', 'active', 'disabled', 'alert'];
-output_form('', $input_types);
-output_form('without-borders', $input_types);
 ?>
 
-<div class="comp-wrapper comp-dark-bg">
-  <?php output_form('dark', $input_types); ?>
+<div class="comp-wrapper">
+  <?php cru_form(); ?>
+</div>
+
+<div class="comp-wrapper">
+  <?php cru_form(false, true); ?>
 </div>
 
 <div class="comp-wrapper comp-dark-bg">
-  <?php output_form('dark-without-borders', $input_types); ?>
+  <?php cru_form(true); ?>
+</div>
+
+<div class="comp-wrapper comp-dark-bg">
+  <?php cru_form(true, true); ?>
 </div>

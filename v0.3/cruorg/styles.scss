@@ -5,6 +5,10 @@
 $cru-import-google-fonts-sans-serif-only: true;
 @import '../scss/fonts';
 
+// Import Material Icons
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons+Round');
+
 // Import component styles
 @import 'components/accordion/accordion.scss';
 @import 'components/breadcrumb/breadcrumb.scss';
@@ -24,9 +28,9 @@ $cru-import-google-fonts-sans-serif-only: true;
 @import 'components/teaser/teaser.scss';
 @import 'components/text/text.scss';
 @import 'components/title/title.scss';
-@font-face {
-  font-family: 'Material Icons';
-  font-style: normal;
-  font-weight: 500;
-  src: local('Material Icons'), local('MaterialIcons-Regular'), url('fonts/material-icons.woff2') format('woff2'), url('fonts/material-icons.woff') format('woff'), url('fonts/material-icons.ttf') format('truetype');
-}
+// @font-face {
+//   font-family: 'Material Icons';
+//   font-style: normal;
+//   font-weight: 500;
+//   src: local('Material Icons'), local('MaterialIcons-Regular'), url('fonts/material-icons.woff2') format('woff2'), url('fonts/material-icons.woff') format('woff'), url('fonts/material-icons.ttf') format('truetype');
+// }

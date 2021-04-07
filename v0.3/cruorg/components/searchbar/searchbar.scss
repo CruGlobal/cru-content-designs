@@ -20,7 +20,7 @@ $cru-searchbar-icon-wrapper-size: 32px;
         font-size: $cru-font-size-base;
         line-height: $cru-line-height-base;
         background-color: $cru-color-white;
-        transition: box-shadow .15s ease-in-out, background-color .15s ease-in-out;
+        transition: box-shadow .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out;
         padding: ($cru-spacer-base * 1.5) ($cru-spacer-base * 8) ($cru-spacer-base * 1.5) ($cru-spacer-base * 3);
         width: 100%;
         box-sizing: border-box;
@@ -65,7 +65,7 @@ $cru-searchbar-icon-wrapper-size: 32px;
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
             caret-color: $cru-color-yellow;
             &::placeholder {
-                color: $cru-color-white;
+                color: transparent;
             }
         }
         .fieldIcons__before {
