@@ -17,6 +17,7 @@
   .cmp-accordion__icon::before {
     font-family: "Material Icons";
     font-size: 1.125rem;
+    font-style: normal;
     display: inline-block;
     line-height: 1;
     content: 'expand_more'; }

@@ -21,6 +21,7 @@
   .cmp-accordion__icon::before {
     font-family: "Material Icons";
     font-size: 1.125rem;
+    font-style: normal;
     display: inline-block;
     line-height: 1;
     content: 'expand_more'; }
@@ -248,6 +249,7 @@
   .cru-form-text-alert .cmp-form-text::before {
     font-family: "Material Icons Round";
     font-size: 24px;
+    font-style: normal;
     display: inline-block;
     line-height: 1;
     content: 'warning_amber';
@@ -363,34 +365,54 @@ input[type="text"][disabled] {
 .cru-list-extra-spacing .cmp-list__item {
   margin-bottom: 16px; }
 
-/* Searchbar styles */
-.searchBar__form .fieldIcons__root,
-.searchBar__form .fieldIcons__input {
-  display: block; }
-
-.searchBar__form .fieldIcons__root {
+/* Search styles */
+.cmp-search__field {
   position: relative; }
+  .cmp-search__field:focus-within .cmp-search__input {
+    outline: none;
+    background-color: #FFFFFF;
+    border-color: transparent;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+    caret-color: #FFCF07; }
+    .cmp-search__field:focus-within .cmp-search__input::placeholder {
+      color: transparent !important; }
+    .cmp-search__field:focus-within .cmp-search__input::-webkit-input-placeholder {
+      color: transparent !important; }
+    .cmp-search__field:focus-within .cmp-search__input::-moz-placeholder {
+      color: transparent !important;
+      opacity: 1; }
+    .cmp-search__field:focus-within .cmp-search__input:-ms-input-placeholder {
+      color: transparent !important; }
+    .cmp-search__field:focus-within .cmp-search__input:-moz-placeholder {
+      color: transparent !important; }
+  .cmp-search__field:focus-within .cmp-search__icon {
+    background-color: #FFCF07; }
+    .cmp-search__field:focus-within .cmp-search__icon::before {
+      color: #FFFFFF; }
 
-.searchBar__form .field__input {
+.cmp-search__input {
   border: #EBECEC 1px solid;
   border-radius: 24px;
   font-size: 1rem;
   line-height: calc(1em + 8px);
-  background-color: #FFFFFF;
-  transition: box-shadow .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out;
-  padding: 12px 64px 12px 24px;
+  background-color: transparent;
+  transition: box-shadow .15s ease-in-out, color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out;
+  padding: 11px 64px 11px 24px;
   width: 100%;
   box-sizing: border-box; }
-  .searchBar__form .field__input::-webkit-input-placeholder {
+  .cmp-search__input::placeholder {
     color: #383F43; }
-  .searchBar__form .field__input::-moz-placeholder {
+  .cmp-search__input::-webkit-input-placeholder {
     color: #383F43; }
-  .searchBar__form .field__input:-ms-input-placeholder {
+  .cmp-search__input::-moz-placeholder {
+    color: #383F43;
+    opacity: 1; }
+  .cmp-search__input:-ms-input-placeholder {
     color: #383F43; }
-  .searchBar__form .field__input:-moz-placeholder {
+  .cmp-search__input:-moz-placeholder {
     color: #383F43; }
 
-.searchBar__form .fieldIcons__before {
+.cmp-search__icon {
   position: absolute;
   top: 50%;
   right: 8px;
@@ -402,58 +424,41 @@ input[type="text"][disabled] {
   background-color: #EBECEC;
   text-align: center;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out; }
-
-.searchBar__form .icon__root {
-  position: relative;
-  display: block;
-  height: 100%; }
-  .searchBar__form .icon__root svg {
+  .cmp-search__icon::before {
+    font-family: "Material Icons";
+    font-size: 18px;
+    font-style: normal;
+    display: inline-block;
+    line-height: 1;
+    content: 'search';
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 14px;
-    height: 14px; }
-    .searchBar__form .icon__root svg circle, .searchBar__form .icon__root svg line {
-      stroke: #383F43; }
+    color: #383F43; }
 
-.searchBar__form:focus-within .field__input {
-  outline: none;
-  border-color: #FFFFFF;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
-  caret-color: #FFCF07; }
-  .searchBar__form:focus-within .field__input::placeholder {
-    color: transparent; }
+.cmp-search__clear {
+  display: none; }
 
-.searchBar__form:focus-within .fieldIcons__before {
-  background-color: #FFCF07; }
+.cru-search-dark .cmp-search__field:focus-within .cmp-search__input {
+  color: #383F43; }
 
-.searchBar__form:focus-within .icon__root svg circle, .searchBar__form:focus-within .icon__root svg line {
-  stroke: #FFFFFF; }
-
-.searchBar__form .message__root {
-  margin-top: 0;
-  margin-bottom: 0; }
-
-.cru-searchbar-dark .field__input {
-  border-color: #FFFFFF;
-  background-color: transparent; }
-  .cru-searchbar-dark .field__input::-webkit-input-placeholder {
+.cru-search-dark .cmp-search__input {
+  color: #FFFFFF;
+  border-color: #FFFFFF; }
+  .cru-search-dark .cmp-search__input::placeholder {
     color: #FFFFFF; }
-  .cru-searchbar-dark .field__input::-moz-placeholder {
+  .cru-search-dark .cmp-search__input::-webkit-input-placeholder {
     color: #FFFFFF; }
-  .cru-searchbar-dark .field__input:-ms-input-placeholder {
+  .cru-search-dark .cmp-search__input::-moz-placeholder {
+    color: #FFFFFF;
+    opacity: 1; }
+  .cru-search-dark .cmp-search__input:-ms-input-placeholder {
     color: #FFFFFF; }
-  .cru-searchbar-dark .field__input:-moz-placeholder {
+  .cru-search-dark .cmp-search__input:-moz-placeholder {
     color: #FFFFFF; }
 
-.cru-searchbar-dark .fieldIcons__before {
-  background-color: #FFFFFF; }
-
-.cru-searchbar-dark .icon__root svg circle, .cru-searchbar-dark .icon__root svg line {
-  stroke: #383F43; }
-
-.cru-searchbar-dark:focus-within .field__input {
+.cru-search-dark .cmp-search__icon {
   background-color: #FFFFFF; }
 
 /* Separator styles */

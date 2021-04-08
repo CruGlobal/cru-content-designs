@@ -88,6 +88,7 @@
   .cru-form-text-alert .cmp-form-text::before {
     font-family: "Material Icons Round";
     font-size: 24px;
+    font-style: normal;
     display: inline-block;
     line-height: 1;
     content: 'warning_amber';

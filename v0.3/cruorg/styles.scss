@@ -21,16 +21,11 @@ $cru-import-google-fonts-sans-serif-only: true;
 @import 'components/image/image.scss';
 @import 'components/input/input.scss';
 @import 'components/list/list.scss';
-@import 'components/searchbar/searchbar.scss';
+@import 'components/search/search.scss';
+// @import 'components/searchbar/searchbar.scss';
 @import 'components/separator/separator.scss';
 @import 'components/sharing/sharing.scss';
 @import 'components/tabs/tabs.scss';
 @import 'components/teaser/teaser.scss';
 @import 'components/text/text.scss';
 @import 'components/title/title.scss';
-// @font-face {
-//   font-family: 'Material Icons';
-//   font-style: normal;
-//   font-weight: 500;
-//   src: local('Material Icons'), local('MaterialIcons-Regular'), url('fonts/material-icons.woff2') format('woff2'), url('fonts/material-icons.woff') format('woff'), url('fonts/material-icons.ttf') format('truetype');
-// }

@@ -2,6 +2,7 @@
 @mixin cru-material-icon($size: 1em, $font: 'Material Icons') {
     font-family: $font;
     font-size: $size;
+    font-style: normal;
     display: inline-block;
     line-height: 1;
 }

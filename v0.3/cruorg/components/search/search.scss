@@ -1,0 +1,80 @@
+// Branding imports
+@import '../../branding-imports';
+
+/* Search styles */
+
+$cru-searchbar-icon-size: 18px;
+$cru-searchbar-icon-wrapper-size: 32px;
+
+.cmp-search {
+  &__field {
+    position: relative;
+    &:focus-within .cmp-search {
+      &__input {
+        outline: none;
+        background-color: $cru-color-white;
+        border-color: transparent;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+        caret-color: $cru-color-yellow;
+        @include cru-placeholder-color(transparent, true);
+      }
+      &__icon {
+        background-color: $cru-color-yellow;
+        &::before {
+          color: $cru-color-white;
+        }
+      }
+    }
+  }
+  &__input {
+    border: $cru-color-gray-light $cru-btn-border-width $cru-btn-border-style;
+    border-radius: ($cru-spacer-base * 3);
+    font-size: $cru-font-size-base;
+    line-height: $cru-line-height-base;
+    background-color: transparent;
+    transition: box-shadow .15s ease-in-out, color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out;
+    padding: ($cru-spacer-base * 1.5 - 1) ($cru-spacer-base * 8) ($cru-spacer-base * 1.5 - 1) ($cru-spacer-base * 3);
+    width: 100%;
+    box-sizing: border-box;
+    @include cru-placeholder-color($cru-color-gray-dark);
+  }
+  &__icon {
+    position: absolute;
+    top: 50%;
+    right: $cru-spacer-base;
+    transform: translateY(-50%);
+    font-size: 0;
+    width: $cru-searchbar-icon-wrapper-size;
+    height: $cru-searchbar-icon-wrapper-size;
+    border-radius: $cru-searchbar-icon-wrapper-size / 2;
+    background-color: $cru-color-gray-light;
+    text-align: center;
+    transition: $cru-btn-transition;
+    &::before {
+      @include cru-material-icon($cru-searchbar-icon-size);
+      content: 'search';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: $cru-color-gray-dark;
+    }
+  }
+  &__clear {
+    display: none;
+  }
+}
+
+.cru-search-dark .cmp-search {
+  &__field:focus-within .cmp-search__input {
+    color: $cru-color-gray-dark;
+  }
+  &__input {
+    color: $cru-color-white;
+    border-color: $cru-color-white;
+    @include cru-placeholder-color($cru-color-white);
+  }
+  &__icon {
+    background-color: $cru-color-white;
+  }
+}
