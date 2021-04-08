@@ -1,26 +1,4 @@
 /* Input styles */
-/* .text {
-    @include cru-text;
-    margin: $cru-spacer-base;
-    width: 352px;
-    position: relative;
-    .cmp-form-text {
-        label, span {
-            @include cru-text-sm;
-            display: block;
-        }
-        @include cru-form-input;
-    }
-    &.cru-form-text-without-borders .cmp-form-text {
-        @include cru-form-input-without-borders;
-    }
-    &.cru-form-text-dark .cmp-form-text {
-        @include cru-form-input-dark;
-    }
-    &.cru-form-text-dark-without-borders .cmp-form-text {
-        @include cru-form-input-dark-without-borders;
-    }
-} */
 .cmp-form .text + .text,
 .cmp-form .text + .option,
 .cmp-form .text + .button,
@@ -32,97 +10,82 @@
 .cmp-form .button + .button {
   margin-top: 16px; }
 
-.cmp-form .cmp-form-text label {
+.cmp-form label {
   display: block;
-  margin-bottom: 8px;
-  color: #383F43;
   font-size: 0.875rem;
-  line-height: calc(1em + 8px); }
+  line-height: calc(1em + 8px);
+  margin-bottom: 8px;
+  color: #383F43; }
 
-.cmp-form .cmp-form-text__text {
+.cmp-form input[type="text"] {
   width: 100%;
-  color: #383F43;
+  box-sizing: border-box;
   font-size: 1rem;
   line-height: calc(1em + 8px);
   padding: 11px 16px;
-  background-color: #FFFFFF;
-  border: #383F43 1px solid;
+  color: #383F43;
+  border-color: #383F43;
+  border-width: 1px;
+  border-style: solid;
   border-radius: 4px;
+  background-color: transparent;
   transition: box-shadow .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out; }
-  .cmp-form .cmp-form-text__text::placeholder {
+  .cmp-form input[type="text"]::placeholder {
     color: #383F43; }
-  .cmp-form .cmp-form-text__text::-webkit-input-placeholder {
+  .cmp-form input[type="text"]::-webkit-input-placeholder {
     color: #383F43; }
-  .cmp-form .cmp-form-text__text::-moz-placeholder {
+  .cmp-form input[type="text"]::-moz-placeholder {
     color: #383F43;
     opacity: 1; }
-  .cmp-form .cmp-form-text__text:-ms-input-placeholder {
+  .cmp-form input[type="text"]:-ms-input-placeholder {
     color: #383F43; }
-  .cmp-form .cmp-form-text__text:-moz-placeholder {
+  .cmp-form input[type="text"]:-moz-placeholder {
     color: #383F43; }
-  .cmp-form .cmp-form-text__text:focus {
+  .cmp-form input[type="text"]:focus {
     outline: none;
-    border-color: transparent;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
     caret-color: #FFCF07; }
-    .cmp-form .cmp-form-text__text:focus::placeholder {
-      color: transparent; }
-    .cmp-form .cmp-form-text__text:focus::-webkit-input-placeholder {
-      color: transparent; }
-    .cmp-form .cmp-form-text__text:focus::-moz-placeholder {
-      color: transparent;
+    .cmp-form input[type="text"]:focus::placeholder {
+      color: transparent !important; }
+    .cmp-form input[type="text"]:focus::-webkit-input-placeholder {
+      color: transparent !important; }
+    .cmp-form input[type="text"]:focus::-moz-placeholder {
+      color: transparent !important;
       opacity: 1; }
-    .cmp-form .cmp-form-text__text:focus:-ms-input-placeholder {
-      color: transparent; }
-    .cmp-form .cmp-form-text__text:focus:-moz-placeholder {
-      color: transparent; }
+    .cmp-form input[type="text"]:focus:-ms-input-placeholder {
+      color: transparent !important; }
+    .cmp-form input[type="text"]:focus:-moz-placeholder {
+      color: transparent !important; }
 
-.cmp-form .cru-form-text-disabled label {
-  color: #EBECEC; }
+.cru-form-standard input[type="text"]:focus {
+  background-color: #FFFFFF;
+  border-color: transparent;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08); }
 
-.cmp-form .cru-form-text-disabled .cmp-form-text__text,
-.cmp-form .cmp-form-text__text[disabled] {
-  cursor: not-allowed;
-  border-color: #EBECEC; }
-  .cmp-form .cru-form-text-disabled .cmp-form-text__text::placeholder,
-  .cmp-form .cmp-form-text__text[disabled]::placeholder {
-    color: #EBECEC; }
-  .cmp-form .cru-form-text-disabled .cmp-form-text__text::-webkit-input-placeholder,
-  .cmp-form .cmp-form-text__text[disabled]::-webkit-input-placeholder {
-    color: #EBECEC; }
-  .cmp-form .cru-form-text-disabled .cmp-form-text__text::-moz-placeholder,
-  .cmp-form .cmp-form-text__text[disabled]::-moz-placeholder {
-    color: #EBECEC;
-    opacity: 1; }
-  .cmp-form .cru-form-text-disabled .cmp-form-text__text:-ms-input-placeholder,
-  .cmp-form .cmp-form-text__text[disabled]:-ms-input-placeholder {
-    color: #EBECEC; }
-  .cmp-form .cru-form-text-disabled .cmp-form-text__text:-moz-placeholder,
-  .cmp-form .cmp-form-text__text[disabled]:-moz-placeholder {
-    color: #EBECEC; }
-  .cmp-form .cru-form-text-disabled .cmp-form-text__text:focus,
-  .cmp-form .cmp-form-text__text[disabled]:focus {
-    border-color: transparent; }
-    .cmp-form .cru-form-text-disabled .cmp-form-text__text:focus::placeholder,
-    .cmp-form .cmp-form-text__text[disabled]:focus::placeholder {
-      color: transparent; }
-    .cmp-form .cru-form-text-disabled .cmp-form-text__text:focus::-webkit-input-placeholder,
-    .cmp-form .cmp-form-text__text[disabled]:focus::-webkit-input-placeholder {
-      color: transparent; }
-    .cmp-form .cru-form-text-disabled .cmp-form-text__text:focus::-moz-placeholder,
-    .cmp-form .cmp-form-text__text[disabled]:focus::-moz-placeholder {
-      color: transparent;
-      opacity: 1; }
-    .cmp-form .cru-form-text-disabled .cmp-form-text__text:focus:-ms-input-placeholder,
-    .cmp-form .cmp-form-text__text[disabled]:focus:-ms-input-placeholder {
-      color: transparent; }
-    .cmp-form .cru-form-text-disabled .cmp-form-text__text:focus:-moz-placeholder,
-    .cmp-form .cmp-form-text__text[disabled]:focus:-moz-placeholder {
-      color: transparent; }
+.cru-form-underline label {
+  opacity: 0;
+  margin-bottom: 0; }
 
-.cmp-form .cru-form-text-alert {
+.cru-form-underline input[type="text"] {
+  padding: 6px 0;
+  border-width: 0 0 1px;
+  border-radius: 0; }
+  .cru-form-underline input[type="text"]:focus {
+    border-color: #FFCF07; }
+
+.cru-form-underline .cru-form-text-alert label,
+.cru-form-underline .cmp-form-text:focus-within label {
+  opacity: 1; }
+
+.cru-form-underline .cru-form-text-alert .cmp-form-text::before {
+  bottom: 7px;
+  left: 0; }
+
+.cru-form-underline .cru-form-text-alert input[type="text"] {
+  padding-left: 40px; }
+
+.cru-form-text-alert {
   position: relative; }
-  .cmp-form .cru-form-text-alert .cmp-form-text::before {
+  .cru-form-text-alert .cmp-form-text::before {
     font-family: "Material Icons Round";
     font-size: 24px;
     display: inline-block;
@@ -132,79 +95,87 @@
     bottom: 12px;
     left: 17px;
     color: #FFCF07; }
-  .cmp-form .cru-form-text-alert .cmp-form-text__text {
+  .cru-form-text-alert input[type="text"] {
     border-color: #FFCF07;
     padding-left: 56px; }
 
-.cru-form-dark .cmp-form-text label {
+.cru-form-text-disabled label {
+  color: #EBECEC; }
+
+.cru-form-text-disabled input[type="text"],
+input[type="text"][disabled] {
+  cursor: not-allowed;
+  border-color: #EBECEC; }
+  .cru-form-text-disabled input[type="text"]::placeholder,
+  input[type="text"][disabled]::placeholder {
+    color: #EBECEC; }
+  .cru-form-text-disabled input[type="text"]::-webkit-input-placeholder,
+  input[type="text"][disabled]::-webkit-input-placeholder {
+    color: #EBECEC; }
+  .cru-form-text-disabled input[type="text"]::-moz-placeholder,
+  input[type="text"][disabled]::-moz-placeholder {
+    color: #EBECEC;
+    opacity: 1; }
+  .cru-form-text-disabled input[type="text"]:-ms-input-placeholder,
+  input[type="text"][disabled]:-ms-input-placeholder {
+    color: #EBECEC; }
+  .cru-form-text-disabled input[type="text"]:-moz-placeholder,
+  input[type="text"][disabled]:-moz-placeholder {
+    color: #EBECEC; }
+
+.cru-form-dark label {
   color: #FFFFFF; }
 
-.cru-form-dark .cmp-form-text__text {
-  border-color: #FFFFFF;
-  background-color: transparent; }
-  .cru-form-dark .cmp-form-text__text::placeholder {
+.cru-form-dark input[type="text"] {
+  color: #FFFFFF;
+  border-color: #FFFFFF; }
+  .cru-form-dark input[type="text"]::placeholder {
     color: #FFFFFF; }
-  .cru-form-dark .cmp-form-text__text::-webkit-input-placeholder {
+  .cru-form-dark input[type="text"]::-webkit-input-placeholder {
     color: #FFFFFF; }
-  .cru-form-dark .cmp-form-text__text::-moz-placeholder {
+  .cru-form-dark input[type="text"]::-moz-placeholder {
     color: #FFFFFF;
     opacity: 1; }
-  .cru-form-dark .cmp-form-text__text:-ms-input-placeholder {
+  .cru-form-dark input[type="text"]:-ms-input-placeholder {
     color: #FFFFFF; }
-  .cru-form-dark .cmp-form-text__text:-moz-placeholder {
+  .cru-form-dark input[type="text"]:-moz-placeholder {
     color: #FFFFFF; }
-  .cru-form-dark .cmp-form-text__text:focus {
-    background-color: #FFFFFF; }
+  .cru-form-dark input[type="text"]:focus {
+    color: #383F43; }
+
+.cru-form-dark .cru-form-text-alert input[type="text"] {
+  border-color: #FFCF07; }
+  .cru-form-dark .cru-form-text-alert input[type="text"]:focus {
+    border-color: transparent; }
+
+.cru-form-dark.cru-form-underline input[type="text"] {
+  border-color: #9C9FA1; }
+  .cru-form-dark.cru-form-underline input[type="text"]:focus {
+    color: #FFFFFF; }
+
+.cru-form-dark.cru-form-underline input[type="text"]:focus,
+.cru-form-dark.cru-form-underline .cru-form-text-alert input[type="text"] {
+  border-color: #FFCF07; }
 
 .cru-form-dark .cru-form-text-disabled label {
   color: #9C9FA1; }
 
-.cru-form-dark .cru-form-text-disabled .cmp-form-text__text,
-.cru-form-dark .cmp-form-text__text[disabled] {
+.cru-form-dark .cru-form-text-disabled input[type="text"],
+.cru-form-dark input[type="text"][disabled] {
   border-color: #9C9FA1; }
-  .cru-form-dark .cru-form-text-disabled .cmp-form-text__text::placeholder,
-  .cru-form-dark .cmp-form-text__text[disabled]::placeholder {
+  .cru-form-dark .cru-form-text-disabled input[type="text"]::placeholder,
+  .cru-form-dark input[type="text"][disabled]::placeholder {
     color: #9C9FA1; }
-  .cru-form-dark .cru-form-text-disabled .cmp-form-text__text::-webkit-input-placeholder,
-  .cru-form-dark .cmp-form-text__text[disabled]::-webkit-input-placeholder {
+  .cru-form-dark .cru-form-text-disabled input[type="text"]::-webkit-input-placeholder,
+  .cru-form-dark input[type="text"][disabled]::-webkit-input-placeholder {
     color: #9C9FA1; }
-  .cru-form-dark .cru-form-text-disabled .cmp-form-text__text::-moz-placeholder,
-  .cru-form-dark .cmp-form-text__text[disabled]::-moz-placeholder {
+  .cru-form-dark .cru-form-text-disabled input[type="text"]::-moz-placeholder,
+  .cru-form-dark input[type="text"][disabled]::-moz-placeholder {
     color: #9C9FA1;
     opacity: 1; }
-  .cru-form-dark .cru-form-text-disabled .cmp-form-text__text:-ms-input-placeholder,
-  .cru-form-dark .cmp-form-text__text[disabled]:-ms-input-placeholder {
+  .cru-form-dark .cru-form-text-disabled input[type="text"]:-ms-input-placeholder,
+  .cru-form-dark input[type="text"][disabled]:-ms-input-placeholder {
     color: #9C9FA1; }
-  .cru-form-dark .cru-form-text-disabled .cmp-form-text__text:-moz-placeholder,
-  .cru-form-dark .cmp-form-text__text[disabled]:-moz-placeholder {
+  .cru-form-dark .cru-form-text-disabled input[type="text"]:-moz-placeholder,
+  .cru-form-dark input[type="text"][disabled]:-moz-placeholder {
     color: #9C9FA1; }
-
-.cru-form-underline .cmp-form-text label {
-  visibility: hidden;
-  margin-bottom: 0; }
-
-.cru-form-underline .cmp-form-text:focus-within label {
-  visibility: visible; }
-
-.cru-form-underline .cmp-form-text__text {
-  border-width: 0 0 1px;
-  border-radius: 0;
-  padding: 6px 0;
-  background-color: transparent; }
-  .cru-form-underline .cmp-form-text__text:focus {
-    box-shadow: none;
-    border-color: #FFCF07; }
-
-.cru-form-underline .cru-form-text-disabled .cmp-form-text__text:focus,
-.cru-form-underline .cmp-form-text__text[disabled]:focus {
-  border-color: #FFCF07; }
-
-.cru-form-underline .cru-form-text-alert .cmp-form-text::before {
-  bottom: 7px;
-  left: 0; }
-
-.cru-form-underline .cru-form-text-alert .cmp-form-text__text {
-  padding-left: 40px; }
-
-.cru-form-dark.cru-form-underline .cmp-form-text__text:focus {
-  background-color: transparent; }

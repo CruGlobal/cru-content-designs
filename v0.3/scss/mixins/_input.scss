@@ -1,7 +1,15 @@
-@mixin cru-placeholder-color($color) {
-  &::placeholder { color: $color; }
-  &::-webkit-input-placeholder { color: $color; }
-  &::-moz-placeholder { color: $color; opacity: 1; }
-  &:-ms-input-placeholder { color: $color; }
-  &:-moz-placeholder { color: $color; }
+@mixin cru-placeholder-color($color, $important: false) {
+  @if $important == false {
+    &::placeholder { color: $color; }
+    &::-webkit-input-placeholder { color: $color; }
+    &::-moz-placeholder { color: $color; opacity: 1; }
+    &:-ms-input-placeholder { color: $color; }
+    &:-moz-placeholder { color: $color; }
+  } @else {
+    &::placeholder { color: $color !important; }
+    &::-webkit-input-placeholder { color: $color !important; }
+    &::-moz-placeholder { color: $color !important; opacity: 1; }
+    &:-ms-input-placeholder { color: $color !important; }
+    &:-moz-placeholder { color: $color !important; }
+  }
 }

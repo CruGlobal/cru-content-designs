@@ -1,7 +1,7 @@
 <?php
 function cru_form($dark = false, $underline = false) {
 ?>
-  <div class="container<?php if ( $dark == true ) { echo ' cru-form-dark'; } ?><?php if ( $underline == true ) { echo ' cru-form-underline'; } ?>">
+  <div class="container<?php if ( $dark == true ) { echo ' cru-form-dark'; } ?><?php echo ( $underline == false ) ? ' cru-form-standard' : ' cru-form-underline'; ?>">
     <form class="cmp-form">
       <?php
         $input_types = ['', 'disabled', 'alert'];
@@ -18,7 +18,7 @@ function cru_form($dark = false, $underline = false) {
 function cru_form_input($input_type)
 {
 ?>
-  <div class="text <?php if ( $input_type !== '' ) { echo 'cru-form-text-' . $input_type; } ?>">
+  <div class="text cru-form-text-<?= $input_type ?>">
     <div class="cmp-form-text">
       <label>Label</label>
       <input class="cmp-form-text__text" type="text" placeholder="Text goes here..." name="firstName">
