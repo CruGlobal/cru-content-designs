@@ -393,6 +393,7 @@ input[type="text"][disabled] {
 .cmp-search__input {
   border: #EBECEC 1px solid;
   border-radius: 24px;
+  font-family: "Source Sans Pro", sans-serif;
   font-size: 1rem;
   line-height: calc(1em + 8px);
   background-color: transparent;
@@ -422,6 +423,7 @@ input[type="text"][disabled] {
   height: 32px;
   border-radius: 16px;
   background-color: #EBECEC;
+  background-image: none;
   text-align: center;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out; }
   .cmp-search__icon::before {

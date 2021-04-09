@@ -29,6 +29,7 @@ $cru-searchbar-icon-wrapper-size: 32px;
   &__input {
     border: $cru-color-gray-light $cru-btn-border-width $cru-btn-border-style;
     border-radius: ($cru-spacer-base * 3);
+    font-family: $cru-font-family-sans-serif;
     font-size: $cru-font-size-base;
     line-height: $cru-line-height-base;
     background-color: transparent;
@@ -48,6 +49,7 @@ $cru-searchbar-icon-wrapper-size: 32px;
     height: $cru-searchbar-icon-wrapper-size;
     border-radius: $cru-searchbar-icon-wrapper-size / 2;
     background-color: $cru-color-gray-light;
+    background-image: none;
     text-align: center;
     transition: $cru-btn-transition;
     &::before {
