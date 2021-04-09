@@ -54,7 +54,7 @@
 
       $components = array(
         // 'accordion',
-        // 'breadcrumb',
+        'breadcrumb',
         // 'button',
         // 'carousel',
         // 'container',
@@ -68,7 +68,7 @@
         // 'tabs',
         // 'teaser',
         // 'text',
-        'title',
+        // 'title',
       );
 
       foreach ($components as $component) {
