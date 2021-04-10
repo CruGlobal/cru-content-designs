@@ -68,7 +68,7 @@
 
       $components = array(
         // 'accordion',
-        // 'breadcrumb',
+        'breadcrumb',
         // 'button',
         // 'carousel',
         // 'container',

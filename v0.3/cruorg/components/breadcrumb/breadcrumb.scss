@@ -2,3 +2,68 @@
 @import '../../branding-imports';
 
 /* Breadcrumb styles */
+
+.cmp-breadcrumb {
+  &__list {
+    margin: 0;
+    padding: 0;
+  }
+  &__item {
+    margin: 0 0 0 10px;
+    padding: 0 0 0 18px;
+    list-style-type: none;
+    display: inline-block;
+    position: relative;
+    &::before {
+      display: inline-block;
+      content: '>';
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+      color: $cru-color-gray-dark;
+    }
+    &:first-of-type {
+      margin-left: 0;
+      padding-left: 0;
+      &::before {
+        display: none;
+      }
+    }
+    @include cru-media-breakpoint-down($cru-breakpoint-md) {
+      &:not(.cmp-breadcrumb__item--active) {
+        display: none;
+      }
+      &.cmp-breadcrumb__item--active {
+        margin-left: 0;
+        &::before {
+          content: '<';
+        }
+      }
+    }
+  }
+  &__item-link,
+  span {
+    color: $cru-color-gray-dark;
+  }
+  &__item-link {
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  span {
+    font-size: $cru-font-size-sm;
+    line-height: $cru-line-height-base;
+  }
+}
+
+@each $name, $color in $cru-text-colors {
+  .cru-breadcrumb-#{$name} .cmp-breadcrumb {
+    .cmp-breadcrumb__item::before,
+    .cmp-breadcrumb__item-link,
+    span {
+      color: $color;
+    }
+  }
+}
