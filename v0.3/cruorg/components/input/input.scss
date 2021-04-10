@@ -1,0 +1,177 @@
+// Branding imports
+@import '../../branding-imports';
+
+/* Input styles */
+
+$cru-input-spacing: $cru-spacer;
+$cru-input-label-spacing: $cru-spacer-base;
+$cru-input-label-font-size: $cru-font-size-sm;
+$cru-input-line-height: $cru-line-height-base;
+$cru-input-font-size: $cru-font-size-base;
+$cru-input-text-color: $cru-color-gray-dark;
+$cru-input-border-color: $cru-color-gray-dark;
+$cru-input-border-width: 1px;
+$cru-input-border-style: solid;
+$cru-input-border-radius: $cru-btn-border-radius;
+$cru-input-background-color: transparent;
+$cru-input-padding-h: $cru-spacer;
+$cru-input-alert-color: $cru-color-yellow;
+$cru-input-alert-icon-size: 24px;
+$cru-input-alert-padding-left: $cru-spacer + $cru-input-alert-icon-size + $cru-spacer;
+$cru-input-alert-icon-left: $cru-input-border-width + $cru-spacer;
+$cru-input-standard-focus-background: $cru-color-white;
+$cru-input-standard-focus-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+$cru-input-underline-label-spacing: 0;
+$cru-input-underline-padding: 6px 0;
+$cru-input-underline-alert-icon-bottom: 7px;
+$cru-input-underline-alert-icon-left: 0;
+$cru-input-disabled-label-color: $cru-color-gray-light;
+$cru-input-dark-label-color: $cru-color-white;
+$cru-input-dark-label-focus-color: $cru-color-gray-dark;
+$cru-input-dark-underline-color: $cru-color-gray-medium;
+$cru-input-dark-underline-focus-color: $cru-color-white;
+$cru-input-dark-disabled-color: $cru-color-gray-medium;
+
+.cmp-form {
+    .text,
+    .option,
+    .button {
+        + .text,
+        + .option,
+        + .button {
+            margin-top: $cru-input-spacing;
+        }
+    }
+    label {
+        display: block;
+        font-size: $cru-input-label-font-size;
+        line-height: $cru-input-line-height;
+        margin-bottom: $cru-input-label-spacing;
+        color: $cru-input-text-color;
+    }
+    input[type="text"] {
+        width: 100%;
+        box-sizing: border-box;
+        font-size: $cru-input-font-size;
+        line-height: $cru-input-line-height;
+        padding: ($cru-input-padding-h * 0.75 - 1) $cru-input-padding-h;
+        color: $cru-input-text-color;
+        border-color: $cru-input-border-color;
+        border-width: $cru-input-border-width;
+        border-style: $cru-input-border-style;
+        border-radius: $cru-input-border-radius;
+        background-color: $cru-input-background-color;
+        transition: box-shadow .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out;
+        @include cru-placeholder-color($cru-input-text-color);
+        &:focus {
+            outline: none;
+            caret-color: $cru-input-alert-color;
+            @include cru-placeholder-color(transparent, true);
+        }
+    }
+}
+
+.cru-form-standard {
+    input[type="text"]:focus {
+        background-color: $cru-input-standard-focus-background;
+        border-color: transparent;
+        box-shadow: $cru-input-standard-focus-shadow;
+    }
+}
+
+.cru-form-underline {
+    label {
+        opacity: 0;
+        margin-bottom: $cru-input-underline-label-spacing;
+    }
+    input[type="text"] {
+        padding: $cru-input-underline-padding;
+        border-width: 0 0 $cru-input-border-width;
+        border-radius: 0;
+        &:focus {
+            border-color: $cru-input-alert-color;
+        }
+    }
+    .cru-form-text-alert,
+    .cmp-form-text:focus-within {
+        label {
+            opacity: 1;
+        }
+    }
+    .cru-form-text-alert {
+        .cmp-form-text::before {
+            bottom: $cru-input-underline-alert-icon-bottom;
+            left: $cru-input-underline-alert-icon-left;
+        }
+        input[type="text"] {
+            padding-left: $cru-input-alert-padding-left - $cru-spacer;
+        }
+    }
+}
+
+.cru-form-text-alert {
+    position: relative;
+    .cmp-form-text::before {
+        @include cru-material-icon($cru-input-alert-icon-size, 'Material Icons Round');
+        content: 'warning_amber';
+        position: absolute;
+        bottom: $cru-input-alert-icon-size / 2;
+        left: $cru-input-alert-icon-left;
+        color: $cru-input-alert-color;
+    }
+    input[type="text"] {
+        border-color: $cru-input-alert-color;
+        padding-left: $cru-input-alert-padding-left;
+    }
+}
+
+.cru-form-text-disabled label {
+    color: $cru-input-disabled-label-color;
+}
+
+.cru-form-text-disabled input[type="text"],
+input[type="text"][disabled] {
+    cursor: not-allowed;
+    border-color: $cru-input-disabled-label-color;
+    @include cru-placeholder-color($cru-input-disabled-label-color);
+}
+
+.cru-form-dark {
+    label {
+        color: $cru-input-dark-label-color;
+    }
+    input[type="text"] {
+        color: $cru-input-dark-label-color;
+        border-color: $cru-input-dark-label-color;
+        @include cru-placeholder-color($cru-input-dark-label-color);
+        &:focus {
+            color: $cru-input-dark-label-focus-color;
+        }
+    }
+    .cru-form-text-alert input[type="text"] {
+        border-color: $cru-input-alert-color;
+        &:focus {
+            border-color: transparent;
+        }
+    }
+    &.cru-form-underline input[type="text"] {
+        border-color: $cru-input-dark-underline-color;
+        &:focus {
+            color: $cru-input-dark-underline-focus-color;
+        }
+    }
+    &.cru-form-underline {
+        input[type="text"]:focus,
+        .cru-form-text-alert input[type="text"] {
+            border-color: $cru-input-alert-color;
+        }
+    }
+    .cru-form-text-disabled label {
+        color: $cru-input-dark-disabled-color;
+    }
+    .cru-form-text-disabled input[type="text"],
+    input[type="text"][disabled] {
+        border-color: $cru-input-dark-disabled-color;
+        @include cru-placeholder-color($cru-input-dark-disabled-color);
+    }
+}

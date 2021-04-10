@@ -1,0 +1,92 @@
+/* Searchbar styles */
+.searchBar__form .fieldIcons__root,
+.searchBar__form .fieldIcons__input {
+  display: block; }
+
+.searchBar__form .fieldIcons__root {
+  position: relative; }
+
+.searchBar__form .field__input {
+  border: #EBECEC 1px solid;
+  border-radius: 24px;
+  font-size: 1rem;
+  line-height: calc(1em + 8px);
+  background-color: #FFFFFF;
+  transition: box-shadow .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out;
+  padding: 12px 64px 12px 24px;
+  width: 100%;
+  box-sizing: border-box; }
+  .searchBar__form .field__input::-webkit-input-placeholder {
+    color: #383F43; }
+  .searchBar__form .field__input::-moz-placeholder {
+    color: #383F43; }
+  .searchBar__form .field__input:-ms-input-placeholder {
+    color: #383F43; }
+  .searchBar__form .field__input:-moz-placeholder {
+    color: #383F43; }
+
+.searchBar__form .fieldIcons__before {
+  position: absolute;
+  top: 50%;
+  right: 8px;
+  transform: translateY(-50%);
+  font-size: 0;
+  width: 32px;
+  height: 32px;
+  border-radius: 16px;
+  background-color: #EBECEC;
+  text-align: center;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out; }
+
+.searchBar__form .icon__root {
+  position: relative;
+  display: block;
+  height: 100%; }
+  .searchBar__form .icon__root svg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 14px;
+    height: 14px; }
+    .searchBar__form .icon__root svg circle, .searchBar__form .icon__root svg line {
+      stroke: #383F43; }
+
+.searchBar__form:focus-within .field__input {
+  outline: none;
+  border-color: #FFFFFF;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+  caret-color: #FFCF07; }
+  .searchBar__form:focus-within .field__input::placeholder {
+    color: transparent; }
+
+.searchBar__form:focus-within .fieldIcons__before {
+  background-color: #FFCF07; }
+
+.searchBar__form:focus-within .icon__root svg circle, .searchBar__form:focus-within .icon__root svg line {
+  stroke: #FFFFFF; }
+
+.searchBar__form .message__root {
+  margin-top: 0;
+  margin-bottom: 0; }
+
+.cru-searchbar-dark .field__input {
+  border-color: #FFFFFF;
+  background-color: transparent; }
+  .cru-searchbar-dark .field__input::-webkit-input-placeholder {
+    color: #FFFFFF; }
+  .cru-searchbar-dark .field__input::-moz-placeholder {
+    color: #FFFFFF; }
+  .cru-searchbar-dark .field__input:-ms-input-placeholder {
+    color: #FFFFFF; }
+  .cru-searchbar-dark .field__input:-moz-placeholder {
+    color: #FFFFFF; }
+
+.cru-searchbar-dark .fieldIcons__before {
+  background-color: #FFFFFF; }
+
+.cru-searchbar-dark .icon__root svg circle, .cru-searchbar-dark .icon__root svg line {
+  stroke: #383F43; }
+
+.cru-searchbar-dark:focus-within .field__input {
+  background-color: #FFFFFF; }

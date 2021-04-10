@@ -2,3 +2,14 @@
 @import '../../branding-imports';
 
 /* List styles */
+
+.cmp-list__item {
+    @include cru-text;
+    padding-left: $cru-spacer-base * 1.5;
+    &-link {
+        color: inherit;
+    }
+}
+.cru-list-extra-spacing .cmp-list__item {
+    margin-bottom: $cru-spacer;
+}
