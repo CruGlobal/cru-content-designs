@@ -3,7 +3,8 @@
 <head>
   <meta name="viewport" content="width=device-width, minimum-scale=1.0">
   <title>Cru Branding - Cru.org</title>
-  <script src="https://kit.fontawesome.com/a93b69849a.js" crossorigin="anonymous"></script>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined" rel="stylesheet">
+  <!-- <script src="https://kit.fontawesome.com/a93b69849a.js" crossorigin="anonymous"></script> -->
   <link href="styles.css" type="text/css" rel="stylesheet">
   <style>
     body {font-family: "Source Sans Pro";}
@@ -54,7 +55,7 @@
       $components = array(
         // 'accordion',
         // 'breadcrumb',
-        // 'button',
+        'button',
         // 'carousel',
         // 'container',
         // 'download',
@@ -66,8 +67,8 @@
         // 'sharing',
         // 'tabs',
         // 'teaser',
-        'text',
-        'title',
+        // 'text',
+        // 'title',
       );
 
       foreach ($components as $component) {

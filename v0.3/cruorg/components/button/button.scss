@@ -2,6 +2,59 @@
 @import '../../branding-imports';
 
 /* Button styles */
-.cmp-button {
-  @include cru-button;
+.button {
+  .cmp-button {
+    // @include cru-button;
+  }
+  a.cmp-button {
+    text-decoration: none;
+  }
+
+  /*
+  sts = Standard
+  stti = Text/icon
+  std = Dot
+  stt = Tag
+
+  sld = Solid
+  out = Outline
+  */
+
+  &[class~="cru-btn-text-yellow"] .cmp-button { color: $cru-color-yellow; }
+  &[class~="cru-btn-text-gray"] .cmp-button { color: $cru-color-gray-dark; }
+  &[class~="cru-btn-text-white"] .cmp-button { color: $cru-color-white; }
+
+  &[class~="cru-btn-background-yellow"] .cmp-button { background-color: $cru-color-yellow; }
+  &[class~="cru-btn-background-gray"] .cmp-button { background-color: $cru-color-gray-dark; }
+  &[class~="cru-btn-background-white"] .cmp-button { background-color: $cru-color-white; }
+
+  &[class~="cru-btn-border-yellow"] .cmp-button { border-color: $cru-color-yellow; }
+  &[class~="cru-btn-border-gray"] .cmp-button { border-color: $cru-color-gray-dark; }
+  &[class~="cru-btn-border-white"] .cmp-button { border-color: $cru-color-white; }
+
+  &.stnd-sld-yg {}
+  &.stnd-sld-gw {}
+  &.stnd-sld-wg {}
+  &.stnd-out-yg {}
+  &.stnd-out-yw {}
+  &.stnd-out-gg {}
+  &.stnd-out-ww {}
+  &.ti-sld-gyw {}
+  &.ti-sld-wyw {}
+  &.ti-sld-ggw {}
+  &.ti-sld-wgw {}
+  &.ti-out-gyy {}
+  &.ti-out-wyy {}
+  &.ti-out-ggg {}
+  &.ti-out-www {}
+  &.dot-sld-yw {}
+  &.dot-sld-gw {}
+  &.dot-sld-wg {}
+  &.dot-out-yy {}
+  &.dot-out-gg {}
+  &.dot-out-ww {}
+  &.tag-sld-gw {}
+  &.tag-sld-wg {}
+  &.tag-out-gg {}
+  &.tag-out-ww {}
 }
