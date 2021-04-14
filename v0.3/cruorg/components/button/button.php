@@ -2,249 +2,158 @@
 
 $btn_standard = array(
   array(
-    'desc'    => 'Solid yellow/gray (default)',
-    'format'  => 'stnd',
-    'style'   => 'sld',
-    'colors'  => 'yg',
+    'desc'    => 'Solid yellow/gray',
+    'classes' => array('cru-button-standard', 'cru-button-solid', 'cru-button-yellow-gray')
   ),
   array(
     'desc'    => 'Solid gray/white',
-    'format'  => 'stnd',
-    'style'   => 'sld',
-    'colors'  => 'gw',
+    'classes' => array('cru-button-standard', 'cru-button-solid', 'cru-button-gray-white')
   ),
   array(
     'desc'    => 'Solid white/gray',
-    'format'  => 'stnd',
-    'style'   => 'sld',
-    'colors'  => 'wg',
+    'classes' => array('cru-button-standard', 'cru-button-solid', 'cru-button-white-gray')
   ),
   array(
     'desc'    => 'Outline yellow/gray',
-    'format'  => 'stnd',
-    'style'   => 'out',
-    'colors'  => 'yg',
+    'classes' => array('cru-button-standard', 'cru-button-outline', 'cru-button-yellow-gray')
   ),
   array(
     'desc'    => 'Outline yellow/white',
-    'format'  => 'stnd',
-    'style'   => 'out',
-    'colors'  => 'yw',
+    'classes' => array('cru-button-standard', 'cru-button-outline', 'cru-button-yellow-white')
   ),
   array(
     'desc'    => 'Outline gray/gray',
-    'format'  => 'stnd',
-    'style'   => 'out',
-    'colors'  => 'gg',
+    'classes' => array('cru-button-standard', 'cru-button-outline', 'cru-button-gray-gray')
   ),
   array(
     'desc'    => 'Outline white/white',
-    'format'  => 'stnd',
-    'style'   => 'out',
-    'colors'  => 'ww',
-  ),
-);
-
-$btn_text_icon = array(
-  array(
-    'desc'    => 'Solid gray/yellow/white',
-    'format'  => 'ti',
-    'style'   => 'sld',
-    'colors'  => 'gyw',
-  ),
-  array(
-    'desc'    => 'Solid white/yellow/white',
-    'format'  => 'ti',
-    'style'   => 'sld',
-    'colors'  => 'wyw',
-  ),
-  array(
-    'desc'    => 'Solid gray/gray/white',
-    'format'  => 'ti',
-    'style'   => 'sld',
-    'colors'  => 'ggw',
-  ),
-  array(
-    'desc'    => 'Solid white/gray/white',
-    'format'  => 'ti',
-    'style'   => 'sld',
-    'colors'  => 'wgw',
-  ),
-  array(
-    'desc'    => 'Outline gray/yellow/yellow',
-    'format'  => 'ti',
-    'style'   => 'out',
-    'colors'  => 'gyy',
-  ),
-  array(
-    'desc'    => 'Outline white/yellow/yellow',
-    'format'  => 'ti',
-    'style'   => 'out',
-    'colors'  => 'wyy',
-  ),
-  array(
-    'desc'    => 'Outline gray/gray/gray',
-    'format'  => 'ti',
-    'style'   => 'out',
-    'colors'  => 'ggg',
-  ),
-  array(
-    'desc'    => 'Outline white/white/white',
-    'format'  => 'ti',
-    'style'   => 'out',
-    'colors'  => 'www',
+    'classes' => array('cru-button-standard', 'cru-button-outline', 'cru-button-white-white')
   ),
 );
 
 $btn_dot = array(
   array(
     'desc'    => 'Solid yellow/white',
-    'format'  => 'dot',
-    'style'   => 'sld',
-    'colors'  => 'yw',
+    'classes' => array('cru-button-dot', 'cru-button-solid', 'cru-button-yellow-white'),
   ),
   array(
     'desc'    => 'Solid gray/white',
-    'format'  => 'dot',
-    'style'   => 'sld',
-    'colors'  => 'gw',
+    'classes' => array('cru-button-dot', 'cru-button-solid', 'cru-button-gray-white'),
   ),
   array(
     'desc'    => 'Solid white/gray',
-    'format'  => 'dot',
-    'style'   => 'sld',
-    'colors'  => 'wg',
+    'classes' => array('cru-button-dot', 'cru-button-solid', 'cru-button-white-gray'),
   ),
   array(
     'desc'    => 'Outline yellow/yellow',
-    'format'  => 'dot',
-    'style'   => 'out',
-    'colors'  => 'yy',
+    'classes' => array('cru-button-dot', 'cru-button-outline', 'cru-button-yellow-yellow'),
   ),
   array(
     'desc'    => 'Outline gray/gray',
-    'format'  => 'dot',
-    'style'   => 'out',
-    'colors'  => 'gg',
+    'classes' => array('cru-button-dot', 'cru-button-outline', 'cru-button-gray-gray'),
   ),
   array(
     'desc'    => 'Outline white/white',
-    'format'  => 'dot',
-    'style'   => 'out',
-    'colors'  => 'ww',
+    'classes' => array('cru-button-dot', 'cru-button-outline', 'cru-button-white-white'),
+  ),
+);
+
+$btn_text_icon = array(
+  array(
+    'desc'    => 'Solid gray/yellow/white',
+    'classes' => array('cru-button-combo', 'cru-button-solid', 'cru-button-yellow-white', 'cru-button-gray-text'),
+  ),
+  array(
+    'desc'    => 'Solid white/yellow/white',
+    'classes' => array('cru-button-combo', 'cru-button-solid', 'cru-button-yellow-white', 'cru-button-white-text'),
+  ),
+  array(
+    'desc'    => 'Solid gray/gray/white',
+    'classes' => array('cru-button-combo', 'cru-button-solid', 'cru-button-gray-white', 'cru-button-gray-text'),
+  ),
+  array(
+    'desc'    => 'Solid white/gray/white',
+    'classes' => array('cru-button-combo', 'cru-button-solid', 'cru-button-gray-white', 'cru-button-white-text'),
+  ),
+  array(
+    'desc'    => 'Outline gray/yellow/yellow',
+    'classes' => array('cru-button-combo', 'cru-button-outline', 'cru-button-yellow-yellow', 'cru-button-gray-text'),
+  ),
+  array(
+    'desc'    => 'Outline white/yellow/yellow',
+    'classes' => array('cru-button-combo', 'cru-button-outline', 'cru-button-yellow-yellow', 'cru-button-white-text'),
+  ),
+  array(
+    'desc'    => 'Outline gray/gray/gray',
+    'classes' => array('cru-button-combo', 'cru-button-outline', 'cru-button-gray-gray', 'cru-button-gray-text'),
+  ),
+  array(
+    'desc'    => 'Outline white/white/white',
+    'classes' => array('cru-button-combo', 'cru-button-outline', 'cru-button-white-white', 'cru-button-white-text'),
   ),
 );
 
 $btn_tag = array(
   array(
     'desc'    => 'Solid gray/white',
-    'format'  => 'tag',
-    'style'   => 'sld',
-    'colors'  => 'gw',
+    'classes'  => array('cru-button-tag', 'cru-button-solid', 'cru-button-gray-white'),
   ),
   array(
     'desc'    => 'Solid white/gray',
-    'format'  => 'tag',
-    'style'   => 'sld',
-    'colors'  => 'wg',
+    'classes'  => array('cru-button-tag', 'cru-button-solid', 'cru-button-white-gray'),
   ),
   array(
     'desc'    => 'Outline gray/gray',
-    'format'  => 'tag',
-    'style'   => 'out',
-    'colors'  => 'gg',
+    'classes'  => array('cru-button-tag', 'cru-button-outline', 'cru-button-gray-gray'),
   ),
   array(
     'desc'    => 'Outline white/white',
-    'format'  => 'tag',
-    'style'   => 'out',
-    'colors'  => 'ww',
+    'classes'  => array('cru-button-tag', 'cru-button-outline', 'cru-button-white-white'),
   ),
 );
 
-function button($type, $style = '', $text = '', $icon = '', $shadow = false) {
-  $btn_txt = ($type == 'button') ? 'Button' : 'Anchor';
-  $dark_bg = ( strpos( $style, 'w' ) ) ? ' style="background-color: #E5E5E5;"' : '';
+function button($type, $classes, $icon = '', $shadow = false) {
+  for ($i = 1; $i <= 4; $i++) :
+    $classesString = implode(' ', $classes);
+    $classesString = (($i % 2 == 0) && ($shadow === true) && (in_array('cru-button-solid', $classes))) ? $classesString . ' cru-button-shadow' : $classesString;
+    $element = ($i <= 2) ? 'button' : 'a' ;
+    $btn_txt = ($element == 'button') ? 'Button' : 'Anchor';
 ?>
-<div class="button <?= $style ?><?php echo ($shadow) ? ' shadow' : ''; ?>"<?= $dark_bg ?>>
-  <<?= $type ?> class="cmp-button"<?php echo ($type == 'a') ? ' href="#"' : ''; ?>>
-    <?php if ($icon) { ?><span class="cmp-button__icon cmp-button__icon--<?= $icon ?>"></span><?php } ?>
-    <?php if ($text !== false) { ?><span class="cmp-button__text"><?= $btn_txt ?></span><?php } ?>
-  </<?= $type ?>>
-</div>
+<td>
+  <div class="button <?= $classesString ?>">
+    <<?= $element ?> class="cmp-button"<?php echo ($element == 'a') ? ' href="#"' : ''; ?>>
+      <?php if ($icon && (in_array($type, ['dot', 'combo']) || ($i%2 == 0))) { ?><span class="cmp-button__icon cmp-button__icon--<?= $icon ?>"></span><?php } ?>
+      <?php if ($type != 'dot') { ?><span class="cmp-button__text"><?= $btn_txt ?></span><?php } ?>
+    </<?= $element ?>>
+  </div>
+</td>
 <?php
+  endfor;
 }
 
 ?>
 
 <h2>Standard format buttons</h2>
-<table>
+<table width="100%">
   <tr>
     <th>Style</th>
-    <th>Class</th>
+    <th>Classes</th>
     <th>Standard</th>
     <th>Standard w/ icon</th>
     <th>Linked</th>
     <th>Linked w/ icon</th>
   </tr>
-  <?php foreach ($btn_standard as $btn) : $class = $btn['format'] . '-' . $btn['style'] . '-' . $btn['colors']; ?>
+  <?php foreach ($btn_standard as $btn) : ?>
   <tr>
     <td><?= $btn['desc'] ?></td>
-    <td><?= $class ?></td>
-    <td><?php button('button', $class); ?></td>
-    <td><?php button('button', $class, '', 'shopping_cart'); ?></td>
-    <td><?php button('a', $class); ?></td>
-    <td><?php button('a', $class, '', 'shopping_cart'); ?></td>
-  </tr>
-  <?php endforeach; ?>
-</table>
-
-<h2>Text/icon format buttons</h2>
-<table>
-  <tr>
-    <th>Style</th>
-    <th>Class</th>
-    <th>Standard</th>
-    <th>Standard w/ shadow</th>
-    <th>Linked</th>
-    <th>Linked w/ shadow</th>
-  </tr>
-  <?php foreach ($btn_text_icon as $btn) : $class = $btn['format'] . '-' . $btn['style'] . '-' . $btn['colors']; ?>
-  <tr>
-    <td><?= $btn['desc'] ?></td>
-    <td><?= $class ?></td>
-    <td><?php button('button', $class, '', 'arrow_forward'); ?></td>
-    <td><?php if ( $btn['style'] != 'out' ) { button('button', $class, '', 'arrow_forward', true); } ?></td>
-    <td><?php button('a', $class, '', 'arrow_forward'); ?></td>
-    <td><?php if ( $btn['style'] != 'out' ) { button('a', $class, '', 'arrow_forward', true); } ?></td>
-  </tr>
-  <?php endforeach; ?>
-</table>
-
-<h2>Dot format buttons</h2>
-<table>
-  <tr>
-    <th>Style</th>
-    <th>Class</th>
-    <th>Standard</th>
-    <th>Standard w/ shadow</th>
-    <th>Linked</th>
-    <th>Linked w/ shadow</th>
-  </tr>
-  <?php foreach ($btn_dot as $btn) : $class = $btn['format'] . '-' . $btn['style'] . '-' . $btn['colors']; ?>
-  <tr>
-    <td><?= $btn['desc'] ?></td>
-    <td><?= $class ?></td>
-    <td><?php button('button', $class, false, 'arrow_forward'); ?></td>
-    <td><?php if ( $btn['style'] != 'out' ) { button('button', $class, false, 'arrow_forward', true); } ?></td>
-    <td><?php button('a', $class, false, 'arrow_forward'); ?></td>
-    <td><?php if ( $btn['style'] != 'out' ) { button('a', $class, false, 'arrow_forward', true); } ?></td>
+    <td><?= implode('<br />', $btn['classes']) ?></td>
+    <?php button('standard', $btn['classes'], 'shopping_cart'); ?>
   </tr>
   <?php endforeach; ?>
 </table>
 
 <h2>Tag format buttons</h2>
-<table>
+<table width="100%">
   <tr>
     <th>Style</th>
     <th>Class</th>
@@ -253,14 +162,55 @@ function button($type, $style = '', $text = '', $icon = '', $shadow = false) {
     <th>Linked</th>
     <th>Linked w/ icon</th>
   </tr>
-  <?php foreach ($btn_tag as $btn) : $class = $btn['format'] . '-' . $btn['style'] . '-' . $btn['colors']; ?>
+  <?php foreach ($btn_tag as $btn) : ?>
   <tr>
     <td><?= $btn['desc'] ?></td>
-    <td><?= $class ?></td>
-    <td><?php button('button', $class); ?></td>
-    <td><?php button('button', $class, '', 'cancel'); ?></td>
-    <td><?php button('a', $class); ?></td>
-    <td><?php button('a', $class, '', 'cancel'); ?></td>
+    <td><?= implode('<br />', $btn['classes']) ?></td>
+    <?php button('standard', $btn['classes'], 'cancel'); ?>
+  </tr>
+  <?php endforeach; ?>
+</table>
+
+<h2>Dot format buttons</h2>
+<table width="100%">
+  <tr>
+    <th>Style</th>
+    <th>Class</th>
+    <th>Standard</th>
+    <th>Standard w/ shadow</th>
+    <th>Linked</th>
+    <th>Linked w/ shadow</th>
+  </tr>
+  <?php foreach ($btn_dot as $btn) : ?>
+  <tr>
+    <td><?= $btn['desc'] ?></td>
+    <td><?php
+      echo implode('<br />', $btn['classes']);
+      if (in_array('cru-button-solid', $btn['classes'])) { echo '<br />(cru-button-shadow)'; }
+    ?></td>
+    <?php button('dot', $btn['classes'], 'arrow_forward', true); ?>
+  </tr>
+  <?php endforeach; ?>
+</table>
+
+<h2>Text/icon format buttons</h2>
+<table width="100%">
+  <tr>
+    <th>Style</th>
+    <th>Class</th>
+    <th>Standard</th>
+    <th>Standard w/ shadow</th>
+    <th>Linked</th>
+    <th>Linked w/ shadow</th>
+  </tr>
+  <?php foreach ($btn_text_icon as $btn) : ?>
+  <tr>
+    <td><?= $btn['desc'] ?></td>
+    <td><?php
+      echo implode('<br />', $btn['classes']);
+      if (in_array('cru-button-solid', $btn['classes'])) { echo '<br />(cru-button-shadow)'; }
+    ?></td>
+    <?php button('combo', $btn['classes'], 'arrow_forward', true); ?>
   </tr>
   <?php endforeach; ?>
 </table>

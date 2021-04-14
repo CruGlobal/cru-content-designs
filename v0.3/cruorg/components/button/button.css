@@ -1,31 +1,273 @@
 /* Button styles */
-.button {
-  /*
-  sts = Standard
-  stti = Text/icon
-  std = Dot
-  stt = Tag
+.cmp-button {
+  display: flex;
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: 600;
+  text-align: center;
+  cursor: pointer;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out; }
+  .cmp-button__icon {
+    order: 2; }
+  .cmp-button__text {
+    order: 1; }
+  .cmp-button:focus {
+    outline: none; }
 
-  sld = Solid
-  out = Outline
-  */ }
-  .button a.cmp-button {
-    text-decoration: none; }
-  .button[class~="cru-btn-text-yellow"] .cmp-button {
-    color: #FFCF07; }
-  .button[class~="cru-btn-text-gray"] .cmp-button {
-    color: #383F43; }
-  .button[class~="cru-btn-text-white"] .cmp-button {
-    color: #FFFFFF; }
-  .button[class~="cru-btn-background-yellow"] .cmp-button {
-    background-color: #FFCF07; }
-  .button[class~="cru-btn-background-gray"] .cmp-button {
-    background-color: #383F43; }
-  .button[class~="cru-btn-background-white"] .cmp-button {
-    background-color: #FFFFFF; }
-  .button[class~="cru-btn-border-yellow"] .cmp-button {
+.cru-button-standard .cmp-button {
+  line-height: calc(1em + 4px);
+  border-radius: 4px;
+  font-size: 16px;
+  padding: 9px 23px; }
+
+.cru-button-standard.cru-button-solid .cmp-button {
+  color: #383F43;
+  background-color: #FFCF07;
+  border-color: #FFCF07; }
+
+.cru-button-standard.cru-button-outline .cmp-button {
+  color: #383F43;
+  background-color: transparent;
+  border-color: #FFCF07; }
+
+.cru-button-tag .cmp-button {
+  line-height: calc(1em + 8px);
+  border-radius: 16px;
+  font-size: 14px;
+  padding-top: 4px;
+  padding-left: 15px;
+  padding-right: 8px;
+  padding-bottom: 4px; }
+  .cru-button-tag .cmp-button__text:first-child {
+    padding-right: 7px; }
+  .cru-button-tag .cmp-button__icon::before {
+    font-size: 16px; }
+
+.cru-button-tag.cru-button-solid .cmp-button {
+  color: #FFFFFF;
+  background-color: #383F43;
+  border-color: #383F43; }
+
+.cru-button-tag.cru-button-outline .cmp-button {
+  color: #383F43;
+  background-color: transparent;
+  border-color: #383F43; }
+
+.cru-button-standard .cmp-button,
+.cru-button-tag .cmp-button {
+  border-width: 1px;
+  border-style: solid; }
+  .cru-button-standard .cmp-button__icon::before,
+  .cru-button-tag .cmp-button__icon::before {
+    position: relative;
+    top: 3px; }
+
+.cru-button-dot.cru-button-solid .cmp-button__icon {
+  color: #FFFFFF;
+  background-color: #FFCF07;
+  border-color: #FFCF07; }
+
+.cru-button-dot.cru-button-outline .cmp-button__icon {
+  color: #FFCF07;
+  background-color: transparent;
+  border-color: #FFCF07; }
+
+.cru-button-combo .cmp-button {
+  font-size: 16px;
+  line-height: 32px; }
+
+.cru-button-combo.cru-button-gray-text .cmp-button {
+  color: #383F43; }
+
+.cru-button-combo.cru-button-white-text .cmp-button {
+  color: #FFFFFF; }
+
+.cru-button-dot .cmp-button,
+.cru-button-combo .cmp-button {
+  border: none;
+  background-color: transparent;
+  padding: 0;
+  color: #383F43; }
+  .cru-button-dot .cmp-button__icon,
+  .cru-button-combo .cmp-button__icon {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 16px;
+    transition: all 0.15s ease-in-out; }
+    .cru-button-dot .cmp-button__icon::before,
+    .cru-button-combo .cmp-button__icon::before {
+      line-height: 30px; }
+
+.cru-button-dot.cru-button-solid.cru-button-shadow .cmp-button__icon,
+.cru-button-combo.cru-button-solid.cru-button-shadow .cmp-button__icon {
+  box-shadow: 0px 8px 32px rgba(0, 0, 0, 0.08); }
+
+.cru-button-dot.cru-button-solid .cmp-button__icon,
+.cru-button-combo.cru-button-solid .cmp-button__icon {
+  color: #FFFFFF;
+  background-color: #FFCF07;
+  border-color: #FFCF07; }
+
+.cru-button-dot.cru-button-outline .cmp-button__icon,
+.cru-button-combo.cru-button-outline .cmp-button__icon {
+  color: #FFCF07;
+  background-color: transparent;
+  border-color: #FFCF07; }
+
+.button.disabled .cmp-button,
+.button .cmp-button[disabled] {
+  cursor: not-allowed; }
+
+.cru-button-standard .cmp-button__icon,
+.cru-button-tag .cmp-button__icon,
+.cru-button-combo .cmp-button__icon {
+  margin-left: 8px; }
+
+.cru-button-standard.cru-button-solid.cru-button-yellow-gray .cmp-button {
+  color: #383F43;
+  background-color: #FFCF07;
+  border-color: #FFCF07; }
+
+.cru-button-standard.cru-button-outline.cru-button-yellow-gray .cmp-button {
+  color: #383F43;
+  background-color: transparent;
+  border-color: #FFCF07; }
+
+.cru-button-standard.cru-button-outline.cru-button-yellow-white .cmp-button {
+  color: #FFFFFF;
+  background-color: transparent;
+  border-color: #FFCF07; }
+
+.cru-button-standard.cru-button-outline.cru-button-white-white .cmp-button:hover {
+  color: #383F43;
+  background-color: #FFFFFF;
+  border-color: #FFFFFF; }
+
+.cru-button-standard.cru-button-solid.cru-button-gray-white .cmp-button,
+.cru-button-tag.cru-button-solid.cru-button-gray-white .cmp-button {
+  color: #FFFFFF;
+  background-color: #383F43;
+  border-color: #383F43; }
+
+.cru-button-standard.cru-button-solid.cru-button-white-gray .cmp-button,
+.cru-button-tag.cru-button-solid.cru-button-white-gray .cmp-button {
+  color: #383F43;
+  background-color: #FFFFFF;
+  border-color: #FFFFFF; }
+
+.cru-button-standard.cru-button-outline.cru-button-gray-gray .cmp-button,
+.cru-button-tag.cru-button-outline.cru-button-gray-gray .cmp-button {
+  color: #383F43;
+  background-color: transparent;
+  border-color: #383F43; }
+
+.cru-button-standard.cru-button-outline.cru-button-white-white .cmp-button,
+.cru-button-tag.cru-button-outline.cru-button-white-white .cmp-button {
+  color: #FFFFFF;
+  background-color: transparent;
+  border-color: #FFFFFF; }
+
+.cru-button-dot.cru-button-solid.cru-button-yellow-white .cmp-button:hover .cmp-button__icon {
+  color: #FFFFFF;
+  background-color: #383F43;
+  border-color: #383F43; }
+
+.cru-button-dot.cru-button-solid.cru-button-white-gray .cmp-button__icon {
+  color: #383F43;
+  background-color: #FFFFFF;
+  border-color: #FFFFFF; }
+
+.cru-button-dot.cru-button-solid.cru-button-yellow-white .cmp-button__icon,
+.cru-button-combo.cru-button-solid.cru-button-yellow-white .cmp-button__icon {
+  color: #FFFFFF;
+  background-color: #FFCF07;
+  border-color: #FFCF07; }
+
+.cru-button-dot.cru-button-solid.cru-button-gray-white .cmp-button__icon,
+.cru-button-combo.cru-button-solid.cru-button-gray-white .cmp-button__icon {
+  color: #FFFFFF;
+  background-color: #383F43;
+  border-color: #383F43; }
+
+.cru-button-dot.cru-button-outline.cru-button-yellow-yellow .cmp-button__icon,
+.cru-button-combo.cru-button-outline.cru-button-yellow-yellow .cmp-button__icon {
+  color: #FFCF07;
+  background-color: transparent;
+  border-color: #FFCF07; }
+
+.cru-button-dot.cru-button-outline.cru-button-gray-gray .cmp-button__icon,
+.cru-button-combo.cru-button-outline.cru-button-gray-gray .cmp-button__icon {
+  color: #383F43;
+  background-color: transparent;
+  border-color: #383F43; }
+
+.cru-button-dot.cru-button-outline.cru-button-white-white .cmp-button__icon,
+.cru-button-combo.cru-button-outline.cru-button-white-white .cmp-button__icon {
+  color: #FFFFFF;
+  background-color: transparent;
+  border-color: #FFFFFF; }
+
+.cru-button-standard.cru-button-solid .cmp-button:hover, .cru-button-standard.cru-button-outline .cmp-button:hover,
+.cru-button-tag.cru-button-solid .cmp-button:hover,
+.cru-button-tag.cru-button-outline .cmp-button:hover {
+  color: #FFFFFF;
+  background-color: #FFCF07;
+  border-color: #FFCF07; }
+
+.cru-button-dot.cru-button-solid .cmp-button:hover, .cru-button-dot.cru-button-outline .cmp-button:hover,
+.cru-button-combo.cru-button-solid .cmp-button:hover,
+.cru-button-combo.cru-button-outline .cmp-button:hover {
+  color: #FFCF07; }
+  .cru-button-dot.cru-button-solid .cmp-button:hover .cmp-button__icon, .cru-button-dot.cru-button-outline .cmp-button:hover .cmp-button__icon,
+  .cru-button-combo.cru-button-solid .cmp-button:hover .cmp-button__icon,
+  .cru-button-combo.cru-button-outline .cmp-button:hover .cmp-button__icon {
+    color: #FFFFFF;
+    background-color: #FFCF07;
     border-color: #FFCF07; }
-  .button[class~="cru-btn-border-gray"] .cmp-button {
-    border-color: #383F43; }
-  .button[class~="cru-btn-border-white"] .cmp-button {
-    border-color: #FFFFFF; }
+
+.cru-button-standard.cru-button-solid.disabled .cmp-button,
+.cru-button-standard.cru-button-solid .cmp-button[disabled],
+.cru-button-tag.cru-button-solid.disabled .cmp-button,
+.cru-button-tag.cru-button-solid .cmp-button[disabled] {
+  color: #9C9FA1 !important;
+  background-color: #EBECEC !important;
+  border-color: #EBECEC !important; }
+
+.cru-button-standard.cru-button-outline.disabled .cmp-button,
+.cru-button-standard.cru-button-outline .cmp-button[disabled],
+.cru-button-tag.cru-button-outline.disabled .cmp-button,
+.cru-button-tag.cru-button-outline .cmp-button[disabled] {
+  color: #9C9FA1 !important;
+  background-color: transparent !important;
+  border-color: #9C9FA1 !important; }
+
+.cru-button-dot.cru-button-solid.disabled .cmp-button,
+.cru-button-dot.cru-button-solid .cmp-button[disabled],
+.cru-button-combo.cru-button-solid.disabled .cmp-button,
+.cru-button-combo.cru-button-solid .cmp-button[disabled] {
+  color: #9C9FA1 !important; }
+  .cru-button-dot.cru-button-solid.disabled .cmp-button .cmp-button__icon,
+  .cru-button-dot.cru-button-solid .cmp-button[disabled] .cmp-button__icon,
+  .cru-button-combo.cru-button-solid.disabled .cmp-button .cmp-button__icon,
+  .cru-button-combo.cru-button-solid .cmp-button[disabled] .cmp-button__icon {
+    color: #9C9FA1 !important;
+    background-color: #EBECEC !important;
+    border-color: #EBECEC !important; }
+
+.cru-button-dot.cru-button-outline.disabled .cmp-button,
+.cru-button-dot.cru-button-outline .cmp-button[disabled],
+.cru-button-combo.cru-button-outline.disabled .cmp-button,
+.cru-button-combo.cru-button-outline .cmp-button[disabled] {
+  color: #9C9FA1 !important; }
+  .cru-button-dot.cru-button-outline.disabled .cmp-button .cmp-button__icon,
+  .cru-button-dot.cru-button-outline .cmp-button[disabled] .cmp-button__icon,
+  .cru-button-combo.cru-button-outline.disabled .cmp-button .cmp-button__icon,
+  .cru-button-combo.cru-button-outline .cmp-button[disabled] .cmp-button__icon {
+    color: #9C9FA1 !important;
+    background-color: transparent !important;
+    border-color: #9C9FA1 !important; }
