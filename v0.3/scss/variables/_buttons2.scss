@@ -1,0 +1,31 @@
+// All button variables required for Cru branding
+// v0.3
+
+// Standard buttons
+$cru-btn-display: inline-block;
+$cru-btn-font-family: "Source Sans Pro", sans-serif;
+$cru-btn-font-weight: 600;
+$cru-btn-line-height: calc(1em + 4px);
+$cru-btn-border-width: 1px;
+$cru-btn-border-style: solid;
+$cru-btn-border-radius: 4px;
+$cru-btn-transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out;
+$cru-btn-letter-spacing: 0.02em;
+$cru-btn-cursor: pointer;
+$cru-btn-cursor-disabled: not-allowed;
+$cru-btn-outline-active-focus: none;
+$cru-btn-text-decoration: none;
+$cru-btn-text-align: center;
+
+$cru-button-responsive-styles: (
+  font-size: (
+    1:    $cru-font-size-sm,
+    2:    $cru-font-size-base,
+    3:    $cru-font-size-base,
+  ),
+  padding: (
+    1:      6px 15px,
+    2:      9px 23px,
+    3:      9px 23px,
+  ),
+);

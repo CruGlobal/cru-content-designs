@@ -2,3 +2,11 @@
 @import '../../branding-imports';
 
 /* Text styles */
+.text {
+  .cmp-text {
+    @include cru-text;
+  }
+  &.cru-text-sm .cmp-text {
+    @include cru-text-sm;
+  }
+}

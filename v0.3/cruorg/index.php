@@ -3,7 +3,8 @@
 <head>
   <meta name="viewport" content="width=device-width, minimum-scale=1.0">
   <title>Cru Branding - Cru.org</title>
-  <script src="https://kit.fontawesome.com/a93b69849a.js" crossorigin="anonymous"></script>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined" rel="stylesheet">
+  <!-- <script src="https://kit.fontawesome.com/a93b69849a.js" crossorigin="anonymous"></script> -->
   <link href="styles.css" type="text/css" rel="stylesheet">
   <style>
     body {font-family: "Source Sans Pro";}
@@ -32,7 +33,6 @@
       background-color: #383F43;
     }
     .info {
-      color: #383F43;
       background-color: #cfe2ff;
       border: #9ec5fe 1px solid;
       padding: 10px;
@@ -68,7 +68,7 @@
 
       $components = array(
         // 'accordion',
-        'breadcrumb',
+        // 'breadcrumb',
         // 'button',
         // 'carousel',
         // 'container',
@@ -77,20 +77,20 @@
         // 'form',
         // 'image',
         // 'input',
-        // 'list',
-        'search',
+        'list',
+        // 'search',
         // 'searchbar',
         // 'separator',
         // 'sharing',
         // 'tabs',
-        'teaser',
-        // 'text',
-        // 'title',
+        // 'teaser',
+        'text',
+        'title',
       );
 
       foreach ($components as $component) {
       ?>
-      <fieldset>
+      <fieldset class="<?= $component ?>-component">
         <legend><?= $component; ?> component</legend>
         <?php include "components/$component/$component.php"; ?>
       </fieldset>

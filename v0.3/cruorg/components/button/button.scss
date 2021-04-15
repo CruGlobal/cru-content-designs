@@ -1,7 +1,286 @@
 // Branding imports
 @import '../../branding-imports';
 
+@mixin disabled() {
+  &.disabled .cmp-button,
+  .cmp-button[disabled] {
+    @content;
+  }
+}
+
 /* Button styles */
 .cmp-button {
-  @include cru-button;
+  display: $cru-btn-display;
+  font-family: $cru-btn-font-family;
+  font-weight: $cru-btn-font-weight;
+  text-align: $cru-btn-text-align;
+  cursor: $cru-btn-cursor;
+  letter-spacing: $cru-btn-letter-spacing;
+  text-decoration: $cru-btn-text-decoration;
+  transition: $cru-btn-transition;
+  text-transform: none;
+  &:focus {
+    outline: $cru-btn-outline-active-focus;
+  }
+}
+
+// Standard button type defaults
+.cru-button-standard {
+  .cmp-button {
+    line-height: $cru-btn-line-height;
+    border-radius: $cru-btn-border-radius;
+    @include cru-responsive-styles($cru-button-responsive-styles);
+  }
+  &.cru-button-solid .cmp-button {
+    @include yellow-gray-solid;
+  }
+  &.cru-button-outline .cmp-button {
+    @include yellow-gray-outline;
+  }
+}
+
+// Tag button type defaults
+.cru-button-tag {
+  .cmp-button {
+    line-height: calc(1em + 8px);
+    border-radius: 16px;
+    font-size: 14px;
+    padding-top: 4px;
+    padding-left: 15px;
+    padding-right: 8px;
+    padding-bottom: 4px;
+    &__text:first-child {
+      padding-right: 7px;
+    }
+    &__icon::before {
+      font-size: 16px;
+    }
+  }
+  &.cru-button-solid .cmp-button {
+    @include gray-white-solid;
+  }
+  &.cru-button-outline .cmp-button {
+    @include gray-gray-outline;
+  }
+}
+
+// Standard/tag button type defaults
+.cru-button-standard,
+.cru-button-tag {
+  .cmp-button {
+    border-width: $cru-btn-border-width;
+    border-style: $cru-btn-border-style;
+    &__icon::before {
+      position: relative;
+      top: 3px;
+    }
+  }
+}
+
+// Combo button type defaults
+.cru-button-combo {
+  .cmp-button {
+    font-size: 16px;
+    line-height: 32px;
+    color: $cru-color-gray-dark;
+  }
+  &.cru-button-gray-text .cmp-button {
+    color: $cru-color-gray-dark;
+  }
+  &.cru-button-white-text .cmp-button {
+    color: $cru-color-white;
+  }
+}
+
+// Dot/combo button type defaults
+.cru-button-dot,
+.cru-button-combo {
+  .cmp-button {
+    border: none;
+    background-color: transparent;
+    padding: 0;
+    color: $cru-color-gray-dark;
+    &__icon {
+      display: inline-block;
+      width: 30px;
+      height: 30px;
+      line-height: 30px;
+      border-width: 1px;
+      border-style: solid;
+      border-radius: 16px;
+      transition: all 0.15s ease-in-out;
+      &::before {
+        line-height: 30px;
+      }
+    }
+  }
+  &.cru-button-solid {
+    &.cru-button-shadow .cmp-button__icon {
+      box-shadow: 0px 8px 32px rgba(0, 0, 0, 0.08);
+    }
+    .cmp-button {
+      &__icon {
+        @include yellow-gray-solid;
+      }
+    }
+  }
+  &.cru-button-outline {
+    .cmp-button {
+      &__icon {
+        @include yellow-yellow-outline;
+      }
+    }
+  }
+}
+
+// Misc
+.button {
+  @include disabled {
+    cursor: $cru-btn-cursor-disabled;
+  }
+}
+.cru-button-standard,
+.cru-button-tag,
+.cru-button-combo {
+  .cmp-button__icon {
+    margin-left: 8px;
+    float: right;
+  }
+}
+
+// Color variations
+
+.cru-button-standard {
+  &.cru-button-solid {
+    &.cru-button-yellow-gray .cmp-button {
+      @include yellow-gray-solid;
+    }
+  }
+  &.cru-button-outline {
+    &.cru-button-yellow-gray .cmp-button {
+      @include yellow-gray-outline;
+    }
+    &.cru-button-yellow-white .cmp-button {
+      @include yellow-white-outline;
+    }
+    &.cru-button-white-white .cmp-button:hover {
+      @include white-gray-solid;
+    }
+  }
+}
+
+.cru-button-standard,
+.cru-button-tag {
+  &.cru-button-solid {
+    &.cru-button-gray-white .cmp-button {
+      @include gray-white-solid;
+    }
+    &.cru-button-white-gray .cmp-button {
+      @include white-gray-solid;
+    }
+  }
+  &.cru-button-outline {
+    &.cru-button-gray-gray .cmp-button {
+      @include gray-gray-outline;
+    }
+    &.cru-button-white-white .cmp-button {
+      @include white-white-outline;
+    }
+  }
+}
+
+.cru-button-dot {
+  &.cru-button-solid {
+    &.cru-button-yellow-gray .cmp-button:hover .cmp-button__icon {
+      @include gray-white-solid;
+    }
+    &.cru-button-white-gray .cmp-button__icon {
+      @include white-gray-solid;
+    }
+  }
+}
+
+.cru-button-dot,
+.cru-button-combo {
+  &.cru-button-solid {
+    &.cru-button-yellow-gray .cmp-button__icon {
+      @include yellow-gray-solid;
+    }
+    &.cru-button-gray-white .cmp-button__icon {
+      @include gray-white-solid;
+    }
+  }
+  &.cru-button-outline {
+    &.cru-button-yellow-yellow .cmp-button__icon {
+      @include yellow-yellow-outline;
+    }
+    &.cru-button-gray-gray .cmp-button__icon {
+      @include gray-gray-outline;
+    }
+    &.cru-button-white-white .cmp-button__icon {
+      @include white-white-outline;
+    }
+  }
+}
+
+// Hover colors
+// Must come after color variations
+
+.cru-button-standard,
+.cru-button-tag {
+  &.cru-button-solid,
+  &.cru-button-outline {
+    .cmp-button:hover {
+      @include yellow-white-solid;
+    }
+  }
+}
+
+.cru-button-dot,
+.cru-button-combo {
+  &.cru-button-solid,
+  &.cru-button-outline {
+    .cmp-button:hover {
+      color: $cru-color-yellow;
+      .cmp-button__icon {
+        @include yellow-white-solid;
+      }
+    }
+  }
+}
+
+// Disabled colors
+
+.cru-button-standard,
+.cru-button-tag {
+  &.cru-button-solid {
+    @include disabled {
+      @include disabled-solid();
+    }
+  }
+  &.cru-button-outline {
+    @include disabled {
+      @include disabled-outline();
+    }
+  }
+}
+
+.cru-button-dot,
+.cru-button-combo {
+  &.cru-button-solid {
+    @include disabled {
+      color: $cru-color-gray-medium !important;
+      .cmp-button__icon {
+        @include disabled-solid();
+      }
+    }
+  }
+  &.cru-button-outline {
+    @include disabled {
+      color: $cru-color-gray-medium !important;
+      .cmp-button__icon {
+        @include disabled-outline();
+      }
+    }
+  }
 }

@@ -61,7 +61,17 @@
       font-size: 1.5rem; } }
 
 .title.cru-heading-sm .cmp-title__text {
+  line-height: 1.334;
   font-size: 1.5rem; }
+  @media (max-width: 768px) {
+    .title.cru-heading-sm .cmp-title__text {
+      font-size: 1.125rem; } }
+  @media (min-width: 769px) and (max-width: 992px) {
+    .title.cru-heading-sm .cmp-title__text {
+      font-size: 1.125rem; } }
+  @media (min-width: 993px) and (max-width: 1200px) {
+    .title.cru-heading-sm .cmp-title__text {
+      font-size: 1.125rem; } }
 
 .title.cru-heading-xs .cmp-title__text {
   font-size: 1.25rem;

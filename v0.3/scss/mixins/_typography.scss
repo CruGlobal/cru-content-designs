@@ -44,7 +44,8 @@
 }
 
 @mixin cru-heading-sm {
-  font-size: $cru-headings-sm-font-size;
+  line-height: $cru-headings-sm-line-height;
+  @include cru-responsive-styles($cru-heading-sm-responsive-styles);
 }
 
 @mixin cru-heading-xs {
