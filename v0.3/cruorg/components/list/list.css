@@ -1,1 +1,22 @@
 /* List styles */
+.cmp-list__item {
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: 400;
+  line-height: calc(1em + 8px);
+  color: #383F43;
+  font-size: 1.125rem;
+  padding-left: 12px; }
+  @media (max-width: 768px) {
+    .cmp-list__item {
+      font-size: 1rem; } }
+  @media (min-width: 769px) and (max-width: 992px) {
+    .cmp-list__item {
+      font-size: 1rem; } }
+  @media (min-width: 993px) and (max-width: 1200px) {
+    .cmp-list__item {
+      font-size: 1rem; } }
+  .cmp-list__item-link {
+    color: inherit; }
+
+.cru-list-extra-spacing .cmp-list__item {
+  margin-bottom: 16px; }

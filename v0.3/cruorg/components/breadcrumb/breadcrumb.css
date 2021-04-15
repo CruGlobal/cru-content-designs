@@ -1,1 +1,69 @@
 /* Breadcrumb styles */
+.cmp-breadcrumb__list {
+  margin: 0;
+  padding: 0; }
+
+.cmp-breadcrumb__item {
+  margin: 0 0 0 10px;
+  padding: 0 0 0 18px;
+  list-style-type: none;
+  display: inline-block;
+  position: relative; }
+  .cmp-breadcrumb__item::before {
+    display: inline-block;
+    content: '>';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    color: #383F43; }
+  .cmp-breadcrumb__item:first-of-type {
+    margin-left: 0;
+    padding-left: 0; }
+    .cmp-breadcrumb__item:first-of-type::before {
+      display: none; }
+  @media (max-width: 768px) {
+    .cmp-breadcrumb__item:not(.cmp-breadcrumb__item--active) {
+      display: none; }
+    .cmp-breadcrumb__item.cmp-breadcrumb__item--active {
+      margin-left: 0; }
+      .cmp-breadcrumb__item.cmp-breadcrumb__item--active::before {
+        content: '<'; } }
+
+.cmp-breadcrumb__item-link,
+.cmp-breadcrumb span {
+  color: #383F43; }
+
+.cmp-breadcrumb__item-link {
+  text-decoration: none; }
+  .cmp-breadcrumb__item-link:hover {
+    text-decoration: underline; }
+
+.cmp-breadcrumb span {
+  font-size: 0.875rem;
+  line-height: calc(1em + 8px); }
+
+.cru-breadcrumb-yellow .cmp-breadcrumb .cmp-breadcrumb__item::before,
+.cru-breadcrumb-yellow .cmp-breadcrumb .cmp-breadcrumb__item-link,
+.cru-breadcrumb-yellow .cmp-breadcrumb span {
+  color: #FFCF07; }
+
+.cru-breadcrumb-gray-dark .cmp-breadcrumb .cmp-breadcrumb__item::before,
+.cru-breadcrumb-gray-dark .cmp-breadcrumb .cmp-breadcrumb__item-link,
+.cru-breadcrumb-gray-dark .cmp-breadcrumb span {
+  color: #383F43; }
+
+.cru-breadcrumb-gray-medium .cmp-breadcrumb .cmp-breadcrumb__item::before,
+.cru-breadcrumb-gray-medium .cmp-breadcrumb .cmp-breadcrumb__item-link,
+.cru-breadcrumb-gray-medium .cmp-breadcrumb span {
+  color: #9C9FA1; }
+
+.cru-breadcrumb-gray-light .cmp-breadcrumb .cmp-breadcrumb__item::before,
+.cru-breadcrumb-gray-light .cmp-breadcrumb .cmp-breadcrumb__item-link,
+.cru-breadcrumb-gray-light .cmp-breadcrumb span {
+  color: #EBECEC; }
+
+.cru-breadcrumb-white .cmp-breadcrumb .cmp-breadcrumb__item::before,
+.cru-breadcrumb-white .cmp-breadcrumb .cmp-breadcrumb__item-link,
+.cru-breadcrumb-white .cmp-breadcrumb span {
+  color: #FFFFFF; }
