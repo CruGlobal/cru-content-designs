@@ -69,7 +69,7 @@
       $components = array(
         // 'accordion',
         // 'breadcrumb',
-        'button',
+        // 'button',
         // 'carousel',
         // 'container',
         // 'download',
@@ -77,15 +77,15 @@
         // 'form',
         // 'image',
         // 'input',
-        // 'list',
+        'list',
         // 'search',
         // 'searchbar',
         // 'separator',
         // 'sharing',
         // 'tabs',
         // 'teaser',
-        // 'text',
-        // 'title',
+        'text',
+        'title',
       );
 
       foreach ($components as $component) {

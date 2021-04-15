@@ -41,27 +41,30 @@
     <blockquote>- Oscar Wilde</blockquote>
   </div>
 </div>
+<div class="info">
+  <span>No additional styling provided.</span>
+</div>
 
 <h2>Lists</h2>
 <div class="text">
   <div class="cmp-text">
     <ul>
       <li>List item</li>
+      <li><a href="#">List item</a></li>
       <li>List item</li>
-      <li>List item</li>
-      <li>List item</li>
+      <li><a href="#">List item</a></li>
     </ul>
     <p>&nbsp;</p>
     <ol>
-      <li>List Item 1</li>
-      <li>List Item 2</li>
-      <li>List item 3</li>
-      <li>List item 4</li>
+      <li>List Item</li>
+      <li><a href="#">List item</a></li>
+      <li>List item</li>
+      <li><a href="#">List item</a></li>
     </ol>
   </div>
 </div>
 <div class="info">
-  <span>Grab styles from list component.</span>
+  <span>Same styles from list component.</span>
 </div>
 
 <h2>Table</h2>

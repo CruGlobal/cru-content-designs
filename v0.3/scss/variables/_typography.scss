@@ -63,7 +63,15 @@ $cru-heading-md-responsive-styles: (
   )
 );
 
-$cru-headings-sm-font-size:     $cru-font-size-base * 1.5;
+$cru-heading-sm-responsive-styles: (
+  font-size: (
+    1: $cru-font-size-lg,
+    2: $cru-font-size-lg,
+    3: $cru-font-size-base * 1.5,
+  )
+);
+
+$cru-headings-sm-line-height:   1.334;
 
 $cru-headings-xs-font-size:     $cru-font-size-base * 1.25;
 $cru-headings-xs-line-height:   1.2;
