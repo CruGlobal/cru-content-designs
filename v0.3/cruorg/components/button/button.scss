@@ -18,6 +18,7 @@
   letter-spacing: $cru-btn-letter-spacing;
   text-decoration: $cru-btn-text-decoration;
   transition: $cru-btn-transition;
+  text-transform: none;
   &:focus {
     outline: $cru-btn-outline-active-focus;
   }
@@ -28,8 +29,7 @@
   .cmp-button {
     line-height: $cru-btn-line-height;
     border-radius: $cru-btn-border-radius;
-    font-size: 16px;
-    padding: 9px 23px;
+    @include cru-responsive-styles($cru-button-responsive-styles);
   }
   &.cru-button-solid .cmp-button {
     @include yellow-gray-solid;
@@ -77,25 +77,12 @@
   }
 }
 
-// Dot button type defaults
-.cru-button-dot {
-  &.cru-button-solid {
-    .cmp-button__icon {
-      @include yellow-white-solid;
-    }
-  }
-  &.cru-button-outline {
-    .cmp-button__icon {
-      @include yellow-yellow-outline;
-    }
-  }
-}
-
 // Combo button type defaults
 .cru-button-combo {
   .cmp-button {
     font-size: 16px;
     line-height: 32px;
+    color: $cru-color-gray-dark;
   }
   &.cru-button-gray-text .cmp-button {
     color: $cru-color-gray-dark;
@@ -133,7 +120,7 @@
     }
     .cmp-button {
       &__icon {
-        @include yellow-white-solid;
+        @include yellow-gray-solid;
       }
     }
   }
@@ -204,7 +191,7 @@
 
 .cru-button-dot {
   &.cru-button-solid {
-    &.cru-button-yellow-white .cmp-button:hover .cmp-button__icon {
+    &.cru-button-yellow-gray .cmp-button:hover .cmp-button__icon {
       @include gray-white-solid;
     }
     &.cru-button-white-gray .cmp-button__icon {
@@ -216,8 +203,8 @@
 .cru-button-dot,
 .cru-button-combo {
   &.cru-button-solid {
-    &.cru-button-yellow-white .cmp-button__icon {
-      @include yellow-white-solid;
+    &.cru-button-yellow-gray .cmp-button__icon {
+      @include yellow-gray-solid;
     }
     &.cru-button-gray-white .cmp-button__icon {
       @include gray-white-solid;

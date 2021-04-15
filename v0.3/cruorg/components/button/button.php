@@ -25,7 +25,7 @@ $buttons = array(
     array('outline', 'white-white'),
   ),
   'dot' => array(
-    array('solid', 'yellow-white'),
+    array('solid', 'yellow-gray'),
     array('solid', 'gray-white'),
     array('solid', 'white-gray'),
     array('outline', 'yellow-yellow'),
@@ -33,7 +33,7 @@ $buttons = array(
     array('outline', 'white-white'),
   ),
   'combo' => array(
-    array('solid', 'yellow-white', 'gray-text'),
+    array('solid', 'yellow-gray', 'gray-text'),
     array('solid', 'yellow-white', 'white-text'),
     array('solid', 'gray-white', 'gray-text'),
     array('solid', 'gray-white', 'white-text'),

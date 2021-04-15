@@ -16,3 +16,16 @@ $cru-btn-cursor-disabled: not-allowed;
 $cru-btn-outline-active-focus: none;
 $cru-btn-text-decoration: none;
 $cru-btn-text-align: center;
+
+$cru-button-responsive-styles: (
+  font-size: (
+    1:    $cru-font-size-sm,
+    2:    $cru-font-size-base,
+    3:    $cru-font-size-base,
+  ),
+  padding: (
+    1:      6px 15px,
+    2:      9px 23px,
+    3:      9px 23px,
+  ),
+);

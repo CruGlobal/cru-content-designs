@@ -7,15 +7,28 @@
   cursor: pointer;
   letter-spacing: 0.02em;
   text-decoration: none;
-  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out; }
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+  text-transform: none; }
   .cmp-button:focus {
     outline: none; }
 
 .cru-button-standard .cmp-button {
   line-height: calc(1em + 4px);
   border-radius: 4px;
-  font-size: 16px;
+  font-size: 1rem;
   padding: 9px 23px; }
+  @media (max-width: 768px) {
+    .cru-button-standard .cmp-button {
+      font-size: 0.875rem;
+      padding: 6px 15px; } }
+  @media (min-width: 769px) and (max-width: 992px) {
+    .cru-button-standard .cmp-button {
+      font-size: 1rem;
+      padding: 9px 23px; } }
+  @media (min-width: 993px) and (max-width: 1200px) {
+    .cru-button-standard .cmp-button {
+      font-size: 1rem;
+      padding: 9px 23px; } }
 
 .cru-button-standard.cru-button-solid .cmp-button {
   color: #383F43;
@@ -59,19 +72,10 @@
     position: relative;
     top: 3px; }
 
-.cru-button-dot.cru-button-solid .cmp-button__icon {
-  color: #FFFFFF;
-  background-color: #FFCF07;
-  border-color: #FFCF07; }
-
-.cru-button-dot.cru-button-outline .cmp-button__icon {
-  color: #FFCF07;
-  background-color: transparent;
-  border-color: #FFCF07; }
-
 .cru-button-combo .cmp-button {
   font-size: 16px;
-  line-height: 32px; }
+  line-height: 32px;
+  color: #383F43; }
 
 .cru-button-combo.cru-button-gray-text .cmp-button {
   color: #383F43; }
@@ -105,7 +109,7 @@
 
 .cru-button-dot.cru-button-solid .cmp-button__icon,
 .cru-button-combo.cru-button-solid .cmp-button__icon {
-  color: #FFFFFF;
+  color: #383F43;
   background-color: #FFCF07;
   border-color: #FFCF07; }
 
@@ -169,7 +173,7 @@
   background-color: transparent;
   border-color: #FFFFFF; }
 
-.cru-button-dot.cru-button-solid.cru-button-yellow-white .cmp-button:hover .cmp-button__icon {
+.cru-button-dot.cru-button-solid.cru-button-yellow-gray .cmp-button:hover .cmp-button__icon {
   color: #FFFFFF;
   background-color: #383F43;
   border-color: #383F43; }
@@ -179,9 +183,9 @@
   background-color: #FFFFFF;
   border-color: #FFFFFF; }
 
-.cru-button-dot.cru-button-solid.cru-button-yellow-white .cmp-button__icon,
-.cru-button-combo.cru-button-solid.cru-button-yellow-white .cmp-button__icon {
-  color: #FFFFFF;
+.cru-button-dot.cru-button-solid.cru-button-yellow-gray .cmp-button__icon,
+.cru-button-combo.cru-button-solid.cru-button-yellow-gray .cmp-button__icon {
+  color: #383F43;
   background-color: #FFCF07;
   border-color: #FFCF07; }
 
