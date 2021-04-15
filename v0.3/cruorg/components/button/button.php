@@ -1,216 +1,112 @@
+<style>
+  fieldset.button-component table { width: 100%; }
+  fieldset.button-component th:nth-child(-n + 2),
+  fieldset.button-component td:nth-child(-n + 2) { text-align: left; }
+  fieldset.button-component td { padding-top: 8px; padding-bottom: 8px; text-align: center; }
+  fieldset.button-component td.silver-bg { background-color: #eee; }
+</style>
+
 <?php
 
-$btn_standard = array(
-  array(
-    'desc'    => 'Solid yellow/gray',
-    'classes' => array('cru-button-standard', 'cru-button-solid', 'cru-button-yellow-gray')
+$buttons = array(
+  'standard' => array(
+    array('solid', 'yellow-gray'),
+    array('solid', 'gray-white'),
+    array('solid', 'white-gray'),
+    array('outline', 'yellow-gray'),
+    array('outline', 'yellow-white'),
+    array('outline', 'gray-gray'),
+    array('outline', 'white-white'),
   ),
-  array(
-    'desc'    => 'Solid gray/white',
-    'classes' => array('cru-button-standard', 'cru-button-solid', 'cru-button-gray-white')
+  'tag' => array(
+    array('solid', 'gray-white'),
+    array('solid', 'white-gray'),
+    array('outline', 'gray-gray'),
+    array('outline', 'white-white'),
   ),
-  array(
-    'desc'    => 'Solid white/gray',
-    'classes' => array('cru-button-standard', 'cru-button-solid', 'cru-button-white-gray')
+  'dot' => array(
+    array('solid', 'yellow-white'),
+    array('solid', 'gray-white'),
+    array('solid', 'white-gray'),
+    array('outline', 'yellow-yellow'),
+    array('outline', 'gray-gray'),
+    array('outline', 'white-white'),
   ),
-  array(
-    'desc'    => 'Outline yellow/gray',
-    'classes' => array('cru-button-standard', 'cru-button-outline', 'cru-button-yellow-gray')
-  ),
-  array(
-    'desc'    => 'Outline yellow/white',
-    'classes' => array('cru-button-standard', 'cru-button-outline', 'cru-button-yellow-white')
-  ),
-  array(
-    'desc'    => 'Outline gray/gray',
-    'classes' => array('cru-button-standard', 'cru-button-outline', 'cru-button-gray-gray')
-  ),
-  array(
-    'desc'    => 'Outline white/white',
-    'classes' => array('cru-button-standard', 'cru-button-outline', 'cru-button-white-white')
-  ),
-);
-
-$btn_dot = array(
-  array(
-    'desc'    => 'Solid yellow/white',
-    'classes' => array('cru-button-dot', 'cru-button-solid', 'cru-button-yellow-white'),
-  ),
-  array(
-    'desc'    => 'Solid gray/white',
-    'classes' => array('cru-button-dot', 'cru-button-solid', 'cru-button-gray-white'),
-  ),
-  array(
-    'desc'    => 'Solid white/gray',
-    'classes' => array('cru-button-dot', 'cru-button-solid', 'cru-button-white-gray'),
-  ),
-  array(
-    'desc'    => 'Outline yellow/yellow',
-    'classes' => array('cru-button-dot', 'cru-button-outline', 'cru-button-yellow-yellow'),
-  ),
-  array(
-    'desc'    => 'Outline gray/gray',
-    'classes' => array('cru-button-dot', 'cru-button-outline', 'cru-button-gray-gray'),
-  ),
-  array(
-    'desc'    => 'Outline white/white',
-    'classes' => array('cru-button-dot', 'cru-button-outline', 'cru-button-white-white'),
+  'combo' => array(
+    array('solid', 'yellow-white', 'gray-text'),
+    array('solid', 'yellow-white', 'white-text'),
+    array('solid', 'gray-white', 'gray-text'),
+    array('solid', 'gray-white', 'white-text'),
+    array('outline', 'yellow-yellow', 'gray-text'),
+    array('outline', 'yellow-yellow', 'white-text'),
+    array('outline', 'gray-gray', 'gray-text'),
+    array('outline', 'white-white', 'white-text'),
   ),
 );
 
-$btn_text_icon = array(
-  array(
-    'desc'    => 'Solid gray/yellow/white',
-    'classes' => array('cru-button-combo', 'cru-button-solid', 'cru-button-yellow-white', 'cru-button-gray-text'),
-  ),
-  array(
-    'desc'    => 'Solid white/yellow/white',
-    'classes' => array('cru-button-combo', 'cru-button-solid', 'cru-button-yellow-white', 'cru-button-white-text'),
-  ),
-  array(
-    'desc'    => 'Solid gray/gray/white',
-    'classes' => array('cru-button-combo', 'cru-button-solid', 'cru-button-gray-white', 'cru-button-gray-text'),
-  ),
-  array(
-    'desc'    => 'Solid white/gray/white',
-    'classes' => array('cru-button-combo', 'cru-button-solid', 'cru-button-gray-white', 'cru-button-white-text'),
-  ),
-  array(
-    'desc'    => 'Outline gray/yellow/yellow',
-    'classes' => array('cru-button-combo', 'cru-button-outline', 'cru-button-yellow-yellow', 'cru-button-gray-text'),
-  ),
-  array(
-    'desc'    => 'Outline white/yellow/yellow',
-    'classes' => array('cru-button-combo', 'cru-button-outline', 'cru-button-yellow-yellow', 'cru-button-white-text'),
-  ),
-  array(
-    'desc'    => 'Outline gray/gray/gray',
-    'classes' => array('cru-button-combo', 'cru-button-outline', 'cru-button-gray-gray', 'cru-button-gray-text'),
-  ),
-  array(
-    'desc'    => 'Outline white/white/white',
-    'classes' => array('cru-button-combo', 'cru-button-outline', 'cru-button-white-white', 'cru-button-white-text'),
-  ),
-);
-
-$btn_tag = array(
-  array(
-    'desc'    => 'Solid gray/white',
-    'classes'  => array('cru-button-tag', 'cru-button-solid', 'cru-button-gray-white'),
-  ),
-  array(
-    'desc'    => 'Solid white/gray',
-    'classes'  => array('cru-button-tag', 'cru-button-solid', 'cru-button-white-gray'),
-  ),
-  array(
-    'desc'    => 'Outline gray/gray',
-    'classes'  => array('cru-button-tag', 'cru-button-outline', 'cru-button-gray-gray'),
-  ),
-  array(
-    'desc'    => 'Outline white/white',
-    'classes'  => array('cru-button-tag', 'cru-button-outline', 'cru-button-white-white'),
-  ),
-);
-
-function button($type, $classes, $icon = '', $shadow = false) {
-  for ($i = 1; $i <= 4; $i++) :
-    $classesString = implode(' ', $classes);
-    $classesString = (($i % 2 == 0) && ($shadow === true) && (in_array('cru-button-solid', $classes))) ? $classesString . ' cru-button-shadow' : $classesString;
-    $element = ($i <= 2) ? 'button' : 'a' ;
-    $btn_txt = ($element == 'button') ? 'Button' : 'Anchor';
+foreach ($buttons as $type => $variation) :
+  $addon = (in_array($type, array('standard', 'tag'))) ? 'icon' : 'shadow';
 ?>
-<td>
-  <div class="button <?= $classesString ?>">
-    <<?= $element ?> class="cmp-button"<?php echo ($element == 'a') ? ' href="#"' : ''; ?>>
-      <?php if ($icon && (in_array($type, ['dot', 'combo']) || ($i%2 == 0))) { ?><span class="cmp-button__icon cmp-button__icon--<?= $icon ?>"></span><?php } ?>
-      <?php if ($type != 'dot') { ?><span class="cmp-button__text"><?= $btn_txt ?></span><?php } ?>
-    </<?= $element ?>>
-  </div>
-</td>
-<?php
-  endfor;
-}
-
-?>
-
-<h2>Standard format buttons</h2>
-<table width="100%">
+<h2><?= ucfirst($type) ?> buttons</h2>
+<table>
   <tr>
-    <th>Style</th>
+    <th>Description</th>
     <th>Classes</th>
     <th>Standard</th>
-    <th>Standard w/ icon</th>
+    <th>Standard w/ <?= $addon ?></th>
     <th>Linked</th>
-    <th>Linked w/ icon</th>
+    <th>Linked w/ <?= $addon ?></th>
   </tr>
-  <?php foreach ($btn_standard as $btn) : ?>
-  <tr>
-    <td><?= $btn['desc'] ?></td>
-    <td><?= implode('<br />', $btn['classes']) ?></td>
-    <?php button('standard', $btn['classes'], 'shopping_cart'); ?>
-  </tr>
-  <?php endforeach; ?>
-</table>
+  <?php
+    foreach ($variation as $attrs) :
+      $desc = ucfirst($attrs[0]) . ' ';
+      $desc .= (isset($attrs[2])) ? substr($attrs[2], 0, strpos($attrs[2], '-')) . '/' : '';
+      $desc .= str_replace('-', '/', $attrs[1]);
 
-<h2>Tag format buttons</h2>
-<table width="100%">
-  <tr>
-    <th>Style</th>
-    <th>Class</th>
-    <th>Standard</th>
-    <th>Standard w/ icon</th>
-    <th>Linked</th>
-    <th>Linked w/ icon</th>
-  </tr>
-  <?php foreach ($btn_tag as $btn) : ?>
-  <tr>
-    <td><?= $btn['desc'] ?></td>
-    <td><?= implode('<br />', $btn['classes']) ?></td>
-    <?php button('standard', $btn['classes'], 'cancel'); ?>
-  </tr>
-  <?php endforeach; ?>
-</table>
+      $shadow = in_array($type, array('dot', 'combo')) && in_array('solid', $attrs);
 
-<h2>Dot format buttons</h2>
-<table width="100%">
-  <tr>
-    <th>Style</th>
-    <th>Class</th>
-    <th>Standard</th>
-    <th>Standard w/ shadow</th>
-    <th>Linked</th>
-    <th>Linked w/ shadow</th>
-  </tr>
-  <?php foreach ($btn_dot as $btn) : ?>
-  <tr>
-    <td><?= $btn['desc'] ?></td>
-    <td><?php
-      echo implode('<br />', $btn['classes']);
-      if (in_array('cru-button-solid', $btn['classes'])) { echo '<br />(cru-button-shadow)'; }
-    ?></td>
-    <?php button('dot', $btn['classes'], 'arrow_forward', true); ?>
-  </tr>
-  <?php endforeach; ?>
-</table>
+      $classes_list = 'cru-button-' . $type . '<br />cru-button-' . implode('<br />cru-button-', $attrs);
+      $classes_list .= ($shadow) ? '<br />(cru-button-shadow)' : '';
+      $classes_attr = 'cru-button-' . $type . ' cru-button-' . implode(' cru-button-', $attrs);
 
-<h2>Text/icon format buttons</h2>
-<table width="100%">
+      $col_class = (
+        (strpos($attrs[1], 'white') === 0) ||
+        (($attrs[0] === 'outline') && (strpos($attrs[1], '-white') > 0)) ||
+        (isset($attrs[2]) && (strpos($attrs[2], 'white') === 0))
+      ) ? 'silver-bg' : '';
+
+      switch ($type) {
+        case 'standard' :
+          $btn_icon = 'shopping_cart';
+          break;
+        case 'tag' :
+          $btn_icon = 'cancel';
+          break;
+        default :
+          $btn_icon = 'arrow_forward';
+      }
+  ?>
   <tr>
-    <th>Style</th>
-    <th>Class</th>
-    <th>Standard</th>
-    <th>Standard w/ shadow</th>
-    <th>Linked</th>
-    <th>Linked w/ shadow</th>
-  </tr>
-  <?php foreach ($btn_text_icon as $btn) : ?>
-  <tr>
-    <td><?= $btn['desc'] ?></td>
-    <td><?php
-      echo implode('<br />', $btn['classes']);
-      if (in_array('cru-button-solid', $btn['classes'])) { echo '<br />(cru-button-shadow)'; }
-    ?></td>
-    <?php button('combo', $btn['classes'], 'arrow_forward', true); ?>
+    <td><?= $desc ?></td>
+    <td><?= $classes_list ?></td>
+    <?php
+      for ($i = 1; $i <= 4; $i++) :
+        $element = ($i <= 2) ? 'button' : 'a' ;
+        $btn_txt = ($element == 'button') ? 'Button' : 'Anchor';
+
+        $classes_string = (($i % 2 == 0) && $shadow) ? $classes_attr . ' cru-button-shadow' : $classes_attr;
+    ?>
+      <td class="<?= $col_class ?>">
+        <div class="button <?= $classes_string ?>">
+          <<?= $element ?> class="cmp-button"<?php echo ($element === 'a') ? ' href="#"' : ''; ?>>
+            <?php if ($btn_icon && (in_array($type, ['dot', 'combo']) || ($i%2 == 0))) { ?><span class="cmp-button__icon cmp-button__icon--<?= $btn_icon ?>"></span><?php } ?>
+            <?php if ($type !== 'dot') { ?><span class="cmp-button__text"><?= $btn_txt ?></span><?php } ?>
+          </<?= $element ?>>
+        </div>
+      </td>
+    <?php endfor; ?>
   </tr>
   <?php endforeach; ?>
 </table>
+<?php
+endforeach;

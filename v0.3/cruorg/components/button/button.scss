@@ -10,7 +10,7 @@
 
 /* Button styles */
 .cmp-button {
-  display: flex;
+  display: $cru-btn-display;
   font-family: $cru-btn-font-family;
   font-weight: $cru-btn-font-weight;
   text-align: $cru-btn-text-align;
@@ -18,12 +18,6 @@
   letter-spacing: $cru-btn-letter-spacing;
   text-decoration: $cru-btn-text-decoration;
   transition: $cru-btn-transition;
-  &__icon {
-    order: 2;
-  }
-  &__text {
-    order: 1;
-  }
   &:focus {
     outline: $cru-btn-outline-active-focus;
   }
@@ -163,6 +157,7 @@
 .cru-button-combo {
   .cmp-button__icon {
     margin-left: 8px;
+    float: right;
   }
 }
 

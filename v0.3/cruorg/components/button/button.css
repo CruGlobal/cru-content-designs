@@ -1,6 +1,6 @@
 /* Button styles */
 .cmp-button {
-  display: flex;
+  display: inline-block;
   font-family: "Source Sans Pro", sans-serif;
   font-weight: 600;
   text-align: center;
@@ -8,10 +8,6 @@
   letter-spacing: 0.02em;
   text-decoration: none;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out; }
-  .cmp-button__icon {
-    order: 2; }
-  .cmp-button__text {
-    order: 1; }
   .cmp-button:focus {
     outline: none; }
 
@@ -126,7 +122,8 @@
 .cru-button-standard .cmp-button__icon,
 .cru-button-tag .cmp-button__icon,
 .cru-button-combo .cmp-button__icon {
-  margin-left: 8px; }
+  margin-left: 8px;
+  float: right; }
 
 .cru-button-standard.cru-button-solid.cru-button-yellow-gray .cmp-button {
   color: #383F43;

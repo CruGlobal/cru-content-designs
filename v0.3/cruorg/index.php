@@ -73,7 +73,7 @@
 
       foreach ($components as $component) {
       ?>
-      <fieldset>
+      <fieldset class="<?= $component ?>-component">
         <legend><?= $component; ?> component</legend>
         <?php include "components/$component/$component.php"; ?>
       </fieldset>
