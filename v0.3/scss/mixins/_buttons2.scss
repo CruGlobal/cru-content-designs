@@ -1,80 +1,193 @@
 // All button mixins required for Cru branding
 // v0.3
 
-@mixin yellow-yellow-outline() {
-  color: $cru-color-yellow;
-  background-color: transparent;
-  border-color: $cru-color-yellow;
+@mixin cru-button2() {
+  display: $cru-btn-display;
+  font-family: $cru-btn-font-family;
+  font-weight: $cru-btn-font-weight;
+  text-align: $cru-btn-text-align;
+  cursor: $cru-btn-cursor;
+  letter-spacing: $cru-btn-letter-spacing;
+  text-decoration: $cru-btn-text-decoration;
+  transition: $cru-btn-transition;
+  text-transform: none;
+  &:focus {
+    outline: $cru-btn-outline-active-focus;
+  }
 }
 
-@mixin yellow-gray-solid() {
-  color: $cru-color-gray-dark;
-  background-color: $cru-color-yellow;
-  border-color: $cru-color-yellow;
+@mixin cru-button2-disabled() {
+  &.disabled .cmp-button,
+  .cmp-button[disabled] {
+    @content;
+  }
 }
 
-@mixin yellow-gray-outline() {
-  color: $cru-color-gray-dark;
-  background-color: transparent;
-  border-color: $cru-color-yellow;
+@mixin cru-button2-disabled-cursor() {
+  cursor: $cru-btn-cursor-disabled;
 }
 
-@mixin yellow-white-solid() {
-  color: $cru-color-white;
-  background-color: $cru-color-yellow;
-  border-color: $cru-color-yellow;
-}
-
-@mixin yellow-white-outline() {
-  color: $cru-color-white;
-  background-color: transparent;
-  border-color: $cru-color-yellow;
-}
-
-@mixin gray-white-solid() {
-  color: $cru-color-white;
-  background-color: $cru-color-gray-dark;
-  border-color: $cru-color-gray-dark;
-}
-
-@mixin gray-white-outline() {
-  color: $cru-color-white;
-  background-color: transparent;
-  border-color: $cru-color-gray-dark;
-}
-
-@mixin gray-gray-outline() {
-  color: $cru-color-gray-dark;
-  background-color: transparent;
-  border-color: $cru-color-gray-dark;
-}
-
-@mixin white-gray-solid() {
-  color: $cru-color-gray-dark;
-  background-color: $cru-color-white;
-  border-color: $cru-color-white;
-}
-
-@mixin white-gray-outline() {
-  color: $cru-color-gray-dark;
-  background-color: transparent;
-  border-color: $cru-color-white;
-}
-
-@mixin white-white-outline() {
-  color: $cru-color-white;
-  background-color: transparent;
-  border-color: $cru-color-white;
-}
-
-@mixin disabled-solid() {
+@mixin cru-button2-disabled-solid() {
   color: $cru-color-gray-medium !important;
   background-color: $cru-color-gray-light !important;
   border-color: $cru-color-gray-light !important;
 }
 
-@mixin disabled-outline() {
+@mixin cru-button2-disabled-outline() {
   color: $cru-color-gray-medium !important;
   background-color: transparent !important;
   border-color: $cru-color-gray-medium !important;
+}
+
+@mixin cru-button2-disabled-color() {
+  color: $cru-color-gray-medium !important;
+}
+
+@mixin cru-button2-standard-defaults() {
+  line-height: $cru-btn-line-height;
+  border-radius: $cru-btn-border-radius;
+  @include cru-responsive-styles($cru-button-responsive-styles);
+}
+
+@mixin cru-button2-tag-defaults() {
+  line-height: calc(1em + 8px);
+  border-radius: 16px;
+  font-size: 14px;
+  padding-top: 4px;
+  padding-left: 15px;
+  padding-right: 8px;
+  padding-bottom: 4px;
+}
+
+@mixin cru-button2-tag-text-padding() {
+  padding-right: 7px;
+}
+
+@mixin cru-button2-tag-icon-font-size() {
+  font-size: 16px;
+}
+
+@mixin cru-button2-standard-tag-border() {
+  border-width: $cru-btn-border-width;
+  border-style: $cru-btn-border-style;
+}
+
+@mixin cru-button2-standard-tag-icon() {
+  position: relative;
+  top: 3px;
+}
+
+@mixin cru-button2-combo-defaults() {
+  font-size: 16px;
+  line-height: 32px;
+  color: $cru-color-gray-dark;
+}
+
+@mixin cru-button2-combo-gray-text() {
+  color: $cru-color-gray-dark;
+}
+
+@mixin cru-button2-combo-white-text() {
+  color: $cru-color-white;
+}
+
+@mixin cru-button2-dot-combo-defaults() {
+  border: none;
+  background-color: transparent;
+  padding: 0;
+  color: $cru-color-gray-dark;
+}
+
+@mixin cru-button2-dot-combo-icon() {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 16px;
+  transition: all 0.15s ease-in-out;
+}
+
+@mixin cru-button2-dot-combo-icon-line-height() {
+  line-height: 30px;
+}
+
+@mixin cru-button2-dot-combo-icon-shadow() {
+  box-shadow: 0px 8px 32px rgba(0, 0, 0, 0.08);
+}
+
+@mixin cru-button2-dot-combo-hover-color() {
+  color: $cru-color-yellow;
+}
+
+@mixin cru-button2-standard-tag-combo-icon() {
+  margin-left: 8px;
+  float: right;
+}
+
+@mixin cru-button2-yellow-yellow-outline() {
+  color: $cru-color-yellow;
+  background-color: transparent;
+  border-color: $cru-color-yellow;
+}
+
+@mixin cru-button2-yellow-gray-solid() {
+  color: $cru-color-gray-dark;
+  background-color: $cru-color-yellow;
+  border-color: $cru-color-yellow;
+}
+
+@mixin cru-button2-yellow-gray-outline() {
+  color: $cru-color-gray-dark;
+  background-color: transparent;
+  border-color: $cru-color-yellow;
+}
+
+@mixin cru-button2-yellow-white-solid() {
+  color: $cru-color-white;
+  background-color: $cru-color-yellow;
+  border-color: $cru-color-yellow;
+}
+
+@mixin cru-button2-yellow-white-outline() {
+  color: $cru-color-white;
+  background-color: transparent;
+  border-color: $cru-color-yellow;
+}
+
+@mixin cru-button2-gray-white-solid() {
+  color: $cru-color-white;
+  background-color: $cru-color-gray-dark;
+  border-color: $cru-color-gray-dark;
+}
+
+@mixin cru-button2-gray-white-outline() {
+  color: $cru-color-white;
+  background-color: transparent;
+  border-color: $cru-color-gray-dark;
+}
+
+@mixin cru-button2-gray-gray-outline() {
+  color: $cru-color-gray-dark;
+  background-color: transparent;
+  border-color: $cru-color-gray-dark;
+}
+
+@mixin cru-button2-white-gray-solid() {
+  color: $cru-color-gray-dark;
+  background-color: $cru-color-white;
+  border-color: $cru-color-white;
+}
+
+@mixin cru-button2-white-gray-outline() {
+  color: $cru-color-gray-dark;
+  background-color: transparent;
+  border-color: $cru-color-white;
+}
+
+@mixin cru-button2-white-white-outline() {
+  color: $cru-color-white;
+  background-color: transparent;
+  border-color: $cru-color-white;
 }
