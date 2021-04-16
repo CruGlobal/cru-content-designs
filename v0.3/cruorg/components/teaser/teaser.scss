@@ -76,9 +76,15 @@ $cru-teaser-title: (
       margin-top: $cru-spacer * 2;
     }
     &__action-link {
-      display: inline-block;
+      @include cru-button2;
+      @include cru-button2-standard-defaults;
+      @include cru-button2-standard-tag-border;
+      @include cru-button2-yellow-white-outline;
       &:nth-child(2) {
         margin-left: $cru-spacer;
+      }
+      &:hover {
+        @include cru-button2-yellow-white-solid;
       }
     }
   }

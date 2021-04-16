@@ -65,6 +65,41 @@
   .cru-teaser-layered .cmp-teaser__action-container {
     margin-top: 32px; }
   .cru-teaser-layered .cmp-teaser__action-link {
-    display: inline-block; }
+    display: inline-block;
+    font-family: "Source Sans Pro", sans-serif;
+    font-weight: 600;
+    text-align: center;
+    cursor: pointer;
+    letter-spacing: 0.02em;
+    text-decoration: none;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+    text-transform: none;
+    line-height: calc(1em + 4px);
+    border-radius: 4px;
+    font-size: 1rem;
+    padding: 9px 23px;
+    border-width: 1px;
+    border-style: solid;
+    color: #FFFFFF;
+    background-color: transparent;
+    border-color: #FFCF07; }
+    .cru-teaser-layered .cmp-teaser__action-link:focus {
+      outline: none; }
+    @media (max-width: 768px) {
+      .cru-teaser-layered .cmp-teaser__action-link {
+        font-size: 0.875rem;
+        padding: 6px 15px; } }
+    @media (min-width: 769px) and (max-width: 992px) {
+      .cru-teaser-layered .cmp-teaser__action-link {
+        font-size: 1rem;
+        padding: 9px 23px; } }
+    @media (min-width: 993px) and (max-width: 1200px) {
+      .cru-teaser-layered .cmp-teaser__action-link {
+        font-size: 1rem;
+        padding: 9px 23px; } }
     .cru-teaser-layered .cmp-teaser__action-link:nth-child(2) {
       margin-left: 16px; }
+    .cru-teaser-layered .cmp-teaser__action-link:hover {
+      color: #FFFFFF;
+      background-color: #FFCF07;
+      border-color: #FFCF07; }
