@@ -1,22 +1,6 @@
 .cmp-button__icon {
   &::before {
-    display: inline-block;
-    // margin-right: .375rem;
-    vertical-align: top;
-    font-family: 'Material Icons';
-    font-weight: normal;
-    font-style: normal;
-    font-size: .9375rem;
-    line-height: 1;
-    text-transform: none;
-    letter-spacing: normal;
-    word-wrap: normal;
-    white-space: nowrap;
-    direction: ltr;
-    -webkit-font-smoothing: antialiased;
-    text-rendering: optimizeLegibility;
-    -moz-osx-font-smoothing: grayscale;
-    font-feature-settings: 'liga';
+    @include cru-material-icon;
   }
   &--email::before {
     content: "email";
@@ -31,4 +15,8 @@
     content: "shopping_cart";
     font-family: 'Material Icons Outlined';
   }
+}
+
+.cmp-carousel__item:not(.cmp-carousel__item--active) {
+  display: none;
 }

@@ -11,6 +11,8 @@
   text-transform: none; }
   .cmp-button:focus {
     outline: none; }
+  .cmp-button__icon::before {
+    margin-right: 0; }
 
 .cru-button-standard .cmp-button {
   line-height: calc(1em + 4px);

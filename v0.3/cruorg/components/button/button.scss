@@ -4,6 +4,9 @@
 /* Button styles */
 .cmp-button {
   @include cru-button2;
+  &__icon::before {
+    margin-right: 0;
+  }
 }
 
 // Standard button type defaults

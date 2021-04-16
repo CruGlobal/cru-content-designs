@@ -87,10 +87,20 @@
   position: relative; }
   .cru-form-text-alert .cmp-form-text::before {
     font-family: "Material Icons Round";
-    font-size: 24px;
+    font-weight: normal;
     font-style: normal;
+    font-size: 24px;
     display: inline-block;
     line-height: 1;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    -moz-osx-font-smoothing: grayscale;
+    font-feature-settings: 'liga';
     content: 'warning_amber';
     position: absolute;
     bottom: 12px;

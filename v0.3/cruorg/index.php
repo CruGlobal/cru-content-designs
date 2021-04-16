@@ -69,8 +69,8 @@
       $components = array(
         // 'accordion',
         // 'breadcrumb',
-        'button',
-        // 'carousel',
+        // 'button',
+        'carousel',
         // 'container',
         // 'download',
         // 'embed',
@@ -83,7 +83,7 @@
         // 'separator',
         // 'sharing',
         // 'tabs',
-        'teaser',
+        // 'teaser',
         // 'text',
         // 'title',
       );

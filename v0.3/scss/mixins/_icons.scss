@@ -1,8 +1,18 @@
 // Styles from https://google.github.io/material-design-icons/#icon-font-for-the-web
 @mixin cru-material-icon($size: 1em, $font: 'Material Icons') {
     font-family: $font;
-    font-size: $size;
+    font-weight: normal;
     font-style: normal;
+    font-size: $size;
     display: inline-block;
     line-height: 1;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    -moz-osx-font-smoothing: grayscale;
+    font-feature-settings: 'liga';
 }

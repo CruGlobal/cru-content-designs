@@ -1,1 +1,14 @@
 /* Image styles */
+.cmp-image {
+  font-size: 0; }
+  .cmp-image__link {
+    text-decoration: none; }
+  .cmp-image__image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px; }
+  .cmp-image__title {
+    display: block;
+    color: #383F43;
+    margin-top: 16px;
+    font-size: 0.875rem; }

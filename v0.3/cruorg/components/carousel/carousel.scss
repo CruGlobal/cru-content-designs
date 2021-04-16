@@ -2,3 +2,72 @@
 @import '../../branding-imports';
 
 /* Carousel styles */
+
+.cmp-carousel {
+  &__content {
+    position: relative;
+    &::after {
+      display: block;
+      content: '';
+      clear: both;
+    }
+  }
+  &__actions {
+    float: left;
+    margin-top: $cru-spacer;
+  }
+  &__action {
+    @include cru-button2;
+    @include cru-button2-dot-combo-defaults;
+    font-size: $cru-font-size-base;
+    &-text {
+      display: none;
+    }
+    &-icon {
+      @include cru-button2-dot-combo-icon;
+      @include cru-button2-dot-combo-icon-shadow;
+      @include cru-button2-white-gray-solid;
+      &::before {
+        @include cru-material-icon;
+        @include cru-button2-dot-combo-icon-line-height;
+      }
+      &:hover {
+        @include cru-button2-yellow-white-solid;
+      }
+    }
+    &--previous .cmp-carousel__action-icon::before {
+      content: "arrow_back";
+    }
+    &--next {
+      position: absolute;
+      right: 0;
+      .cmp-carousel__action-icon::before {
+        content: "arrow_forward";
+      }
+    }
+  }
+  &__indicators {
+    margin: $cru-spacer 0 0;
+    padding: 0;
+    text-align: center;
+  }
+  &__indicator {
+    margin: 0 4px;
+    padding: 0;
+    list-style-type: none;
+    display: inline-block;
+    width: 4px;
+    height: 4px;
+    border-radius: 2px;
+    background-color: $cru-color-gray-light;
+    &--active, &:hover {
+      background-color: $cru-color-gray-dark;
+    }
+  }
+  .cmp-teaser {
+    &__title-link {
+      color: $cru-color-white;
+      text-decoration: none;
+    }
+  }
+}

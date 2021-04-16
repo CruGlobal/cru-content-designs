@@ -13,7 +13,9 @@ $cru-teaser-title: (
 );
 
 /* Teaser styles */
-.cru-teaser-layered {
+// Also applies to lists in text components
+.cru-teaser-layered,
+.cmp-carousel .teaser {
   position: relative;
   img {
     display: block;

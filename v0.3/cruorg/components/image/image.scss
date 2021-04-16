@@ -2,3 +2,21 @@
 @import '../../branding-imports';
 
 /* Image styles */
+
+.cmp-image {
+  font-size: 0;
+  &__link {
+    text-decoration: none;
+  }
+  &__image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+  }
+  &__title {
+    display: block;
+    color: $cru-body-color;
+    margin-top: $cru-spacer;
+    font-size: $cru-font-size-sm;
+  }
+}
