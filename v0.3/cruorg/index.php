@@ -83,7 +83,7 @@
         // 'separator',
         // 'sharing',
         // 'tabs',
-        // 'teaser',
+        'teaser',
         // 'text',
         // 'title',
       );

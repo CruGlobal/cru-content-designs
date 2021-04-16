@@ -91,3 +91,6 @@
 .cmp-carousel .cmp-teaser__title-link {
   color: #FFFFFF;
   text-decoration: none; }
+
+.cmp-carousel .cmp-image .cmp-image__image {
+  height: 528px; }

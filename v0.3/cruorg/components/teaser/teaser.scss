@@ -15,12 +15,10 @@ $cru-teaser-title: (
 /* Teaser styles */
 // Also applies to lists in text components
 .cru-teaser-layered,
-.cmp-carousel .teaser {
+.cmp-carousel .cmp-teaser {
   position: relative;
   img {
     display: block;
-    height: auto;
-    max-width: 100%;
   }
   .cmp-teaser {
     &__image {
@@ -34,6 +32,7 @@ $cru-teaser-title: (
         width: 100%;
         height: 100%;
         background-color: rgba(0, 0, 0, 0.3);
+        border-radius: 4px;
       }
       + .cmp-teaser__content {
         position: absolute;
@@ -90,4 +89,11 @@ $cru-teaser-title: (
       }
     }
   }
+}
+
+.cru-teaser-layered .cmp-image__image,
+.cmp-carousel .cmp-image__image {
+  height: 480px;
+  width: 100%;
+  object-fit: cover;
 }
