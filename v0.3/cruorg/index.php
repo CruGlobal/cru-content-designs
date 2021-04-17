@@ -70,7 +70,7 @@
         // 'accordion',
         // 'breadcrumb',
         // 'button',
-        'carousel',
+        // 'carousel',
         // 'container',
         // 'download',
         // 'embed',

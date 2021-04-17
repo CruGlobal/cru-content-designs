@@ -59,3 +59,12 @@
   line-height: $cru-headings-xxs-line-height;
   @include cru-heading-uppercase;
 }
+
+@mixin cru-heading-overline($color: $cru-color-yellow, $width: $cru-spacer * 2) {
+  display: block;
+  content: "";
+  width: $width;
+  height: 2px;
+  margin-bottom: $cru-spacer-base;
+  background-color: $color;
+}

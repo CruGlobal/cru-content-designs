@@ -97,3 +97,126 @@ $cru-teaser-title: (
   width: 100%;
   object-fit: cover;
 }
+
+.cru-teaser-featured {
+  $cru-teaser-featured-left-desktop: 112px;
+  $cru-teaser-featured-left-tablet: 104px;
+  $cru-teaser-featured-bottom: $cru-spacer * 4;
+  $cru-teaser-featured-height: 448px;
+  $cru-teaser-featured-color-block-width-desktop: 560px;
+  $cru-teaser-featured-color-block-width-tablet: 464px;
+  .cmp-teaser {
+    position: relative;
+    &__content {
+      position: absolute;
+      z-index: 20;
+      bottom: $cru-teaser-featured-bottom + ($cru-spacer * 2);
+      left: $cru-spacer * 3;
+      padding-right: $cru-spacer * 1.5;
+      @include cru-media-breakpoint-down($cru-breakpoint-md) {
+        left: $cru-font-size-base * 1.5;
+      }
+      @include cru-media-breakpoint-between($cru-breakpoint-md, $cru-breakpoint-xl) {
+        left: $cru-font-size-base * 3.75;
+      }
+    }
+    &__title {
+      font-size: $cru-font-size-base * 4;
+      color: $cru-color-white;
+      margin-top: 0;
+      margin-bottom: 0;
+      line-height: $cru-headings-line-height;
+      &::before {
+        @include cru-heading-overline($cru-color-white);
+      }
+      @include cru-media-breakpoint-down($cru-breakpoint-md) {
+        font-size: $cru-font-size-base * 2;
+      }
+      @include cru-media-breakpoint-between($cru-breakpoint-md, $cru-breakpoint-xl) {
+        font-size: $cru-font-size-base * 3;
+      }
+    }
+    &__description {
+      margin-top: $cru-spacer;
+      color: $cru-color-white;
+      p {
+        margin-top: 0;
+        margin-bottom: 0;
+      }
+    }
+    &__action {
+      &-container {
+        margin-top: $cru-spacer * 2;
+      }
+      &-link {
+        @include cru-button2;
+        @include cru-button2-standard-defaults;
+        @include cru-button2-standard-tag-border;
+        @include cru-button2-white-white-outline;
+        &:hover {
+          @include cru-button2-white-gray-solid;
+        }
+      }
+    }
+  }
+  .cmp-image {
+    padding-bottom: $cru-teaser-featured-bottom;
+    &::before {
+      display: block;
+      content: '';
+      width: $cru-teaser-featured-color-block-width-desktop;
+      height: $cru-teaser-featured-height;
+      background-color: $cru-color-yellow;
+      position: absolute;
+      top: $cru-teaser-featured-bottom;
+      left: 0;
+      z-index: 1;
+      border-radius: 4px;
+      @include cru-media-breakpoint-down($cru-breakpoint-md) {
+        width: 100%;
+        border-radius: 0;
+      }
+      @include cru-media-breakpoint-between($cru-breakpoint-md, $cru-breakpoint-xl) {
+        width: $cru-teaser-featured-color-block-width-tablet;
+      }
+    }
+    &::after {
+      display: block;
+      content: '';
+      width: $cru-teaser-featured-color-block-width-desktop - $cru-teaser-featured-left-desktop;
+      height: $cru-teaser-featured-height;
+      background: rgba($cru-color-black, 0.2);
+      background: linear-gradient(to right, rgba($cru-color-black, 0.5) 22.5%, rgba($cru-color-black, 0) 100%);
+      position: absolute;
+      top: 0;
+      left: $cru-teaser-featured-left-desktop;
+      z-index: 15;
+      border-radius: 4px 0 0 4px;
+      @include cru-media-breakpoint-down($cru-breakpoint-md) {
+        left: 0;
+        width: 100%;
+      }
+      @include cru-media-breakpoint-between($cru-breakpoint-md, $cru-breakpoint-xl) {
+        left: $cru-teaser-featured-left-tablet;
+        width: $cru-teaser-featured-color-block-width-tablet - $cru-teaser-featured-left-tablet;
+      }
+    }
+  }
+  .cmp-image__image {
+    width: calc(100% - #{$cru-teaser-featured-left-desktop});
+    height: $cru-teaser-featured-height;
+    object-fit: cover;
+    margin-left: $cru-teaser-featured-left-desktop;
+    position: relative;
+    z-index: 10;
+    @include cru-media-breakpoint-down($cru-breakpoint-md) {
+      width: 100%;
+      margin-left: 0;
+      border-radius: 4px 4px 0 0;
+    }
+    @include cru-media-breakpoint-between($cru-breakpoint-md, $cru-breakpoint-xl) {
+      width: calc(100% - #{$cru-teaser-featured-left-tablet});
+      margin-left: $cru-teaser-featured-left-tablet;
+    }
+  }
+}
