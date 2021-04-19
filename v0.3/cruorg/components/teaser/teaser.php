@@ -43,6 +43,10 @@ function output_teaser($class = '', $img = false, $pre = false, $desc = false, $
 </div>
 
 <div class="comp-wrapper">
+  <?php output_teaser('cru-teaser-featured cru-teaser-featured-gray-dark', true, false, true, true); ?>
+</div>
+
+<div class="comp-wrapper">
   <?php output_teaser('cru-teaser-layered', true); ?>
 </div>
 

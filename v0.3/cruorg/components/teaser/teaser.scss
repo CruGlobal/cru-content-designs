@@ -219,4 +219,23 @@ $cru-teaser-title: (
       margin-left: $cru-teaser-featured-left-tablet;
     }
   }
+  &.cru-teaser-featured-gray-dark,
+  &.cru-teaser-featured-gray-medium {
+    .cmp-teaser {
+      &__title::before {
+        background-color: $cru-color-yellow;
+      }
+      &__action-link {
+        @include cru-button2-yellow-white-outline;
+        &:hover {
+          @include cru-button2-yellow-white-solid;
+        }
+      }
+    }
+  }
+  &.cru-teaser-featured-gray-dark {
+    .cmp-image::before {
+      background-color: $cru-color-gray-dark;
+    }
+  }
 }

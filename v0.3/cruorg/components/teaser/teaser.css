@@ -267,3 +267,18 @@
     .cru-teaser-featured .cmp-image__image {
       width: calc(100% - 104px);
       margin-left: 104px; } }
+
+.cru-teaser-featured.cru-teaser-featured-gray-dark .cmp-teaser__title::before, .cru-teaser-featured.cru-teaser-featured-gray-medium .cmp-teaser__title::before {
+  background-color: #FFCF07; }
+
+.cru-teaser-featured.cru-teaser-featured-gray-dark .cmp-teaser__action-link, .cru-teaser-featured.cru-teaser-featured-gray-medium .cmp-teaser__action-link {
+  color: #FFFFFF;
+  background-color: transparent;
+  border-color: #FFCF07; }
+  .cru-teaser-featured.cru-teaser-featured-gray-dark .cmp-teaser__action-link:hover, .cru-teaser-featured.cru-teaser-featured-gray-medium .cmp-teaser__action-link:hover {
+    color: #FFFFFF;
+    background-color: #FFCF07;
+    border-color: #FFCF07; }
+
+.cru-teaser-featured.cru-teaser-featured-gray-dark .cmp-image::before {
+  background-color: #383F43; }
