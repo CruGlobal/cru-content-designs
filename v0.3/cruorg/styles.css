@@ -822,7 +822,8 @@ input[type="text"][disabled] {
 
 /* Search styles */
 .cmp-search__field {
-  position: relative; }
+  position: relative;
+  height: auto; }
   .cmp-search__field:focus-within .cmp-search__input {
     outline: none;
     background-color: #FFFFFF;
@@ -855,7 +856,8 @@ input[type="text"][disabled] {
   transition: box-shadow .15s ease-in-out, color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out;
   padding: 11px 64px 11px 24px;
   width: 100%;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  height: auto; }
   .cmp-search__input::placeholder {
     color: #383F43; }
   .cmp-search__input::-webkit-input-placeholder {
@@ -871,6 +873,7 @@ input[type="text"][disabled] {
 .cmp-search__icon {
   position: absolute;
   top: 50%;
+  left: unset;
   right: 8px;
   transform: translateY(-50%);
   font-size: 0;

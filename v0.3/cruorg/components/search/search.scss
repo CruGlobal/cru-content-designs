@@ -9,6 +9,7 @@ $cru-searchbar-icon-wrapper-size: 32px;
 .cmp-search {
   &__field {
     position: relative;
+    height: auto;
     &:focus-within .cmp-search {
       &__input {
         outline: none;
@@ -37,11 +38,13 @@ $cru-searchbar-icon-wrapper-size: 32px;
     padding: ($cru-spacer-base * 1.5 - 1) ($cru-spacer-base * 8) ($cru-spacer-base * 1.5 - 1) ($cru-spacer-base * 3);
     width: 100%;
     box-sizing: border-box;
+    height: auto;
     @include cru-placeholder-color($cru-color-gray-dark);
   }
   &__icon {
     position: absolute;
     top: 50%;
+    left: unset;
     right: $cru-spacer-base;
     transform: translateY(-50%);
     font-size: 0;
