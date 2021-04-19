@@ -135,6 +135,13 @@ $cru-teaser-title: (
       @include cru-media-breakpoint-between($cru-breakpoint-md, $cru-breakpoint-xl) {
         font-size: $cru-font-size-base * 3;
       }
+      &-link {
+        color: $cru-color-white;
+        &:hover {
+          color: $cru-color-white;
+          text-decoration: underline;
+        }
+      }
     }
     &__description {
       margin-top: $cru-spacer;

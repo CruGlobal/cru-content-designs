@@ -4,14 +4,28 @@
   padding: 0; }
 
 .cmp-breadcrumb__item {
-  margin: 0 0 0 10px;
-  padding: 0 0 0 18px;
+  margin: 0 0 0 6px;
+  padding: 0 0 0 20px;
   list-style-type: none;
   display: inline-block;
   position: relative; }
   .cmp-breadcrumb__item::before {
+    font-family: "Material Icons";
+    font-weight: normal;
+    font-style: normal;
+    font-size: 1em;
     display: inline-block;
-    content: '>';
+    line-height: 1;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    -moz-osx-font-smoothing: grayscale;
+    font-feature-settings: 'liga';
+    content: 'chevron_right';
     position: absolute;
     top: 50%;
     left: 0;

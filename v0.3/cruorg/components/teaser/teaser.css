@@ -164,6 +164,11 @@
     @media (min-width: 769px) and (max-width: 1200px) {
       .cru-teaser-featured .cmp-teaser__title {
         font-size: 3rem; } }
+    .cru-teaser-featured .cmp-teaser__title-link {
+      color: #FFFFFF; }
+      .cru-teaser-featured .cmp-teaser__title-link:hover {
+        color: #FFFFFF;
+        text-decoration: underline; }
   .cru-teaser-featured .cmp-teaser__description {
     margin-top: 16px;
     color: #FFFFFF; }

@@ -9,14 +9,15 @@
     padding: 0;
   }
   &__item {
-    margin: 0 0 0 10px;
-    padding: 0 0 0 18px;
+    margin: 0 0 0 6px;
+    padding: 0 0 0 20px;
     list-style-type: none;
     display: inline-block;
     position: relative;
     &::before {
-      display: inline-block;
-      content: '>';
+      // display: inline-block;
+      @include cru-material-icon;
+      content: 'chevron_right';
       position: absolute;
       top: 50%;
       left: 0;
