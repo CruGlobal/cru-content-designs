@@ -34,6 +34,7 @@
     }
     .comp-dark-bg > h2 {
       color: white;
+      margin-top: 0;
     }
     .info {
       background-color: #cfe2ff;
@@ -70,8 +71,8 @@
     <?php
 
       $components = array(
-        'accordion',
-        // 'breadcrumb',
+        // 'accordion',
+        'breadcrumb',
         // 'button',
         // 'carousel',
         // 'container',
