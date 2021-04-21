@@ -1,5 +1,5 @@
-<?php function cru_accordion($dark = false, $link = false, $items = 3) { ?>
-<div class="accordion<?php if ( $dark == true ) { echo ' cru-accordion-dark'; } ?> <?php if ( $link == true ) { echo 'cru-accordion-links'; } ?>">
+<?php function output_accordion($dark = false, $link = false, $items = 3) { ?>
+<div class="accordion cru-accordion<?php if ( $dark == true ) { echo ' cru-accordion-dark'; } ?><?php if ( $link == true ) { echo ' cru-accordion-links'; } ?>">
   <div class="cmp-accordion">
     <?php for ($i = 1; $i <= $items; $i++) : $state = $i == 1 ? 'expanded' : 'hidden'; ?>
       <div class="cmp-accordion__item">
@@ -19,17 +19,33 @@
 <?php } ?>
 
 <div class="comp-wrapper">
-  <?php cru_accordion(); ?>
+  <h2>Standard accordion</h2>
+  <?php output_accordion(); ?>
+  <div class="info">
+    <span>Class: cru-accordion</span>
+  </div>
 </div>
 
 <div class="comp-wrapper comp-dark-bg">
-  <?php cru_accordion(true); ?>
+  <h2>Standard accordion w/ dark background</h2>
+  <?php output_accordion(true); ?>
+  <div class="info">
+    <span>Class: cru-accordion cru-accordion-dark</span>
+  </div>
 </div>
 
 <div class="comp-wrapper">
-  <?php cru_accordion(false, true, 2); ?>
+  <h2>Quick links accordion</h2>
+  <?php output_accordion(false, true, 2); ?>
+  <div class="info">
+    <span>Class: cru-accordion cru-accordion-links</span>
+  </div>
 </div>
 
 <div class="comp-wrapper comp-dark-bg">
-  <?php cru_accordion(true, true, 2); ?>
+  <h2>Quick links accordion w/ dark background</h2>
+  <?php output_accordion(true, true, 2); ?>
+  <div class="info">
+    <span>Class: cru-accordion cru-accordion-links cru-accordion-dark</span>
+  </div>
 </div>

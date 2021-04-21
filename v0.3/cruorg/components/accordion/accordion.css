@@ -1,20 +1,20 @@
 /* Accordion styles */
-.cmp-accordion__item {
+.cru-accordion .cmp-accordion__item {
   border: 1px solid #EBECEC;
   border-width: 0 0 1px; }
-  .cmp-accordion__item:first-child {
+  .cru-accordion .cmp-accordion__item:first-child {
     border-top-width: 1px; }
 
-.cmp-accordion__header {
+.cru-accordion .cmp-accordion__header {
   margin: 0; }
 
-.cmp-accordion__icon {
+.cru-accordion .cmp-accordion__icon {
   position: absolute;
   top: 50%;
   right: 8px;
   transform: translateY(-50%);
   font-size: 0; }
-  .cmp-accordion__icon::before {
+  .cru-accordion .cmp-accordion__icon::before {
     font-family: "Material Icons";
     font-weight: normal;
     font-style: normal;
@@ -30,9 +30,9 @@
     text-rendering: optimizeLegibility;
     -moz-osx-font-smoothing: grayscale;
     font-feature-settings: 'liga';
-    content: 'expand_more'; }
+    content: "expand_more"; }
 
-.cmp-accordion__button {
+.cru-accordion .cmp-accordion__button {
   display: block;
   color: #383F43;
   border: none;
@@ -42,12 +42,12 @@
   text-align: left;
   width: 100%;
   position: relative; }
-  .cmp-accordion__button--expanded {
+  .cru-accordion .cmp-accordion__button--expanded {
     color: #FFCF07; }
-    .cmp-accordion__button--expanded .cmp-accordion__icon::before {
-      content: 'expand_less'; }
+    .cru-accordion .cmp-accordion__button--expanded .cmp-accordion__icon::before {
+      content: "expand_less"; }
 
-.cmp-accordion__title {
+.cru-accordion .cmp-accordion__title {
   font-family: "Source Sans Pro", sans-serif;
   font-size: 0.875rem;
   font-weight: 700;
@@ -56,20 +56,20 @@
   line-height: calc(0.875rem + 6px);
   display: inline-block; }
 
-.cmp-accordion__panel {
+.cru-accordion .cmp-accordion__panel {
   padding: 8px 0 16px;
   line-height: calc(1em + 8px);
   font-size: 1.125rem; }
   @media (max-width: 768px) {
-    .cmp-accordion__panel {
+    .cru-accordion .cmp-accordion__panel {
       font-size: 1rem; } }
   @media (min-width: 769px) and (max-width: 992px) {
-    .cmp-accordion__panel {
+    .cru-accordion .cmp-accordion__panel {
       font-size: 1rem; } }
   @media (min-width: 993px) and (max-width: 1200px) {
-    .cmp-accordion__panel {
+    .cru-accordion .cmp-accordion__panel {
       font-size: 1rem; } }
-  .cmp-accordion__panel--hidden {
+  .cru-accordion .cmp-accordion__panel--hidden {
     display: none; }
 
 .cru-accordion-dark .cmp-accordion__button, .cru-accordion-dark .cmp-accordion__panel {
@@ -100,7 +100,7 @@
     vertical-align: middle; }
   .cru-accordion-links .cmp-accordion__button::before {
     display: block;
-    content: '';
+    content: "";
     width: 32px;
     height: 2px;
     background-color: #FFCF07;

@@ -32,6 +32,9 @@
       padding: 25px 12px;
       background-color: #383F43;
     }
+    .comp-dark-bg > h2 {
+      color: white;
+    }
     .info {
       background-color: #cfe2ff;
       border: #9ec5fe 1px solid;
@@ -67,10 +70,10 @@
     <?php
 
       $components = array(
-        // 'accordion',
+        'accordion',
         // 'breadcrumb',
         // 'button',
-        'carousel',
+        // 'carousel',
         // 'container',
         // 'download',
         // 'embed',
@@ -83,7 +86,7 @@
         // 'separator',
         // 'sharing',
         // 'tabs',
-        'teaser',
+        // 'teaser',
         // 'text',
         // 'title',
       );
