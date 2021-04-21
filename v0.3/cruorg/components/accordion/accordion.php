@@ -22,7 +22,7 @@
   <h2>Standard accordion</h2>
   <?php output_accordion(); ?>
   <div class="info">
-    <span>Class: cru-accordion</span>
+    <span>Classes: cru-accordion</span>
   </div>
 </div>
 
@@ -30,7 +30,7 @@
   <h2>Standard accordion w/ dark background</h2>
   <?php output_accordion(true); ?>
   <div class="info">
-    <span>Class: cru-accordion cru-accordion-dark</span>
+    <span>Classes: cru-accordion cru-accordion-dark</span>
   </div>
 </div>
 
@@ -38,7 +38,7 @@
   <h2>Quick links accordion</h2>
   <?php output_accordion(false, true, 2); ?>
   <div class="info">
-    <span>Class: cru-accordion cru-accordion-links</span>
+    <span>Classes: cru-accordion cru-accordion-links</span>
   </div>
 </div>
 
@@ -46,6 +46,6 @@
   <h2>Quick links accordion w/ dark background</h2>
   <?php output_accordion(true, true, 2); ?>
   <div class="info">
-    <span>Class: cru-accordion cru-accordion-links cru-accordion-dark</span>
+    <span>Classes: cru-accordion cru-accordion-links cru-accordion-dark</span>
   </div>
 </div>

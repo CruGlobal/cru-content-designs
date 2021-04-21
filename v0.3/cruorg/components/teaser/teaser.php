@@ -42,7 +42,7 @@ function output_teaser($class = '', $img = false, $pre = false, $desc = false, $
   <h2>Featured teaser</h2>
   <?php output_teaser('cru-teaser-featured', true, false, true, true); ?>
   <div class="info">
-    <span>Class: cru-teaser-featured</span>
+    <span>Classes: cru-teaser-featured</span>
   </div>
 </div>
 
@@ -58,7 +58,7 @@ function output_teaser($class = '', $img = false, $pre = false, $desc = false, $
   <h2>Layered teaser</h2>
   <?php output_teaser('cru-teaser-layered', true); ?>
   <div class="info">
-    <span>Class: cru-teaser-layered</span>
+    <span>Classes: cru-teaser-layered</span>
   </div>
 </div>
 
@@ -66,7 +66,7 @@ function output_teaser($class = '', $img = false, $pre = false, $desc = false, $
   <h2>Layered teaser</h2>
   <?php output_teaser('cru-teaser-layered', true, false, false, true); ?>
   <div class="info">
-    <span>Class: cru-teaser-layered</span>
+    <span>Classes: cru-teaser-layered</span>
   </div>
 </div>
 
@@ -74,7 +74,7 @@ function output_teaser($class = '', $img = false, $pre = false, $desc = false, $
   <h2>Layered teaser</h2>
   <?php output_teaser('cru-teaser-layered', true, false, false, true, true); ?>
   <div class="info">
-    <span>Class: cru-teaser-layered</span>
+    <span>Classes: cru-teaser-layered</span>
   </div>
 </div>
 
@@ -82,7 +82,7 @@ function output_teaser($class = '', $img = false, $pre = false, $desc = false, $
   <h2>Layered teaser</h2>
   <?php output_teaser('cru-teaser-layered', true, false, true); ?>
   <div class="info">
-    <span>Class: cru-teaser-layered</span>
+    <span>Classes: cru-teaser-layered</span>
   </div>
 </div>
 
@@ -90,7 +90,7 @@ function output_teaser($class = '', $img = false, $pre = false, $desc = false, $
   <h2>Layered teaser</h2>
   <?php output_teaser('cru-teaser-layered', true, false, true, true); ?>
   <div class="info">
-    <span>Class: cru-teaser-layered</span>
+    <span>Classes: cru-teaser-layered</span>
   </div>
 </div>
 
@@ -98,7 +98,7 @@ function output_teaser($class = '', $img = false, $pre = false, $desc = false, $
   <h2>Layered teaser</h2>
   <?php output_teaser('cru-teaser-layered', true, false, true, true, true); ?>
   <div class="info">
-    <span>Class: cru-teaser-layered</span>
+    <span>Classes: cru-teaser-layered</span>
   </div>
 </div>
 
@@ -106,7 +106,7 @@ function output_teaser($class = '', $img = false, $pre = false, $desc = false, $
   <h2>Layered teaser</h2>
   <?php output_teaser('cru-teaser-layered', true, true); ?>
   <div class="info">
-    <span>Class: cru-teaser-layered</span>
+    <span>Classes: cru-teaser-layered</span>
   </div>
 </div>
 
@@ -114,7 +114,7 @@ function output_teaser($class = '', $img = false, $pre = false, $desc = false, $
   <h2>Layered teaser</h2>
   <?php output_teaser('cru-teaser-layered', true, true, false, true); ?>
   <div class="info">
-    <span>Class: cru-teaser-layered</span>
+    <span>Classes: cru-teaser-layered</span>
   </div>
 </div>
 
@@ -122,7 +122,7 @@ function output_teaser($class = '', $img = false, $pre = false, $desc = false, $
   <h2>Layered teaser</h2>
   <?php output_teaser('cru-teaser-layered', true, true, false, true, true); ?>
   <div class="info">
-    <span>Class: cru-teaser-layered</span>
+    <span>Classes: cru-teaser-layered</span>
   </div>
 </div>
 
@@ -130,7 +130,7 @@ function output_teaser($class = '', $img = false, $pre = false, $desc = false, $
   <h2>Layered teaser</h2>
   <?php output_teaser('cru-teaser-layered', true, true, true); ?>
   <div class="info">
-    <span>Class: cru-teaser-layered</span>
+    <span>Classes: cru-teaser-layered</span>
   </div>
 </div>
 
@@ -138,7 +138,7 @@ function output_teaser($class = '', $img = false, $pre = false, $desc = false, $
   <h2>Layered teaser</h2>
   <?php output_teaser('cru-teaser-layered', true, true, true, true); ?>
   <div class="info">
-    <span>Class: cru-teaser-layered</span>
+    <span>Classes: cru-teaser-layered</span>
   </div>
 </div> -->
 
@@ -146,6 +146,6 @@ function output_teaser($class = '', $img = false, $pre = false, $desc = false, $
   <h2>Layered teaser</h2>
   <?php output_teaser('cru-teaser-layered', true, true, true, true, true); ?>
   <div class="info">
-    <span>Class: cru-teaser-layered</span>
+    <span>Classes: cru-teaser-layered</span>
   </div>
 </div>
