@@ -67,25 +67,25 @@
     <?php
 
       $components = array(
-        'accordion',
-        'breadcrumb',
-        'button',
+        // 'accordion',
+        // 'breadcrumb',
+        // 'button',
         'carousel',
         // 'container',
         // 'download',
         // 'embed',
         // 'form',
-        'image',
-        'input',
-        'list',
-        'search',
+        // 'image',
+        // 'input',
+        // 'list',
+        // 'search',
         // 'searchbar',
-        'separator',
+        // 'separator',
         // 'sharing',
-        'tabs',
+        // 'tabs',
         'teaser',
-        'text',
-        'title',
+        // 'text',
+        // 'title',
       );
 
       foreach ($components as $component) {

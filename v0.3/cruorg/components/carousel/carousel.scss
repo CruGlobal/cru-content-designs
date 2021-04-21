@@ -3,7 +3,7 @@
 
 /* Carousel styles */
 
-.cmp-carousel {
+.cru-carousel .cmp-carousel {
   &__content {
     position: relative;
     &::after {
@@ -12,9 +12,11 @@
       clear: both;
     }
   }
+  &__actions, &__indicators {
+    margin-top: $cru-spacer;
+  }
   &__actions {
     float: left;
-    margin-top: $cru-spacer;
   }
   &__action {
     @include cru-button2;
@@ -45,14 +47,21 @@
         content: "arrow_forward";
       }
     }
+    &--pause, &--play {
+      display: none;
+    }
   }
   &__indicators {
-    margin: $cru-spacer 0 0;
+    display: block;
+    flex-wrap: unset;
+    justify-content: unset;
+    margin-bottom: 0;
     padding: 0;
     text-align: center;
+    font-size: 0;
   }
   &__indicator {
-    margin: 0 4px;
+    margin: 14px 4px;
     padding: 0;
     list-style-type: none;
     display: inline-block;
@@ -60,17 +69,11 @@
     height: 4px;
     border-radius: 2px;
     background-color: $cru-color-gray-light;
+    text-indent: -5000px;
+    position: unset;
+    flex: unset;
     &--active, &:hover {
       background-color: $cru-color-gray-dark;
     }
-  }
-  .cmp-teaser {
-    &__title-link {
-      color: $cru-color-white;
-      text-decoration: none;
-    }
-  }
-  .cmp-image .cmp-image__image {
-    height: 528px;
   }
 }

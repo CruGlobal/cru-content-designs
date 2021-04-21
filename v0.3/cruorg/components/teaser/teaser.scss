@@ -13,9 +13,7 @@ $cru-teaser-title: (
 );
 
 /* Teaser styles */
-// Also applies to lists in text components
-.cru-teaser-layered,
-.cmp-carousel .cmp-teaser {
+.cru-teaser-layered {
   position: relative;
   img {
     display: block;
@@ -64,6 +62,13 @@ $cru-teaser-title: (
       @include cru-responsive-styles($cru-teaser-title);
       color: $cru-color-white;
       margin: 0;
+      &-link {
+        color: $cru-color-white;
+        text-decoration: none;
+        &:hover {
+          color: $cru-color-white;
+        }
+      }
     }
     &__description {
       margin-top: $cru-spacer;
@@ -134,13 +139,6 @@ $cru-teaser-title: (
       }
       @include cru-media-breakpoint-between($cru-breakpoint-md, $cru-breakpoint-xl) {
         font-size: $cru-font-size-base * 3;
-      }
-      &-link {
-        color: $cru-color-white;
-        &:hover {
-          color: $cru-color-white;
-          text-decoration: underline;
-        }
       }
     }
     &__description {
@@ -226,8 +224,7 @@ $cru-teaser-title: (
       margin-left: $cru-teaser-featured-left-tablet;
     }
   }
-  &.cru-teaser-featured-gray-dark,
-  &.cru-teaser-featured-gray-medium {
+  &.cru-teaser-featured-gray-dark {
     .cmp-teaser {
       &__title::before {
         background-color: $cru-color-yellow;

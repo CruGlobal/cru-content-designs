@@ -39,57 +39,113 @@ function output_teaser($class = '', $img = false, $pre = false, $desc = false, $
 <?php } ?>
 
 <div class="comp-wrapper">
+  <h2>Featured teaser</h2>
   <?php output_teaser('cru-teaser-featured', true, false, true, true); ?>
+  <div class="info">
+    <span>Class: cru-teaser-featured</span>
+  </div>
 </div>
 
 <div class="comp-wrapper">
+  <h2>Featured teaser</h2>
   <?php output_teaser('cru-teaser-featured cru-teaser-featured-gray-dark', true, false, true, true); ?>
+  <div class="info">
+    <span>Classes: cru-teaser-featured cru-teaser-featured-gray-dark</span>
+  </div>
 </div>
 
-<div class="comp-wrapper">
+<!-- <div class="comp-wrapper">
+  <h2>Layered teaser</h2>
   <?php output_teaser('cru-teaser-layered', true); ?>
+  <div class="info">
+    <span>Class: cru-teaser-layered</span>
+  </div>
 </div>
 
 <div class="comp-wrapper">
+  <h2>Layered teaser</h2>
   <?php output_teaser('cru-teaser-layered', true, false, false, true); ?>
+  <div class="info">
+    <span>Class: cru-teaser-layered</span>
+  </div>
 </div>
 
 <div class="comp-wrapper">
+  <h2>Layered teaser</h2>
   <?php output_teaser('cru-teaser-layered', true, false, false, true, true); ?>
+  <div class="info">
+    <span>Class: cru-teaser-layered</span>
+  </div>
 </div>
 
 <div class="comp-wrapper">
+  <h2>Layered teaser</h2>
   <?php output_teaser('cru-teaser-layered', true, false, true); ?>
+  <div class="info">
+    <span>Class: cru-teaser-layered</span>
+  </div>
 </div>
 
 <div class="comp-wrapper">
+  <h2>Layered teaser</h2>
   <?php output_teaser('cru-teaser-layered', true, false, true, true); ?>
+  <div class="info">
+    <span>Class: cru-teaser-layered</span>
+  </div>
 </div>
 
 <div class="comp-wrapper">
+  <h2>Layered teaser</h2>
   <?php output_teaser('cru-teaser-layered', true, false, true, true, true); ?>
+  <div class="info">
+    <span>Class: cru-teaser-layered</span>
+  </div>
 </div>
 
 <div class="comp-wrapper">
+  <h2>Layered teaser</h2>
   <?php output_teaser('cru-teaser-layered', true, true); ?>
+  <div class="info">
+    <span>Class: cru-teaser-layered</span>
+  </div>
 </div>
 
 <div class="comp-wrapper">
+  <h2>Layered teaser</h2>
   <?php output_teaser('cru-teaser-layered', true, true, false, true); ?>
+  <div class="info">
+    <span>Class: cru-teaser-layered</span>
+  </div>
 </div>
 
 <div class="comp-wrapper">
+  <h2>Layered teaser</h2>
   <?php output_teaser('cru-teaser-layered', true, true, false, true, true); ?>
+  <div class="info">
+    <span>Class: cru-teaser-layered</span>
+  </div>
 </div>
 
 <div class="comp-wrapper">
+  <h2>Layered teaser</h2>
   <?php output_teaser('cru-teaser-layered', true, true, true); ?>
+  <div class="info">
+    <span>Class: cru-teaser-layered</span>
+  </div>
 </div>
 
 <div class="comp-wrapper">
+  <h2>Layered teaser</h2>
   <?php output_teaser('cru-teaser-layered', true, true, true, true); ?>
-</div>
+  <div class="info">
+    <span>Class: cru-teaser-layered</span>
+  </div>
+</div> -->
 
 <div class="comp-wrapper">
+  <h2>Layered teaser</h2>
   <?php output_teaser('cru-teaser-layered', true, true, true, true, true); ?>
+  <div class="info">
+    <span>Class: cru-teaser-layered</span>
+  </div>
 </div>

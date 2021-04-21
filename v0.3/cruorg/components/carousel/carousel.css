@@ -1,16 +1,18 @@
 /* Carousel styles */
-.cmp-carousel__content {
+.cru-carousel .cmp-carousel__content {
   position: relative; }
-  .cmp-carousel__content::after {
+  .cru-carousel .cmp-carousel__content::after {
     display: block;
     content: '';
     clear: both; }
 
-.cmp-carousel__actions {
-  float: left;
+.cru-carousel .cmp-carousel__actions, .cru-carousel .cmp-carousel__indicators {
   margin-top: 16px; }
 
-.cmp-carousel__action {
+.cru-carousel .cmp-carousel__actions {
+  float: left; }
+
+.cru-carousel .cmp-carousel__action {
   display: inline-block;
   font-family: "Source Sans Pro", sans-serif;
   font-weight: 600;
@@ -25,11 +27,11 @@
   padding: 0;
   color: #383F43;
   font-size: 1rem; }
-  .cmp-carousel__action:focus {
+  .cru-carousel .cmp-carousel__action:focus {
     outline: none; }
-  .cmp-carousel__action-text {
+  .cru-carousel .cmp-carousel__action-text {
     display: none; }
-  .cmp-carousel__action-icon {
+  .cru-carousel .cmp-carousel__action-icon {
     display: inline-block;
     width: 30px;
     height: 30px;
@@ -42,7 +44,7 @@
     color: #383F43;
     background-color: #FFFFFF;
     border-color: #FFFFFF; }
-    .cmp-carousel__action-icon::before {
+    .cru-carousel .cmp-carousel__action-icon::before {
       font-family: "Material Icons";
       font-weight: normal;
       font-style: normal;
@@ -59,38 +61,40 @@
       -moz-osx-font-smoothing: grayscale;
       font-feature-settings: 'liga';
       line-height: 30px; }
-    .cmp-carousel__action-icon:hover {
+    .cru-carousel .cmp-carousel__action-icon:hover {
       color: #FFFFFF;
       background-color: #FFCF07;
       border-color: #FFCF07; }
-  .cmp-carousel__action--previous .cmp-carousel__action-icon::before {
+  .cru-carousel .cmp-carousel__action--previous .cmp-carousel__action-icon::before {
     content: "arrow_back"; }
-  .cmp-carousel__action--next {
+  .cru-carousel .cmp-carousel__action--next {
     position: absolute;
     right: 0; }
-    .cmp-carousel__action--next .cmp-carousel__action-icon::before {
+    .cru-carousel .cmp-carousel__action--next .cmp-carousel__action-icon::before {
       content: "arrow_forward"; }
+  .cru-carousel .cmp-carousel__action--pause, .cru-carousel .cmp-carousel__action--play {
+    display: none; }
 
-.cmp-carousel__indicators {
-  margin: 16px 0 0;
+.cru-carousel .cmp-carousel__indicators {
+  display: block;
+  flex-wrap: unset;
+  justify-content: unset;
+  margin-bottom: 0;
   padding: 0;
-  text-align: center; }
+  text-align: center;
+  font-size: 0; }
 
-.cmp-carousel__indicator {
-  margin: 0 4px;
+.cru-carousel .cmp-carousel__indicator {
+  margin: 14px 4px;
   padding: 0;
   list-style-type: none;
   display: inline-block;
   width: 4px;
   height: 4px;
   border-radius: 2px;
-  background-color: #EBECEC; }
-  .cmp-carousel__indicator--active, .cmp-carousel__indicator:hover {
+  background-color: #EBECEC;
+  text-indent: -5000px;
+  position: unset;
+  flex: unset; }
+  .cru-carousel .cmp-carousel__indicator--active, .cru-carousel .cmp-carousel__indicator:hover {
     background-color: #383F43; }
-
-.cmp-carousel .cmp-teaser__title-link {
-  color: #FFFFFF;
-  text-decoration: none; }
-
-.cmp-carousel .cmp-image .cmp-image__image {
-  height: 528px; }
