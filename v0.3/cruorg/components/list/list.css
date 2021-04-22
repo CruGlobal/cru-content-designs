@@ -1,6 +1,6 @@
 /* List styles */
-.cmp-list__item,
-.cmp-text li {
+.cru-list .cmp-list__item,
+.cru-text .cmp-text li {
   font-family: "Source Sans Pro", sans-serif;
   font-weight: 400;
   line-height: calc(1em + 8px);
@@ -8,20 +8,20 @@
   font-size: 1.125rem;
   padding-left: 12px; }
   @media (max-width: 768px) {
-    .cmp-list__item,
-    .cmp-text li {
+    .cru-list .cmp-list__item,
+    .cru-text .cmp-text li {
       font-size: 1rem; } }
   @media (min-width: 769px) and (max-width: 992px) {
-    .cmp-list__item,
-    .cmp-text li {
+    .cru-list .cmp-list__item,
+    .cru-text .cmp-text li {
       font-size: 1rem; } }
   @media (min-width: 993px) and (max-width: 1200px) {
-    .cmp-list__item,
-    .cmp-text li {
+    .cru-list .cmp-list__item,
+    .cru-text .cmp-text li {
       font-size: 1rem; } }
 
-.cmp-list__item-link,
-.cmp-text li a {
+.cru-list .cmp-list__item-link,
+.cru-text .cmp-text li a {
   color: inherit; }
 
 .cru-list-extra-spacing .cmp-list__item {

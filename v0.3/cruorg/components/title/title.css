@@ -1,85 +1,85 @@
 /* Title styles */
-.title .cmp-title__text {
+.cru-title .cmp-title__text {
   margin-top: 0;
   font-family: "Source Sans Pro", sans-serif;
   font-weight: 700;
   color: #383F43;
   line-height: calc(1em + 8px);
   margin-bottom: 0; }
-  .title .cmp-title__text a {
+  .cru-title .cmp-title__text a {
     color: inherit;
     text-decoration: none; }
-    .title .cmp-title__text a:hover {
+    .cru-title .cmp-title__text a:hover {
       text-decoration: underline; }
 
-.title.cru-heading-xxl .cmp-title__text {
+.cru-title-xxl .cmp-title__text {
   font-size: 6rem; }
   @media (max-width: 768px) {
-    .title.cru-heading-xxl .cmp-title__text {
+    .cru-title-xxl .cmp-title__text {
       font-size: 4rem; } }
   @media (min-width: 769px) and (max-width: 992px) {
-    .title.cru-heading-xxl .cmp-title__text {
+    .cru-title-xxl .cmp-title__text {
       font-size: 4rem; } }
   @media (min-width: 993px) and (max-width: 1200px) {
-    .title.cru-heading-xxl .cmp-title__text {
+    .cru-title-xxl .cmp-title__text {
       font-size: 4rem; } }
 
-.title.cru-heading-xl .cmp-title__text {
+.cru-title-xl .cmp-title__text {
   font-size: 4rem; }
   @media (max-width: 768px) {
-    .title.cru-heading-xl .cmp-title__text {
+    .cru-title-xl .cmp-title__text {
       font-size: 3rem; } }
   @media (min-width: 769px) and (max-width: 992px) {
-    .title.cru-heading-xl .cmp-title__text {
+    .cru-title-xl .cmp-title__text {
       font-size: 3rem; } }
   @media (min-width: 993px) and (max-width: 1200px) {
-    .title.cru-heading-xl .cmp-title__text {
+    .cru-title-xl .cmp-title__text {
       font-size: 3rem; } }
 
-.title.cru-heading-lg .cmp-title__text {
+.cru-title-lg .cmp-title__text {
   font-size: 3rem; }
   @media (max-width: 768px) {
-    .title.cru-heading-lg .cmp-title__text {
+    .cru-title-lg .cmp-title__text {
       font-size: 2rem; } }
   @media (min-width: 769px) and (max-width: 992px) {
-    .title.cru-heading-lg .cmp-title__text {
+    .cru-title-lg .cmp-title__text {
       font-size: 2rem; } }
   @media (min-width: 993px) and (max-width: 1200px) {
-    .title.cru-heading-lg .cmp-title__text {
+    .cru-title-lg .cmp-title__text {
       font-size: 2rem; } }
 
-.title.cru-heading-md .cmp-title__text {
+.cru-title-md .cmp-title__text {
   font-size: 2rem; }
   @media (max-width: 768px) {
-    .title.cru-heading-md .cmp-title__text {
+    .cru-title-md .cmp-title__text {
       font-size: 1.5rem; } }
   @media (min-width: 769px) and (max-width: 992px) {
-    .title.cru-heading-md .cmp-title__text {
+    .cru-title-md .cmp-title__text {
       font-size: 1.5rem; } }
   @media (min-width: 993px) and (max-width: 1200px) {
-    .title.cru-heading-md .cmp-title__text {
+    .cru-title-md .cmp-title__text {
       font-size: 1.5rem; } }
 
-.title.cru-heading-sm .cmp-title__text {
+.cru-title-sm .cmp-title__text {
   line-height: 1.334;
   font-size: 1.5rem; }
   @media (max-width: 768px) {
-    .title.cru-heading-sm .cmp-title__text {
+    .cru-title-sm .cmp-title__text {
       font-size: 1.125rem; } }
   @media (min-width: 769px) and (max-width: 992px) {
-    .title.cru-heading-sm .cmp-title__text {
+    .cru-title-sm .cmp-title__text {
       font-size: 1.125rem; } }
   @media (min-width: 993px) and (max-width: 1200px) {
-    .title.cru-heading-sm .cmp-title__text {
+    .cru-title-sm .cmp-title__text {
       font-size: 1.125rem; } }
 
-.title.cru-heading-xs .cmp-title__text {
+.cru-title-xs .cmp-title__text {
   font-size: 1.25rem;
   line-height: 1.2;
   text-transform: uppercase;
   letter-spacing: 0.12em; }
 
-.title.cru-heading-xxs .cmp-title__text {
+.cru-title-xxs .cmp-title__text {
   font-size: 0.875rem;
   line-height: 1.43;
   text-transform: uppercase;

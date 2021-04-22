@@ -1,52 +1,52 @@
 // Branding imports
-@import '../../branding-imports';
+@import "../../branding-imports";
 
 /* Tabs styles */
 
-.cmp-tabs {
-    &__tablist {
-        margin-top: 0;
-        margin-bottom: $cru-spacer;
-        padding: 0;
-        border-bottom: $cru-color-gray-light 2px $cru-btn-border-style;
+.cru-tabs .cmp-tabs {
+  &__tablist {
+    margin-top: 0;
+    margin-bottom: $cru-spacer;
+    padding: 0;
+    border-bottom: $cru-color-gray-light 2px $cru-btn-border-style;
+  }
+  &__tab {
+    @include cru-text;
+    font-size: $cru-font-size-base;
+    list-style: none;
+    color: $cru-color-gray-medium;
+    padding: ($cru-spacer-base * 1.5) ($cru-spacer-base * 3);
+    line-height: $cru-line-height-base;
+    display: inline-block;
+    border-bottom: $cru-color-gray-light 2px $cru-btn-border-style;
+    margin-bottom: -2px;
+    white-space: nowrap;
+    &--active {
+      border-color: $cru-color-yellow;
+      color: $cru-color-gray-dark;
     }
-    &__tab {
-        @include cru-text;
-        font-size: $cru-font-size-base;
-        list-style: none;
-        color: $cru-color-gray-medium;
-        padding: ($cru-spacer-base * 1.5) ($cru-spacer-base * 3);
-        line-height: $cru-line-height-base;
-        display: inline-block;
-        border-bottom: $cru-color-gray-light 2px $cru-btn-border-style;
-        margin-bottom: -2px;
-        white-space: nowrap;
-        &--active {
-            border-color: $cru-color-yellow;
-            color: $cru-color-gray-dark;
-        }
+  }
+  &__tabpanel {
+    display: none;
+    &--active {
+      display: block;
     }
-    &__tabpanel {
-        display: none;
-        &--active {
-            display: block;
-        }
-    }
+  }
 }
 
-.cru-tablist-icon {
-    .cmp-tabs__tab::before {
-        content: '';
-        display: inline-block; 
-        width: 16px;
-        height: 16px;
-        border-radius: 8px;
-        background-color: $cru-color-gray-medium;
-        vertical-align: top;
-        margin-top: 5px;
-        margin-right: $cru-spacer-base;
-    }
-    .cmp-tabs__tab--active::before  {
-        background-color: $cru-color-yellow;
-    }
+.cru-tabs-dot {
+  .cmp-tabs__tab::before {
+    content: "";
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border-radius: 8px;
+    background-color: $cru-color-gray-medium;
+    vertical-align: top;
+    margin-top: 5px;
+    margin-right: $cru-spacer-base;
+  }
+  .cmp-tabs__tab--active::before {
+    background-color: $cru-color-yellow;
+  }
 }

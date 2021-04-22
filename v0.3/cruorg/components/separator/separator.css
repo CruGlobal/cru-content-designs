@@ -1,12 +1,11 @@
 /* Separator styles */
-.separator {
+.cru-separator {
   margin: 48px 0; }
-
-.cmp-separator__horizontal-rule {
-  border-color: #9C9FA1;
-  border-style: solid;
-  border-width: 1px 0;
-  margin: 0; }
+  .cru-separator .cmp-separator__horizontal-rule {
+    border-color: #9C9FA1;
+    border-style: solid;
+    border-width: 1px 0;
+    margin: 0; }
 
 .cru-separator-yellow .cmp-separator__horizontal-rule {
   border-color: #FFCF07; }

@@ -1,9 +1,9 @@
 <?php
-function cru_list($extra_spacing = false, $links = false) {
+function output_list($extra_spacing = false, $links = false) {
   $list_types = ['ul', 'ol'];
   foreach ($list_types as $tag) :
 ?>
-<div class="list<?php if ( $extra_spacing == true ) { echo ' cru-list-extra-spacing'; } ?>">
+<div class="list cru-list<?php if ( $extra_spacing == true ) { echo ' cru-list-extra-spacing'; } ?>">
   <<?= $tag ?> class="cmp-list">
     <?php for ($i = 1; $i <= 3; $i++) : ?>
         <li class="cmp-list__item">
@@ -23,8 +23,31 @@ function cru_list($extra_spacing = false, $links = false) {
   endforeach;
 }
 ?>
-
-<?php cru_list(); ?>
-<?php cru_list(true); ?>
-<?php cru_list(false, true); ?>
-<?php cru_list(true, true); ?>
+<div class="comp-wrapper">
+  <h2>Standard list</h2>
+  <?php output_list(); ?>
+  <div class="info">
+    <span>Classes: cru-list</span>
+  </div>
+</div>
+<div class="comp-wrapper">
+  <h2>List w/ extra spacing</h2>
+  <?php output_list(true); ?>
+  <div class="info">
+    <span>Classes: cru-list</span>
+  </div>
+</div>
+<div class="comp-wrapper">
+  <h2>List w/ links</h2>
+  <?php output_list(false, true); ?>
+  <div class="info">
+    <span>Classes: cru-list cru-list-extra-spacing</span>
+  </div>
+</div>
+<div class="comp-wrapper">
+  <h2>List w/ extra spacing and links</h2>
+  <?php output_list(true, true); ?>
+  <div class="info">
+    <span>Classes: cru-list cru-list-extra-spacing</span>
+  </div>
+</div>

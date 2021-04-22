@@ -37,16 +37,14 @@
   </table>
 </div>
 
-<?php
-function output_heading($size) {
-?>
-<div class="title cru-heading-<?= $size; ?>">
+<?php function output_heading($size) { ?>
+<div class="title cru-title cru-title-<?= $size; ?>">
   <div class="cmp-title">
     <h2 class="cmp-title__text">Heading <span style="text-transform: uppercase;"><?= $size; ?></span></h2>
   </div>
 </div>
 <div class="info">
-  <span>Class: cru-heading-<?= $size; ?></span>
+  <span>Classes: cru-heading-<?= $size; ?></span>
 </div>
 <?php
 }
@@ -56,7 +54,7 @@ foreach ($heading_sizes as $size) {
   output_heading($size);
 }
 ?>
-<div class="title cru-heading-lg">
+<div class="title cru-title cru-title-lg">
   <div class="cmp-title">
     <h1 class="cmp-title__text"><a class="cmp-title__link" href="#">Heading Link</a></h1>
   </div>

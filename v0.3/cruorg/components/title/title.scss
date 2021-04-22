@@ -2,38 +2,43 @@
 @import '../../branding-imports';
 
 /* Title styles */
-.title {
-  .cmp-title__text {
-    @include cru-heading;
-    margin-bottom: 0;
-    a {
-      color: inherit;
-      text-decoration: none;
-      &:hover {
-        text-decoration: underline;
-      }
+.cru-title .cmp-title__text {
+  @include cru-heading;
+  margin-bottom: 0;
+  a {
+    color: inherit;
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
     }
   }
-  &.cru-heading-xxl .cmp-title__text {
-    @include cru-heading-xxl;
-  }
-  &.cru-heading-xl .cmp-title__text {
-    @include cru-heading-xl;
-  }
-  &.cru-heading-lg .cmp-title__text {
-    @include cru-heading-lg;
-  }
-  &.cru-heading-md .cmp-title__text {
-    @include cru-heading-md;
-  }
-  &.cru-heading-sm .cmp-title__text {
-    @include cru-heading-sm;
-  }
-  &.cru-heading-xs .cmp-title__text {
-    @include cru-heading-xs;
-  }
-  &.cru-heading-xxs .cmp-title__text {
-    @include cru-heading-xxs;
-  }
+}
+
+.cru-title-xxl .cmp-title__text {
+  @include cru-heading-xxl;
+}
+
+.cru-title-xl .cmp-title__text {
+  @include cru-heading-xl;
+}
+
+.cru-title-lg .cmp-title__text {
+  @include cru-heading-lg;
+}
+
+.cru-title-md .cmp-title__text {
+  @include cru-heading-md;
+}
+
+.cru-title-sm .cmp-title__text {
+  @include cru-heading-sm;
+}
+
+.cru-title-xs .cmp-title__text {
+  @include cru-heading-xs;
+}
+
+.cru-title-xxs .cmp-title__text {
+  @include cru-heading-xxs;
 }
 

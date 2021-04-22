@@ -4,15 +4,17 @@
 /* List styles */
 // Also applies to lists in text components
 
-.cmp-list__item,
-.cmp-text li {
+.cru-list .cmp-list__item,
+.cru-text .cmp-text li {
   @include cru-text;
   padding-left: $cru-spacer-base * 1.5;
 }
-.cmp-list__item-link,
-.cmp-text li a {
+
+.cru-list .cmp-list__item-link,
+.cru-text .cmp-text li a {
   color: inherit;
 }
+
 .cru-list-extra-spacing .cmp-list__item {
   margin-bottom: $cru-spacer;
 }
