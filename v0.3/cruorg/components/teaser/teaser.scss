@@ -13,6 +13,17 @@ $cru-teaser-title: (
 );
 
 /* Teaser styles */
+.cru-teaser-layered,
+.cru-teaser-featured {
+  .cmp-teaser__title-link {
+    color: $cru-color-white;
+    text-decoration: none;
+    &:hover {
+      color: $cru-color-white;
+    }
+  }
+}
+
 .cru-teaser-layered {
   position: relative;
   img {
@@ -62,13 +73,6 @@ $cru-teaser-title: (
       @include cru-responsive-styles($cru-teaser-title);
       color: $cru-color-white;
       margin: 0;
-      &-link {
-        color: $cru-color-white;
-        text-decoration: none;
-        &:hover {
-          color: $cru-color-white;
-        }
-      }
     }
     &__description {
       margin-top: $cru-spacer;

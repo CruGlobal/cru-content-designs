@@ -87,9 +87,9 @@
         // 'separator',
         // 'sharing',
         // 'tabs',
-        // 'teaser',
-        'text',
-        'title',
+        'teaser',
+        // 'text',
+        // 'title',
       );
 
       foreach ($components as $component) {
