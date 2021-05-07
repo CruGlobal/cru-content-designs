@@ -1,3 +1,6 @@
+// All input mixins required for Cru branding
+// v0.3
+
 @mixin cru-placeholder-color($color, $important: false) {
   @if $important == false {
     &::placeholder { color: $color; }
@@ -12,4 +15,83 @@
     &:-ms-input-placeholder { color: $color !important; }
     &:-moz-placeholder { color: $color !important; }
   }
+}
+
+@mixin cru-input-label {
+  display: block;
+  font-size: $cru-input-label-font-size;
+  line-height: $cru-input-line-height;
+  color: $cru-input-text-color;
+  margin-bottom: $cru-input-label-spacing;
+}
+
+@mixin cru-input-label-underlined {
+  opacity: 0;
+  margin-bottom: $cru-input-underline-label-spacing;
+}
+
+@mixin cru-input-label-underlined-focus {
+  opacity: 1;
+}
+
+@mixin cru-input-text {
+  width: 100%;
+  box-sizing: border-box;
+  font-size: $cru-input-font-size;
+  line-height: $cru-input-line-height;
+  color: $cru-input-text-color;
+  border-color: $cru-input-border-color;
+  border-style: $cru-input-border-style;
+  background-color: $cru-input-background-color;
+  transition: box-shadow 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+  padding: ($cru-input-padding-h * 0.75 - 1) $cru-input-padding-h;
+  border-width: $cru-input-border-width;
+  border-radius: $cru-input-border-radius;
+  @include cru-placeholder-color($cru-input-text-color);
+  &:focus {
+    outline: none;
+    caret-color: $cru-input-alert-color;
+    @include cru-placeholder-color(transparent, true);
+    @include cru-input-text-focus;
+  }
+}
+
+@mixin cru-input-text-underlined {
+  padding: $cru-input-underline-padding;
+  border-width: 0 0 $cru-input-border-width;
+  border-radius: 0;
+  &:focus {
+    background-color: transparent;
+    border-color: $cru-input-alert-color;
+    box-shadow: none;
+  }
+}
+
+@mixin cru-input-text-focus {
+  background-color: $cru-input-standard-focus-background;
+  border-color: transparent;
+  box-shadow: $cru-input-standard-focus-shadow;
+}
+
+@mixin cru-input-text-alert {
+  border-color: $cru-input-alert-color;
+  padding-right: $cru-input-alert-padding-right;
+  background-image: url('data:image/svg+xml;utf-8,<svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="24px" viewBox="0 0 24 24" width="24px" fill="%23#{str-slice($cru-input-alert-color-string, 2, 7)}"><rect fill="none" height="24" width="24"/><path d="M12,5.99L19.53,19H4.47L12,5.99 M12,2L1,21h22L12,2L12,2z"/><polygon points="13,16 11,16 11,18 13,18"/><polygon points="13,10 11,10 11,15 13,15"/></svg>');
+  background-position: right $cru-input-alert-icon-right bottom ($cru-input-alert-icon-size / 2);
+  background-repeat: no-repeat;
+}
+
+@mixin cru-input-text-underlined-alert {
+  padding-right: $cru-input-alert-padding-right - $cru-spacer;
+  background-position: right $cru-input-underline-alert-icon-right bottom $cru-input-underline-alert-icon-bottom;
+}
+
+@mixin cru-input-text-disabled-label {
+  color: $cru-input-disabled-label-color;
+}
+
+@mixin cru-input-text-disabled-input {
+  cursor: not-allowed;
+  border-color: $cru-input-disabled-label-color;
+  @include cru-placeholder-color($cru-input-disabled-label-color);
 }

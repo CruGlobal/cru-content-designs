@@ -1,0 +1,32 @@
+// All form input variables required for Cru branding
+// v0.3
+
+$cru-input-spacing: $cru-spacer;
+$cru-input-label-spacing: $cru-spacer-base;
+$cru-input-label-font-size: $cru-font-size-sm;
+$cru-input-line-height: $cru-line-height-base;
+$cru-input-font-size: $cru-font-size-base;
+$cru-input-text-color: $cru-color-gray-dark;
+$cru-input-border-color: $cru-color-gray-dark;
+$cru-input-border-width: 1px;
+$cru-input-border-style: solid;
+$cru-input-border-radius: $cru-btn-border-radius;
+$cru-input-background-color: transparent;
+$cru-input-padding-h: $cru-spacer;
+$cru-input-alert-color: $cru-color-yellow;
+$cru-input-alert-color-string: '' + $cru-input-alert-color;
+$cru-input-alert-icon-size: 24px;
+$cru-input-alert-padding-right: $cru-spacer + $cru-input-alert-icon-size + $cru-spacer;
+$cru-input-alert-icon-right: $cru-input-border-width + $cru-spacer;
+$cru-input-standard-focus-background: $cru-color-white;
+$cru-input-standard-focus-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+$cru-input-underline-label-spacing: 0;
+$cru-input-underline-padding: 6px 0;
+$cru-input-underline-alert-icon-bottom: 7px;
+$cru-input-underline-alert-icon-right: 0;
+$cru-input-disabled-label-color: $cru-color-gray-light;
+$cru-input-dark-label-color: $cru-color-white;
+$cru-input-dark-label-focus-color: $cru-color-gray-dark;
+$cru-input-dark-underline-color: $cru-color-gray-medium;
+$cru-input-dark-underline-focus-color: $cru-color-white;
+$cru-input-dark-disabled-color: $cru-color-gray-medium;
