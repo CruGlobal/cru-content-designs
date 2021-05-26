@@ -13,13 +13,31 @@
       margin-top: $cru-input-spacing;
     }
   }
-  &-text {
+}
+
+.cru-form-standard {
+  .cmp-form-text {
     label {
-      @include cru-input-label;
+      @include cru-input-label-standard;
     }
     input,
     textarea {
-      @include cru-input-text;
+      @include cru-input-text-standard;
+    }
+  }
+  &.cru-form-dark .cmp-form-text {
+    label {
+      @include cru-input-label-standard-dark;
+    }
+    input,
+    textarea {
+      @include cru-input-text-standard-dark;
+    }
+  }
+  .cru-form-text-alert .cmp-form-text {
+    input,
+    textarea {
+      @include cru-input-text-standard-alert;
     }
   }
 }
@@ -33,14 +51,26 @@
     textarea {
       @include cru-input-text-underlined;
     }
+    &:focus-within label {
+      @include cru-input-label-underlined-focus;
+    }
   }
-  .cru-form-text-alert .cmp-form-text,
-  .cmp-form-text:focus-within {
+  &.cru-form-dark .cmp-form-text {
     label {
+      @include cru-input-label-underlined-dark;
+    }
+    input,
+    textarea {
+      @include cru-input-text-underlined-dark;
+    }
+    &:focus-within label {
       @include cru-input-label-underlined-focus;
     }
   }
   .cru-form-text-alert .cmp-form-text {
+    label {
+      @include cru-input-label-underlined-focus;
+    }
     input,
     textarea {
       @include cru-input-text-underlined-alert;
@@ -48,60 +78,24 @@
   }
 }
 
-.cru-form-text-alert .cmp-form-text {
-  input,
-  textarea {
-    @include cru-input-text-alert;
-  }
-}
-
 .cru-form-text-disabled .cmp-form-text label {
-  @include cru-input-text-disabled-label;
+  @include cru-input-label-disabled;
 }
-
 .cru-form-text-disabled .cmp-form-text input,
 .cru-form-text-disabled .cmp-form-text textarea,
 .cmp-form-text input[disabled],
 .cmp-form-text textarea[disabled] {
-  @include cru-input-text-disabled-input;
+  @include cru-input-text-light-disabled;
 }
 
+.cru-form-dark .cru-form-text-disabled .cmp-form-text label {
+  @include cru-input-label-disabled-dark;
+}
 .cru-form-dark {
-  label {
-    color: $cru-input-dark-label-color;
-  }
-  input[type="text"] {
-    color: $cru-input-dark-label-color;
-    border-color: $cru-input-dark-label-color;
-    @include cru-placeholder-color($cru-input-dark-label-color);
-    &:focus {
-      color: $cru-input-dark-label-focus-color;
-    }
-  }
-  .cru-form-text-alert input[type="text"] {
-    border-color: $cru-input-alert-color;
-    &:focus {
-      border-color: transparent;
-    }
-  }
-  &.cru-form-underline input[type="text"] {
-    border-color: $cru-input-dark-underline-color;
-    &:focus {
-      color: $cru-input-dark-underline-focus-color;
-    }
-  }
-  &.cru-form-underline {
-    input[type="text"]:focus,
-    .cru-form-text-alert input[type="text"] {
-      border-color: $cru-input-alert-color;
-    }
-  }
-  .cru-form-text-disabled label {
-    color: $cru-input-dark-disabled-color;
-  }
-  .cru-form-text-disabled input[type="text"],
-  input[type="text"][disabled] {
-    border-color: $cru-input-dark-disabled-color;
-    @include cru-placeholder-color($cru-input-dark-disabled-color);
+  .cru-form-text-disabled .cmp-form-text input,
+  .cru-form-text-disabled .cmp-form-text textarea,
+  .cmp-form-text input[disabled],
+  .cmp-form-text textarea[disabled] {
+    @include cru-input-text-dark-disabled;
   }
 }

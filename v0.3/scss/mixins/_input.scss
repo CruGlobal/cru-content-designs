@@ -17,15 +17,20 @@
   }
 }
 
-@mixin cru-input-label {
+// LABELS
+
+@mixin cru-input-label-all-shared {
   display: block;
   font-size: $cru-input-label-font-size;
   line-height: $cru-input-line-height;
-  color: $cru-input-text-color;
+  transition: opacity 0.15s ease-in-out;
+}
+
+@mixin cru-input-label-standard-shared {
   margin-bottom: $cru-input-label-spacing;
 }
 
-@mixin cru-input-label-underlined {
+@mixin cru-input-label-underlined-shared {
   opacity: 0;
   margin-bottom: $cru-input-underline-label-spacing;
 }
@@ -34,64 +39,177 @@
   opacity: 1;
 }
 
-@mixin cru-input-text {
+@mixin cru-input-label-light-shared {
+  color: $cru-input-text-color;
+}
+
+@mixin cru-input-label-dark-shared {
+  color: $cru-input-dark-label-color;
+}
+
+@mixin cru-input-label-standard {
+  @include cru-input-label-all-shared;
+  @include cru-input-label-standard-shared;
+  @include cru-input-label-light-shared;
+}
+
+@mixin cru-input-label-underlined {
+  @include cru-input-label-all-shared;
+  @include cru-input-label-underlined-shared;
+  @include cru-input-label-light-shared;
+}
+
+@mixin cru-input-label-standard-dark {
+  @include cru-input-label-all-shared;
+  @include cru-input-label-standard-shared;
+  @include cru-input-label-dark-shared;
+}
+
+@mixin cru-input-label-underlined-dark {
+  @include cru-input-label-all-shared;
+  @include cru-input-label-underlined-shared;
+  @include cru-input-label-dark-shared;
+}
+
+@mixin cru-input-label-disabled {
+  color: $cru-input-disabled-color !important;
+}
+
+@mixin cru-input-label-disabled-dark {
+  color: $cru-input-dark-disabled-color !important;
+}
+
+// TEXT & TEXTAREA
+
+@mixin cru-input-text-all-shared {
   width: 100%;
   box-sizing: border-box;
   font-size: $cru-input-font-size;
   line-height: $cru-input-line-height;
-  color: $cru-input-text-color;
-  border-color: $cru-input-border-color;
   border-style: $cru-input-border-style;
   background-color: $cru-input-background-color;
   transition: box-shadow 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
-  padding: ($cru-input-padding-h * 0.75 - 1) $cru-input-padding-h;
-  border-width: $cru-input-border-width;
-  border-radius: $cru-input-border-radius;
-  @include cru-placeholder-color($cru-input-text-color);
   &:focus {
     outline: none;
     caret-color: $cru-input-alert-color;
     @include cru-placeholder-color(transparent, true);
-    @include cru-input-text-focus;
   }
 }
 
-@mixin cru-input-text-underlined {
+@mixin cru-input-text-standard-shared {
+  padding: ($cru-input-padding-h * 0.75 - 1) $cru-input-padding-h;
+  border-width: $cru-input-border-width;
+  border-radius: $cru-input-border-radius;
+  &:focus {
+    background-color: $cru-input-standard-focus-background;
+    border-color: transparent;
+    box-shadow: $cru-input-standard-focus-shadow;
+  }
+}
+
+@mixin cru-input-text-underlined-shared {
   padding: $cru-input-underline-padding;
   border-width: 0 0 $cru-input-border-width;
   border-radius: 0;
   &:focus {
-    background-color: transparent;
     border-color: $cru-input-alert-color;
-    box-shadow: none;
   }
 }
 
-@mixin cru-input-text-focus {
-  background-color: $cru-input-standard-focus-background;
-  border-color: transparent;
-  box-shadow: $cru-input-standard-focus-shadow;
+@mixin cru-input-text-light-shared {
+  color: $cru-input-text-color;
+  border-color: $cru-input-border-color;
+  @include cru-placeholder-color($cru-input-text-color);
 }
 
-@mixin cru-input-text-alert {
-  border-color: $cru-input-alert-color;
-  padding-right: $cru-input-alert-padding-right;
-  background-image: url('data:image/svg+xml;utf-8,<svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="24px" viewBox="0 0 24 24" width="24px" fill="%23#{str-slice($cru-input-alert-color-string, 2, 7)}"><rect fill="none" height="24" width="24"/><path d="M12,5.99L19.53,19H4.47L12,5.99 M12,2L1,21h22L12,2L12,2z"/><polygon points="13,16 11,16 11,18 13,18"/><polygon points="13,10 11,10 11,15 13,15"/></svg>');
-  background-position: right $cru-input-alert-icon-right bottom ($cru-input-alert-icon-size / 2);
-  background-repeat: no-repeat;
+@mixin cru-input-text-dark-shared {
+  @include cru-placeholder-color($cru-input-dark-label-color);
 }
 
-@mixin cru-input-text-underlined-alert {
-  padding-right: $cru-input-alert-padding-right - $cru-spacer;
-  background-position: right $cru-input-underline-alert-icon-right bottom $cru-input-underline-alert-icon-bottom;
+@mixin cru-input-text-standard {
+  @include cru-input-text-all-shared;
+  @include cru-input-text-standard-shared;
+  @include cru-input-text-light-shared;
 }
 
-@mixin cru-input-text-disabled-label {
-  color: $cru-input-disabled-label-color;
+@mixin cru-input-text-underlined {
+  @include cru-input-text-all-shared;
+  @include cru-input-text-underlined-shared;
+  @include cru-input-text-light-shared;
 }
 
-@mixin cru-input-text-disabled-input {
-  cursor: not-allowed;
-  border-color: $cru-input-disabled-label-color;
-  @include cru-placeholder-color($cru-input-disabled-label-color);
+@mixin cru-input-text-standard-dark {
+  @include cru-input-text-all-shared;
+  @include cru-input-text-standard-shared;
+  @include cru-input-text-dark-shared;
+  border-color: $cru-input-dark-label-color;
+  &:not(:focus) {
+    color: $cru-input-dark-label-color;
+  }
 }
+
+@mixin cru-input-text-underlined-dark {
+  @include cru-input-text-all-shared;
+  @include cru-input-text-underlined-shared;
+  @include cru-input-text-dark-shared;
+  border-color: $cru-input-dark-underline-color;
+  color: $cru-input-dark-label-color;
+}
+
+  // ALERTS
+
+  @mixin cru-input-text-alert-shared {
+    border-color: $cru-input-alert-color !important;
+    background-image: url('data:image/svg+xml;utf-8,<svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="24px" viewBox="0 0 24 24" width="24px" fill="%23#{str-slice($cru-input-alert-color-string, 2, 7)}"><rect fill="none" height="24" width="24"/><path d="M12,5.99L19.53,19H4.47L12,5.99 M12,2L1,21h22L12,2L12,2z"/><polygon points="13,16 11,16 11,18 13,18"/><polygon points="13,10 11,10 11,15 13,15"/></svg>');
+    background-repeat: no-repeat;
+  }
+
+  @mixin cru-input-text-standard-alert-shared {
+    padding-right: $cru-input-alert-padding-right;
+    background-position: right $cru-input-alert-icon-right bottom ($cru-input-alert-icon-size / 2);
+  }
+
+  @mixin cru-input-text-underlined-alert-shared {
+    padding-right: $cru-input-alert-padding-right - $cru-spacer;
+    background-position: right $cru-input-underline-alert-icon-right bottom $cru-input-underline-alert-icon-bottom;
+  }
+
+  @mixin cru-input-text-standard-alert {
+    @include cru-input-text-alert-shared;
+    @include cru-input-text-standard-alert-shared;
+  }
+
+  @mixin cru-input-text-underlined-alert {
+    @include cru-input-text-alert-shared;
+    @include cru-input-text-underlined-alert-shared;
+  }
+
+  // DISABLED
+
+  @mixin cru-input-text-disabled-shared {
+    cursor: not-allowed;
+    background-color: transparent !important;
+    box-shadow: none !important;
+  }
+
+  @mixin cru-input-text-light-disabled-shared {
+    color: $cru-input-disabled-color !important;
+    border-color: $cru-input-disabled-color !important;
+    @include cru-placeholder-color($cru-input-disabled-color, true);
+  }
+
+  @mixin cru-input-text-dark-disabled-shared {
+    color: $cru-input-dark-disabled-color !important;
+    border-color: $cru-input-dark-disabled-color !important;
+    @include cru-placeholder-color($cru-input-dark-disabled-color, true);
+  }
+
+  @mixin cru-input-text-light-disabled {
+    @include cru-input-text-disabled-shared;
+    @include cru-input-text-light-disabled-shared;
+  }
+
+  @mixin cru-input-text-dark-disabled {
+    @include cru-input-text-disabled-shared;
+    @include cru-input-text-dark-disabled-shared;
+  }
