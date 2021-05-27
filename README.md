@@ -161,7 +161,7 @@ Please realize that this submodule has the potential to impact numerous web prop
 
 `/{version-directory}/cruorg` is where the magic happens and file paths in the rest of this section will be relative to it. Here's a breakdown of everything in that directory and how to use them:
 
-* `/index.php` displays all the styled components once they've been uncommented from the array on lines 55-72.
+* `/index.php` displays all the styled components once they've been uncommented from the array on lines 16-33.
 * `/styles.scss` automatically pulls in and compiles the SCSS files from each component and composit.
 * `/styles.css` is the compiled version of `styles.scss`.
 * `/_branding-imports.scss` contains the branding options, variables, and mixins needed for cru.org.
@@ -180,5 +180,5 @@ A few notes:
 
 ## Currently Used By
 
-* Cru's main website - [cru.org](https://cru.org)
-* Cru Store (previously known as Cru Press) - [crustore.org](https://crustore.org)
+* Cru's main website - [cru.org](https://cru.org) (in progress)
+* Cru Store (previously known as Cru Press) - [crustore.org](https://crustore.org) (on hold)
