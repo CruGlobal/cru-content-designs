@@ -1,7 +1,7 @@
 {
   "name": "cru-content-designs",
   "version": "1.0.0",
-  "description": "",
+  "description": "Designs for use on cru.org and other Cru digital properties utilizing official branding guidelines.",
   "main": "index.js",
   "scripts": {
     "build": "gulp",
