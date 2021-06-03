@@ -8,8 +8,8 @@
 <body>
   <div class="container my-5">
     <div class="d-flex  justify-content-evenly">
-      <a href="/v0.3/demo" class="btn btn-primary btn-lg">Branding Demo</a>
-      <a href="/v0.3/cruorg" class="btn btn-primary btn-lg">Cru.org Core Components</a>
+      <a href="/demo" class="btn btn-primary btn-lg">Branding Demo</a>
+      <a href="/cruorg" class="btn btn-primary btn-lg">Cru.org Core Components</a>
     </div>
   </div>
 </body>
