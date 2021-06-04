@@ -1,5 +1,5 @@
 {
-  "name": "cru-content-designs",
+  "name": "@cruglobal/cru-content-designs",
   "version": "1.0.0",
   "description": "Designs for use on cru.org and other Cru digital properties utilizing official branding guidelines.",
   "main": "index.js",
