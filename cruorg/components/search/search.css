@@ -10,15 +10,6 @@
     caret-color: #FFCF07; }
     .cru-search .cmp-search__field:focus-within .cmp-search__input::placeholder {
       color: transparent !important; }
-    .cru-search .cmp-search__field:focus-within .cmp-search__input::-webkit-input-placeholder {
-      color: transparent !important; }
-    .cru-search .cmp-search__field:focus-within .cmp-search__input::-moz-placeholder {
-      color: transparent !important;
-      opacity: 1; }
-    .cru-search .cmp-search__field:focus-within .cmp-search__input:-ms-input-placeholder {
-      color: transparent !important; }
-    .cru-search .cmp-search__field:focus-within .cmp-search__input:-moz-placeholder {
-      color: transparent !important; }
   .cru-search .cmp-search__field:focus-within .cmp-search__icon {
     background-color: #FFCF07; }
     .cru-search .cmp-search__field:focus-within .cmp-search__icon::before {
@@ -37,15 +28,6 @@
   box-sizing: border-box;
   height: auto; }
   .cru-search .cmp-search__input::placeholder {
-    color: #383F43; }
-  .cru-search .cmp-search__input::-webkit-input-placeholder {
-    color: #383F43; }
-  .cru-search .cmp-search__input::-moz-placeholder {
-    color: #383F43;
-    opacity: 1; }
-  .cru-search .cmp-search__input:-ms-input-placeholder {
-    color: #383F43; }
-  .cru-search .cmp-search__input:-moz-placeholder {
     color: #383F43; }
 
 .cru-search .cmp-search__icon {
@@ -95,15 +77,6 @@
   color: #FFFFFF;
   border-color: #FFFFFF; }
   .cru-search-dark .cmp-search__input::placeholder {
-    color: #FFFFFF; }
-  .cru-search-dark .cmp-search__input::-webkit-input-placeholder {
-    color: #FFFFFF; }
-  .cru-search-dark .cmp-search__input::-moz-placeholder {
-    color: #FFFFFF;
-    opacity: 1; }
-  .cru-search-dark .cmp-search__input:-ms-input-placeholder {
-    color: #FFFFFF; }
-  .cru-search-dark .cmp-search__input:-moz-placeholder {
     color: #FFFFFF; }
 
 .cru-search-dark .cmp-search__icon {

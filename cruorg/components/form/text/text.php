@@ -1,24 +1,9 @@
 <?php
-function cru_form($dark = false, $underline = false) {
-?>
-  <div class="container<?php if ( $dark == true ) { echo ' cru-form-dark'; } ?><?php echo ( $underline == false ) ? ' cru-form-standard' : ' cru-form-underline'; ?>">
-    <form class="cmp-form">
-      <?php
-        $input_types = ['', 'disabled', 'alert'];
-        foreach ($input_types as $type) :
-          echo cru_form_input($type);
-        endforeach;
-      ?>
-    </form>
-  </div>
-<?php
-}
+include ROOT . '/components/form/form.php';
 
-
-function cru_form_input($input_type)
-{
+function cru_form_input($input_type) {
 ?>
-  <div class="text cru-form-text-<?= $input_type ?>">
+  <div class="text<?php if ($input_type != '') {echo " cru-form-text-$input_type";} ?>">
     <div class="cmp-form-text">
       <label>Label</label>
       <input class="cmp-form-text__text" type="text" placeholder="Text goes here..." name="firstName">
@@ -37,17 +22,17 @@ function cru_form_input($input_type)
 </div>
 
 <div class="comp-wrapper">
-  <?php cru_form(); ?>
+  <?php cru_form_container('text'); ?>
 </div>
 
 <div class="comp-wrapper">
-  <?php cru_form(false, true); ?>
+  <?php cru_form_container('text', false, true); ?>
 </div>
 
 <div class="comp-wrapper comp-dark-bg">
-  <?php cru_form(true); ?>
+  <?php cru_form_container('text', true); ?>
 </div>
 
 <div class="comp-wrapper comp-dark-bg">
-  <?php cru_form(true, true); ?>
+  <?php cru_form_container('text', true, true); ?>
 </div>

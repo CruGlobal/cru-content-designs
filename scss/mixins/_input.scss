@@ -4,16 +4,16 @@
 @mixin cru-placeholder-color($color, $important: false) {
   @if $important == false {
     &::placeholder { color: $color; }
-    &::-webkit-input-placeholder { color: $color; }
-    &::-moz-placeholder { color: $color; opacity: 1; }
-    &:-ms-input-placeholder { color: $color; }
-    &:-moz-placeholder { color: $color; }
+    // &::-webkit-input-placeholder { color: $color; }
+    // &::-moz-placeholder { color: $color; opacity: 1; }
+    // &:-ms-input-placeholder { color: $color; }
+    // &:-moz-placeholder { color: $color; }
   } @else {
     &::placeholder { color: $color !important; }
-    &::-webkit-input-placeholder { color: $color !important; }
-    &::-moz-placeholder { color: $color !important; opacity: 1; }
-    &:-ms-input-placeholder { color: $color !important; }
-    &:-moz-placeholder { color: $color !important; }
+    // &::-webkit-input-placeholder { color: $color !important; }
+    // &::-moz-placeholder { color: $color !important; opacity: 1; }
+    // &:-ms-input-placeholder { color: $color !important; }
+    // &:-moz-placeholder { color: $color !important; }
   }
 }
 
@@ -32,7 +32,7 @@
 
 @mixin cru-input-label-underlined-shared {
   opacity: 0;
-  margin-bottom: $cru-input-underline-label-spacing;
+  margin-bottom: $cru-input-underlined-label-spacing;
 }
 
 @mixin cru-input-label-underlined-focus {
@@ -45,6 +45,14 @@
 
 @mixin cru-input-label-dark-shared {
   color: $cru-input-dark-label-color;
+}
+
+@mixin cru-input-label-disabled {
+  color: $cru-input-disabled-color !important;
+}
+
+@mixin cru-input-label-disabled-dark {
+  color: $cru-input-dark-disabled-color !important;
 }
 
 @mixin cru-input-label-standard {
@@ -71,12 +79,13 @@
   @include cru-input-label-dark-shared;
 }
 
-@mixin cru-input-label-disabled {
-  color: $cru-input-disabled-color !important;
-}
+// HELP TEXT
 
-@mixin cru-input-label-disabled-dark {
-  color: $cru-input-dark-disabled-color !important;
+@mixin cru-input-help {
+  @include cru-input-label-all-shared;
+  @include cru-input-label-light-shared;
+  margin-top: $cru-spacer-base;
+  margin-bottom: 0;
 }
 
 // TEXT & TEXTAREA
@@ -91,7 +100,7 @@
   transition: box-shadow 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
   &:focus {
     outline: none;
-    caret-color: $cru-input-alert-color;
+    caret-color: $cru-input-focus-color;
     @include cru-placeholder-color(transparent, true);
   }
 }
@@ -108,11 +117,11 @@
 }
 
 @mixin cru-input-text-underlined-shared {
-  padding: $cru-input-underline-padding;
+  padding: $cru-input-underlined-padding;
   border-width: 0 0 $cru-input-border-width;
   border-radius: 0;
   &:focus {
-    border-color: $cru-input-alert-color;
+    border-color: $cru-input-focus-color;
   }
 }
 
@@ -152,64 +161,128 @@
   @include cru-input-text-all-shared;
   @include cru-input-text-underlined-shared;
   @include cru-input-text-dark-shared;
-  border-color: $cru-input-dark-underline-color;
+  border-color: $cru-input-dark-underlined-color;
   color: $cru-input-dark-label-color;
 }
 
-  // ALERTS
+// OPTIONS
 
-  @mixin cru-input-text-alert-shared {
-    border-color: $cru-input-alert-color !important;
-    background-image: url('data:image/svg+xml;utf-8,<svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="24px" viewBox="0 0 24 24" width="24px" fill="%23#{str-slice($cru-input-alert-color-string, 2, 7)}"><rect fill="none" height="24" width="24"/><path d="M12,5.99L19.53,19H4.47L12,5.99 M12,2L1,21h22L12,2L12,2z"/><polygon points="13,16 11,16 11,18 13,18"/><polygon points="13,10 11,10 11,15 13,15"/></svg>');
-    background-repeat: no-repeat;
+@mixin cru-input-options-fieldset-reset {
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+@mixin cru-input-options-legend-reset {
+  padding: 0;
+}
+
+@mixin cru-input-options-select-reset {
+  -webkit-appearance: none;
+  appearance: none;
+  overflow: auto;
+  margin: 0;
+}
+
+@mixin cru-input-options-options-spacing { // No effect in Safari
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+@mixin cru-input-options-dropdown-shared {
+  @include cru-input-dropdown-icon($cru-input-text-color-string);
+  background-repeat: no-repeat;
+}
+
+// ALERTS
+
+@mixin cru-input-text-alert-shared {
+  border-color: $cru-input-alert-color !important;
+  background-image: $cru-input-icon-alert;
+  background-repeat: no-repeat;
+}
+
+@mixin cru-input-text-standard-alert-shared {
+  padding-right: $cru-input-standard-icon-single-padding-right;
+  background-position: $cru-input-standard-icon-single-position;
+}
+
+@mixin cru-input-text-underlined-alert-shared {
+  padding-right: $cru-input-underlined-icon-single-padding-right;
+  background-position: $cru-input-underlined-icon-single-position;
+}
+
+@mixin cru-input-options-multi-alert {
+  padding-right: $cru-input-standard-icon-single-padding-right;
+  background-position: right ($cru-input-underlined-primary-icon-position-right + $cru-spacer + $cru-input-scrollbar-width) top $cru-input-standard-primary-icon-position-top;
+}
+
+@mixin cru-input-options-standard-dropdown-alert {
+  padding-right: $cru-input-standard-icon-double-padding-right;
+  background-position: $cru-input-standard-icon-single-position, right $cru-input-standard-secondary-icon-position-right top $cru-input-standard-primary-icon-position-top;
+  @include cru-input-options-dropdown-alert-icons;
+}
+
+@mixin cru-input-options-underlined-dropdown-alert {
+  padding-right: $cru-input-underlined-icon-double-padding-right;
+  background-position: $cru-input-underlined-icon-single-position, right $cru-input-underlined-secondary-icon-position-right top $cru-input-underlined-primary-icon-position-top;
+  @include cru-input-options-dropdown-alert-icons;
+}
+
+@mixin cru-input-options-dropdown-alert-icons {
+  @include cru-input-dropdown-icon($cru-input-text-color-string, true);
+}
+
+@mixin cru-input-options-dropdown-alert-icons-dark {
+  @include cru-input-dropdown-icon($cru-input-dark-label-color-string, true);
+}
+
+@mixin cru-input-text-standard-alert {
+  @include cru-input-text-alert-shared;
+  @include cru-input-text-standard-alert-shared;
+}
+
+@mixin cru-input-text-underlined-alert {
+  @include cru-input-text-alert-shared;
+  @include cru-input-text-underlined-alert-shared;
+}
+
+// DISABLED
+
+@mixin cru-input-text-disabled-shared {
+  cursor: not-allowed;
+  background-color: transparent !important;
+  box-shadow: none !important;
+}
+
+@mixin cru-input-text-light-disabled-shared {
+  color: $cru-input-disabled-color !important;
+  border-color: $cru-input-disabled-color !important;
+  @include cru-placeholder-color($cru-input-disabled-color, true);
+}
+
+@mixin cru-input-text-dark-disabled-shared {
+  color: $cru-input-dark-disabled-color !important;
+  border-color: $cru-input-dark-disabled-color !important;
+  @include cru-placeholder-color($cru-input-dark-disabled-color, true);
+}
+
+@mixin cru-input-text-light-disabled {
+  @include cru-input-text-disabled-shared;
+  @include cru-input-text-light-disabled-shared;
+}
+
+@mixin cru-input-text-dark-disabled {
+  @include cru-input-text-disabled-shared;
+  @include cru-input-text-dark-disabled-shared;
+}
+
+// ICONS
+
+@mixin cru-input-dropdown-icon($color, $alert: false) {
+  @if $alert == false {
+    background-image: url('data:image/svg+xml;charset=utf8,%3Csvg xmlns="http://www.w3.org/2000/svg" height="#{$cru-input-icon-size-string}px" viewBox="0 0 #{$cru-input-icon-size-string} #{$cru-input-icon-size-string}" width="#{$cru-input-icon-size-string}px" fill="%23#{str-slice($color, 2, 7)}"%3E%3Cpath d="M24 24H0V0h24v24z" fill="none" opacity=".87"/%3E%3Cpath d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6-1.41-1.41z"/%3E%3C/svg%3E');
+  } @else {
+    background-image: $cru-input-icon-alert, url('data:image/svg+xml;charset=utf8,%3Csvg xmlns="http://www.w3.org/2000/svg" height="#{$cru-input-icon-size-string}px" viewBox="0 0 #{$cru-input-icon-size-string} #{$cru-input-icon-size-string}" width="#{$cru-input-icon-size-string}px" fill="%23#{str-slice($color, 2, 7)}"%3E%3Cpath d="M24 24H0V0h24v24z" fill="none" opacity=".87"/%3E%3Cpath d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6-1.41-1.41z"/%3E%3C/svg%3E');
   }
-
-  @mixin cru-input-text-standard-alert-shared {
-    padding-right: $cru-input-alert-padding-right;
-    background-position: right $cru-input-alert-icon-right bottom ($cru-input-alert-icon-size / 2);
-  }
-
-  @mixin cru-input-text-underlined-alert-shared {
-    padding-right: $cru-input-alert-padding-right - $cru-spacer;
-    background-position: right $cru-input-underline-alert-icon-right bottom $cru-input-underline-alert-icon-bottom;
-  }
-
-  @mixin cru-input-text-standard-alert {
-    @include cru-input-text-alert-shared;
-    @include cru-input-text-standard-alert-shared;
-  }
-
-  @mixin cru-input-text-underlined-alert {
-    @include cru-input-text-alert-shared;
-    @include cru-input-text-underlined-alert-shared;
-  }
-
-  // DISABLED
-
-  @mixin cru-input-text-disabled-shared {
-    cursor: not-allowed;
-    background-color: transparent !important;
-    box-shadow: none !important;
-  }
-
-  @mixin cru-input-text-light-disabled-shared {
-    color: $cru-input-disabled-color !important;
-    border-color: $cru-input-disabled-color !important;
-    @include cru-placeholder-color($cru-input-disabled-color, true);
-  }
-
-  @mixin cru-input-text-dark-disabled-shared {
-    color: $cru-input-dark-disabled-color !important;
-    border-color: $cru-input-dark-disabled-color !important;
-    @include cru-placeholder-color($cru-input-dark-disabled-color, true);
-  }
-
-  @mixin cru-input-text-light-disabled {
-    @include cru-input-text-disabled-shared;
-    @include cru-input-text-light-disabled-shared;
-  }
-
-  @mixin cru-input-text-dark-disabled {
-    @include cru-input-text-disabled-shared;
-    @include cru-input-text-dark-disabled-shared;
-  }
+} 

@@ -5,10 +5,10 @@
 
 .cmp-form {
   .text,
-  .option,
+  .options,
   .button {
     + .text,
-    + .option,
+    + .options,
     + .button {
       margin-top: $cru-input-spacing;
     }

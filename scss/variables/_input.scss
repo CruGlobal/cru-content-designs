@@ -7,24 +7,48 @@ $cru-input-label-font-size: $cru-font-size-sm;
 $cru-input-line-height: $cru-line-height-base;
 $cru-input-font-size: $cru-font-size-base;
 $cru-input-text-color: $cru-color-gray-dark;
+$cru-input-text-color-string: '' + $cru-input-text-color;
 $cru-input-border-color: $cru-color-gray-dark;
 $cru-input-border-width: 1px;
 $cru-input-border-style: solid;
 $cru-input-border-radius: $cru-btn-border-radius;
 $cru-input-background-color: transparent;
 $cru-input-padding-h: $cru-spacer;
-$cru-input-alert-color: $cru-color-yellow;
+$cru-input-focus-color: $cru-color-yellow;
+$cru-input-alert-color: #f00;
 $cru-input-alert-color-string: '' + $cru-input-alert-color;
-$cru-input-alert-icon-size: 24px;
-$cru-input-alert-padding-right: $cru-spacer + $cru-input-alert-icon-size + $cru-spacer;
-$cru-input-alert-icon-right: $cru-input-border-width + $cru-spacer;
 $cru-input-standard-focus-background: $cru-color-white;
 $cru-input-standard-focus-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
-$cru-input-underline-label-spacing: 0;
-$cru-input-underline-padding: 6px 0;
-$cru-input-underline-alert-icon-bottom: 7px;
-$cru-input-underline-alert-icon-right: 0;
+$cru-input-underlined-label-spacing: 0;
+$cru-input-underlined-padding: 6px 0;
 $cru-input-disabled-color: $cru-color-gray-light;
+$cru-input-disabled-color-string: '' + $cru-input-disabled-color;
 $cru-input-dark-label-color: $cru-color-white;
-$cru-input-dark-underline-color: $cru-color-gray-medium;
+$cru-input-dark-label-color-string: '' + $cru-input-dark-label-color;
+$cru-input-dark-underlined-color: $cru-color-gray-medium;
 $cru-input-dark-disabled-color: $cru-color-gray-medium;
+$cru-input-dark-disabled-color-string: '' + $cru-input-dark-disabled-color;
+$cru-input-scrollbar-width: 17px;
+
+// Icon variables
+
+$cru-input-icon-size: 24px;
+$cru-input-icon-size-string: str-slice('' + $cru-input-icon-size, 1, 2);
+$cru-input-standard-icon-single-padding-right: $cru-spacer + $cru-input-icon-size + $cru-spacer;
+$cru-input-underlined-icon-single-padding-right: $cru-spacer + $cru-input-icon-size;
+$cru-input-standard-icon-double-padding-right: $cru-input-icon-size + $cru-spacer-base + $cru-input-standard-icon-single-padding-right;
+$cru-input-underlined-icon-double-padding-right: $cru-input-icon-size + $cru-spacer-base + $cru-input-underlined-icon-single-padding-right;
+$cru-input-multi-icon-padding-right: $cru-input-standard-icon-single-padding-right + $cru-input-scrollbar-width;
+
+$cru-input-standard-primary-icon-position-top: $cru-input-icon-size / 2 - $cru-input-border-width;
+$cru-input-standard-primary-icon-position-right: $cru-spacer;
+$cru-input-underlined-primary-icon-position-top: 6px;
+$cru-input-underlined-primary-icon-position-right: 0;
+
+$cru-input-standard-secondary-icon-position-right: $cru-spacer-base + $cru-input-icon-size + $cru-spacer;
+$cru-input-underlined-secondary-icon-position-right: $cru-spacer-base + $cru-input-icon-size;
+
+$cru-input-standard-icon-single-position: right $cru-input-standard-primary-icon-position-right top $cru-input-standard-primary-icon-position-top;
+$cru-input-underlined-icon-single-position: right $cru-input-underlined-primary-icon-position-right top $cru-input-underlined-primary-icon-position-top;
+
+$cru-input-icon-alert: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' height='#{$cru-input-icon-size-string}px' viewBox='0 0 #{$cru-input-icon-size-string} #{$cru-input-icon-size-string}' width='#{$cru-input-icon-size-string}px' fill='%23#{str-slice($cru-input-alert-color-string, 2, 7)}'%3E%3Cpath d='M0 0h24v24H0V0z' fill='none'/%3E%3Cpath d='M12 5.99L19.53 19H4.47L12 5.99M12 2L1 21h22L12 2zm1 14h-2v2h2v-2zm0-6h-2v4h2v-4z'/%3E%3C/svg%3E");

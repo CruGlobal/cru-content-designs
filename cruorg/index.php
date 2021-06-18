@@ -1,4 +1,6 @@
 <?php
+define('ROOT', dirname(__FILE__));
+
 $components = array(
   'accordion',
   'breadcrumb',
@@ -7,6 +9,7 @@ $components = array(
   // 'container',
   // 'download',
   // 'embed',
+  'form/options',
   'form/text',
   'image',
   'list',
@@ -54,33 +57,31 @@ foreach ($components as $component) {
 </head>
 
 <body>
-  <div class="comp-container">
-    <nav>
-      <h3>Filter:</h3>
+  <nav>
+    <h3>Filter:</h3>
+    <div class="button cru-button-tag cru-button-solid cru-button-gray-white">
+      <a class="cmp-button" href="/cruorg"><span class="cmp-button__text">All</span></a>
+    </div>
+    <?php foreach ($components_data as $component) : ?>
       <div class="button cru-button-tag cru-button-solid cru-button-gray-white">
-        <a class="cmp-button" href="/cruorg"><span class="cmp-button__text">All</span></a>
+        <a class="cmp-button" href="?comp=<?= $component['slug'] ?>"><span class="cmp-button__text"><?= $component['label'] ?></span></a>
       </div>
-      <?php foreach ($components_data as $component) : ?>
-        <div class="button cru-button-tag cru-button-solid cru-button-gray-white">
-          <a class="cmp-button" href="?comp=<?= $component['slug'] ?>"><span class="cmp-button__text"><?= $component['label'] ?></span></a>
-        </div>
-      <?php endforeach; ?>
-    </nav>
-    <?php
-      foreach ($components_data as $component) :
-        if (
-          ( isset( $_GET['comp'] ) && $_GET['comp'] === $component['slug'] ) ||
-          !isset( $_GET['comp'] )
-        ) :
-    ?>
-      <fieldset class="<?= $component['slug'] ?>-component">
-        <legend><?= $component['label']; ?> Component</legend>
-        <?php include "components/{$component['path']}/{$component['file']}.php"; ?>
-      </fieldset>
-    <?php
-        endif;
-      endforeach;
-    ?>
-  </div>
+    <?php endforeach; ?>
+  </nav>
+  <?php
+    foreach ($components_data as $component) :
+      if (
+        ( isset( $_GET['comp'] ) && $_GET['comp'] === $component['slug'] ) ||
+        !isset( $_GET['comp'] )
+      ) :
+  ?>
+    <fieldset class="comp-container <?= $component['slug'] ?>-component">
+      <legend><?= $component['label']; ?> Component</legend>
+      <?php include "components/{$component['path']}/{$component['file']}.php"; ?>
+    </fieldset>
+  <?php
+      endif;
+    endforeach;
+  ?>
 </body>
 </html>

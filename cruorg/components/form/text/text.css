@@ -1,12 +1,12 @@
 /* Input styles */
 .cmp-form .text + .text,
-.cmp-form .text + .option,
+.cmp-form .text + .options,
 .cmp-form .text + .button,
-.cmp-form .option + .text,
-.cmp-form .option + .option,
-.cmp-form .option + .button,
+.cmp-form .options + .text,
+.cmp-form .options + .options,
+.cmp-form .options + .button,
 .cmp-form .button + .text,
-.cmp-form .button + .option,
+.cmp-form .button + .options,
 .cmp-form .button + .button {
   margin-top: 16px; }
 
@@ -39,19 +39,6 @@
     .cru-form-standard .cmp-form-text input:focus::placeholder,
     .cru-form-standard .cmp-form-text textarea:focus::placeholder {
       color: transparent !important; }
-    .cru-form-standard .cmp-form-text input:focus::-webkit-input-placeholder,
-    .cru-form-standard .cmp-form-text textarea:focus::-webkit-input-placeholder {
-      color: transparent !important; }
-    .cru-form-standard .cmp-form-text input:focus::-moz-placeholder,
-    .cru-form-standard .cmp-form-text textarea:focus::-moz-placeholder {
-      color: transparent !important;
-      opacity: 1; }
-    .cru-form-standard .cmp-form-text input:focus:-ms-input-placeholder,
-    .cru-form-standard .cmp-form-text textarea:focus:-ms-input-placeholder {
-      color: transparent !important; }
-    .cru-form-standard .cmp-form-text input:focus:-moz-placeholder,
-    .cru-form-standard .cmp-form-text textarea:focus:-moz-placeholder {
-      color: transparent !important; }
   .cru-form-standard .cmp-form-text input:focus,
   .cru-form-standard .cmp-form-text textarea:focus {
     background-color: #FFFFFF;
@@ -59,19 +46,6 @@
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08); }
   .cru-form-standard .cmp-form-text input::placeholder,
   .cru-form-standard .cmp-form-text textarea::placeholder {
-    color: #383F43; }
-  .cru-form-standard .cmp-form-text input::-webkit-input-placeholder,
-  .cru-form-standard .cmp-form-text textarea::-webkit-input-placeholder {
-    color: #383F43; }
-  .cru-form-standard .cmp-form-text input::-moz-placeholder,
-  .cru-form-standard .cmp-form-text textarea::-moz-placeholder {
-    color: #383F43;
-    opacity: 1; }
-  .cru-form-standard .cmp-form-text input:-ms-input-placeholder,
-  .cru-form-standard .cmp-form-text textarea:-ms-input-placeholder {
-    color: #383F43; }
-  .cru-form-standard .cmp-form-text input:-moz-placeholder,
-  .cru-form-standard .cmp-form-text textarea:-moz-placeholder {
     color: #383F43; }
 
 .cru-form-standard.cru-form-dark .cmp-form-text label {
@@ -102,19 +76,6 @@
     .cru-form-standard.cru-form-dark .cmp-form-text input:focus::placeholder,
     .cru-form-standard.cru-form-dark .cmp-form-text textarea:focus::placeholder {
       color: transparent !important; }
-    .cru-form-standard.cru-form-dark .cmp-form-text input:focus::-webkit-input-placeholder,
-    .cru-form-standard.cru-form-dark .cmp-form-text textarea:focus::-webkit-input-placeholder {
-      color: transparent !important; }
-    .cru-form-standard.cru-form-dark .cmp-form-text input:focus::-moz-placeholder,
-    .cru-form-standard.cru-form-dark .cmp-form-text textarea:focus::-moz-placeholder {
-      color: transparent !important;
-      opacity: 1; }
-    .cru-form-standard.cru-form-dark .cmp-form-text input:focus:-ms-input-placeholder,
-    .cru-form-standard.cru-form-dark .cmp-form-text textarea:focus:-ms-input-placeholder {
-      color: transparent !important; }
-    .cru-form-standard.cru-form-dark .cmp-form-text input:focus:-moz-placeholder,
-    .cru-form-standard.cru-form-dark .cmp-form-text textarea:focus:-moz-placeholder {
-      color: transparent !important; }
   .cru-form-standard.cru-form-dark .cmp-form-text input:focus,
   .cru-form-standard.cru-form-dark .cmp-form-text textarea:focus {
     background-color: #FFFFFF;
@@ -123,30 +84,17 @@
   .cru-form-standard.cru-form-dark .cmp-form-text input::placeholder,
   .cru-form-standard.cru-form-dark .cmp-form-text textarea::placeholder {
     color: #FFFFFF; }
-  .cru-form-standard.cru-form-dark .cmp-form-text input::-webkit-input-placeholder,
-  .cru-form-standard.cru-form-dark .cmp-form-text textarea::-webkit-input-placeholder {
-    color: #FFFFFF; }
-  .cru-form-standard.cru-form-dark .cmp-form-text input::-moz-placeholder,
-  .cru-form-standard.cru-form-dark .cmp-form-text textarea::-moz-placeholder {
-    color: #FFFFFF;
-    opacity: 1; }
-  .cru-form-standard.cru-form-dark .cmp-form-text input:-ms-input-placeholder,
-  .cru-form-standard.cru-form-dark .cmp-form-text textarea:-ms-input-placeholder {
-    color: #FFFFFF; }
-  .cru-form-standard.cru-form-dark .cmp-form-text input:-moz-placeholder,
-  .cru-form-standard.cru-form-dark .cmp-form-text textarea:-moz-placeholder {
-    color: #FFFFFF; }
   .cru-form-standard.cru-form-dark .cmp-form-text input:not(:focus),
   .cru-form-standard.cru-form-dark .cmp-form-text textarea:not(:focus) {
     color: #FFFFFF; }
 
 .cru-form-standard .cru-form-text-alert .cmp-form-text input,
 .cru-form-standard .cru-form-text-alert .cmp-form-text textarea {
-  border-color: #FFCF07 !important;
-  background-image: url('data:image/svg+xml;utf-8,<svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="24px" viewBox="0 0 24 24" width="24px" fill="%23FFCF07"><rect fill="none" height="24" width="24"/><path d="M12,5.99L19.53,19H4.47L12,5.99 M12,2L1,21h22L12,2L12,2z"/><polygon points="13,16 11,16 11,18 13,18"/><polygon points="13,10 11,10 11,15 13,15"/></svg>');
+  border-color: #f00 !important;
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' height='24px' viewBox='0 0 24 24' width='24px' fill='%23f00'%3E%3Cpath d='M0 0h24v24H0V0z' fill='none'/%3E%3Cpath d='M12 5.99L19.53 19H4.47L12 5.99M12 2L1 21h22L12 2zm1 14h-2v2h2v-2zm0-6h-2v4h2v-4z'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   padding-right: 56px;
-  background-position: right 17px bottom 12px; }
+  background-position: right 16px top 11px; }
 
 .cru-form-underline .cmp-form-text label {
   display: block;
@@ -178,37 +126,11 @@
     .cru-form-underline .cmp-form-text input:focus::placeholder,
     .cru-form-underline .cmp-form-text textarea:focus::placeholder {
       color: transparent !important; }
-    .cru-form-underline .cmp-form-text input:focus::-webkit-input-placeholder,
-    .cru-form-underline .cmp-form-text textarea:focus::-webkit-input-placeholder {
-      color: transparent !important; }
-    .cru-form-underline .cmp-form-text input:focus::-moz-placeholder,
-    .cru-form-underline .cmp-form-text textarea:focus::-moz-placeholder {
-      color: transparent !important;
-      opacity: 1; }
-    .cru-form-underline .cmp-form-text input:focus:-ms-input-placeholder,
-    .cru-form-underline .cmp-form-text textarea:focus:-ms-input-placeholder {
-      color: transparent !important; }
-    .cru-form-underline .cmp-form-text input:focus:-moz-placeholder,
-    .cru-form-underline .cmp-form-text textarea:focus:-moz-placeholder {
-      color: transparent !important; }
   .cru-form-underline .cmp-form-text input:focus,
   .cru-form-underline .cmp-form-text textarea:focus {
     border-color: #FFCF07; }
   .cru-form-underline .cmp-form-text input::placeholder,
   .cru-form-underline .cmp-form-text textarea::placeholder {
-    color: #383F43; }
-  .cru-form-underline .cmp-form-text input::-webkit-input-placeholder,
-  .cru-form-underline .cmp-form-text textarea::-webkit-input-placeholder {
-    color: #383F43; }
-  .cru-form-underline .cmp-form-text input::-moz-placeholder,
-  .cru-form-underline .cmp-form-text textarea::-moz-placeholder {
-    color: #383F43;
-    opacity: 1; }
-  .cru-form-underline .cmp-form-text input:-ms-input-placeholder,
-  .cru-form-underline .cmp-form-text textarea:-ms-input-placeholder {
-    color: #383F43; }
-  .cru-form-underline .cmp-form-text input:-moz-placeholder,
-  .cru-form-underline .cmp-form-text textarea:-moz-placeholder {
     color: #383F43; }
 
 .cru-form-underline .cmp-form-text:focus-within label {
@@ -244,37 +166,11 @@
     .cru-form-underline.cru-form-dark .cmp-form-text input:focus::placeholder,
     .cru-form-underline.cru-form-dark .cmp-form-text textarea:focus::placeholder {
       color: transparent !important; }
-    .cru-form-underline.cru-form-dark .cmp-form-text input:focus::-webkit-input-placeholder,
-    .cru-form-underline.cru-form-dark .cmp-form-text textarea:focus::-webkit-input-placeholder {
-      color: transparent !important; }
-    .cru-form-underline.cru-form-dark .cmp-form-text input:focus::-moz-placeholder,
-    .cru-form-underline.cru-form-dark .cmp-form-text textarea:focus::-moz-placeholder {
-      color: transparent !important;
-      opacity: 1; }
-    .cru-form-underline.cru-form-dark .cmp-form-text input:focus:-ms-input-placeholder,
-    .cru-form-underline.cru-form-dark .cmp-form-text textarea:focus:-ms-input-placeholder {
-      color: transparent !important; }
-    .cru-form-underline.cru-form-dark .cmp-form-text input:focus:-moz-placeholder,
-    .cru-form-underline.cru-form-dark .cmp-form-text textarea:focus:-moz-placeholder {
-      color: transparent !important; }
   .cru-form-underline.cru-form-dark .cmp-form-text input:focus,
   .cru-form-underline.cru-form-dark .cmp-form-text textarea:focus {
     border-color: #FFCF07; }
   .cru-form-underline.cru-form-dark .cmp-form-text input::placeholder,
   .cru-form-underline.cru-form-dark .cmp-form-text textarea::placeholder {
-    color: #FFFFFF; }
-  .cru-form-underline.cru-form-dark .cmp-form-text input::-webkit-input-placeholder,
-  .cru-form-underline.cru-form-dark .cmp-form-text textarea::-webkit-input-placeholder {
-    color: #FFFFFF; }
-  .cru-form-underline.cru-form-dark .cmp-form-text input::-moz-placeholder,
-  .cru-form-underline.cru-form-dark .cmp-form-text textarea::-moz-placeholder {
-    color: #FFFFFF;
-    opacity: 1; }
-  .cru-form-underline.cru-form-dark .cmp-form-text input:-ms-input-placeholder,
-  .cru-form-underline.cru-form-dark .cmp-form-text textarea:-ms-input-placeholder {
-    color: #FFFFFF; }
-  .cru-form-underline.cru-form-dark .cmp-form-text input:-moz-placeholder,
-  .cru-form-underline.cru-form-dark .cmp-form-text textarea:-moz-placeholder {
     color: #FFFFFF; }
 
 .cru-form-underline.cru-form-dark .cmp-form-text:focus-within label {
@@ -285,11 +181,11 @@
 
 .cru-form-underline .cru-form-text-alert .cmp-form-text input,
 .cru-form-underline .cru-form-text-alert .cmp-form-text textarea {
-  border-color: #FFCF07 !important;
-  background-image: url('data:image/svg+xml;utf-8,<svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="24px" viewBox="0 0 24 24" width="24px" fill="%23FFCF07"><rect fill="none" height="24" width="24"/><path d="M12,5.99L19.53,19H4.47L12,5.99 M12,2L1,21h22L12,2L12,2z"/><polygon points="13,16 11,16 11,18 13,18"/><polygon points="13,10 11,10 11,15 13,15"/></svg>');
+  border-color: #f00 !important;
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' height='24px' viewBox='0 0 24 24' width='24px' fill='%23f00'%3E%3Cpath d='M0 0h24v24H0V0z' fill='none'/%3E%3Cpath d='M12 5.99L19.53 19H4.47L12 5.99M12 2L1 21h22L12 2zm1 14h-2v2h2v-2zm0-6h-2v4h2v-4z'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   padding-right: 40px;
-  background-position: right 0 bottom 7px; }
+  background-position: right 0 top 6px; }
 
 .cru-form-text-disabled .cmp-form-text label {
   color: #EBECEC !important; }
@@ -308,27 +204,6 @@
   .cmp-form-text input[disabled]::placeholder,
   .cmp-form-text textarea[disabled]::placeholder {
     color: #EBECEC !important; }
-  .cru-form-text-disabled .cmp-form-text input::-webkit-input-placeholder,
-  .cru-form-text-disabled .cmp-form-text textarea::-webkit-input-placeholder,
-  .cmp-form-text input[disabled]::-webkit-input-placeholder,
-  .cmp-form-text textarea[disabled]::-webkit-input-placeholder {
-    color: #EBECEC !important; }
-  .cru-form-text-disabled .cmp-form-text input::-moz-placeholder,
-  .cru-form-text-disabled .cmp-form-text textarea::-moz-placeholder,
-  .cmp-form-text input[disabled]::-moz-placeholder,
-  .cmp-form-text textarea[disabled]::-moz-placeholder {
-    color: #EBECEC !important;
-    opacity: 1; }
-  .cru-form-text-disabled .cmp-form-text input:-ms-input-placeholder,
-  .cru-form-text-disabled .cmp-form-text textarea:-ms-input-placeholder,
-  .cmp-form-text input[disabled]:-ms-input-placeholder,
-  .cmp-form-text textarea[disabled]:-ms-input-placeholder {
-    color: #EBECEC !important; }
-  .cru-form-text-disabled .cmp-form-text input:-moz-placeholder,
-  .cru-form-text-disabled .cmp-form-text textarea:-moz-placeholder,
-  .cmp-form-text input[disabled]:-moz-placeholder,
-  .cmp-form-text textarea[disabled]:-moz-placeholder {
-    color: #EBECEC !important; }
 
 .cru-form-dark .cru-form-text-disabled .cmp-form-text label {
   color: #9C9FA1 !important; }
@@ -346,25 +221,4 @@
   .cru-form-dark .cru-form-text-disabled .cmp-form-text textarea::placeholder,
   .cru-form-dark .cmp-form-text input[disabled]::placeholder,
   .cru-form-dark .cmp-form-text textarea[disabled]::placeholder {
-    color: #9C9FA1 !important; }
-  .cru-form-dark .cru-form-text-disabled .cmp-form-text input::-webkit-input-placeholder,
-  .cru-form-dark .cru-form-text-disabled .cmp-form-text textarea::-webkit-input-placeholder,
-  .cru-form-dark .cmp-form-text input[disabled]::-webkit-input-placeholder,
-  .cru-form-dark .cmp-form-text textarea[disabled]::-webkit-input-placeholder {
-    color: #9C9FA1 !important; }
-  .cru-form-dark .cru-form-text-disabled .cmp-form-text input::-moz-placeholder,
-  .cru-form-dark .cru-form-text-disabled .cmp-form-text textarea::-moz-placeholder,
-  .cru-form-dark .cmp-form-text input[disabled]::-moz-placeholder,
-  .cru-form-dark .cmp-form-text textarea[disabled]::-moz-placeholder {
-    color: #9C9FA1 !important;
-    opacity: 1; }
-  .cru-form-dark .cru-form-text-disabled .cmp-form-text input:-ms-input-placeholder,
-  .cru-form-dark .cru-form-text-disabled .cmp-form-text textarea:-ms-input-placeholder,
-  .cru-form-dark .cmp-form-text input[disabled]:-ms-input-placeholder,
-  .cru-form-dark .cmp-form-text textarea[disabled]:-ms-input-placeholder {
-    color: #9C9FA1 !important; }
-  .cru-form-dark .cru-form-text-disabled .cmp-form-text input:-moz-placeholder,
-  .cru-form-dark .cru-form-text-disabled .cmp-form-text textarea:-moz-placeholder,
-  .cru-form-dark .cmp-form-text input[disabled]:-moz-placeholder,
-  .cru-form-dark .cmp-form-text textarea[disabled]:-moz-placeholder {
     color: #9C9FA1 !important; }

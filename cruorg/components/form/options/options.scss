@@ -1,0 +1,180 @@
+// Branding imports
+@import "../../../branding-imports";
+
+/* Input styles */
+
+// Spacing between input fields is handled in the form/text component
+
+.cru-form-standard,
+.cru-form-underline {
+  .cmp-form-options {
+    @include cru-input-options-fieldset-reset;
+    &__legend {
+      @include cru-input-options-legend-reset;
+    }
+    &__field {
+      &--drop-down,
+      &--multi-drop-down {
+        @include cru-input-options-select-reset;
+      }
+      &--drop-down {
+        @include cru-input-options-dropdown-shared;
+      }
+      &--multi-drop-down {
+        option {
+          @include cru-input-options-options-spacing;
+        }
+      }
+    }
+    &__help-message {
+      @include cru-input-help;
+    }
+  }
+  &.cru-form-dark {
+    .cmp-form-options {
+      &__field {
+        &--drop-down {
+          @include cru-input-dropdown-icon($cru-input-dark-label-color-string);
+        }
+      }
+      &__help-message {
+        @include cru-input-label-dark-shared;
+      }
+    }
+    .cru-form-options-alert .cmp-form-options {
+      &__field {
+        &--drop-down {
+          @include cru-input-options-dropdown-alert-icons-dark;
+        }
+      }
+    }
+  }
+}
+
+.cru-form-standard {
+  .cmp-form-options {
+    &__legend,
+    &__label {
+      @include cru-input-label-standard;
+    }
+    &__field {
+      &--drop-down,
+      &--multi-drop-down {
+        @include cru-input-text-standard;
+      }
+      &--drop-down {
+        @include cru-input-text-standard-alert-shared;
+      }
+    }
+  }
+  &.cru-form-dark .cmp-form-options {
+    &__legend,
+    &__label {
+      @include cru-input-label-standard-dark;
+    }
+    &__field {
+      &--drop-down,
+      &--multi-drop-down {
+        @include cru-input-text-standard-dark;
+      }
+      &--drop-down {
+        @include cru-input-text-standard-alert-shared;
+      }
+    }
+  }
+  .cru-form-options-alert .cmp-form-options {
+    &__field {
+      &--drop-down,
+      &--multi-drop-down {
+        @include cru-input-text-standard-alert;
+      }
+      &--drop-down {
+        @include cru-input-options-standard-dropdown-alert;
+      }
+      &--multi-drop-down {
+        @include cru-input-options-multi-alert;
+      }
+    }
+  }
+}
+
+.cru-form-underline {
+  .cmp-form-options {
+    &__legend,
+    &__label {
+      @include cru-input-label-underlined;
+    }
+    &__field {
+      &--drop-down,
+      &--multi-drop-down {
+        @include cru-input-text-underlined;
+      }
+      &--drop-down {
+        @include cru-input-text-underlined-alert-shared;
+      }
+    }
+  }
+  &.cru-form-dark .cmp-form-options {
+    &__legend,
+    &__label {
+      @include cru-input-label-underlined-dark;
+    }
+    &__field {
+      &--drop-down,
+      &--multi-drop-down {
+        @include cru-input-text-underlined-dark;
+      }
+      &--drop-down {
+        @include cru-input-text-underlined-alert-shared;
+      }
+    }
+  }
+  .cru-form-options-alert .cmp-form-options {
+    &__field {
+      &--drop-down,
+      &--multi-drop-down {
+        @include cru-input-text-underlined-alert;
+      }
+      &--drop-down {
+        @include cru-input-options-underlined-dropdown-alert;
+      }
+      &--multi-drop-down {
+        @include cru-input-options-multi-alert;
+      }
+    }
+  }
+}
+
+.cru-form-options-disabled .cmp-form-options {
+  &__label,
+  &__help-message {
+    @include cru-input-label-disabled;
+  }
+}
+.cru-form-options-disabled .cmp-form-options select,
+.cmp-form-options select[disabled] {
+  @include cru-input-text-light-disabled;
+}
+.cru-form-options-disabled .cmp-form-options__field--drop-down,
+.cmp-form-options__field--drop-down[disabled] {
+  @include cru-input-dropdown-icon($cru-input-disabled-color-string);
+}
+
+.cru-form-dark .cru-form-options-disabled .cmp-form-options {
+  &__label,
+  &__help-message {
+    @include cru-input-label-disabled-dark;
+  }
+}
+.cru-form-dark {
+  .cru-form-options-disabled .cmp-form-options select,
+  .cmp-form-options select[disabled] {
+    @include cru-input-text-dark-disabled;
+  }
+}
+.cru-form-dark {
+  .cru-form-options-disabled .cmp-form-options__field--drop-down,
+  .cmp-form-options__field--drop-down[disabled] {
+    @include cru-input-dropdown-icon($cru-input-dark-disabled-color-string);
+  }
+}

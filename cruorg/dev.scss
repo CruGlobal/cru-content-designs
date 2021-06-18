@@ -3,12 +3,25 @@
 
 // Demo pages
 body {font-family: "Source Sans Pro";}
+nav,
 .comp-container {
   max-width: 1200px;
   margin: 0 auto;
 }
-fieldset {
-  margin: 25px 0;
+nav {
+  margin-top: 30px;
+  h3 {
+    display: inline-block;
+    margin-right: 10px;
+  }
+  .button {
+    display: inline-block;
+    margin: 0 5px 5px;
+  }
+}
+.comp-container {
+  margin-top: 25px;
+  margin-bottom: 25px;
   border-style: solid;
   border-color: #383F43;
 }
@@ -75,17 +88,6 @@ fieldset {
   font-family: monospace;
 }
 
-nav {
-  margin-top: 30px;
-  h3 {
-    display: inline-block;
-    margin-right: 10px;
-  }
-  .button {
-    display: inline-block;
-    margin: 0 5px 5px;
-  }
-}
 
 // AEM
 
