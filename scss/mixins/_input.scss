@@ -17,6 +17,18 @@
   }
 }
 
+@mixin cru-input-vertical-spacing($type) {
+  .cru-form {
+    .#{$type} {
+      + {
+        .text, .options, .button {
+          margin-bottom: 16px;
+        }
+      }
+    }
+  }
+}
+
 // LABELS
 
 @mixin cru-input-label-all-shared {

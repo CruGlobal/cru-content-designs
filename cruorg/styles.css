@@ -587,6 +587,9 @@
 /* Download styles */
 /* Embed styles */
 /* Input styles */
+.cru-form .options + .text, .cru-form .options + .options, .cru-form .options + .button {
+  margin-bottom: 16px; }
+
 .cru-form-standard .cmp-form-options,
 .cru-form-underline .cmp-form-options {
   margin: 0;
@@ -848,16 +851,8 @@
   background-image: url('data:image/svg+xml;charset=utf8,%3Csvg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="%239C9FA1"%3E%3Cpath d="M24 24H0V0h24v24z" fill="none" opacity=".87"/%3E%3Cpath d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6-1.41-1.41z"/%3E%3C/svg%3E'); }
 
 /* Input styles */
-.cmp-form .text + .text,
-.cmp-form .text + .options,
-.cmp-form .text + .button,
-.cmp-form .options + .text,
-.cmp-form .options + .options,
-.cmp-form .options + .button,
-.cmp-form .button + .text,
-.cmp-form .button + .options,
-.cmp-form .button + .button {
-  margin-top: 16px; }
+.cru-form .text + .text, .cru-form .text + .options, .cru-form .text + .button {
+  margin-bottom: 16px; }
 
 .cru-form-standard .cmp-form-text label {
   display: block;

@@ -1,14 +1,6 @@
 /* Input styles */
-.cmp-form .text + .text,
-.cmp-form .text + .options,
-.cmp-form .text + .button,
-.cmp-form .options + .text,
-.cmp-form .options + .options,
-.cmp-form .options + .button,
-.cmp-form .button + .text,
-.cmp-form .button + .options,
-.cmp-form .button + .button {
-  margin-top: 16px; }
+.cru-form .text + .text, .cru-form .text + .options, .cru-form .text + .button {
+  margin-bottom: 16px; }
 
 .cru-form-standard .cmp-form-text label {
   display: block;

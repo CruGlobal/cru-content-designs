@@ -3,17 +3,7 @@
 
 /* Input styles */
 
-.cmp-form {
-  .text,
-  .options,
-  .button {
-    + .text,
-    + .options,
-    + .button {
-      margin-top: $cru-input-spacing;
-    }
-  }
-}
+@include cru-input-vertical-spacing('text');
 
 .cru-form-standard {
   .cmp-form-text {

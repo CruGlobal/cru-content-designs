@@ -3,7 +3,7 @@
 
 /* Input styles */
 
-// Spacing between input fields is handled in the form/text component
+@include cru-input-vertical-spacing('options');
 
 .cru-form-standard,
 .cru-form-underline {

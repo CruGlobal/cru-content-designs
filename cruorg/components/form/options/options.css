@@ -1,4 +1,7 @@
 /* Input styles */
+.cru-form .options + .text, .cru-form .options + .options, .cru-form .options + .button {
+  margin-bottom: 16px; }
+
 .cru-form-standard .cmp-form-options,
 .cru-form-underline .cmp-form-options {
   margin: 0;
