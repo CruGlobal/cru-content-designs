@@ -21,6 +21,7 @@ exports.build = parallel(compileScssDir, compileCruorgDir);
 
 // Watch and compile everything
 exports.default = function() {
-  watch(`./scss/**/*.scss`, compileScssDir);
-  watch(`./cruorg/**/*.scss`, compileCruorgDir);
+  watch(`./**/*.scss`, parallel(compileScssDir, compileCruorgDir));
+  // watch(`./scss/**/*.scss`, compileScssDir);
+  // watch(`./cruorg/**/*.scss`, compileCruorgDir);
 }
