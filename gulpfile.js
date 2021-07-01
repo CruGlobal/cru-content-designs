@@ -1,8 +1,8 @@
-const { src, watch, dest, parallel } = require('gulp');
+const { src, watch, dest, series } = require('gulp');
 var sass = require('gulp-sass');
 var notify = require('gulp-notify');
 
-sass.compiler = require('node-sass');
+sass.compiler = require('sass');
 
 // Compilation function
 function compileSCSS(origDir, message = 'Styles processed', destDir = '') {
@@ -16,12 +16,14 @@ function compileSCSS(origDir, message = 'Styles processed', destDir = '') {
 const compileScssDir = () => compileSCSS('scss', 'Branding styles processed', 'css');
 const compileCruorgDir = () => compileSCSS('cruorg', 'Cru.org styles processed');
 
+const buildAll = series(compileScssDir, compileCruorgDir);
+
 // Build both directories once
-exports.build = parallel(compileScssDir, compileCruorgDir);
+exports.build = buildAll;
 
 // Watch and compile everything
 exports.default = function() {
-  watch(`./**/*.scss`, parallel(compileScssDir, compileCruorgDir));
+  watch(`./**/*.scss`, buildAll);
   // watch(`./scss/**/*.scss`, compileScssDir);
   // watch(`./cruorg/**/*.scss`, compileCruorgDir);
 }

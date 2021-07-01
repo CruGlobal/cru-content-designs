@@ -1,31 +1,13 @@
-// Branding imports
-@import 'branding-imports';
+// Importing these just to set the AEM variable
+@use './branding-imports' with (
+  $cru-aem-media-queries: true
+);
 
-// Import Source Sans Pro
-$cru-import-google-fonts-sans-serif-only: true;
-@import '../scss/fonts';
-
-// Import Material Icons
-@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
-@import url('https://fonts.googleapis.com/icon?family=Material+Icons+Round');
+// Import external fonts
+@use '../scss/imports' with (
+  $cru-import-material-icons: true,
+  $cru-import-material-icons-round: true,
+);
 
 // Import component styles
-@import 'components/accordion/accordion.scss';
-@import 'components/breadcrumb/breadcrumb.scss';
-@import 'components/button/button.scss';
-@import 'components/carousel/carousel.scss';
-@import 'components/container/container.scss';
-@import 'components/download/download.scss';
-@import 'components/embed/embed.scss';
-@import 'components/form/options/options.scss';
-@import 'components/form/text/text.scss';
-@import 'components/image/image.scss';
-@import 'components/list/list.scss';
-@import 'components/search/search.scss';
-// @import 'components/searchbar/searchbar.scss';
-@import 'components/separator/separator.scss';
-@import 'components/sharing/sharing.scss';
-@import 'components/tabs/tabs.scss';
-@import 'components/teaser/teaser.scss';
-@import 'components/text/text.scss';
-@import 'components/title/title.scss';
+@use 'components/components.scss';

@@ -1,5 +1,8 @@
 // All typography classes required for Cru branding
-// v0.4.0
+// v0.5.0
+
+@use '../mixins/typography' as *;
+@use '../variables' as *;
 
 // Basic text
 .cru-text         { @include cru-text; }
@@ -23,8 +26,8 @@
 }
 
 // Serif text
-@if $cru-import-google-fonts or $cru-import-google-fonts-serif-only {
-  .cru-text-serif {
-    font-family: $cru-font-family-serif;
-  }
-}
+// @if $cru-import-google-fonts or $cru-import-google-fonts-serif-only {
+//   .cru-text-serif {
+//     font-family: $cru-font-family-serif;
+//   }
+// }

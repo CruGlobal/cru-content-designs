@@ -1,23 +1,30 @@
 /* Separator styles */
 .cru-separator {
-  margin: 48px 0; }
-  .cru-separator .cmp-separator__horizontal-rule {
-    border-color: #9C9FA1;
-    border-style: solid;
-    border-width: 1px 0;
-    margin: 0; }
+  margin: 48px 0;
+}
+.cru-separator .cmp-separator__horizontal-rule {
+  border-color: #9C9FA1;
+  border-style: solid;
+  border-width: 1px 0;
+  margin: 0;
+}
 
 .cru-separator-yellow .cmp-separator__horizontal-rule {
-  border-color: #FFCF07; }
+  border-color: #FFCF07;
+}
 
 .cru-separator-gray-dark .cmp-separator__horizontal-rule {
-  border-color: #383F43; }
+  border-color: #383F43;
+}
 
 .cru-separator-gray-medium .cmp-separator__horizontal-rule {
-  border-color: #9C9FA1; }
+  border-color: #9C9FA1;
+}
 
 .cru-separator-gray-light .cmp-separator__horizontal-rule {
-  border-color: #EBECEC; }
+  border-color: #EBECEC;
+}
 
 .cru-separator-white .cmp-separator__horizontal-rule {
-  border-color: #FFFFFF; }
+  border-color: #FFFFFF;
+}

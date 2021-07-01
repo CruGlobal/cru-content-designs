@@ -1,5 +1,5 @@
 // Branding imports
-@import '../../branding-imports';
+@use '../../branding-imports' as *;
 
 $cru-teaser-content-padding-v: $cru-spacer * 3;
 $cru-teaser-content-padding-h: $cru-spacer * 2;

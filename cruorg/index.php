@@ -54,6 +54,7 @@ foreach ($components as $component) {
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined" rel="stylesheet">
   <!-- <script src="https://kit.fontawesome.com/a93b69849a.js" crossorigin="anonymous"></script> -->
   <link href="dev.css" type="text/css" rel="stylesheet">
+  <link href="styles.css" type="text/css" rel="stylesheet">
 </head>
 
 <body>

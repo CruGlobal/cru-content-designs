@@ -1,5 +1,7 @@
+@use 'sass:math';
+
 // Branding imports
-@import "../../branding-imports";
+@use '../../branding-imports' as *;
 
 /* Accordion styles */
 
@@ -89,7 +91,7 @@ $cru-accordion-links-icon-size-adjusted: $cru-accordion-links-icon-size - ($cru-
       width: $cru-accordion-links-icon-size-adjusted;
       height: $cru-accordion-links-icon-size-adjusted;
       border: $cru-color-yellow $cru-accordion-links-icon-border-width solid;
-      border-radius: $cru-accordion-links-icon-size / 2;
+      border-radius: math.div($cru-accordion-links-icon-size, 2);
       margin-left: $cru-spacer-base;
       text-align: center;
     }

@@ -3,14 +3,14 @@
   margin-top: 0;
   margin-bottom: 16px;
   padding: 0;
-  border-bottom: #EBECEC 2px solid; }
-
+  border-bottom: #EBECEC 2px solid;
+}
 .cru-tabs .cmp-tabs__tab {
   font-family: "Source Sans Pro", sans-serif;
   font-weight: 400;
   line-height: calc(1em + 8px);
   color: #383F43;
-  font-size: 1.125rem;
+  font-size: 1rem;
   font-size: 1rem;
   list-style: none;
   color: #9C9FA1;
@@ -19,24 +19,28 @@
   display: inline-block;
   border-bottom: #EBECEC 2px solid;
   margin-bottom: -2px;
-  white-space: nowrap; }
-  @media (max-width: 768px) {
-    .cru-tabs .cmp-tabs__tab {
-      font-size: 1rem; } }
-  @media (min-width: 769px) and (max-width: 992px) {
-    .cru-tabs .cmp-tabs__tab {
-      font-size: 1rem; } }
-  @media (min-width: 993px) and (max-width: 1200px) {
-    .cru-tabs .cmp-tabs__tab {
-      font-size: 1rem; } }
-  .cru-tabs .cmp-tabs__tab--active {
-    border-color: #FFCF07;
-    color: #383F43; }
-
+  white-space: nowrap;
+}
+@media (min-width: 768px) {
+  .cru-tabs .cmp-tabs__tab {
+    font-size: 1rem;
+  }
+}
+@media (min-width: 1200px) {
+  .cru-tabs .cmp-tabs__tab {
+    font-size: 1.125rem;
+  }
+}
+.cru-tabs .cmp-tabs__tab--active {
+  border-color: #FFCF07;
+  color: #383F43;
+}
 .cru-tabs .cmp-tabs__tabpanel {
-  display: none; }
-  .cru-tabs .cmp-tabs__tabpanel--active {
-    display: block; }
+  display: none;
+}
+.cru-tabs .cmp-tabs__tabpanel--active {
+  display: block;
+}
 
 .cru-tabs-dot .cmp-tabs__tab::before {
   content: "";
@@ -47,7 +51,8 @@
   background-color: #9C9FA1;
   vertical-align: top;
   margin-top: 5px;
-  margin-right: 8px; }
-
+  margin-right: 8px;
+}
 .cru-tabs-dot .cmp-tabs__tab--active::before {
-  background-color: #FFCF07; }
+  background-color: #FFCF07;
+}

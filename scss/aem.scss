@@ -1,9 +1,7 @@
 // All styles required for AEM Cru branding
-// v0.4.0
+// v0.5.0
 
-// Variable overrides for AEM
-@import 'aem-overrides';
-
-
-// All styles from _style.scss
-@import 'styles';
+// All styles from _styles.scss
+@use './styles' with (
+  $cru-aem-media-queries: true
+);

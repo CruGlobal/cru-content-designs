@@ -1,20 +1,24 @@
 /* Search styles */
 .cru-search .cmp-search__field {
   position: relative;
-  height: auto; }
-  .cru-search .cmp-search__field:focus-within .cmp-search__input {
-    outline: none;
-    background-color: #FFFFFF;
-    border-color: transparent;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
-    caret-color: #FFCF07; }
-    .cru-search .cmp-search__field:focus-within .cmp-search__input::placeholder {
-      color: transparent !important; }
-  .cru-search .cmp-search__field:focus-within .cmp-search__icon {
-    background-color: #FFCF07; }
-    .cru-search .cmp-search__field:focus-within .cmp-search__icon::before {
-      color: #FFFFFF; }
-
+  height: auto;
+}
+.cru-search .cmp-search__field:focus-within .cmp-search__input {
+  outline: none;
+  background-color: #FFFFFF;
+  border-color: transparent;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+  caret-color: #FFCF07;
+}
+.cru-search .cmp-search__field:focus-within .cmp-search__input::placeholder {
+  color: transparent !important;
+}
+.cru-search .cmp-search__field:focus-within .cmp-search__icon {
+  background-color: #FFCF07;
+}
+.cru-search .cmp-search__field:focus-within .cmp-search__icon::before {
+  color: #FFFFFF;
+}
 .cru-search .cmp-search__input {
   border: #EBECEC 1px solid;
   border-radius: 24px;
@@ -22,14 +26,15 @@
   font-size: 1rem;
   line-height: calc(1em + 8px);
   background-color: transparent;
-  transition: box-shadow .15s ease-in-out, color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out;
+  transition: box-shadow 0.15s ease-in-out, color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
   padding: 11px 64px 11px 24px;
   width: 100%;
   box-sizing: border-box;
-  height: auto; }
-  .cru-search .cmp-search__input::placeholder {
-    color: #383F43; }
-
+  height: auto;
+}
+.cru-search .cmp-search__input::placeholder {
+  color: #383F43;
+}
 .cru-search .cmp-search__icon {
   position: absolute;
   top: 50%;
@@ -43,41 +48,45 @@
   background-color: #EBECEC;
   background-image: none;
   text-align: center;
-  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out; }
-  .cru-search .cmp-search__icon::before {
-    font-family: "Material Icons";
-    font-weight: normal;
-    font-style: normal;
-    font-size: 18px;
-    display: inline-block;
-    line-height: 1;
-    text-transform: none;
-    letter-spacing: normal;
-    word-wrap: normal;
-    white-space: nowrap;
-    direction: ltr;
-    -webkit-font-smoothing: antialiased;
-    text-rendering: optimizeLegibility;
-    -moz-osx-font-smoothing: grayscale;
-    font-feature-settings: 'liga';
-    content: 'search';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: #383F43; }
-
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+}
+.cru-search .cmp-search__icon::before {
+  font-family: "Material Icons";
+  font-weight: normal;
+  font-style: normal;
+  font-size: 18px;
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: "liga";
+  content: "search";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #383F43;
+}
 .cru-search .cmp-search__clear {
-  display: none; }
+  display: none;
+}
 
 .cru-search-dark .cmp-search__field:focus-within .cmp-search__input {
-  color: #383F43; }
-
+  color: #383F43;
+}
 .cru-search-dark .cmp-search__input {
   color: #FFFFFF;
-  border-color: #FFFFFF; }
-  .cru-search-dark .cmp-search__input::placeholder {
-    color: #FFFFFF; }
-
+  border-color: #FFFFFF;
+}
+.cru-search-dark .cmp-search__input::placeholder {
+  color: #FFFFFF;
+}
 .cru-search-dark .cmp-search__icon {
-  background-color: #FFFFFF; }
+  background-color: #FFFFFF;
+}

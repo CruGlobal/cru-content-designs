@@ -1,5 +1,7 @@
+@use 'sass:math';
+
 // Branding imports
-@import '../../branding-imports';
+@use '../../branding-imports' as *;
 
 /* Searchbar styles */
 
@@ -37,7 +39,7 @@ $cru-searchbar-icon-wrapper-size: 32px;
         font-size: 0;
         width: $cru-searchbar-icon-wrapper-size;
         height: $cru-searchbar-icon-wrapper-size;
-        border-radius: $cru-searchbar-icon-wrapper-size / 2;
+        border-radius: math.div($cru-searchbar-icon-wrapper-size, 2);
         background-color: $cru-color-gray-light;
         text-align: center;
         transition: $cru-btn-transition;

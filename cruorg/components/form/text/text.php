@@ -3,7 +3,7 @@ include ROOT . '/components/form/form.php';
 
 function cru_form_input($input_type) {
 ?>
-  <div class="text<?php if ($input_type != '') {echo " cru-form-text-$input_type";} ?>">
+  <div class="text<?php if ($input_type != '') {echo " cru-form-text--$input_type";} ?>">
     <div class="cmp-form-text">
       <label>Label</label>
       <input class="cmp-form-text__text" type="text" placeholder="Text goes here..." name="firstName">

@@ -8,7 +8,7 @@ function cru_form_boxes($input_type) {
   foreach ($option_type as $type) :
     $name = ( $type == 'radio' ) ? rand( 1000, 9999 ) : 'ch';
 ?>
-  <div class="options<?php if ($input_type != '') {echo " cru-form-options-$input_type";} ?>">
+  <div class="options<?php if ($input_type != '') {echo " cru-form-options--$input_type";} ?>">
     <fieldset class="cmp-form-options cmp-form-options--<?= $type ?>">
       <legend class="cmp-form-options__legend">Options</legend>
       <?php
@@ -34,7 +34,7 @@ function cru_form_select($input_type) {
   foreach ($option_type as $type) :
     $multi = ( $type == 'multi-drop-down' ) ? 'multiple' : '';
 ?>
-  <div class="options<?php if ($input_type != '') {echo " cru-form-options-$input_type";} ?>">
+  <div class="options<?php if ($input_type != '') {echo " cru-form-options--$input_type";} ?>">
     <fieldset class="cmp-form-options cmp-form-options--<?= $type ?>">
       <label class="cmp-form-options__label">Options</label>
       <select class="cmp-form-options__field cmp-form-options__field--<?= $type ?>" <?= $multi ?>>

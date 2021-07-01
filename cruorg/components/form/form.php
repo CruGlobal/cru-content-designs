@@ -1,9 +1,9 @@
 <?php
 function cru_form_container($input_type, $dark = false, $underline = false) {
-  $styleClass = ( $underline == false ) ? ' cru-form-standard' : ' cru-form-underline';
-  $darkClass = ( $dark == true ) ? ' cru-form-dark' : '';
+  $styleClass = ( $underline == true ) ? ' cru-form--underlined' : '';
+  $darkClass = ( $dark == true ) ? ' cru-form--dark' : '';
 ?>
-  <div class="container<?= $styleClass . $darkClass ?>">
+  <div class="container cru-form<?= $styleClass . $darkClass ?>">
     <form class="cmp-form">
       <?php
         $input_state = ['', 'disabled', 'alert'];

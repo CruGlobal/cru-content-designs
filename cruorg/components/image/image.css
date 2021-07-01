@@ -1,14 +1,18 @@
 /* Image styles */
 .cru-image .cmp-image {
-  font-size: 0; }
-  .cru-image .cmp-image__link {
-    text-decoration: none; }
-  .cru-image .cmp-image__image {
-    max-width: 100%;
-    height: auto;
-    border-radius: 4px; }
-  .cru-image .cmp-image__title {
-    display: block;
-    color: #383F43;
-    margin-top: 16px;
-    font-size: 0.875rem; }
+  font-size: 0;
+}
+.cru-image .cmp-image__link {
+  text-decoration: none;
+}
+.cru-image .cmp-image__image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+.cru-image .cmp-image__title {
+  display: block;
+  color: #383F43;
+  margin-top: 16px;
+  font-size: 0.875rem;
+}

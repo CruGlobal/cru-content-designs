@@ -1,0 +1,19 @@
+// Import for Cru branding
+// v0.5.0
+
+// Import external fonts
+$cru-import-source-sans: true !default;
+$cru-import-material-icons: false !default;
+$cru-import-material-icons-round: false !default;
+
+@if $cru-import-source-sans {
+  @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap');
+}
+
+@if $cru-import-material-icons {
+  @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+}
+
+@if $cru-import-material-icons-round {
+  @import url('https://fonts.googleapis.com/icon?family=Material+Icons+Round');
+}

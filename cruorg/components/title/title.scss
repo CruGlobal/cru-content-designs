@@ -1,5 +1,5 @@
 // Branding imports
-@import '../../branding-imports';
+@use '../../branding-imports' as *;
 
 /* Title styles */
 .cru-title .cmp-title__text {

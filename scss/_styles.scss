@@ -1,16 +1,14 @@
 /**
   Official branding for Cru web properties
-  Version: 0.3
+  Version: 0.5.0
 **/
 
 // Configuration
-@import 'options';
-@import 'variables';
-@import 'mixins';
+@forward './variables';
+@forward './mixins';
 
 // Conditional font import
-$cru-import-google-fonts: true;
-@import 'fonts';
+@forward './imports';
 
 // Classes
-@import 'classes';
+@forward './classes';

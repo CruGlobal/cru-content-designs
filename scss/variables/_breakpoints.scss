@@ -1,5 +1,5 @@
 // All breakpoint variables required for Cru branding
-// v0.4.0
+// v0.5.0
 
 $cru-breakpoints: (
   1: 0,
@@ -12,6 +12,24 @@ $cru-breakpoints-mapping: (
   2: 2,
   3: 3,
 ) !default;
+
+$cru-aem-media-queries: false !default;
+
+@if $cru-aem-media-queries == true {
+  $cru-breakpoints: (
+    xs: 0,
+    md: 768px,
+    lg: 992px,
+    xl: 1200px,
+  );
+
+  $cru-breakpoints-mapping: (
+    xs: 1,
+    md: 2,
+    lg: 2,
+    xl: 3,
+  );
+}
 
 @function cru_index_map_data($map, $index_key: false) {
   $i: 1;
@@ -33,5 +51,7 @@ $cru-breakpoints-values-indexed: cru_index_map_data($cru-breakpoints);
 $cru-breakpoints-mapping-indexed: cru_index_map_data($cru-breakpoints-mapping);
 
 $cru-breakpoint-xs: map-get($cru-breakpoints-values-indexed, 1) !default;
+// $cru-breakpoint-sm: false !default;
 $cru-breakpoint-md: map-get($cru-breakpoints-values-indexed, 2) !default;
+@if $cru-aem-media-queries == true { $cru-breakpoint-lg: map-get($cru-breakpoints, lg); }
 $cru-breakpoint-xl: map-get($cru-breakpoints-values-indexed, 3) !default;

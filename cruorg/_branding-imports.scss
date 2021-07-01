@@ -1,7 +1,3 @@
-// Variable overrides for AEM
-@import '../scss/aem-overrides';
-
 // Import submodule options, variables, and mixins
-@import '../scss/options';
-@import '../scss/variables';
-@import '../scss/mixins';
+@forward '../scss/variables';
+@forward '../scss/mixins';

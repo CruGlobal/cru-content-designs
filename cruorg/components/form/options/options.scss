@@ -1,180 +1,162 @@
+@use '../../../../scss/mixins/input' as *;
+
 // Branding imports
-@import "../../../branding-imports";
+@use '../../../branding-imports' as *;
 
-/* Input styles */
+/* Form select options styles */
 
-@include cru-input-vertical-spacing('options');
+@include form-field-vertical-spacing('options');
 
-.cru-form-standard,
-.cru-form-underline {
+// Reset
+.cru-form {
   .cmp-form-options {
-    @include cru-input-options-fieldset-reset;
+    @include fieldset-reset;
     &__legend {
-      @include cru-input-options-legend-reset;
+      @include legend-reset;
     }
-    &__field {
+    .cmp-form-options__field {
       &--drop-down,
       &--multi-drop-down {
-        @include cru-input-options-select-reset;
+        @include select-reset;
       }
-      &--drop-down {
-        @include cru-input-options-dropdown-shared;
-      }
-      &--multi-drop-down {
-        option {
-          @include cru-input-options-options-spacing;
-        }
-      }
+    }
+  }
+}
+
+// Labels
+.cru-form {
+  // Default
+  .cmp-form-options {
+    &__legend,
+    &__label {
+      @include label;
     }
     &__help-message {
-      @include cru-input-help;
+      @include help;
     }
   }
-  &.cru-form-dark {
-    .cmp-form-options {
-      &__field {
-        &--drop-down {
-          @include cru-input-dropdown-icon($cru-input-dark-label-color-string);
-        }
-      }
-      &__help-message {
-        @include cru-input-label-dark-shared;
-      }
+
+  // Underlined
+  &.cru-form--underlined .cmp-form-options {
+    &__legend,
+    &__label {
+      @include label-underlined;
     }
-    .cru-form-options-alert .cmp-form-options {
-      &__field {
-        &--drop-down {
-          @include cru-input-options-dropdown-alert-icons-dark;
-        }
-      }
+    &:focus-within label {
+      @include label-underlined-focus;
+    }
+  }
+
+  // Dark
+  &.cru-form--dark .cmp-form-options {
+    &__legend,
+    &__label,
+    &__help-message {
+      @include label-dark;
     }
   }
 }
 
-.cru-form-standard {
-  .cmp-form-options {
-    &__legend,
-    &__label {
-      @include cru-input-label-standard;
+// Text and textarea fields
+.cru-form {
+  // Default
+  .cmp-form-options .cmp-form-options__field {
+    &--drop-down,
+    &--multi-drop-down {
+      @include text-field;
     }
-    &__field {
-      &--drop-down,
-      &--multi-drop-down {
-        @include cru-input-text-standard;
-      }
-      &--drop-down {
-        @include cru-input-text-standard-alert-shared;
-      }
+    &--drop-down {
+      @include dropdown;
     }
-  }
-  &.cru-form-dark .cmp-form-options {
-    &__legend,
-    &__label {
-      @include cru-input-label-standard-dark;
-    }
-    &__field {
-      &--drop-down,
-      &--multi-drop-down {
-        @include cru-input-text-standard-dark;
-      }
-      &--drop-down {
-        @include cru-input-text-standard-alert-shared;
+    &--multi-drop-down {
+      option {
+        @include option-spacing;
       }
     }
   }
-  .cru-form-options-alert .cmp-form-options {
-    &__field {
+
+  // Default alert
+  .cru-form-options--alert .cmp-form-options .cmp-form-options__field {
+    &--drop-down,
+    &--multi-drop-down {
+      @include alert-border-color;
+    }
+    &--drop-down {
+      @include dropdown-alert-icon;
+    }
+    &--multi-drop-down {
+      @include multi-dropdown-alert;
+    }
+  }
+
+  // Underlined
+  &.cru-form--underlined .cmp-form-options .cmp-form-options__field {
+    &--drop-down,
+    &--multi-drop-down {
+      @include text-field-underlined;
+    }
+  }
+
+  // Dark default
+  &.cru-form--dark {
+    // Default
+    .cmp-form-options .cmp-form-options__field {
       &--drop-down,
       &--multi-drop-down {
-        @include cru-input-text-standard-alert;
+        @include text-field-dark;
       }
       &--drop-down {
-        @include cru-input-options-standard-dropdown-alert;
+        @include dropdown-dark;
       }
-      &--multi-drop-down {
-        @include cru-input-options-multi-alert;
-      }
+    }
+
+    // Dark alert
+    .cru-form-options--alert .cmp-form-options .cmp-form-options__field--drop-down {
+      @include dropdown-alert-dark;
+    }
+  }
+
+  // Underlined dark
+  &.cru-form--underlined.cru-form--dark .cmp-form-options .cmp-form-options__field {
+    &--drop-down,
+    &--multi-drop-down {
+      @include text-field-underlined-dark;
     }
   }
 }
 
-.cru-form-underline {
-  .cmp-form-options {
-    &__legend,
-    &__label {
-      @include cru-input-label-underlined;
-    }
-    &__field {
-      &--drop-down,
-      &--multi-drop-down {
-        @include cru-input-text-underlined;
-      }
-      &--drop-down {
-        @include cru-input-text-underlined-alert-shared;
-      }
-    }
-  }
-  &.cru-form-dark .cmp-form-options {
-    &__legend,
-    &__label {
-      @include cru-input-label-underlined-dark;
-    }
-    &__field {
-      &--drop-down,
-      &--multi-drop-down {
-        @include cru-input-text-underlined-dark;
-      }
-      &--drop-down {
-        @include cru-input-text-underlined-alert-shared;
-      }
-    }
-  }
-  .cru-form-options-alert .cmp-form-options {
-    &__field {
-      &--drop-down,
-      &--multi-drop-down {
-        @include cru-input-text-underlined-alert;
-      }
-      &--drop-down {
-        @include cru-input-options-underlined-dropdown-alert;
-      }
-      &--multi-drop-down {
-        @include cru-input-options-multi-alert;
-      }
-    }
-  }
+// Text and textarea disabled
+@include disabled-label('options', '.cmp-form-options__legend') {
+  @include label-disabled;
+}
+@include disabled-label('options', '.cmp-form-options__label') {
+  @include label-disabled;
+}
+@include disabled-label('options', '.cmp-form-options__help-message') {
+  @include label-disabled;
 }
 
-.cru-form-options-disabled .cmp-form-options {
-  &__label,
-  &__help-message {
-    @include cru-input-label-disabled;
-  }
+@include disabled-field('options', '.cmp-form-options__field--drop-down') {
+  @include disabled-dropdown;
+};
+@include disabled-field('options', '.cmp-form-options__field--multi-drop-down') {
+  @include disabled;
+};
+
+// Text and textarea dark disabled
+@include disabled-label('options', '.cmp-form-options__legend', true) {
+  @include label-disabled-dark;
 }
-.cru-form-options-disabled .cmp-form-options select,
-.cmp-form-options select[disabled] {
-  @include cru-input-text-light-disabled;
+@include disabled-label('options', '.cmp-form-options__label', true) {
+  @include label-disabled-dark;
 }
-.cru-form-options-disabled .cmp-form-options__field--drop-down,
-.cmp-form-options__field--drop-down[disabled] {
-  @include cru-input-dropdown-icon($cru-input-disabled-color-string);
+@include disabled-label('options', '.cmp-form-options__help-message', true) {
+  @include label-disabled-dark;
 }
 
-.cru-form-dark .cru-form-options-disabled .cmp-form-options {
-  &__label,
-  &__help-message {
-    @include cru-input-label-disabled-dark;
-  }
-}
-.cru-form-dark {
-  .cru-form-options-disabled .cmp-form-options select,
-  .cmp-form-options select[disabled] {
-    @include cru-input-text-dark-disabled;
-  }
-}
-.cru-form-dark {
-  .cru-form-options-disabled .cmp-form-options__field--drop-down,
-  .cmp-form-options__field--drop-down[disabled] {
-    @include cru-input-dropdown-icon($cru-input-dark-disabled-color-string);
-  }
-}
+@include disabled-field('options', '.cmp-form-options__field--drop-down', true) {
+  @include disabled-dropdown-dark;
+};
+@include disabled-field('options', '.cmp-form-options__field--multi-drop-down', true) {
+  @include disabled-dark;
+};

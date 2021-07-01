@@ -1,91 +1,87 @@
+@use '../../../../scss/mixins/input' as *;
+
 // Branding imports
-@import "../../../branding-imports";
+@use '../../../branding-imports' as *;
 
-/* Input styles */
+/* Form text input and textarea styles */
 
-@include cru-input-vertical-spacing('text');
+@include form-field-vertical-spacing('text');
 
-.cru-form-standard {
+// Labels
+.cru-form {
+  // Default
   .cmp-form-text {
     label {
-      @include cru-input-label-standard;
-    }
-    input,
-    textarea {
-      @include cru-input-text-standard;
+      @include label;
     }
   }
-  &.cru-form-dark .cmp-form-text {
-    label {
-      @include cru-input-label-standard-dark;
-    }
-    input,
-    textarea {
-      @include cru-input-text-standard-dark;
+
+  // Underlined
+  &.cru-form--underlined {
+    .cmp-form-text {
+      label {
+        @include label-underlined;
+      }
+      &:focus-within label {
+        @include label-underlined-focus;
+      }
     }
   }
-  .cru-form-text-alert .cmp-form-text {
-    input,
-    textarea {
-      @include cru-input-text-standard-alert;
+
+  // Dark
+  &.cru-form--dark {
+    .cmp-form-text {
+      label {
+        @include label-dark;
+      }
     }
   }
 }
 
-.cru-form-underline {
+// Fields
+.cru-form {
+  // Default
   .cmp-form-text {
-    label {
-      @include cru-input-label-underlined;
-    }
-    input,
-    textarea {
-      @include cru-input-text-underlined;
-    }
-    &:focus-within label {
-      @include cru-input-label-underlined-focus;
+    > *:not(label) {
+      @include text-field;
     }
   }
-  &.cru-form-dark .cmp-form-text {
-    label {
-      @include cru-input-label-underlined-dark;
-    }
-    input,
-    textarea {
-      @include cru-input-text-underlined-dark;
-    }
-    &:focus-within label {
-      @include cru-input-label-underlined-focus;
-    }
+
+  // Default alert
+  .cru-form-text--alert .cmp-form-text > *:not(label) {
+    @include text-field-alert;
   }
-  .cru-form-text-alert .cmp-form-text {
-    label {
-      @include cru-input-label-underlined-focus;
-    }
-    input,
-    textarea {
-      @include cru-input-text-underlined-alert;
-    }
+
+  // Underlined
+  &.cru-form--underlined .cmp-form-text > *:not(label) {
+    @include text-field-underlined;
+  }
+
+  // Dark default
+  &.cru-form--dark .cmp-form-text > *:not(label) {
+    @include text-field-dark;
+  }
+
+  // Underlined dark
+  &.cru-form--underlined.cru-form--dark .cmp-form-text > *:not(label) {
+    @include text-field-underlined-dark;
   }
 }
 
-.cru-form-text-disabled .cmp-form-text label {
-  @include cru-input-label-disabled;
-}
-.cru-form-text-disabled .cmp-form-text input,
-.cru-form-text-disabled .cmp-form-text textarea,
-.cmp-form-text input[disabled],
-.cmp-form-text textarea[disabled] {
-  @include cru-input-text-light-disabled;
+// Disabled
+@include disabled-label('text', 'label') {
+  @include label-disabled;
 }
 
-.cru-form-dark .cru-form-text-disabled .cmp-form-text label {
-  @include cru-input-label-disabled-dark;
+@include disabled-field('text', '> *:not(label)') {
+  @include disabled;
+};
+
+// Dark disabled
+@include disabled-label('text', 'label', true) {
+  @include label-disabled-dark;
 }
-.cru-form-dark {
-  .cru-form-text-disabled .cmp-form-text input,
-  .cru-form-text-disabled .cmp-form-text textarea,
-  .cmp-form-text input[disabled],
-  .cmp-form-text textarea[disabled] {
-    @include cru-input-text-dark-disabled;
-  }
-}
+
+@include disabled-field('text', '> *:not(label)', true) {
+  @include disabled-dark;
+};

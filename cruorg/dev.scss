@@ -1,5 +1,5 @@
 // Production styles
-@import 'styles.scss';
+@use '../scss/mixins/icons' as *;
 
 // Demo pages
 body {font-family: "Source Sans Pro";}
