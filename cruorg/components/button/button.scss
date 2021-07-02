@@ -3,7 +3,8 @@
 
 /* Button styles */
 .cmp-button,
-.cmp-form-button {
+.cmp-form-button,
+.cmp-carousel__action {
   @include cru-button2;
   &__icon::before {
     margin-right: 0;
@@ -70,9 +71,6 @@
 
 // Combo button type defaults
 .cru-button-combo {
-  .cmp-button {
-    @include cru-button2-combo-defaults;
-  }
   &.cru-button-gray-text .cmp-button {
     @include cru-button2-combo-gray-text;
   }
@@ -84,30 +82,33 @@
 // Dot/combo button type defaults
 .cru-button-dot,
 .cru-button-combo {
-  .cmp-button {
+  .cmp-button,
+  .cmp-carousel__action {
     @include cru-button2-dot-combo-defaults;
-    &__icon {
-      @include cru-button2-dot-combo-icon;
-      &::before {
-        @include cru-button2-dot-combo-icon-line-height;
-      }
+  }
+  .cmp-button__icon,
+  .cmp-carousel__action-icon {
+    @include cru-button2-dot-combo-icon;
+    &::before {
+      @include cru-button2-dot-combo-icon-line-height;
     }
   }
   &.cru-button-solid {
-    &.cru-button-shadow .cmp-button__icon {
-      @include cru-button2-dot-combo-icon-shadow;
-    }
-    .cmp-button {
-      &__icon {
-        @include cru-button2-yellow-gray-solid;
+    &.cru-button-shadow {
+      .cmp-button__icon,
+      .cmp-carousel__action-icon {
+        @include cru-button2-dot-combo-icon-shadow;
       }
+    }
+    .cmp-button__icon,
+    .cmp-carousel__action-icon {
+      @include cru-button2-yellow-gray-solid;
     }
   }
   &.cru-button-outline {
-    .cmp-button {
-      &__icon {
-        @include cru-button2-yellow-yellow-outline;
-      }
+    .cmp-button__icon,
+    .cmp-carousel__action-icon {
+      @include cru-button2-yellow-yellow-outline;
     }
   }
 }
@@ -195,11 +196,17 @@
 
 .cru-button-dot {
   &.cru-button-solid {
-    &.cru-button-yellow-gray .cmp-button:hover .cmp-button__icon {
-      @include cru-button2-gray-white-solid;
+    &.cru-button-yellow-gray {
+      .cmp-button:hover .cmp-button__icon,
+      .cmp-carousel__action:hover .cmp-carousel__action-icon {
+        @include cru-button2-gray-white-solid;
+      }
     }
-    &.cru-button-white-gray .cmp-button__icon {
-      @include cru-button2-white-gray-solid;
+    &.cru-button-white-gray {
+      .cmp-button__icon,
+      .cmp-carousel__action-icon {
+        @include cru-button2-white-gray-solid;
+      }
     }
   }
 }
@@ -207,22 +214,37 @@
 .cru-button-dot,
 .cru-button-combo {
   &.cru-button-solid {
-    &.cru-button-yellow-gray .cmp-button__icon {
-      @include cru-button2-yellow-gray-solid;
+    &.cru-button-yellow-gray {
+      .cmp-button__icon,
+      .cmp-carousel__action-icon {
+        @include cru-button2-yellow-gray-solid;
+      }
     }
-    &.cru-button-gray-white .cmp-button__icon {
-      @include cru-button2-gray-white-solid;
+    &.cru-button-gray-white {
+      .cmp-button__icon,
+      .cmp-carousel__action-icon {
+        @include cru-button2-gray-white-solid;
+      }
     }
   }
   &.cru-button-outline {
-    &.cru-button-yellow-yellow .cmp-button__icon {
-      @include cru-button2-yellow-yellow-outline;
+    &.cru-button-yellow-yellow {
+      .cmp-button__icon,
+      .cmp-carousel__action-icon {
+        @include cru-button2-yellow-yellow-outline;
+      }
     }
-    &.cru-button-gray-gray .cmp-button__icon {
-      @include cru-button2-gray-gray-outline;
+    &.cru-button-gray-gray {
+      .cmp-button__icon,
+      .cmp-carousel__action-icon {
+        @include cru-button2-gray-gray-outline;
+      }
     }
-    &.cru-button-white-white .cmp-button__icon {
-      @include cru-button2-white-white-outline;
+    &.cru-button-white-white {
+      .cmp-button__icon,
+      .cmp-carousel__action-icon {
+        @include cru-button2-white-white-outline;
+      }
     }
   }
 }
@@ -247,11 +269,15 @@
 .cru-button-combo {
   &.cru-button-solid,
   &.cru-button-outline {
-    .cmp-button:hover {
-      @include cru-button2-dot-combo-hover-color;
-      .cmp-button__icon {
-        @include cru-button2-yellow-white-solid;
+    .cmp-button,
+    .cmp-carousel__action {
+      &:hover {
+        @include cru-button2-dot-combo-hover-color;
       }
+    }
+    .cmp-button:hover .cmp-button__icon,
+    .cmp-carousel__action:hover .cmp-carousel__action-icon {
+      @include cru-button2-yellow-white-solid;
     }
   }
 }
@@ -289,5 +315,29 @@
         @include cru-button2-disabled-outline;
       }
     }
+  }
+}
+
+// Icons
+
+.cmp-button__icon,
+.cmp-carousel__action-icon {
+  &::before {
+    @include cru-material-icon;
+  }
+}
+.cmp-button__icon {
+  &--email::before {
+    content: "email";
+  }
+  &--cancel::before {
+    content: "cancel";
+  }
+  &--arrow_forward::before {
+    content: "arrow_forward";
+  }
+  &--shopping_cart::before {
+    content: "shopping_cart";
+    font-family: 'Material Icons Outlined';
   }
 }

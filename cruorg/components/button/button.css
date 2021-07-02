@@ -1,6 +1,7 @@
 /* Button styles */
 .cmp-button,
-.cmp-form-button {
+.cmp-form-button,
+.cmp-carousel__action {
   display: inline-block;
   font-family: "Source Sans Pro", sans-serif;
   font-weight: 600;
@@ -12,11 +13,13 @@
   text-transform: none;
 }
 .cmp-button:focus,
-.cmp-form-button:focus {
+.cmp-form-button:focus,
+.cmp-carousel__action:focus {
   outline: none;
 }
 .cmp-button__icon::before,
-.cmp-form-button__icon::before {
+.cmp-form-button__icon::before,
+.cmp-carousel__action__icon::before {
   margin-right: 0;
 }
 
@@ -100,11 +103,6 @@
   top: 3px;
 }
 
-.cru-button-combo .cmp-button {
-  font-size: 16px;
-  line-height: 32px;
-  color: #383F43;
-}
 .cru-button-combo.cru-button-gray-text .cmp-button {
   color: #383F43;
 }
@@ -113,14 +111,21 @@
 }
 
 .cru-button-dot .cmp-button,
-.cru-button-combo .cmp-button {
+.cru-button-dot .cmp-carousel__action,
+.cru-button-combo .cmp-button,
+.cru-button-combo .cmp-carousel__action {
   border: none;
   background-color: transparent;
   padding: 0;
   color: #383F43;
+  font-size: 16px;
+  line-height: 32px;
+  color: #383F43;
 }
 .cru-button-dot .cmp-button__icon,
-.cru-button-combo .cmp-button__icon {
+.cru-button-dot .cmp-carousel__action-icon,
+.cru-button-combo .cmp-button__icon,
+.cru-button-combo .cmp-carousel__action-icon {
   display: inline-block;
   width: 30px;
   height: 30px;
@@ -131,21 +136,29 @@
   transition: all 0.15s ease-in-out;
 }
 .cru-button-dot .cmp-button__icon::before,
-.cru-button-combo .cmp-button__icon::before {
+.cru-button-dot .cmp-carousel__action-icon::before,
+.cru-button-combo .cmp-button__icon::before,
+.cru-button-combo .cmp-carousel__action-icon::before {
   line-height: 30px;
 }
 .cru-button-dot.cru-button-solid.cru-button-shadow .cmp-button__icon,
-.cru-button-combo.cru-button-solid.cru-button-shadow .cmp-button__icon {
+.cru-button-dot.cru-button-solid.cru-button-shadow .cmp-carousel__action-icon,
+.cru-button-combo.cru-button-solid.cru-button-shadow .cmp-button__icon,
+.cru-button-combo.cru-button-solid.cru-button-shadow .cmp-carousel__action-icon {
   box-shadow: 0px 8px 32px rgba(0, 0, 0, 0.08);
 }
 .cru-button-dot.cru-button-solid .cmp-button__icon,
-.cru-button-combo.cru-button-solid .cmp-button__icon {
+.cru-button-dot.cru-button-solid .cmp-carousel__action-icon,
+.cru-button-combo.cru-button-solid .cmp-button__icon,
+.cru-button-combo.cru-button-solid .cmp-carousel__action-icon {
   color: #383F43;
   background-color: #FFCF07;
   border-color: #FFCF07;
 }
 .cru-button-dot.cru-button-outline .cmp-button__icon,
-.cru-button-combo.cru-button-outline .cmp-button__icon {
+.cru-button-dot.cru-button-outline .cmp-carousel__action-icon,
+.cru-button-combo.cru-button-outline .cmp-button__icon,
+.cru-button-combo.cru-button-outline .cmp-carousel__action-icon {
   color: #FFCF07;
   background-color: transparent;
   border-color: #FFCF07;
@@ -221,43 +234,55 @@
   border-color: #FFFFFF;
 }
 
-.cru-button-dot.cru-button-solid.cru-button-yellow-gray .cmp-button:hover .cmp-button__icon {
+.cru-button-dot.cru-button-solid.cru-button-yellow-gray .cmp-button:hover .cmp-button__icon,
+.cru-button-dot.cru-button-solid.cru-button-yellow-gray .cmp-carousel__action:hover .cmp-carousel__action-icon {
   color: #FFFFFF;
   background-color: #383F43;
   border-color: #383F43;
 }
-.cru-button-dot.cru-button-solid.cru-button-white-gray .cmp-button__icon {
+.cru-button-dot.cru-button-solid.cru-button-white-gray .cmp-button__icon,
+.cru-button-dot.cru-button-solid.cru-button-white-gray .cmp-carousel__action-icon {
   color: #383F43;
   background-color: #FFFFFF;
   border-color: #FFFFFF;
 }
 
 .cru-button-dot.cru-button-solid.cru-button-yellow-gray .cmp-button__icon,
-.cru-button-combo.cru-button-solid.cru-button-yellow-gray .cmp-button__icon {
+.cru-button-dot.cru-button-solid.cru-button-yellow-gray .cmp-carousel__action-icon,
+.cru-button-combo.cru-button-solid.cru-button-yellow-gray .cmp-button__icon,
+.cru-button-combo.cru-button-solid.cru-button-yellow-gray .cmp-carousel__action-icon {
   color: #383F43;
   background-color: #FFCF07;
   border-color: #FFCF07;
 }
 .cru-button-dot.cru-button-solid.cru-button-gray-white .cmp-button__icon,
-.cru-button-combo.cru-button-solid.cru-button-gray-white .cmp-button__icon {
+.cru-button-dot.cru-button-solid.cru-button-gray-white .cmp-carousel__action-icon,
+.cru-button-combo.cru-button-solid.cru-button-gray-white .cmp-button__icon,
+.cru-button-combo.cru-button-solid.cru-button-gray-white .cmp-carousel__action-icon {
   color: #FFFFFF;
   background-color: #383F43;
   border-color: #383F43;
 }
 .cru-button-dot.cru-button-outline.cru-button-yellow-yellow .cmp-button__icon,
-.cru-button-combo.cru-button-outline.cru-button-yellow-yellow .cmp-button__icon {
+.cru-button-dot.cru-button-outline.cru-button-yellow-yellow .cmp-carousel__action-icon,
+.cru-button-combo.cru-button-outline.cru-button-yellow-yellow .cmp-button__icon,
+.cru-button-combo.cru-button-outline.cru-button-yellow-yellow .cmp-carousel__action-icon {
   color: #FFCF07;
   background-color: transparent;
   border-color: #FFCF07;
 }
 .cru-button-dot.cru-button-outline.cru-button-gray-gray .cmp-button__icon,
-.cru-button-combo.cru-button-outline.cru-button-gray-gray .cmp-button__icon {
+.cru-button-dot.cru-button-outline.cru-button-gray-gray .cmp-carousel__action-icon,
+.cru-button-combo.cru-button-outline.cru-button-gray-gray .cmp-button__icon,
+.cru-button-combo.cru-button-outline.cru-button-gray-gray .cmp-carousel__action-icon {
   color: #383F43;
   background-color: transparent;
   border-color: #383F43;
 }
 .cru-button-dot.cru-button-outline.cru-button-white-white .cmp-button__icon,
-.cru-button-combo.cru-button-outline.cru-button-white-white .cmp-button__icon {
+.cru-button-dot.cru-button-outline.cru-button-white-white .cmp-carousel__action-icon,
+.cru-button-combo.cru-button-outline.cru-button-white-white .cmp-button__icon,
+.cru-button-combo.cru-button-outline.cru-button-white-white .cmp-carousel__action-icon {
   color: #FFFFFF;
   background-color: transparent;
   border-color: #FFFFFF;
@@ -275,14 +300,22 @@
   border-color: #FFCF07;
 }
 
-.cru-button-dot.cru-button-solid .cmp-button:hover, .cru-button-dot.cru-button-outline .cmp-button:hover,
+.cru-button-dot.cru-button-solid .cmp-button:hover,
+.cru-button-dot.cru-button-solid .cmp-carousel__action:hover, .cru-button-dot.cru-button-outline .cmp-button:hover,
+.cru-button-dot.cru-button-outline .cmp-carousel__action:hover,
 .cru-button-combo.cru-button-solid .cmp-button:hover,
-.cru-button-combo.cru-button-outline .cmp-button:hover {
+.cru-button-combo.cru-button-solid .cmp-carousel__action:hover,
+.cru-button-combo.cru-button-outline .cmp-button:hover,
+.cru-button-combo.cru-button-outline .cmp-carousel__action:hover {
   color: #FFCF07;
 }
-.cru-button-dot.cru-button-solid .cmp-button:hover .cmp-button__icon, .cru-button-dot.cru-button-outline .cmp-button:hover .cmp-button__icon,
+.cru-button-dot.cru-button-solid .cmp-button:hover .cmp-button__icon,
+.cru-button-dot.cru-button-solid .cmp-carousel__action:hover .cmp-carousel__action-icon, .cru-button-dot.cru-button-outline .cmp-button:hover .cmp-button__icon,
+.cru-button-dot.cru-button-outline .cmp-carousel__action:hover .cmp-carousel__action-icon,
 .cru-button-combo.cru-button-solid .cmp-button:hover .cmp-button__icon,
-.cru-button-combo.cru-button-outline .cmp-button:hover .cmp-button__icon {
+.cru-button-combo.cru-button-solid .cmp-carousel__action:hover .cmp-carousel__action-icon,
+.cru-button-combo.cru-button-outline .cmp-button:hover .cmp-button__icon,
+.cru-button-combo.cru-button-outline .cmp-carousel__action:hover .cmp-carousel__action-icon {
   color: #FFFFFF;
   background-color: #FFCF07;
   border-color: #FFCF07;
@@ -332,4 +365,37 @@
   color: #9C9FA1 !important;
   background-color: transparent !important;
   border-color: #9C9FA1 !important;
+}
+
+.cmp-button__icon::before,
+.cmp-carousel__action-icon::before {
+  font-family: "Material Icons";
+  font-weight: normal;
+  font-style: normal;
+  font-size: 1em;
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: "liga";
+}
+
+.cmp-button__icon--email::before {
+  content: "email";
+}
+.cmp-button__icon--cancel::before {
+  content: "cancel";
+}
+.cmp-button__icon--arrow_forward::before {
+  content: "arrow_forward";
+}
+.cmp-button__icon--shopping_cart::before {
+  content: "shopping_cart";
+  font-family: "Material Icons Outlined";
 }

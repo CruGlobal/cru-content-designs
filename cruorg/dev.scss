@@ -91,25 +91,6 @@ nav {
 
 // AEM
 
-.cmp-button__icon {
-  &::before {
-    @include cru-material-icon;
-  }
-  &--email::before {
-    content: "email";
-  }
-  &--cancel::before {
-    content: "cancel";
-  }
-  &--arrow_forward::before {
-    content: "arrow_forward";
-  }
-  &--shopping_cart::before {
-    content: "shopping_cart";
-    font-family: 'Material Icons Outlined';
-  }
-}
-
 .cmp-carousel__item:not(.cmp-carousel__item--active) {
   display: none;
 }

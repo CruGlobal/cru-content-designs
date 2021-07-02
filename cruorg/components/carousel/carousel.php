@@ -1,5 +1,5 @@
-<?php function output_carousel($contentType = 'image', $num = 3) { ?>
-<div class="carousel cru-carousel">
+<?php function output_carousel($contentType = 'image', $classes = false, $num = 3) { ?>
+<div class="carousel cru-carousel <?= $classes ?>">
   <div class="cmp-carousel">
     <div class="cmp-carousel__content">
       <?php for ($i = 1; $i <= $num; $i++) : ?>
@@ -67,10 +67,10 @@
 
 <div class="comp-wrapper">
   <h2>Carousel w/ image content</h2>
-  <?php output_carousel(); ?>
+  <?php output_carousel('image', 'cru-button-dot cru-button-solid cru-button-white-gray cru-button-shadow'); ?>
 </div>
 
 <div class="comp-wrapper">
   <h2>Carousel w/ teaser (layered) content</h2>
-  <?php output_carousel('teaser'); ?>
+  <?php output_carousel('teaser', 'cru-button-dot cru-button-solid cru-button-yellow-gray'); ?>
 </div>

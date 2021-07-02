@@ -80,12 +80,6 @@
   top: 3px;
 }
 
-@mixin cru-button2-combo-defaults() {
-  font-size: 16px;
-  line-height: 32px;
-  color: $cru-color-gray-dark;
-}
-
 @mixin cru-button2-combo-gray-text() {
   color: $cru-color-gray-dark;
 }
@@ -98,6 +92,9 @@
   border: none;
   background-color: transparent;
   padding: 0;
+  color: $cru-color-gray-dark;
+  font-size: 16px;
+  line-height: 32px;
   color: $cru-color-gray-dark;
 }
 

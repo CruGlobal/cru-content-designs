@@ -19,23 +19,8 @@
     float: left;
   }
   &__action {
-    @include cru-button2;
-    @include cru-button2-dot-combo-defaults;
-    font-size: $cru-font-size-base;
     &-text {
       display: none;
-    }
-    &-icon {
-      @include cru-button2-dot-combo-icon;
-      @include cru-button2-dot-combo-icon-shadow;
-      @include cru-button2-white-gray-solid;
-      &::before {
-        @include cru-material-icon;
-        @include cru-button2-dot-combo-icon-line-height;
-      }
-      &:hover {
-        @include cru-button2-yellow-white-solid;
-      }
     }
     &--previous .cmp-carousel__action-icon::before {
       content: "arrow_back";
