@@ -34,14 +34,14 @@ function output_list($extra_spacing = false, $links = false) {
   <h2>List w/ extra spacing</h2>
   <?php output_list(true); ?>
   <div class="info">
-    <span>Classes: cru-list</span>
+    <span>Classes: cru-list cru-list-extra-spacing</span>
   </div>
 </div>
 <div class="comp-wrapper">
   <h2>List w/ links</h2>
   <?php output_list(false, true); ?>
   <div class="info">
-    <span>Classes: cru-list cru-list-extra-spacing</span>
+    <span>Classes: cru-list</span>
   </div>
 </div>
 <div class="comp-wrapper">
