@@ -9,6 +9,7 @@ $components = array(
   // 'container',
   // 'download',
   // 'embed',
+  'form/button',
   'form/options',
   'form/text',
   'image',

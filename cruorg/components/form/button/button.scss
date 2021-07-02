@@ -1,0 +1,10 @@
+// Branding imports
+@use '../../../branding-imports' as *;
+
+/* Form button styles */
+
+// Most styles are defined in the button component
+
+.cru-form .cru-button-tag button {
+  padding-right: 15px;
+}

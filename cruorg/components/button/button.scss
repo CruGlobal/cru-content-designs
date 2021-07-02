@@ -2,7 +2,8 @@
 @use '../../branding-imports' as *;
 
 /* Button styles */
-.cmp-button {
+.cmp-button,
+.cmp-form-button {
   @include cru-button2;
   &__icon::before {
     margin-right: 0;
@@ -11,20 +12,28 @@
 
 // Standard button type defaults
 .cru-button-standard {
-  .cmp-button {
+  .cmp-button,
+  .cmp-form-button {
     @include cru-button2-standard-defaults;
   }
-  &.cru-button-solid .cmp-button {
-    @include cru-button2-yellow-gray-solid;
+  &.cru-button-solid {
+    .cmp-button,
+    .cmp-form-button {
+      @include cru-button2-yellow-gray-solid;
+    }
   }
-  &.cru-button-outline .cmp-button {
-    @include cru-button2-yellow-gray-outline;
+  &.cru-button-outline {
+    .cmp-button,
+    .cmp-form-button {
+      @include cru-button2-yellow-gray-outline;
+    }
   }
 }
 
 // Tag button type defaults
 .cru-button-tag {
-  .cmp-button {
+  .cmp-button,
+  .cmp-form-button {
     @include cru-button2-tag-defaults;
     &__text:first-child {
       @include cru-button2-tag-text-padding;
@@ -33,18 +42,25 @@
       @include cru-button2-tag-icon-font-size;
     }
   }
-  &.cru-button-solid .cmp-button {
-    @include cru-button2-gray-white-solid;
+  &.cru-button-solid {
+    .cmp-button,
+    .cmp-form-button {
+      @include cru-button2-gray-white-solid;
+    }
   }
-  &.cru-button-outline .cmp-button {
-    @include cru-button2-gray-gray-outline;
+  &.cru-button-outline {
+    .cmp-button,
+    .cmp-form-button {
+      @include cru-button2-gray-gray-outline;
+    }
   }
 }
 
 // Standard/tag button type defaults
 .cru-button-standard,
 .cru-button-tag {
-  .cmp-button {
+  .cmp-button,
+  .cmp-form-button {
     @include cru-button2-standard-tag-border;
     &__icon::before {
       @include cru-button2-standard-tag-icon;
@@ -114,19 +130,33 @@
 
 .cru-button-standard {
   &.cru-button-solid {
-    &.cru-button-yellow-gray .cmp-button {
-      @include cru-button2-yellow-gray-solid;
+    &.cru-button-yellow-gray {
+      .cmp-button,
+      .cmp-form-button {
+        @include cru-button2-yellow-gray-solid;
+      }
     }
   }
   &.cru-button-outline {
-    &.cru-button-yellow-gray .cmp-button {
-      @include cru-button2-yellow-gray-outline;
+    &.cru-button-yellow-gray {
+      .cmp-button,
+      .cmp-form-button {
+        @include cru-button2-yellow-gray-outline;
+      }
     }
-    &.cru-button-yellow-white .cmp-button {
-      @include cru-button2-yellow-white-outline;
+    &.cru-button-yellow-white {
+      .cmp-button,
+      .cmp-form-button {
+        @include cru-button2-yellow-white-outline;
+      }
     }
-    &.cru-button-white-white .cmp-button:hover {
-      @include cru-button2-white-gray-solid;
+    &.cru-button-white-white {
+      .cmp-button,
+      .cmp-form-button {
+        &:hover {
+          @include cru-button2-white-gray-solid;
+        }
+      }
     }
   }
 }
@@ -134,19 +164,31 @@
 .cru-button-standard,
 .cru-button-tag {
   &.cru-button-solid {
-    &.cru-button-gray-white .cmp-button {
-      @include cru-button2-gray-white-solid;
+    &.cru-button-gray-white {
+      .cmp-button,
+      .cmp-form-button {
+        @include cru-button2-gray-white-solid;
+      }
     }
-    &.cru-button-white-gray .cmp-button {
-      @include cru-button2-white-gray-solid;
+    &.cru-button-white-gray {
+      .cmp-button,
+      .cmp-form-button {
+        @include cru-button2-white-gray-solid;
+      }
     }
   }
   &.cru-button-outline {
-    &.cru-button-gray-gray .cmp-button {
-      @include cru-button2-gray-gray-outline;
+    &.cru-button-gray-gray {
+      .cmp-button,
+      .cmp-form-button {
+        @include cru-button2-gray-gray-outline;
+      }
     }
-    &.cru-button-white-white .cmp-button {
-      @include cru-button2-white-white-outline;
+    &.cru-button-white-white {
+      .cmp-button,
+      .cmp-form-button {
+        @include cru-button2-white-white-outline;
+      }
     }
   }
 }
@@ -192,8 +234,11 @@
 .cru-button-tag {
   &.cru-button-solid,
   &.cru-button-outline {
-    .cmp-button:hover {
-      @include cru-button2-yellow-white-solid;
+    .cmp-button,
+    .cmp-form-button {
+      &:hover {
+        @include cru-button2-yellow-white-solid;
+      }
     }
   }
 }

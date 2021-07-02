@@ -113,3 +113,16 @@ nav {
 .cmp-carousel__item:not(.cmp-carousel__item--active) {
   display: none;
 }
+
+.cmp-form .button {
+  float: left;
+  &:nth-child(odd) {
+    clear: both;
+  }
+  &:nth-child(even) {
+    margin-left: 16px;
+  }
+  &:nth-child(1n + 3) {
+    margin-top: 16px;
+  }
+}

@@ -25,6 +25,10 @@ function cru_form_container($input_type, $dark = false, $underline = false) {
           foreach ($input_state as $state) :
             echo cru_form_select($state);
           endforeach;
+        
+        // Button
+        elseif ($input_type == 'button') :
+          echo cru_form_button();
         endif;
       ?>
     </form>
