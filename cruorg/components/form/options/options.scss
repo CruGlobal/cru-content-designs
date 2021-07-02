@@ -57,6 +57,28 @@
   }
 }
 
+// Labels disabled
+@include disabled-label('options', '.cmp-form-options__legend') {
+  @include label-disabled;
+}
+@include disabled-label('options', '.cmp-form-options__label') {
+  @include label-disabled;
+}
+@include disabled-label('options', '.cmp-form-options__help-message') {
+  @include label-disabled;
+}
+
+// Labels dark disabled
+@include disabled-label('options', '.cmp-form-options__legend', true) {
+  @include label-disabled-dark;
+}
+@include disabled-label('options', '.cmp-form-options__label', true) {
+  @include label-disabled-dark;
+}
+@include disabled-label('options', '.cmp-form-options__help-message', true) {
+  @include label-disabled-dark;
+}
+
 // Text and textarea fields
 .cru-form {
   // Default
@@ -126,16 +148,6 @@
 }
 
 // Text and textarea disabled
-@include disabled-label('options', '.cmp-form-options__legend') {
-  @include label-disabled;
-}
-@include disabled-label('options', '.cmp-form-options__label') {
-  @include label-disabled;
-}
-@include disabled-label('options', '.cmp-form-options__help-message') {
-  @include label-disabled;
-}
-
 @include disabled-field('options', '.cmp-form-options__field--drop-down') {
   @include disabled-dropdown;
 };
@@ -144,19 +156,110 @@
 };
 
 // Text and textarea dark disabled
-@include disabled-label('options', '.cmp-form-options__legend', true) {
-  @include label-disabled-dark;
-}
-@include disabled-label('options', '.cmp-form-options__label', true) {
-  @include label-disabled-dark;
-}
-@include disabled-label('options', '.cmp-form-options__help-message', true) {
-  @include label-disabled-dark;
-}
-
 @include disabled-field('options', '.cmp-form-options__field--drop-down', true) {
   @include disabled-dropdown-dark;
 };
 @include disabled-field('options', '.cmp-form-options__field--multi-drop-down', true) {
   @include disabled-dark;
+};
+
+// Checkbox and radio fields
+.cru-form {
+  // Default
+  .cmp-form-options__field {
+    &-label {
+      @include checkbox-radio-label-v;
+      + label {
+        @include checkbox-radio-label-spacing-v;
+      }
+    }
+    &--checkbox,
+    &--radio {
+      @include checkbox-radio-hide-default;
+      &:checked + span::before {
+        @include checkbox-radio-active;
+      }
+    }
+    &--checkbox {
+      + span::before {
+        @include checkbox-border-radius;
+      }
+      &:checked + span::before {
+        @include checkbox-active;
+      }
+    }
+    &--radio {
+      + span::before {
+        @include radio-border-radius;
+      }
+      &:checked + span::before {
+        @include radio-active;
+      }
+    }
+    &-description {
+      @include checkbox-radio-text;
+      &::before {
+        @include checkbox-radio-before;
+      }
+    }
+  }
+
+  // Default alert
+  .cru-form-options--alert .cmp-form-options {
+    &--checkbox,
+    &--radio {
+      @include checkbox-radio-alert;
+    }
+  }
+
+  // Dark default
+  &.cru-form--dark .cmp-form-options__field {
+    &--radio {
+      &:checked + span::before {
+        @include radio-active-dark;
+      }
+    }
+    &-description {
+      @include checkbox-radio-text-dark;
+      &::before {
+        @include checkbox-radio-before-dark;
+      }
+    }
+  }
+
+  // Inline options
+  .cru-form-options--inline .cmp-form-options__field-label {
+    @include checkbox-radio-label-h;
+    + label {
+      @include checkbox-radio-label-spacing-h;
+    }
+  }
+}
+
+// Checkbox and radio disabled
+@include disabled-field('options', '.cmp-form-options__field--checkbox', $selector2: '+ span') {
+  @include checkbox-radio-disabled-text;
+  &::before {
+    @include checkbox-radio-disabled-field;
+  }
+};
+@include disabled-field('options', '.cmp-form-options__field--radio', $selector2: '+ span') {
+  @include checkbox-radio-disabled-text;
+  &::before {
+    @include checkbox-radio-disabled-field;
+  }
+};
+
+// Checkbox and radio disabled
+@include disabled-field('options', '.cmp-form-options__field--checkbox', true, '+ span') {
+  @include checkbox-radio-disabled-text-dark;
+  &::before {
+    @include checkbox-radio-disabled-field-dark;
+  }
+};
+@include disabled-field('options', '.cmp-form-options__field--radio', true, '+ span') {
+  @include checkbox-radio-disabled-text-dark;
+  &::before {
+    @include checkbox-radio-disabled-field-dark;
+  }
 };

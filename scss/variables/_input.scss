@@ -59,4 +59,13 @@ $cru-input-standard-icon-positions: right $cru-input-standard-icon-right top 50%
 $cru-input-underlined-icon-positions: right $cru-input-underlined-icon-right top 50%, right $cru-input-underlined-icon-right-secondary top 50%;
 $cru-input-multi-icon-positions: right $cru-input-multi-icon-right top 50%;
 
-$cru-input-icon-alert: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' height='#{$cru-input-icon-size-string}px' viewBox='0 0 #{$cru-input-icon-size-string} #{$cru-input-icon-size-string}' width='#{$cru-input-icon-size-string}px' fill='#{cru-input-color-string($cru-input-alert-color)}'%3E%3Cpath d='M0 0h24v24H0V0z' fill='none'/%3E%3Cpath d='M12 5.99L19.53 19H4.47L12 5.99M12 2L1 21h22L12 2zm1 14h-2v2h2v-2zm0-6h-2v4h2v-4z'/%3E%3C/svg%3E");
+$cru-input-icon-alert: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' height='#{$cru-input-icon-size}' viewBox='0 0 #{$cru-input-icon-size-string} #{$cru-input-icon-size-string}' width='#{$cru-input-icon-size}' fill='#{cru-input-color-string($cru-input-alert-color)}'%3E%3Cpath d='M0 0h24v24H0V0z' fill='none'/%3E%3Cpath d='M12 5.99L19.53 19H4.47L12 5.99M12 2L1 21h22L12 2zm1 14h-2v2h2v-2zm0-6h-2v4h2v-4z'/%3E%3C/svg%3E");
+
+$cru-input-icon-check: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' height='24px' viewBox='0 0 24 24' width='24px' fill='#{cru-input-color-string($cru-color-white)}'%3E%3Cpath d='M0 0h24v24H0V0z' fill='none'/%3E%3Cpath d='M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z'/%3E%3C/svg%3E");
+
+$cru-input-icon-circle: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' height='24px' viewBox='0 0 24 24' width='24px' fill='#{cru-input-color-string($cru-input-focus-color)}'%3E%3Cpath d='M0 0h24v24H0z' fill='none'/%3E%3Cpath d='M12 2C6.47 2 2 6.47 2 12s4.47 10 10 10 10-4.47 10-10S17.53 2 12 2z'/%3E%3C/svg%3E");
+
+$check-radio-text-size: $cru-font-size-sm; // 14px
+$check-radio-toggle-size: $check-radio-text-size * 1.4285; // 20px
+$radio-toggle-active-size: $check-radio-toggle-size * 0.6; // 12px
+$check-radio-alert-padding: ($cru-input-spacing * 2) + $cru-input-icon-size;
