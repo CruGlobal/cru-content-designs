@@ -2,7 +2,7 @@
 @use '../scss/mixins/icons' as *;
 
 // Demo pages
-body {font-family: "Source Sans Pro";}
+// body {font-family: "Source Sans Pro";}
 nav,
 .comp-container {
   max-width: 1200px;
@@ -13,6 +13,7 @@ nav {
   h3 {
     display: inline-block;
     margin-right: 10px;
+    font-family: "Source Sans Pro";
   }
   .button {
     display: inline-block;
@@ -24,10 +25,16 @@ nav {
   margin-bottom: 25px;
   border-style: solid;
   border-color: #383F43;
+  legend {
+    font-family: "Source Sans Pro";
+  }
 }
 .comp-wrapper {
   margin: 25px -12px;
   padding: 0 12px;
+  > h2 {
+    font-family: "Source Sans Pro";
+  }
 }
 .comp-wrapper:nth-child(2) {
   margin-top: 0;
@@ -50,6 +57,7 @@ nav {
   color: black;
   margin-top: 16px;
   margin-bottom: 32px;
+  font-family: "Source Sans Pro";
 }
 .info:last-child {
   margin-bottom: 0;

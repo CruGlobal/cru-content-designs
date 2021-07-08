@@ -1,8 +1,7 @@
 // All input mixins required for Cru branding
-// v0.5.0
+// v1.1.0
 
-@use '../../scss/variables/spacers' as *;
-@use '../variables/input' as *;
+@use '../variables' as *;
 @use 'sass:string';
 
 @mixin cru-placeholder-color($color, $important: false) {
@@ -29,6 +28,19 @@
           margin-top: $cru-input-spacing;
         }
       }
+    }
+  }
+}
+
+// GLOBALS
+
+@mixin form-field-globals {
+  font-family: $cru-font-family-sans-serif;
+  input, textarea {
+    &:-internal-autofill-selected {
+      -webkit-text-fill-color: $cru-input-color !important;
+      // box-shadow: 0 0 0 1000px white inset !important;
+      // -webkit-box-shadow: 0 0 0 1000px white inset !important;
     }
   }
 }
@@ -87,12 +99,13 @@
   width: 100%;
   box-sizing: border-box;
   font-size: $cru-input-font-size;
+  font-family: $cru-font-family-sans-serif;
   line-height: $cru-input-line-height;
   border-style: $cru-input-border-style;
   background-color: $cru-input-background-color;
   background-repeat: no-repeat;
   transition: box-shadow 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
-  padding: $cru-input-padding-v $cru-input-padding-right $cru-input-padding-v $cru-input-padding-h;
+  padding: $cru-input-padding-v $cru-input-padding-h;
   border-width: $cru-input-border-width;
   border-radius: $cru-input-border-radius;
   color: $cru-input-color;
@@ -109,8 +122,12 @@
   }
 }
 
+@mixin textarea {
+  resize: none;
+}
+
 @mixin text-field-underlined {
-  padding: $cru-input-underlined-padding-v $cru-input-underlined-padding-right $cru-input-underlined-padding-v 0;
+  padding: $cru-input-underlined-padding-v 0;
   border-width: 0 0 $cru-input-border-width;
   border-radius: 0;
   background-position: $cru-input-underlined-icon-positions;
@@ -157,6 +174,7 @@
 
 @mixin dropdown {
   @include dropdown-icon($cru-input-color);
+  padding-right: $cru-input-padding-right-icon-single;
 }
 
 @mixin dropdown-dark {
@@ -172,6 +190,10 @@
   padding-bottom: 5px;
 }
 
+@mixin dropdown-underlined {
+  padding-right: $cru-input-padding-right-icon-single-underlined;
+}
+
 // ALERTS
 
 @mixin alert-border-color {
@@ -179,7 +201,20 @@
 }
 
 @mixin alert-icon {
+  padding-right: $cru-input-padding-right-icon-single;
   background-image: $cru-input-icon-alert;
+}
+
+@mixin text-field-alert-underlined-padding {
+  padding-right: $cru-input-padding-right-icon-single-underlined;
+}
+
+@mixin text-field-alert-date-num-padding {
+  padding-right: $cru-input-padding-right-icon-single-date;
+}
+
+@mixin text-field-alert-underlined-date-num-padding {
+  padding-right: $cru-input-padding-right-icon-single-underlined-date;
 }
 
 @mixin text-field-alert {
@@ -189,6 +224,11 @@
 
 @mixin dropdown-alert-icon {
   @include dropdown-icon($alert: true);
+  padding-right: $cru-input-padding-right-icon-double;
+}
+
+@mixin dropdown-underlined-alert {
+  padding-right: $cru-input-padding-right-icon-double-underlined;
 }
 
 @mixin multi-dropdown-alert {
@@ -302,7 +342,7 @@
   @include alert-icon;
   background-repeat: no-repeat;
   background-position: right $cru-input-spacing top 50%;
-  padding-right: $check-radio-alert-padding;
+  padding-right: $cru-input-padding-right-icon-single;
 }
 
 @mixin checkbox-radio-disabled-text {
@@ -340,3 +380,9 @@
 @mixin radio-active-dark {
   border-color: $cru-input-dark-color;
 }
+
+// Chrome filters
+@mixin chrome-filter {filter: $cru-color-gray-dark-filter;}
+@mixin chrome-filter-dark {filter: $cru-color-white-filter;}
+@mixin chrome-filter-disabled {filter: $cru-color-gray-light-filter !important;}
+@mixin chrome-filter-disabled-dark {filter: $cru-color-gray-medium-filter !important;}

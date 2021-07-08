@@ -5,23 +5,46 @@
 
 @include form-field-vertical-spacing('text');
 
+// Global
+.cru-form {
+  @include form-field-globals;
+}
+
 // Labels
 .cru-form {
   // Default
   .cmp-form-text {
-    label {
+
+    // Specific to AEM
+    display: flex;
+    flex-wrap: wrap;
+    > * {width: 100%;}
+    .cmp-form-text__help-block {
+      order: 10;
+    }
+    // end AEM block
+    
+    label,
+    .cmp-form-text__help-block {
       @include label;
+    }
+    .cmp-form-text__help-block {
+      @include help;
     }
   }
 
   // Underlined
   &.cru-form--underlined {
     .cmp-form-text {
-      label {
+      label,
+      .cmp-form-text__help-block {
         @include label-underlined;
       }
-      &:focus-within label {
-        @include label-underlined-focus;
+      &:focus-within {
+        label,
+        .cmp-form-text__help-block {
+          @include label-underlined-focus;
+        }
       }
     }
   }
@@ -29,7 +52,8 @@
   // Dark
   &.cru-form--dark {
     .cmp-form-text {
-      label {
+      label,
+      .cmp-form-text__help-block {
         @include label-dark;
       }
     }
@@ -40,46 +64,82 @@
 .cru-form {
   // Default
   .cmp-form-text {
-    > *:not(label) {
+    textarea {
+      @include textarea;
+    }
+    [type=date]::-webkit-calendar-picker-indicator {
+      @include chrome-filter;
+    }
+    > *:not(label):not(p) {
       @include text-field;
     }
   }
 
   // Default alert
-  .cru-form-text--alert .cmp-form-text > *:not(label) {
+  .cru-form-text--alert .cmp-form-text > *:not(label):not(p) {
     @include text-field-alert;
+    &[type=date],
+    &[type=number] {
+      @include text-field-alert-date-num-padding;
+    }
   }
 
   // Underlined
-  &.cru-form--underlined .cmp-form-text > *:not(label) {
-    @include text-field-underlined;
+  &.cru-form--underlined {
+    .cmp-form-text > *:not(label):not(p) {
+      @include text-field-underlined;
+    }
+    .cru-form-text--alert .cmp-form-text > *:not(label):not(p) {
+      @include text-field-alert-underlined-padding;
+      &[type=date],
+      &[type=number] {
+        @include text-field-alert-underlined-date-num-padding;
+      }
+    }
   }
 
   // Dark default
-  &.cru-form--dark .cmp-form-text > *:not(label) {
+  &.cru-form--dark .cmp-form-text > *:not(label):not(p) {
     @include text-field-dark;
+    &[type=date] {
+      &:focus::-webkit-calendar-picker-indicator {
+        @include chrome-filter;
+      }
+      &::-webkit-calendar-picker-indicator {
+        @include chrome-filter-dark;
+      }
+    }
   }
 
   // Underlined dark
-  &.cru-form--underlined.cru-form--dark .cmp-form-text > *:not(label) {
+  &.cru-form--underlined.cru-form--dark .cmp-form-text > *:not(label):not(p) {
     @include text-field-underlined-dark;
+    &[type=date]:focus::-webkit-calendar-picker-indicator {
+      @include chrome-filter-dark;
+    }
   }
 }
 
 // Disabled
-@include disabled-label('text', 'label') {
+@include disabled-label('text', '*:not(input):not(textarea)') {
   @include label-disabled;
 }
 
-@include disabled-field('text', '> *:not(label)') {
+@include disabled-field('text', '> *:not(label):not(p)') {
   @include disabled;
+  &[type=date]::-webkit-calendar-picker-indicator {
+    @include chrome-filter-disabled;
+  }
 };
 
 // Dark disabled
-@include disabled-label('text', 'label', true) {
+@include disabled-label('text', '*:not(input):not(textarea)', true) {
   @include label-disabled-dark;
 }
 
-@include disabled-field('text', '> *:not(label)', true) {
+@include disabled-field('text', '> *:not(label):not(p)', true) {
   @include disabled-dark;
+  &[type=date]::-webkit-calendar-picker-indicator {
+    @include chrome-filter-disabled-dark;
+  }
 };

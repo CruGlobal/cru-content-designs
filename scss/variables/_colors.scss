@@ -1,5 +1,5 @@
 // All color variables required for Cru branding
-// v0.3
+// v1.1.0
 
 $cru-color-white:       #FFFFFF;
 $cru-color-black:       #000000;
@@ -22,3 +22,11 @@ $cru-text-colors: (
 );
 
 $cru-body-color: $cru-color-gray-dark;
+
+
+// Filter values created with https://codepen.io/sosuke/pen/Pjoqqp
+$cru-color-white-filter:       brightness(0) invert(1);
+$cru-color-black-filter:       brightness(0) saturate(100%);
+$cru-color-gray-dark-filter:   $cru-color-black-filter invert(22%) sepia(5%) saturate(1102%) hue-rotate(158deg) brightness(94%) contrast(88%);
+$cru-color-gray-medium-filter: $cru-color-black-filter invert(67%) sepia(8%) saturate(99%) hue-rotate(161deg) brightness(92%) contrast(93%);
+$cru-color-gray-light-filter:  $cru-color-black-filter invert(100%) sepia(1%) saturate(1179%) hue-rotate(109deg) brightness(99%) contrast(87%);

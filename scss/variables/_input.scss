@@ -1,12 +1,11 @@
 // All form input variables required for Cru branding
-// v0.5.0
+// v1.1.0
 
 @use './buttons2' as *;
 @use './colors' as *;
 @use './typography' as *;
 @use './spacers' as *;
 @use 'sass:math';
-@use 'sass:string';
 @use 'sass:color';
 
 @function cru-input-color-string($color) {
@@ -25,7 +24,8 @@ $cru-input-focus-color: $cru-color-yellow;
 $cru-input-alert-color: #ff0000;
 
 $cru-input-spacing: $cru-spacer;
-$cru-input-label-spacing: $cru-spacer-base;
+$cru-input-spacing-half: math.div($cru-input-spacing, 2);
+$cru-input-label-spacing: $cru-input-spacing-half;
 $cru-input-label-font-size: $cru-font-size-sm;
 $cru-input-line-height: $cru-line-height-base;
 $cru-input-font-size: $cru-font-size-base;
@@ -33,8 +33,9 @@ $cru-input-border-width: 1px;
 $cru-input-border-style: solid;
 $cru-input-border-radius: $cru-btn-border-radius;
 $cru-input-background-color: transparent;
-$cru-input-padding-v: $cru-spacer * 0.75 - $cru-input-border-width;
-$cru-input-padding-h: $cru-spacer;
+$cru-input-padding-v: $cru-input-spacing * 0.75 - $cru-input-border-width;
+$cru-input-padding-h: $cru-input-spacing;
+$cru-input-padding-h-half: math.div($cru-input-padding-h, 2);
 $cru-input-standard-focus-background: $cru-color-white;
 $cru-input-standard-focus-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
 $cru-input-underlined-label-spacing: 0;
@@ -46,11 +47,17 @@ $cru-input-scrollbar-width: 17px;
 $cru-input-icon-size: 24px;
 $cru-input-icon-size-string: str-slice('' + $cru-input-icon-size, 1, 2);
 
-$cru-input-padding-right: ($cru-input-padding-h * 2) + ($cru-input-icon-size * 2) + (math.div($cru-input-padding-h, 2));
-$cru-input-underlined-padding-right: $cru-input-padding-right - $cru-input-padding-h;
+$cru-input-padding-right-icon-single: $cru-input-icon-size + ($cru-input-padding-h * 2); // 16 + 24 + 16 = 56
+$cru-input-padding-right-icon-double: ($cru-input-icon-size + $cru-input-padding-h) * 2 + $cru-input-padding-h-half; // 16 + 24 + 8 + 24 + 16 = 88
+
+$cru-input-padding-right-icon-single-underlined: $cru-input-padding-right-icon-single - $cru-input-padding-h; // 16 + 24 = 40
+$cru-input-padding-right-icon-double-underlined: $cru-input-padding-right-icon-double - $cru-input-padding-h; // 16 + 24 + 8 + 24 = 72
+
+$cru-input-padding-right-icon-single-date: $cru-input-padding-right-icon-single - $cru-input-padding-h-half; // 8 + 24 + 16 = 48
+$cru-input-padding-right-icon-single-underlined-date: $cru-input-padding-right-icon-single-date - $cru-input-padding-h; // 8 + 24 = 32
 
 $cru-input-standard-icon-right: $cru-input-padding-h;
-$cru-input-standard-icon-right-secondary: $cru-input-padding-h + $cru-input-icon-size + math.div($cru-input-padding-h, 2);
+$cru-input-standard-icon-right-secondary: $cru-input-padding-h + $cru-input-icon-size + $cru-input-padding-h-half;
 $cru-input-underlined-icon-right: 0;
 $cru-input-underlined-icon-right-secondary: $cru-input-standard-icon-right-secondary - $cru-input-padding-h;
 $cru-input-multi-icon-right: $cru-input-scrollbar-width + $cru-input-padding-h;
@@ -61,11 +68,10 @@ $cru-input-multi-icon-positions: right $cru-input-multi-icon-right top 50%;
 
 $cru-input-icon-alert: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' height='#{$cru-input-icon-size}' viewBox='0 0 #{$cru-input-icon-size-string} #{$cru-input-icon-size-string}' width='#{$cru-input-icon-size}' fill='#{cru-input-color-string($cru-input-alert-color)}'%3E%3Cpath d='M0 0h24v24H0V0z' fill='none'/%3E%3Cpath d='M12 5.99L19.53 19H4.47L12 5.99M12 2L1 21h22L12 2zm1 14h-2v2h2v-2zm0-6h-2v4h2v-4z'/%3E%3C/svg%3E");
 
-$cru-input-icon-check: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' height='24px' viewBox='0 0 24 24' width='24px' fill='#{cru-input-color-string($cru-color-white)}'%3E%3Cpath d='M0 0h24v24H0V0z' fill='none'/%3E%3Cpath d='M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z'/%3E%3C/svg%3E");
+$cru-input-icon-check: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' height='#{$cru-input-icon-size}' viewBox='0 0 #{$cru-input-icon-size-string} #{$cru-input-icon-size-string}' width='#{$cru-input-icon-size}' fill='#{cru-input-color-string($cru-color-white)}'%3E%3Cpath d='M0 0h24v24H0V0z' fill='none'/%3E%3Cpath d='M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z'/%3E%3C/svg%3E");
 
-$cru-input-icon-circle: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' height='24px' viewBox='0 0 24 24' width='24px' fill='#{cru-input-color-string($cru-input-focus-color)}'%3E%3Cpath d='M0 0h24v24H0z' fill='none'/%3E%3Cpath d='M12 2C6.47 2 2 6.47 2 12s4.47 10 10 10 10-4.47 10-10S17.53 2 12 2z'/%3E%3C/svg%3E");
+$cru-input-icon-circle: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' height='#{$cru-input-icon-size}' viewBox='0 0 #{$cru-input-icon-size-string} #{$cru-input-icon-size-string}' width='#{$cru-input-icon-size}' fill='#{cru-input-color-string($cru-input-focus-color)}'%3E%3Cpath d='M0 0h24v24H0z' fill='none'/%3E%3Cpath d='M12 2C6.47 2 2 6.47 2 12s4.47 10 10 10 10-4.47 10-10S17.53 2 12 2z'/%3E%3C/svg%3E");
 
 $check-radio-text-size: $cru-font-size-sm; // 14px
 $check-radio-toggle-size: $check-radio-text-size * 1.4285; // 20px
 $radio-toggle-active-size: $check-radio-toggle-size * 0.6; // 12px
-$check-radio-alert-padding: ($cru-input-spacing * 2) + $cru-input-icon-size;
