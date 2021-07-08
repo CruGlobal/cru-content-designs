@@ -12,7 +12,7 @@
     &__legend {
       @include legend-reset;
     }
-    .cmp-form-options__field {
+    &__field {
       &--drop-down,
       &--multi-drop-down {
         @include select-reset;
@@ -80,7 +80,7 @@
 // Text and textarea fields
 .cru-form {
   // Default
-  .cmp-form-options .cmp-form-options__field {
+  .cmp-form-options__field {
     &--drop-down,
     &--multi-drop-down {
       @include text-field;
@@ -96,7 +96,7 @@
   }
 
   // Default alert
-  .cru-form-options--alert .cmp-form-options .cmp-form-options__field {
+  .cru-form-options--alert .cmp-form-options__field {
     &--drop-down,
     &--multi-drop-down {
       @include alert-border-color;
@@ -111,7 +111,7 @@
 
   // Underlined
   &.cru-form--underlined {
-    .cmp-form-options .cmp-form-options__field {
+    .cmp-form-options__field {
       &--drop-down,
       &--multi-drop-down {
         @include text-field-underlined;
@@ -120,15 +120,20 @@
         @include dropdown-underlined;
       }
     }
-    .cru-form-options--alert .cmp-form-options .cmp-form-options__field--drop-down {
-      @include dropdown-underlined-alert;
+    .cru-form-options--alert .cmp-form-options__field {
+      &--drop-down {
+        @include dropdown-underlined-alert;
+      }
+      &--multi-drop-down {
+        @include multi-underlined-alert;
+      }
     }
   }
 
   // Dark default
   &.cru-form--dark {
     // Default
-    .cmp-form-options .cmp-form-options__field {
+    .cmp-form-options__field {
       &--drop-down,
       &--multi-drop-down {
         @include text-field-dark;
@@ -139,13 +144,13 @@
     }
 
     // Dark alert
-    .cru-form-options--alert .cmp-form-options .cmp-form-options__field--drop-down {
+    .cru-form-options--alert .cmp-form-options__field--drop-down {
       @include dropdown-alert-dark;
     }
   }
 
   // Underlined dark
-  &.cru-form--underlined.cru-form--dark .cmp-form-options .cmp-form-options__field {
+  &.cru-form--underlined.cru-form--dark .cmp-form-options__field {
     &--drop-down,
     &--multi-drop-down {
       @include text-field-underlined-dark;

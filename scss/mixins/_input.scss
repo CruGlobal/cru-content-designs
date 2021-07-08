@@ -236,6 +236,10 @@
   background-position: $cru-input-multi-icon-positions !important;
 }
 
+@mixin multi-underlined-alert {
+  padding-right: $cru-input-padding-right-icon-single;
+}
+
 // DISABLED
 
 @mixin disabled-label($type, $selector, $dark: false) {
