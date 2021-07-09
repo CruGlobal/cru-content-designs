@@ -1,5 +1,5 @@
 // All input mixins required for Cru branding
-// v1.1.0
+// v1.1.1
 
 @use '../variables' as *;
 @use 'sass:string';
@@ -188,10 +188,17 @@
 @mixin option-spacing { // No effect in Safari
   padding-top: 5px;
   padding-bottom: 5px;
+  &[disabled] {
+    color: $cru-input-disabled-color !important;
+  }
 }
 
 @mixin dropdown-underlined {
   padding-right: $cru-input-padding-right-icon-single-underlined;
+}
+
+@mixin option-multi-dark-disabled {
+  color: $cru-input-dark-disabled-color !important;
 }
 
 // ALERTS
@@ -300,10 +307,14 @@
 @mixin checkbox-radio-label-spacing-v {
   margin-top: 12px;
 }
-@mixin checkbox-radio-label-h {
+@mixin checkbox-radio-inline-label {
+  margin-bottom: 0;
+}
+@mixin checkbox-radio-inline-option {
   display: inline-block;
 }
-@mixin checkbox-radio-label-spacing-h {
+@mixin checkbox-radio-inline-options {
+  margin-top: 8px;
   margin-left: $cru-input-spacing;
 }
 

@@ -30,7 +30,7 @@ function cru_form_boxes($input_type) {
 function cru_form_select($input_type) {
   $option_type = ['drop-down', 'multi-drop-down'];
   $options = ['Option 1', 'Option 2', 'Option 3', 'Option 4', 'Option 5' ];
-  $states = ['', '', '', '', ''];
+  $states = ['', '', 'disabled', '', ''];
   foreach ($option_type as $type) :
     $multi = ( $type == 'multi-drop-down' ) ? 'multiple' : '';
 ?>
@@ -41,7 +41,7 @@ function cru_form_select($input_type) {
         <?php
           for ($i = 0; $i < count($options); $i++) :
         ?>
-          <option value="<?= $options[$i] ?>"<?= $states[$i] ?>><?= $options[$i] ?></option>
+          <option value="<?= $options[$i] ?>" <?= $states[$i] ?>><?= $options[$i] ?></option>
         <?php endfor ?>
       </select>
       <p class="cmp-form-options__help-message">Help text.</p>
