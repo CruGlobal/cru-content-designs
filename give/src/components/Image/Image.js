@@ -1,6 +1,22 @@
 import "./Image.css";
 import epcot from "../../epcot.jpeg";
 
+const ImageLink = ({ href, children }) => {
+  return href ? (
+    <a className="cmp-image__link" href={href}>
+      {children}
+    </a>
+  ) : (
+    children
+  );
+};
+
+const ImageCaption = ({ caption }) => {
+  if (caption === "") return null;
+
+  return <span className="cmp-image__title">{caption}</span>;
+};
+
 export const Image = ({
   className = "", // string
   img = { src: "", alt: "" }, // object with `src` and `alt` keys, each key containing a string
@@ -10,22 +26,6 @@ export const Image = ({
   if (img.src === "") return null;
 
   const classes = className !== "" ? " " + className : className;
-
-  const ImageLink = ({ href, children }) => {
-    return href ? (
-      <a className="cmp-image__link" href={href}>
-        {children}
-      </a>
-    ) : (
-      children
-    );
-  };
-
-  const ImageCaption = ({ caption }) => {
-    if (caption === "") return null;
-
-    return <span className="cmp-image__title">{caption}</span>;
-  };
 
   return (
     <div className={"image cru-image" + classes}>

@@ -1,5 +1,21 @@
 import "./Breadcrumb.css";
 
+const BreadcrumbItem = ({ item }) => {
+  if (item.title === "") return null;
+
+  return item.href !== "" ? (
+    <li className="cmp-breadcrumb__item">
+      <a href={item.href} class="cmp-breadcrumb__item-link">
+        <span>{item.title}</span>
+      </a>
+    </li>
+  ) : (
+    <li className="cmp-breadcrumb__item cmp-breadcrumb__item--active">
+      <span>{item.title}</span>
+    </li>
+  );
+};
+
 export const Breadcrumb = ({
   className = "", // string
   content = [], // array of objects with `title` and `href` keys, each key containing a string
@@ -9,22 +25,6 @@ export const Breadcrumb = ({
 
   const classes = className !== "" ? " " + className : className;
   const colorClass = color !== "" ? " cru-breadcrumb-" + color : "";
-
-  const BreadcrumbItem = ({ item }) => {
-    if (item.title === "") return null;
-
-    return item.href !== "" ? (
-      <li className="cmp-breadcrumb__item">
-        <a href={item.href} class="cmp-breadcrumb__item-link">
-          <span>{item.title}</span>
-        </a>
-      </li>
-    ) : (
-      <li className="cmp-breadcrumb__item cmp-breadcrumb__item--active">
-        <span>{item.title}</span>
-      </li>
-    );
-  };
 
   return (
     <div className={"breadcrumb cru-breadcrumb" + colorClass + classes}>
