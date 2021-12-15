@@ -1,0 +1,31 @@
+/* List styles */
+.cru-list .cmp-list__item,
+.cru-text .cmp-text li {
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: 400;
+  line-height: calc(1em + 8px);
+  color: #383F43;
+  font-size: 1rem;
+  padding-left: 12px;
+}
+@media (min-width: 768px) {
+  .cru-list .cmp-list__item,
+.cru-text .cmp-text li {
+    font-size: 1rem;
+  }
+}
+@media (min-width: 1200px) {
+  .cru-list .cmp-list__item,
+.cru-text .cmp-text li {
+    font-size: 1.125rem;
+  }
+}
+
+.cru-list .cmp-list__item-link,
+.cru-text .cmp-text li a {
+  color: inherit;
+}
+
+.cru-list-extra-spacing .cmp-list__item {
+  margin-bottom: 16px;
+}

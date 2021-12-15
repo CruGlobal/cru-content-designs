@@ -1,0 +1,21 @@
+/* Text styles */
+.cru-text .cmp-text {
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: 400;
+  line-height: calc(1em + 8px);
+  color: #383F43;
+  font-size: 1rem;
+}
+@media (min-width: 768px) {
+  .cru-text .cmp-text {
+    font-size: 1rem;
+  }
+}
+@media (min-width: 1200px) {
+  .cru-text .cmp-text {
+    font-size: 1.125rem;
+  }
+}
+.cru-text.cru-text-sm .cmp-text {
+  font-size: 0.875rem;
+}
