@@ -9,17 +9,16 @@ export const Component = ({
 
   const classes = className !== "" ? " " + className : className;
 
-  return <p className={classes}>{str}</p>;
+  return <p className={"component-class" + classes}>{str}</p>;
 };
 
 export const ComponentExamples = () => {
   return (
     <>
-      <Component className="randomClass" />
       <Component />
-      <Component />
-      <Component />
-      <Component />
+      <Component className="someClass" />
+      <Component str={"New text"} />
+      <Component str={"Hidden text"} bool={false} />
     </>
   );
 };
