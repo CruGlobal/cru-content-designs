@@ -7,7 +7,9 @@ export const Component = ({
 }) => {
   if (!bool) return null; // Condition for rendering nothing
 
-  return <p className={className}>{str}</p>;
+  const classes = className !== "" ? " " + className : className;
+
+  return <p className={classes}>{str}</p>;
 };
 
 export const ComponentExamples = () => {
