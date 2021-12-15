@@ -1,0 +1,130 @@
+/* Accordion styles */
+.cru-accordion .cmp-accordion__item {
+  border: 1px solid #EBECEC;
+  border-width: 0 0 1px;
+}
+.cru-accordion .cmp-accordion__item:first-child {
+  border-top-width: 1px;
+}
+.cru-accordion .cmp-accordion__header {
+  margin: 0;
+}
+.cru-accordion .cmp-accordion__icon {
+  position: absolute;
+  top: 50%;
+  right: 8px;
+  transform: translateY(-50%);
+  font-size: 0;
+}
+.cru-accordion .cmp-accordion__icon::before {
+  font-family: "Material Icons";
+  font-weight: normal;
+  font-style: normal;
+  font-size: 1.125rem;
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: "liga";
+  content: "expand_more";
+}
+.cru-accordion .cmp-accordion__button {
+  display: block;
+  color: #383F43;
+  border: none;
+  cursor: pointer;
+  padding: 9px 0;
+  background-color: transparent;
+  text-align: left;
+  width: 100%;
+  position: relative;
+}
+.cru-accordion .cmp-accordion__button--expanded {
+  color: #FFCF07;
+}
+.cru-accordion .cmp-accordion__button--expanded .cmp-accordion__icon::before {
+  content: "expand_less";
+}
+.cru-accordion .cmp-accordion__title {
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  line-height: calc(0.875rem + 6px);
+  display: inline-block;
+}
+.cru-accordion .cmp-accordion__panel {
+  padding: 8px 0 16px;
+  line-height: calc(1em + 8px);
+  font-size: 1rem;
+}
+@media (min-width: 768px) {
+  .cru-accordion .cmp-accordion__panel {
+    font-size: 1rem;
+  }
+}
+@media (min-width: 1200px) {
+  .cru-accordion .cmp-accordion__panel {
+    font-size: 1.125rem;
+  }
+}
+.cru-accordion .cmp-accordion__panel--hidden {
+  display: none;
+}
+
+.cru-accordion-dark .cmp-accordion__button, .cru-accordion-dark .cmp-accordion__panel {
+  color: #FFFFFF;
+}
+.cru-accordion-dark .cmp-accordion__button--expanded {
+  color: #FFCF07;
+}
+
+.cru-accordion-links .cmp-accordion__item {
+  border: none;
+}
+.cru-accordion-links .cmp-accordion__icon {
+  position: relative;
+  top: unset;
+  right: unset;
+  transform: none;
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  border: #FFCF07 1px solid;
+  border-radius: 16px;
+  margin-left: 8px;
+  text-align: center;
+}
+.cru-accordion-links .cmp-accordion__button {
+  color: #383F43;
+}
+.cru-accordion-links .cmp-accordion__button span {
+  vertical-align: middle;
+}
+.cru-accordion-links .cmp-accordion__button::before {
+  display: block;
+  content: "";
+  width: 32px;
+  height: 2px;
+  background-color: #FFCF07;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.cru-accordion-links .cmp-accordion__button .cmp-accordion__icon::before {
+  color: #FFCF07;
+  line-height: 30px;
+}
+.cru-accordion-links .cmp-accordion__panel {
+  padding-top: 16px;
+}
+.cru-accordion-links.cru-accordion-dark .cmp-accordion__button {
+  color: #FFFFFF;
+}

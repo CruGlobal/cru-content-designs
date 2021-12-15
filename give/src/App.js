@@ -1,4 +1,5 @@
-import { BreadcrumbExamples } from "./components/Breadcrumb/Breadcrumb";
+import { AccordionExamples } from "./components/Accordion/Accordion";
+// import { BreadcrumbExamples } from "./components/Breadcrumb/Breadcrumb";
 // import { ImageExamples } from "./components/Image/Image";
 // import { ListExamples } from "./components/List/List";
 // import { SearchExamples } from "./components/Search/Search";
@@ -11,7 +12,8 @@ import { BreadcrumbExamples } from "./components/Breadcrumb/Breadcrumb";
 function App() {
   return (
     <>
-      <BreadcrumbExamples />
+      <AccordionExamples />
+      {/* <BreadcrumbExamples /> */}
       {/* <ImageExamples /> */}
       {/* <ListExamples /> */}
       {/* <SearchExamples /> */}
