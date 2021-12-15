@@ -2,7 +2,7 @@ import "./Separator.css";
 
 export const Separator = ({
   className = "", // string
-  color = "yellow", // string - "yellow" | "gray-dark" | "gray-medium" | "gray-light" | "white"
+  color = "gary-dark", // string - "yellow" | "gray-dark" | "gray-medium" | "gray-light" | "white"
 }) => {
   const classes = className !== "" ? " " + className : className;
   const colorClass = color ? " cru-separator-" + color : "";
