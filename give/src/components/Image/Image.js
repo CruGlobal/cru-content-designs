@@ -10,7 +10,6 @@ export const Image = ({
   if (img.src === "") return null;
 
   const classes = className !== "" ? " " + className : className;
-  // const colorClass = color ? " cru-separator-" + color : "";
 
   const ImageLink = ({ href, children }) => {
     return href ? (
@@ -33,8 +32,9 @@ export const Image = ({
       <div className="cmp-image">
         <ImageLink href={href}>
           <img src={img.src} className="cmp-image__image" alt={img.alt} />
-          <ImageCaption caption={caption} />
         </ImageLink>
+        <meta itemprop="caption" content={img.alt}></meta>
+        <ImageCaption caption={caption} />
       </div>
     </div>
   );
@@ -43,15 +43,6 @@ export const Image = ({
 export const ImageExamples = () => {
   return (
     <>
-      <Image img={{ src: epcot, alt: "EPCOT" }} />
-      <Image
-        img={{ src: epcot, alt: "EPCOT" }}
-        caption="photo credit: Tom Bricker"
-      />
-      <Image
-        img={{ src: epcot, alt: "EPCOT" }}
-        href="https://tombricker.smugmug.com/Disney/Epcot/i-jHVJP3N/A"
-      />
       <Image
         img={{ src: epcot, alt: "EPCOT" }}
         caption="photo credit: Tom Bricker"
