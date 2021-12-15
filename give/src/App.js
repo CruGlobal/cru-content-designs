@@ -1,3 +1,4 @@
+import { ComponentExamples } from "./components/ComponentTemplate";
 import { AccordionExamples } from "./components/Accordion/Accordion";
 // import { BreadcrumbExamples } from "./components/Breadcrumb/Breadcrumb";
 // import { ImageExamples } from "./components/Image/Image";
@@ -12,6 +13,7 @@ import { AccordionExamples } from "./components/Accordion/Accordion";
 function App() {
   return (
     <>
+      <ComponentExamples />
       <AccordionExamples />
       {/* <BreadcrumbExamples /> */}
       {/* <ImageExamples /> */}
