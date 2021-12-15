@@ -1,5 +1,6 @@
+import { ImageExamples } from "./components/Image/Image";
 // import { ListExamples } from "./components/List/List";
-import { SearchExamples } from "./components/Search/Search";
+// import { SearchExamples } from "./components/Search/Search";
 // import { SeparatorExamples } from "./components/Separator/Separator";
 // import { TabsExamples } from "./components/Tabs/Tabs";
 // import { TeaserExamples } from "./components/Teaser/Teaser";
@@ -9,8 +10,9 @@ import { SearchExamples } from "./components/Search/Search";
 function App() {
   return (
     <>
+      <ImageExamples />
       {/* <ListExamples /> */}
-      <SearchExamples />
+      {/* <SearchExamples /> */}
       {/* <SeparatorExamples /> */}
       {/* <TabsExamples /> */}
       {/* <TeaserExamples /> */}
