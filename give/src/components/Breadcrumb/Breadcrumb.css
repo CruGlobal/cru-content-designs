@@ -1,0 +1,97 @@
+/* Breadcrumb styles */
+.cru-breadcrumb .cmp-breadcrumb__list {
+  margin: 0;
+  padding: 0;
+}
+.cru-breadcrumb .cmp-breadcrumb__item {
+  margin: 0 0 0 6px;
+  padding: 0 0 0 20px;
+  list-style-type: none;
+  display: inline-block;
+  position: relative;
+}
+.cru-breadcrumb .cmp-breadcrumb__item::before {
+  font-family: "Material Icons";
+  font-weight: normal;
+  font-style: normal;
+  font-size: 1em;
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: "liga";
+  content: "chevron_right";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  color: #383F43;
+}
+.cru-breadcrumb .cmp-breadcrumb__item:first-of-type {
+  margin-left: 0;
+  padding-left: 0;
+}
+.cru-breadcrumb .cmp-breadcrumb__item:first-of-type::before {
+  display: none;
+}
+@media (max-width: 767px) {
+  .cru-breadcrumb .cmp-breadcrumb__item:not(.cmp-breadcrumb__item--active) {
+    display: none;
+  }
+  .cru-breadcrumb .cmp-breadcrumb__item.cmp-breadcrumb__item--active {
+    margin-left: 0;
+  }
+  .cru-breadcrumb .cmp-breadcrumb__item.cmp-breadcrumb__item--active::before {
+    content: "<";
+  }
+}
+.cru-breadcrumb .cmp-breadcrumb__item-link,
+.cru-breadcrumb .cmp-breadcrumb span {
+  color: #383F43;
+}
+.cru-breadcrumb .cmp-breadcrumb__item-link {
+  text-decoration: none;
+}
+.cru-breadcrumb .cmp-breadcrumb__item-link:hover {
+  text-decoration: underline;
+}
+.cru-breadcrumb .cmp-breadcrumb span {
+  font-size: 0.875rem;
+  line-height: calc(1em + 8px);
+}
+
+.cru-breadcrumb-yellow .cmp-breadcrumb .cmp-breadcrumb__item::before,
+.cru-breadcrumb-yellow .cmp-breadcrumb .cmp-breadcrumb__item-link,
+.cru-breadcrumb-yellow .cmp-breadcrumb span {
+  color: #FFCF07;
+}
+
+.cru-breadcrumb-gray-dark .cmp-breadcrumb .cmp-breadcrumb__item::before,
+.cru-breadcrumb-gray-dark .cmp-breadcrumb .cmp-breadcrumb__item-link,
+.cru-breadcrumb-gray-dark .cmp-breadcrumb span {
+  color: #383F43;
+}
+
+.cru-breadcrumb-gray-medium .cmp-breadcrumb .cmp-breadcrumb__item::before,
+.cru-breadcrumb-gray-medium .cmp-breadcrumb .cmp-breadcrumb__item-link,
+.cru-breadcrumb-gray-medium .cmp-breadcrumb span {
+  color: #9C9FA1;
+}
+
+.cru-breadcrumb-gray-light .cmp-breadcrumb .cmp-breadcrumb__item::before,
+.cru-breadcrumb-gray-light .cmp-breadcrumb .cmp-breadcrumb__item-link,
+.cru-breadcrumb-gray-light .cmp-breadcrumb span {
+  color: #EBECEC;
+}
+
+.cru-breadcrumb-white .cmp-breadcrumb .cmp-breadcrumb__item::before,
+.cru-breadcrumb-white .cmp-breadcrumb .cmp-breadcrumb__item-link,
+.cru-breadcrumb-white .cmp-breadcrumb span {
+  color: #FFFFFF;
+}

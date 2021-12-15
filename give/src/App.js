@@ -1,4 +1,5 @@
-import { ImageExamples } from "./components/Image/Image";
+import { BreadcrumbExamples } from "./components/Breadcrumb/Breadcrumb";
+// import { ImageExamples } from "./components/Image/Image";
 // import { ListExamples } from "./components/List/List";
 // import { SearchExamples } from "./components/Search/Search";
 // import { SeparatorExamples } from "./components/Separator/Separator";
@@ -10,7 +11,8 @@ import { ImageExamples } from "./components/Image/Image";
 function App() {
   return (
     <>
-      <ImageExamples />
+      <BreadcrumbExamples />
+      {/* <ImageExamples /> */}
       {/* <ListExamples /> */}
       {/* <SearchExamples /> */}
       {/* <SeparatorExamples /> */}
