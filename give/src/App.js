@@ -1,7 +1,7 @@
 // import { ComponentExamples } from "./components/ComponentTemplate";
-import { ButtonExamples } from "./components/Button/Button";
 // import { AccordionExamples } from "./components/Accordion/Accordion";
 // import { BreadcrumbExamples } from "./components/Breadcrumb/Breadcrumb";
+import { ButtonExamples } from "./components/Button/Button";
 // import { ImageExamples } from "./components/Image/Image";
 // import { ListExamples } from "./components/List/List";
 // import { SearchExamples } from "./components/Search/Search";
@@ -15,9 +15,9 @@ function App() {
   return (
     <>
       {/* <ComponentExamples /> */}
-      <ButtonExamples />
       {/* <AccordionExamples /> */}
       {/* <BreadcrumbExamples /> */}
+      <ButtonExamples />
       {/* <ImageExamples /> */}
       {/* <ListExamples /> */}
       {/* <SearchExamples /> */}
