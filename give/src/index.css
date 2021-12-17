@@ -21,14 +21,7 @@ img {
 }
 
 .button {
-  float: left;
+  display: inline-block;
   margin-right: 10px;
   margin-bottom: 20px;
-}
-
-.cru-button-standard:nth-child(4n + 5),
-.cru-button-tag:nth-child(4n + 5),
-.cru-button-combo:nth-child(2n + 3),
-.cru-button-dot:nth-child(2n + 3) {
-  clear: both;
 }

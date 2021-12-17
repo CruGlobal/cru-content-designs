@@ -22,7 +22,7 @@ export const Button = ({
   shadow = false, // bool - for combo and dot types only
   disabled = false, // bool
 }) => {
-  const classes = className !== "" ? " " + className : className;
+  const classes = className ? " " + className : className;
   const typeClass = " cru-button-" + type;
   const stylingClass = " cru-button-" + styling;
   const colorClass = " cru-button-" + color;
@@ -45,9 +45,7 @@ export const Button = ({
         }
       >
         <ButtonLink href={href}>
-          {text !== "" ? (
-            <span className="cmp-button__text">{text}</span>
-          ) : null}
+          {text ? <span className="cmp-button__text">{text}</span> : null}
           {icon ? (
             <span
               className={"cmp-button__icon cmp-button__icon--" + icon}
@@ -62,6 +60,7 @@ export const Button = ({
 export const ButtonExamples = () => {
   const Buttons = ({
     text,
+    href,
     type,
     styling,
     color,
@@ -80,20 +79,23 @@ export const ButtonExamples = () => {
     }
 
     return (
-      <>
+      <div>
         {isStandard || isTag ? (
           <Button
+            className={className}
             text={text}
+            href={href}
             type={type}
             styling={styling}
             color={color}
             textColor={textColor}
             shadow={shadow}
-            className={className}
           />
         ) : null}
         <Button
+          className={className}
           text={text}
+          href={href}
           type={type}
           styling={styling}
           color={color}
@@ -103,7 +105,9 @@ export const ButtonExamples = () => {
         />
         {isStandard || isTag ? (
           <Button
+            className={className}
             text={text ? text + " (disabled)" : null}
+            href={href}
             type={type}
             styling={styling}
             color={color}
@@ -113,7 +117,9 @@ export const ButtonExamples = () => {
           />
         ) : null}
         <Button
+          className={className}
           text={text ? text + " (disabled)" : null}
+          href={href}
           type={type}
           styling={styling}
           color={color}
@@ -122,7 +128,7 @@ export const ButtonExamples = () => {
           shadow={shadow}
           disabled
         />
-      </>
+      </div>
     );
   };
 
@@ -131,11 +137,13 @@ export const ButtonExamples = () => {
       <h2 style={{ clear: "both" }}>Standard solid buttons</h2>
       <div>
         <Buttons
+          className="randomClass"
           text="Yellow/Gray"
           type="standard"
           styling="solid"
           color="yellow-gray"
           icon="shopping_cart"
+          href="https://google.com"
         />
         <Buttons
           text="Gray/White"
