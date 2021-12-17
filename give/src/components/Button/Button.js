@@ -59,6 +59,7 @@ export const Button = ({
 
 export const ButtonExamples = () => {
   const Buttons = ({
+    className,
     text,
     href,
     type,
@@ -67,7 +68,6 @@ export const ButtonExamples = () => {
     textColor,
     icon,
     shadow,
-    className,
   }) => {
     let isStandard = false;
     let isTag = false;
