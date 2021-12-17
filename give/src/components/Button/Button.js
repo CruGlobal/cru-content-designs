@@ -1,6 +1,6 @@
 import "./Button.css";
 
-const ButtonType = ({ href, children }) => {
+const ButtonLink = ({ href, children }) => {
   return href !== "" ? (
     <a className="cmp-button" href={href}>
       {children}
@@ -8,12 +8,6 @@ const ButtonType = ({ href, children }) => {
   ) : (
     <button className="cmp-button">{children}</button>
   );
-};
-
-const ButtonIcon = ({ icon }) => {
-  if (!icon) return null;
-
-  return <span className={"cmp-button__icon cmp-button__icon--" + icon}></span>;
 };
 
 export const Button = ({
@@ -32,7 +26,7 @@ export const Button = ({
   const typeClass = " cru-button-" + type;
   const stylingClass = " cru-button-" + styling;
   const colorClass = " cru-button-" + color;
-  const textColorClass = " cru-button-" + textColor;
+  const textColorClass = textColor ? " cru-button-" + textColor : "";
   const shadowClass = shadow ? " cru-button-shadow" : "";
   const disabledClass = disabled ? " disabled" : "";
 
@@ -50,19 +44,32 @@ export const Button = ({
           classes
         }
       >
-        <ButtonType href={href}>
+        <ButtonLink href={href}>
           {text !== "" ? (
             <span className="cmp-button__text">{text}</span>
           ) : null}
-          <ButtonIcon icon={icon} />
-        </ButtonType>
+          {icon ? (
+            <span
+              className={"cmp-button__icon cmp-button__icon--" + icon}
+            ></span>
+          ) : null}
+        </ButtonLink>
       </div>
     </>
   );
 };
 
 export const ButtonExamples = () => {
-  const Buttons = ({ text, type, styling, color, textColor, shadow, icon }) => {
+  const Buttons = ({
+    text,
+    type,
+    styling,
+    color,
+    textColor,
+    icon,
+    shadow,
+    className,
+  }) => {
     let isStandard = false;
     let isTag = false;
 
@@ -82,6 +89,7 @@ export const ButtonExamples = () => {
             color={color}
             textColor={textColor}
             shadow={shadow}
+            className={className}
           />
         ) : null}
         <Button
