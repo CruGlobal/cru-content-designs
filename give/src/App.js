@@ -2,7 +2,8 @@
 // import { AccordionExamples } from "./components/Accordion/Accordion";
 // import { BreadcrumbExamples } from "./components/Breadcrumb/Breadcrumb";
 // import { ButtonExamples } from "./components/Button/Button";
-import { CarouselExamples } from "./components/Carousel/Carousel";
+// import { CarouselExamples } from "./components/Carousel/Carousel";
+import { FormExamples } from "./components/Form/Form";
 // import { ImageExamples } from "./components/Image/Image";
 // import { ListExamples } from "./components/List/List";
 // import { SearchExamples } from "./components/Search/Search";
@@ -19,7 +20,8 @@ function App() {
       {/* <AccordionExamples /> */}
       {/* <BreadcrumbExamples /> */}
       {/* <ButtonExamples /> */}
-      <CarouselExamples />
+      {/* <CarouselExamples /> */}
+      <FormExamples />
       {/* <ImageExamples /> */}
       {/* <ListExamples /> */}
       {/* <SearchExamples /> */}
