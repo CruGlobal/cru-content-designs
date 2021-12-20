@@ -13,7 +13,6 @@ export const Text = ({
   required = false, // bool
   requiredMessage = "", // string
   readonly = false, // bool
-  error = false, // bool
   id = "", // string
 }) => {
   const classes = className !== "" ? " " + className : className;
