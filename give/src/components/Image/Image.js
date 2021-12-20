@@ -33,7 +33,7 @@ export const Image = ({
         <ImageLink href={href}>
           <img src={img.src} className="cmp-image__image" alt={img.alt} />
         </ImageLink>
-        <meta itemprop="caption" content={img.alt}></meta>
+        <meta content={img.alt}></meta>
         <ImageCaption caption={caption} />
       </div>
     </div>
