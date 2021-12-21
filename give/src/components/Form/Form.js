@@ -27,10 +27,10 @@ export const FormExamples = () => {
       <Form>
         <TextExamples />
       </Form>
-      {/* <Form underline>
+      <Form underline>
         <TextExamples />
       </Form>
-      <Form dark>
+      {/* <Form dark>
         <TextExamples />
       </Form>
       <Form underline dark>

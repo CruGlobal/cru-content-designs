@@ -3,7 +3,7 @@ import "./Text.css";
 export const Text = ({
   className = "", // string
   constraint = "text", // string - "text" | "textarea" | "email" | "tel" | "date" | "number" | "password"
-  lines = 1, // int
+  lines = 2, // int
   label = "Label", // string
   hideLabel = false, // bool
   name = "", //string
@@ -13,11 +13,21 @@ export const Text = ({
   required = false, // bool
   requiredMessage = "", // string
   readonly = false, // bool
+  disabled = false, // bool
   id = "", // string
 }) => {
   const classes = className !== "" ? " " + className : className;
   const isTextarea = constraint === "textarea" ? true : false;
-  const placeholderText = help && placeholder === true ? help : "";
+  const placeholderText = help && placeholder === true ? help : null;
+  const props = {
+    placeholder: placeholderText,
+    id: id ? id : null,
+    name: name ? name : null,
+    value: value,
+    required: required,
+    readOnly: readonly,
+    disabled: disabled ? disabled : null,
+  };
 
   return (
     <div className={"text" + classes}>
@@ -32,25 +42,11 @@ export const Text = ({
         {isTextarea ? (
           <textarea
             className="cmp-form-text__textarea"
-            placeholder={placeholderText}
-            id={id}
-            name={name}
-            value={value}
             rows={lines}
-            required={required}
-            readOnly={readonly}
+            {...props}
           ></textarea>
         ) : (
-          <input
-            className="cmp-form-text__text"
-            type={constraint}
-            placeholder={placeholderText}
-            id={id}
-            name={name}
-            value={value}
-            required={required}
-            readOnly={readonly}
-          />
+          <input className="cmp-form-text__text" type={constraint} {...props} />
         )}
       </div>
     </div>
@@ -60,7 +56,13 @@ export const Text = ({
 export const TextExamples = () => {
   return (
     <>
-      <Text label="Text input label" required readonly />
+      <Text label="Text" required />
+      <Text label="Textarea" constraint="textarea" readonly />
+      <Text label="Email" constraint="email" disabled />
+      <Text label="Telephone" constraint="tel" help="Helper text" />
+      <Text label="Date" constraint="date" />
+      <Text label="Number" constraint="number" help="12345" placeholder />
+      <Text label="Password" constraint="password" value="password" />
     </>
   );
 };
