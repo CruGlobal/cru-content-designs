@@ -1,12 +1,15 @@
 import "./Options.css";
 
-const BoxOption = ({ type, value, children, ...other }) => {
+const BoxOption = ({
+  type, // string - "checkbox" | "radio"
+  children,
+  ...other
+}) => {
   return (
     <label className="cmp-form-options__field-label">
       <input
         className={"cmp-form-options__field cmp-form-options__field--" + type}
         type={type}
-        value={value}
         {...other}
       />
       <span className="cmp-form-options__field-description">{children}</span>
@@ -45,7 +48,7 @@ export const OptionsExamples = () => {
   return (
     <>
       <Options title="Checkboxes" inline>
-        <BoxOption type="checkbox" name="name1" checked>
+        <BoxOption type="checkbox" name="name1" checked onChange={() => {}}>
           Option 1
         </BoxOption>
         <BoxOption type="checkbox">Option 2</BoxOption>
@@ -54,13 +57,13 @@ export const OptionsExamples = () => {
         </BoxOption>
       </Options>
       <Options title="Radio buttons">
-        <BoxOption type="radio" name="radio1" checked>
+        <BoxOption type="radio" name="radio" checked onChange={() => {}}>
           Option 1
         </BoxOption>
-        <BoxOption type="radio" name="radio2">
+        <BoxOption type="radio" name="radio">
           Option 2
         </BoxOption>
-        <BoxOption type="radio" name="radio3" disabled>
+        <BoxOption type="radio" name="radio" disabled>
           Option 3
         </BoxOption>
       </Options>
