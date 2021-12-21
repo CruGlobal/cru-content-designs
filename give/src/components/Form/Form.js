@@ -1,4 +1,5 @@
-import { TextExamples } from "./Text/Text";
+// import { TextExamples } from "./Text/Text";
+import { OptionsExamples } from "./Options/Options";
 
 export const Form = ({
   className = "", // string
@@ -25,10 +26,12 @@ export const FormExamples = () => {
   return (
     <>
       <Form>
-        <TextExamples />
+        {/* <TextExamples /> */}
+        <OptionsExamples />
       </Form>
       <Form underline>
-        <TextExamples />
+        {/* <TextExamples /> */}
+        <OptionsExamples />
       </Form>
       {/* <Form dark>
         <TextExamples />
