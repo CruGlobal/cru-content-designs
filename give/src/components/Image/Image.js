@@ -1,7 +1,7 @@
 import "./Image.css";
-import epcot from "../../epcot.jpeg";
+import lava1 from "../../assets/lava1.jpeg";
 
-const ImageLink = ({ href, children }) => {
+const LinkWrapper = ({ href, children }) => {
   return href ? (
     <a className="cmp-image__link" href={href}>
       {children}
@@ -11,43 +11,47 @@ const ImageLink = ({ href, children }) => {
   );
 };
 
-const ImageCaption = ({ caption }) => {
-  if (caption === "") return null;
-
-  return <span className="cmp-image__title">{caption}</span>;
-};
-
 export const Image = ({
-  className = "", // string
-  img = { src: "", alt: "" }, // object with `src` and `alt` keys, each key containing a string
+  src = "", // string
+  alt = "", // string
   caption = "", // string
   href = "", // string - URL
+  classes = "", // string
 }) => {
-  if (img.src === "") return null;
-
-  const classes = className !== "" ? " " + className : className;
+  if (src === "") return null;
 
   return (
-    <div className={"image cru-image" + classes}>
+    <div className={`image cru-image${classes ? " " + classes : ""}`}>
       <div className="cmp-image">
-        <ImageLink href={href}>
-          <img src={img.src} className="cmp-image__image" alt={img.alt} />
-        </ImageLink>
-        <meta content={img.alt}></meta>
-        <ImageCaption caption={caption} />
+        <LinkWrapper href={href}>
+          <img src={src} className="cmp-image__image" alt={alt} />
+        </LinkWrapper>
+        {alt && <meta content={alt}></meta>}
+        {caption && <span className="cmp-image__title">{caption}</span>}
       </div>
     </div>
   );
 };
 
 export const ImageExamples = () => {
+  const src = lava1;
+  const alt = "Lava flowing into the ocean";
+  const caption = "Lava flowing into the ocean";
+  const href = "https://unsplash.com/photos/E4944K_4SvI";
+
   return (
     <>
-      <Image
-        img={{ src: epcot, alt: "EPCOT" }}
-        caption="photo credit: Tom Bricker"
-        href="https://tombricker.smugmug.com/Disney/Epcot/i-jHVJP3N/A"
-      />
+      <h2>Standard</h2>
+      <Image src={src} alt={alt} />
+
+      <h2>Caption</h2>
+      <Image src={src} alt={alt} caption={caption} />
+
+      <h2>Linked</h2>
+      <Image src={src} alt={alt} href={href} />
+
+      <h2>Caption/Linked</h2>
+      <Image src={src} alt={alt} caption={caption} href={href} />
     </>
   );
 };

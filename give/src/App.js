@@ -3,8 +3,8 @@
 // import { BreadcrumbExamples } from "./components/Breadcrumb/Breadcrumb";
 // import { ButtonExamples } from "./components/Button/Button";
 // import { CarouselExamples } from "./components/Carousel/Carousel";
-import { FormExamples } from "./components/Form/Form";
-// import { ImageExamples } from "./components/Image/Image";
+// import { FormExamples } from "./components/Form/Form";
+import { ImageExamples } from "./components/Image/Image";
 // import { ListExamples } from "./components/List/List";
 // import { SearchExamples } from "./components/Search/Search";
 // import { SeparatorExamples } from "./components/Separator/Separator";
@@ -21,8 +21,8 @@ function App() {
       {/* <BreadcrumbExamples /> */}
       {/* <ButtonExamples /> */}
       {/* <CarouselExamples /> */}
-      <FormExamples />
-      {/* <ImageExamples /> */}
+      {/* <FormExamples /> */}
+      <ImageExamples />
       {/* <ListExamples /> */}
       {/* <SearchExamples /> */}
       {/* <SeparatorExamples /> */}
