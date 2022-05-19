@@ -16,18 +16,25 @@ export const Image = ({
   alt = "", // string
   caption = "", // string
   href = "", // string - URL
+  popupTitle = true, // boolean
   classes = "", // string
 }) => {
-  if (src === "") return null;
+  if (src === "" && alt === "") return null;
 
   return (
     <div className={`image cru-image${classes ? " " + classes : ""}`}>
       <div className="cmp-image">
         <LinkWrapper href={href}>
-          <img src={src} className="cmp-image__image" alt={alt} />
+          <img
+            src={src}
+            className="cmp-image__image"
+            alt={alt}
+            title={popupTitle && caption ? caption : ""}
+          />
         </LinkWrapper>
-        {alt && <meta content={alt}></meta>}
-        {caption && <span className="cmp-image__title">{caption}</span>}
+        {!popupTitle && caption && (
+          <span className="cmp-image__title">{caption}</span>
+        )}
       </div>
     </div>
   );
@@ -42,15 +49,12 @@ export const ImageExamples = () => {
   return (
     <>
       <h2>Standard</h2>
-      <Image src={src} alt={alt} />
-
-      <h2>Caption</h2>
       <Image src={src} alt={alt} caption={caption} />
 
-      <h2>Linked</h2>
-      <Image src={src} alt={alt} href={href} />
+      <h2>Caption</h2>
+      <Image src={src} alt={alt} caption={caption} popupTitle={false} />
 
-      <h2>Caption/Linked</h2>
+      <h2>Linked</h2>
       <Image src={src} alt={alt} caption={caption} href={href} />
     </>
   );
