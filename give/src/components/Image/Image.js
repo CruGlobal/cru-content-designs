@@ -1,3 +1,5 @@
+// Based on v3 - https://www.aemcomponents.dev/content/core-components-examples/library/core-content/image.html
+
 import "./Image.css";
 import lava1 from "../../assets/lava1.jpeg";
 
@@ -29,7 +31,7 @@ export const Image = ({
             src={src}
             className="cmp-image__image"
             alt={alt}
-            title={popupTitle && caption ? caption : ""}
+            title={popupTitle && caption ? caption : false}
           />
         </LinkWrapper>
         {!popupTitle && caption && (
@@ -42,8 +44,8 @@ export const Image = ({
 
 export const ImageExamples = () => {
   const src = lava1;
-  const alt = "Lava flowing into the ocean";
-  const caption = "Lava flowing into the ocean";
+  const alt = "Alt: Lava flowing into the ocean";
+  const caption = "Title: Lava flowing into the ocean";
   const href = "https://unsplash.com/photos/E4944K_4SvI";
 
   return (
