@@ -1,4 +1,5 @@
-// Based on v3 - https://www.aemcomponents.dev/content/core-components-examples/library/core-content/image.html
+// Based on v3
+// https://www.aemcomponents.dev/content/core-components-examples/library/core-content/image.html
 
 import "./Image.css";
 import lava1 from "../../assets/lava1.jpeg";
