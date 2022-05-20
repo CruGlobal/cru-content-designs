@@ -32,7 +32,7 @@ export const Image = ({
             src={src}
             className="cmp-image__image"
             alt={alt}
-            title={popupTitle && caption ? caption : false}
+            title={popupTitle && caption ? caption : ""}
           />
         </LinkWrapper>
         {!popupTitle && caption && (
