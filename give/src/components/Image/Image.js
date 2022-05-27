@@ -1,5 +1,6 @@
 // Based on v3
 // https://www.aemcomponents.dev/content/core-components-examples/library/core-content/image.html
+// https://github.com/adobe/aem-core-wcm-components/blob/main/content/src/content/jcr_root/apps/core/wcm/components/image/v3/image/image.html
 
 import "./Image.css";
 import lava1 from "../../assets/lava1.jpeg";
@@ -22,7 +23,7 @@ export const Image = ({
   popupTitle = true, // boolean
   classes = "", // string
 }) => {
-  if (src === "" && alt === "") return null;
+  if (!src && !alt) return null;
 
   return (
     <div className={`image cru-image${classes ? " " + classes : ""}`}>
