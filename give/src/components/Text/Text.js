@@ -1,3 +1,7 @@
+// Based on v2
+// https://www.aemcomponents.dev/content/core-components-examples/library/core-content/text.html
+// https://github.com/adobe/aem-core-wcm-components/blob/main/content/src/content/jcr_root/apps/core/wcm/components/text/v2/text/text.html
+
 import "./Text.css";
 import "../List/List.css";
 
@@ -79,22 +83,22 @@ export const TextExamples = () => {
         <table cellPadding="5" cellSpacing="0" border="1">
           <tbody>
             <tr>
-              <td>Column 1</td>
-              <td>Column 2</td>
-              <td>Column 3</td>
-              <td>Column 4</td>
+              <th>Column 1</th>
+              <th>Column 2</th>
+              <th>Column 3</th>
+              <th>Column 4</th>
             </tr>
             <tr>
-              <td>&nbsp;</td>
-              <td>&nbsp;</td>
-              <td>&nbsp;</td>
-              <td>&nbsp;</td>
+              <td>1.1</td>
+              <td>1.2</td>
+              <td>1.3</td>
+              <td>1.4</td>
             </tr>
             <tr>
-              <td>&nbsp;</td>
-              <td>&nbsp;</td>
-              <td>&nbsp;</td>
-              <td>&nbsp;</td>
+              <td>2.1</td>
+              <td>2.2</td>
+              <td>2.3</td>
+              <td>2.4</td>
             </tr>
           </tbody>
         </table>
