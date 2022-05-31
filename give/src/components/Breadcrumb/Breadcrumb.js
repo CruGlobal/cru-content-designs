@@ -1,37 +1,58 @@
+// Based on v3
+// https://www.aemcomponents.dev/content/core-components-examples/library/core-structure/breadcrumb/hidden/level-1/level-2/breadcrumb.html
+// https://github.com/adobe/aem-core-wcm-components/blob/main/content/src/content/jcr_root/apps/core/wcm/components/breadcrumb/v3/breadcrumb/breadcrumb.html
+
 import "./Breadcrumb.css";
 
-const BreadcrumbItem = ({ item }) => {
-  if (item.title === "") return null;
-
-  return item.href !== "" ? (
-    <li className="cmp-breadcrumb__item">
-      <a href={item.href} class="cmp-breadcrumb__item-link">
-        <span>{item.title}</span>
-      </a>
-    </li>
+const LinkWrapper = ({ href, children }) => {
+  return href ? (
+    <a className="cmp-breadcrumb__item-link" href={href}>
+      {children}
+    </a>
   ) : (
-    <li className="cmp-breadcrumb__item cmp-breadcrumb__item--active">
-      <span>{item.title}</span>
+    children
+  );
+};
+
+const BreadcrumbItem = ({ item, last = false }) => {
+  if (!item.title) return null;
+
+  return (
+    <li
+      className={`cmp-breadcrumb__item${
+        last ? " cmp-breadcrumb__item--active" : ""
+      }`}
+    >
+      <LinkWrapper href={item.href}>
+        <span>{item.title}</span>
+      </LinkWrapper>
     </li>
   );
 };
 
 export const Breadcrumb = ({
   className = "", // string
-  content = [], // array of objects with `title` and `href` keys, each key containing a string
-  color = "gray-dark", // string - "yellow" | "gray-dark" | "gray-medium" | "gray-light" | "white"
+  content = [], // array of objects with `title` and `href` props, each key containing a string
+  color = "", // string - "yellow" | "gray-dark" | "gray-medium" | "gray-light" | "white"
 }) => {
   if (content.length === 0) return null;
 
   const classes = className !== "" ? " " + className : className;
-  const colorClass = color !== "" ? " cru-breadcrumb-" + color : "";
+
+  const colors = ["yellow", "gray-dark", "gray-medium", "gray-light", "white"];
+  let colorClass = " cru-breadcrumb-";
+  colorClass += colors.includes(color) ? color : colors[1];
 
   return (
     <div className={"breadcrumb cru-breadcrumb" + colorClass + classes}>
       <nav className="cmp-breadcrumb">
         <ol className="cmp-breadcrumb__list">
           {content.map((item, index) => (
-            <BreadcrumbItem item={item} key={item.title} />
+            <BreadcrumbItem
+              item={item}
+              last={content.length === index + 1}
+              key={item.title}
+            />
           ))}
         </ol>
       </nav>
