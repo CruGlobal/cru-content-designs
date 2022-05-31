@@ -16,16 +16,21 @@ const LinkWrapper = ({ href, children }) => {
 
 export const Title = ({
   className = "", // string
-  component = "h2", // string = "h1" | "h2" | "h3" | "h4" | "h5" | "h6"
-  size = "md", // string - "xxl" | "xl" | "lg" | "md" | "sm" | "xs" | "xxs"
+  component = "", // string = "h1" | "h2" | "h3" | "h4" | "h5" | "h6"
+  size = "", // string - "xxl" | "xl" | "lg" | "md" | "sm" | "xs" | "xxs"
   href = "", // string - URL
   children,
 }) => {
   if (!children) return null;
 
   const classes = className !== "" ? " " + className : className;
-  const sizeClass = size !== "" ? " cru-title-" + size : size;
-  const DynamicHeadingTag = `${component}`;
+
+  const tags = ["h1", "h2", "h3", "h4", "h5", "h6"];
+  const DynamicHeadingTag = tags.includes(component) ? `${component}` : "h2";
+
+  const sizes = ["xxl", "xl", "lg", "md", "sm", "xs", "xxs"];
+  let sizeClass = " cru-title-";
+  sizeClass += sizes.includes(size) ? size : sizes[3];
 
   return (
     <div className={"title cru-title" + sizeClass + classes}>
