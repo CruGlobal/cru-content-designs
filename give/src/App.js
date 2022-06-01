@@ -1,6 +1,6 @@
 // import { ComponentExamples } from "./components/ComponentTemplate";
 // import { AccordionExamples } from "./components/Accordion/Accordion";
-// import { BreadcrumbExamples } from "./components/Breadcrumb/Breadcrumb";
+import { BreadcrumbExamples } from "./components/Breadcrumb/Breadcrumb";
 // import { ButtonExamples } from "./components/Button/Button";
 // import { CarouselExamples } from "./components/Carousel/Carousel";
 // import { FormExamples } from "./components/Form/Form";
@@ -11,14 +11,14 @@
 // import { TabsExamples } from "./components/Tabs/Tabs";
 // import { TeaserExamples } from "./components/Teaser/Teaser";
 // import { TextExamples } from "./components/Text/Text";
-import { TitleExamples } from "./components/Title/Title";
+// import { TitleExamples } from "./components/Title/Title";
 
 function App() {
   return (
     <>
       {/* <ComponentExamples /> */}
       {/* <AccordionExamples /> */}
-      {/* <BreadcrumbExamples /> */}
+      <BreadcrumbExamples />
       {/* <ButtonExamples /> */}
       {/* <CarouselExamples /> */}
       {/* <FormExamples /> */}
@@ -29,7 +29,7 @@ function App() {
       {/* <TabsExamples /> */}
       {/* <TeaserExamples /> */}
       {/* <TextExamples /> */}
-      <TitleExamples />
+      {/* <TitleExamples /> */}
     </>
   );
 }

@@ -40,11 +40,12 @@ export const Breadcrumb = ({
   const classes = className !== "" ? " " + className : className;
 
   const colors = ["yellow", "gray-dark", "gray-medium", "gray-light", "white"];
-  let colorClass = " cru-breadcrumb-";
-  colorClass += colors.includes(color) ? color : colors[1];
+  const colorClass = `cru-breadcrumb-${
+    colors.includes(color) ? color : colors[1]
+  }`;
 
   return (
-    <div className={"breadcrumb cru-breadcrumb" + colorClass + classes}>
+    <div className={`breadcrumb cru-breadcrumb ${colorClass}${classes}`}>
       <nav className="cmp-breadcrumb">
         <ol className="cmp-breadcrumb__list">
           {content.map((item, index) => (
