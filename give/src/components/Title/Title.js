@@ -29,11 +29,10 @@ export const Title = ({
   const DynamicHeadingTag = tags.includes(component) ? `${component}` : "h2";
 
   const sizes = ["xxl", "xl", "lg", "md", "sm", "xs", "xxs"];
-  let sizeClass = " cru-title-";
-  sizeClass += sizes.includes(size) ? size : sizes[3];
+  const sizeClass = `cru-title-${sizes.includes(size) ? size : sizes[3]}`;
 
   return (
-    <div className={"title cru-title" + sizeClass + classes}>
+    <div className={`title cru-title ${sizeClass}${classes}`}>
       <div className="cmp-title">
         <DynamicHeadingTag className="cmp-title__text">
           <LinkWrapper href={href}>{children}</LinkWrapper>
