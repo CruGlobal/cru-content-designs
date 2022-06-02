@@ -24,10 +24,7 @@ export const Teaser = ({
 
   return (
     <ComponentWrapper type="teaser" className={`${typeClass} ${className}`}>
-      <LinkWrapper
-        href={link && btns.length === 0 ? link : false}
-        className="cmp-teaser__link"
-      >
+      <LinkWrapper href={link} className="cmp-teaser__link">
         {/* Content */}
         <div className="cmp-teaser__content">
           {/* Pre-title */}
