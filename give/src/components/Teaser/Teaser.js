@@ -1,74 +1,11 @@
+// Based on v2
+// https://www.aemcomponents.dev/content/core-components-examples/library/core-content/teaser.html
+// https://github.com/adobe/aem-core-wcm-components/blob/main/content/src/content/jcr_root/apps/core/wcm/components/teaser/v2/teaser/teaser.html
+
+import { ComponentWrapper, LinkWrapper } from "../shared";
+import { Image } from "../Image/Image";
 import "./Teaser.css";
-import epcot from "../../epcot.jpeg";
-
-const TeaserTitle = ({ link, children }) => {
-  if (!children) return null;
-
-  return (
-    <h2 className="cmp-teaser__title">
-      {link !== "" ? (
-        <a className="cmp-teaser__title-link" href={link}>
-          {children}
-        </a>
-      ) : (
-        children
-      )}
-    </h2>
-  );
-};
-
-const TeaserImage = ({ obj, link }) => {
-  if (obj.src === "") return null;
-
-  const image = () => (
-    <img src={obj.src} className="cmp-image__image" alt={obj.alt} />
-  );
-
-  return (
-    <div className="cmp-teaser__image">
-      <div className="cmp-image">
-        {link !== "" ? (
-          <a className="cmp-image__link" href={link}>
-            {image()}
-          </a>
-        ) : (
-          image()
-        )}
-        <meta content={obj.alt} />
-      </div>
-    </div>
-  );
-};
-
-const TeaserPreTitle = ({ children }) => {
-  if (!children) return null;
-
-  return <div className="cmp-teaser__pretitle">{children}</div>;
-};
-
-const TeaserDescription = ({ children }) => {
-  if (!children) return null;
-
-  return (
-    <div className="cmp-teaser__description">
-      <p>{children}</p>
-    </div>
-  );
-};
-
-const TeaserButtons = ({ btns }) => {
-  if (btns.length === 0) return null;
-
-  return (
-    <div className="cmp-teaser__action-container">
-      {btns.map((btn) => (
-        <a className="cmp-teaser__action-link" href={btn.href} key={btn.href}>
-          {btn.text}
-        </a>
-      ))}
-    </div>
-  );
-};
+import lava1 from "../../assets/lava1.jpeg";
 
 export const Teaser = ({
   className = "", // string
@@ -80,23 +17,60 @@ export const Teaser = ({
   btns = [], // array of objects with `href` and `text` keys, each key containing a string
   link = "", // string - URL
 }) => {
-  if (title === "") return null;
+  if (!title) return null;
 
-  const classes = className !== "" ? " " + className : className;
-  const typeClass = type !== "" ? " cru-teaser-" + type : type;
+  const types = ["featured", "layered"];
+  const typeClass = types.includes(type) ? "cru-teaser-" + type : "";
 
   return (
-    <div className={"teaser" + typeClass + classes}>
-      <div className="cmp-teaser">
-        <TeaserImage obj={img} link={link} />
+    <ComponentWrapper type="teaser" className={`${typeClass} ${className}`}>
+      <LinkWrapper
+        href={link && btns.length === 0 ? link : false}
+        className="cmp-teaser__link"
+      >
+        {/* Content */}
         <div className="cmp-teaser__content">
-          <TeaserPreTitle>{pre}</TeaserPreTitle>
-          <TeaserTitle link={link}>{title}</TeaserTitle>
-          <TeaserDescription>{desc}</TeaserDescription>
-          <TeaserButtons btns={btns} />
+          {/* Pre-title */}
+          {pre && <p className="cmp-teaser__pretitle">{pre}</p>}
+
+          {/* Title */}
+          <h2 className="cmp-teaser__title">
+            <LinkWrapper href={link} className="cmp-teaser__title-link">
+              {title}
+            </LinkWrapper>
+          </h2>
+
+          {/* Description */}
+          {desc && (
+            <div className="cmp-teaser__description">
+              <p>{desc}</p>
+            </div>
+          )}
+
+          {/* Buttons */}
+          {btns.length > 0 && (
+            <div className="cmp-teaser__action-container">
+              {btns.map((btn) => (
+                <a
+                  className="cmp-teaser__action-link"
+                  href={btn.href}
+                  key={btn.href}
+                >
+                  {btn.text}
+                </a>
+              ))}
+            </div>
+          )}
         </div>
-      </div>
-    </div>
+
+        {/* Image */}
+        {img.src && (
+          <div className="cmp-teaser__image">
+            <Image src={img.src} alt={img.alt} hideWrapper />
+          </div>
+        )}
+      </LinkWrapper>
+    </ComponentWrapper>
   );
 };
 
@@ -108,7 +82,7 @@ export const TeaserExamples = () => {
         pre="Pretitle 1"
         title="Title 1"
         desc="Description 1"
-        img={{ src: epcot, alt: "EPCOT 1" }}
+        img={{ src: lava1, alt: "Lava 1" }}
         link="http://facebook.com"
         btns={[
           { href: "http://google.com", text: "CTA 1" },
@@ -121,7 +95,7 @@ export const TeaserExamples = () => {
         pre="Pretitle 2"
         title="Title 2"
         desc="Description 2"
-        img={{ src: epcot, alt: "EPCOT 2" }}
+        img={{ src: lava1, alt: "Lava 2" }}
         btns={[
           { href: "http://google.com", text: "CTA 1" },
           { href: "http://twitter.com", text: "CTA 2" },
@@ -132,7 +106,7 @@ export const TeaserExamples = () => {
         pre="Pretitle 3"
         title="Title 3"
         desc="Description 3"
-        img={{ src: epcot, alt: "EPCOT 3" }}
+        img={{ src: lava1, alt: "Lava 3" }}
         btns={[
           { href: "http://google.com", text: "CTA 1" },
           { href: "http://twitter.com", text: "CTA 2" },

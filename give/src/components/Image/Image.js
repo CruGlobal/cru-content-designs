@@ -13,11 +13,16 @@ export const Image = ({
   caption = "", // string
   href = "", // string - URL
   popupTitle = true, // boolean
+  hideWrapper = false, // boolean
 }) => {
   if (!src && !alt) return null;
 
   return (
-    <ComponentWrapper type="image" className={className}>
+    <ComponentWrapper
+      type="image"
+      className={className}
+      hideWrapper={hideWrapper}
+    >
       <LinkWrapper href={href} className="cmp-image__link">
         <img
           src={src}

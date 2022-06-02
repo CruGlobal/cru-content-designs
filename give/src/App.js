@@ -10,15 +10,23 @@ import { ImageExamples } from "./components/Image/Image";
 // import { SearchExamples } from "./components/Search/Search";
 // import { SeparatorExamples } from "./components/Separator/Separator";
 // import { TabsExamples } from "./components/Tabs/Tabs";
-// import { TeaserExamples } from "./components/Teaser/Teaser";
+import { TeaserExamples } from "./components/Teaser/Teaser";
 import { TextExamples } from "./components/Text/Text";
 import { TitleExamples } from "./components/Title/Title";
 
 const Nav = () => {
   return (
     <>
-      <nav>
-        <ul>
+      <nav style={{ marginBottom: 50 }}>
+        <ul
+          style={{
+            display: "flex",
+            flexWrap: "wrap",
+            gap: "10px 40px",
+            listStyleType: "none",
+            padding: 0,
+          }}
+        >
           <li>
             <Link to="/">Home</Link>
           </li>
@@ -27,6 +35,9 @@ const Nav = () => {
           </li>
           <li>
             <Link to="/image">Image</Link>
+          </li>
+          <li>
+            <Link to="/teaser">Teaser</Link>
           </li>
           <li>
             <Link to="/text">Text</Link>
@@ -62,7 +73,7 @@ function App() {
           {/* <SearchExamples /> */}
           {/* <SeparatorExamples /> */}
           {/* <TabsExamples /> */}
-          {/* <TeaserExamples /> */}
+          <Route path="teaser" element={<TeaserExamples />} />
           <Route path="text" element={<TextExamples />} />
           <Route path="title" element={<TitleExamples />} />
         </Route>
