@@ -2,45 +2,34 @@
 // https://www.aemcomponents.dev/content/core-components-examples/library/core-content/image.html
 // https://github.com/adobe/aem-core-wcm-components/blob/main/content/src/content/jcr_root/apps/core/wcm/components/image/v3/image/image.html
 
+import { ComponentWrapper, LinkWrapper } from "../shared";
 import "./Image.css";
 import lava1 from "../../assets/lava1.jpeg";
 
-const LinkWrapper = ({ href, children }) => {
-  return href ? (
-    <a className="cmp-image__link" href={href}>
-      {children}
-    </a>
-  ) : (
-    children
-  );
-};
-
 export const Image = ({
+  className = "", // string
   src = "", // string
   alt = "", // string
   caption = "", // string
   href = "", // string - URL
   popupTitle = true, // boolean
-  classes = "", // string
 }) => {
   if (!src && !alt) return null;
 
   return (
-    <div className={`image cru-image${classes ? " " + classes : ""}`}>
-      <div className="cmp-image">
-        <LinkWrapper href={href}>
-          <img
-            src={src}
-            className="cmp-image__image"
-            alt={alt}
-            title={popupTitle && caption ? caption : ""}
-          />
-        </LinkWrapper>
-        {!popupTitle && caption && (
-          <span className="cmp-image__title">{caption}</span>
-        )}
-      </div>
-    </div>
+    <ComponentWrapper type="image" className={className}>
+      <LinkWrapper href={href} className="cmp-image__link">
+        <img
+          src={src}
+          className="cmp-image__image"
+          alt={alt}
+          title={popupTitle && caption ? caption : ""}
+        />
+      </LinkWrapper>
+      {!popupTitle && caption && (
+        <span className="cmp-image__title">{caption}</span>
+      )}
+    </ComponentWrapper>
   );
 };
 

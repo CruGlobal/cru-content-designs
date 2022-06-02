@@ -3,9 +3,11 @@ export const ComponentWrapper = ({ type, className = "", children }) => {
 
   const classes = `${type} cru-${type} ${className}`;
 
+  const DynamicInnerTag = type === "breadcrumb" ? "nav" : "div";
+
   return (
     <div className={classes.trim()}>
-      <div className={`cmp-${type}`}>{children}</div>
+      <DynamicInnerTag className={`cmp-${type}`}>{children}</DynamicInnerTag>
     </div>
   );
 };

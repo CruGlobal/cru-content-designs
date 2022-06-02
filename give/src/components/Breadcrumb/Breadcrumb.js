@@ -2,17 +2,8 @@
 // https://www.aemcomponents.dev/content/core-components-examples/library/core-structure/breadcrumb/hidden/level-1/level-2/breadcrumb.html
 // https://github.com/adobe/aem-core-wcm-components/blob/main/content/src/content/jcr_root/apps/core/wcm/components/breadcrumb/v3/breadcrumb/breadcrumb.html
 
+import { ComponentWrapper, LinkWrapper } from "../shared";
 import "./Breadcrumb.css";
-
-const LinkWrapper = ({ href, children }) => {
-  return href ? (
-    <a className="cmp-breadcrumb__item-link" href={href}>
-      {children}
-    </a>
-  ) : (
-    children
-  );
-};
 
 const BreadcrumbItem = ({ item, last = false }) => {
   if (!item.title) return null;
@@ -23,7 +14,7 @@ const BreadcrumbItem = ({ item, last = false }) => {
         last ? " cmp-breadcrumb__item--active" : ""
       }`}
     >
-      <LinkWrapper href={item.href}>
+      <LinkWrapper href={item.href} className="cmp-breadcrumb__item-link">
         <span>{item.title}</span>
       </LinkWrapper>
     </li>
@@ -37,27 +28,26 @@ export const Breadcrumb = ({
 }) => {
   if (content.length === 0) return null;
 
-  const classes = className !== "" ? " " + className : className;
-
   const colors = ["yellow", "gray-dark", "gray-medium", "gray-light", "white"];
   const colorClass = `cru-breadcrumb-${
     colors.includes(color) ? color : colors[1]
   }`;
 
   return (
-    <div className={`breadcrumb cru-breadcrumb ${colorClass}${classes}`}>
-      <nav className="cmp-breadcrumb">
-        <ol className="cmp-breadcrumb__list">
-          {content.map((item, index) => (
-            <BreadcrumbItem
-              item={item}
-              last={content.length === index + 1}
-              key={item.title}
-            />
-          ))}
-        </ol>
-      </nav>
-    </div>
+    <ComponentWrapper
+      type="breadcrumb"
+      className={`${colorClass} ${className}`}
+    >
+      <ol className="cmp-breadcrumb__list">
+        {content.map((item, index) => (
+          <BreadcrumbItem
+            item={item}
+            last={content.length === index + 1}
+            key={item.title}
+          />
+        ))}
+      </ol>
+    </ComponentWrapper>
   );
 };
 

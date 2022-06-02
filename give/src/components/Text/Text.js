@@ -2,6 +2,7 @@
 // https://www.aemcomponents.dev/content/core-components-examples/library/core-content/text.html
 // https://github.com/adobe/aem-core-wcm-components/blob/main/content/src/content/jcr_root/apps/core/wcm/components/text/v2/text/text.html
 
+import { ComponentWrapper } from "../shared";
 import "./Text.css";
 import "../List/List.css";
 
@@ -12,13 +13,13 @@ export const Text = ({
 }) => {
   if (!children) return null;
 
-  const classes = className !== "" ? " " + className : className;
-  const smallClass = small ? " cru-text-sm" : "";
-
   return (
-    <div className={"text cru-text" + smallClass + classes}>
-      <div className="cmp-text">{children}</div>
-    </div>
+    <ComponentWrapper
+      type="text"
+      className={`${small ? "cru-text-sm " : ""}${className}`}
+    >
+      {children}
+    </ComponentWrapper>
   );
 };
 
