@@ -9,7 +9,7 @@ import { ImageExamples } from "./components/Image/Image";
 // import { ListExamples } from "./components/List/List";
 // import { SearchExamples } from "./components/Search/Search";
 import { SeparatorExamples } from "./components/Separator/Separator";
-// import { TabsExamples } from "./components/Tabs/Tabs";
+import { TabsExamples } from "./components/Tabs/Tabs";
 import { TeaserExamples } from "./components/Teaser/Teaser";
 import { TextExamples } from "./components/Text/Text";
 import { TitleExamples } from "./components/Title/Title";
@@ -38,6 +38,9 @@ const Nav = () => {
           </li>
           <li>
             <Link to="/separator">Separator</Link>
+          </li>
+          <li>
+            <Link to="/tabs">Tabs</Link>
           </li>
           <li>
             <Link to="/teaser">Teaser</Link>
@@ -75,7 +78,7 @@ function App() {
           {/* <ListExamples /> */}
           {/* <SearchExamples /> */}
           <Route path="separator" element={<SeparatorExamples />} />
-          {/* <TabsExamples /> */}
+          <Route path="tabs" element={<TabsExamples />} />
           <Route path="teaser" element={<TeaserExamples />} />
           <Route path="text" element={<TextExamples />} />
           <Route path="title" element={<TitleExamples />} />

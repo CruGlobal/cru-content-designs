@@ -1,3 +1,8 @@
+// Based on v1
+// https://www.aemcomponents.dev/content/core-components-examples/library/core-content/tabs.html
+// https://github.com/adobe/aem-core-wcm-components/blob/main/content/src/content/jcr_root/apps/core/wcm/components/tabs/v1/tabs/tabs.html
+
+import { ComponentWrapper } from "../shared";
 import "./Tabs.css";
 
 export const Tabs = ({
@@ -7,49 +12,55 @@ export const Tabs = ({
 }) => {
   if (content.length === 0) return null;
 
-  const classes = className !== "" ? " " + className : className;
-  const dotClass = dot ? " cru-tabs-dot" : "";
-
   return (
-    <div className={"tabs cru-tabs" + dotClass + classes}>
-      <div className="cmp-tabs">
-        <ol className="cmp-tabs__tablist">
-          {content.map((tab, index) => {
-            let active = index === 0 ? " cmp-tabs__tab--active" : "";
-            return (
-              <li className={"cmp-tabs__tab" + active} key={tab.tab}>
-                {tab.tab}
-              </li>
-            );
-          })}
-        </ol>
-        {content.map((tabpanel, index) => {
-          let active = index === 0 ? " cmp-tabs__tabpanel--active" : "";
+    <ComponentWrapper
+      type="tabs"
+      className={`${dot ? "cru-tabs-dot " : ""}${className}`}
+    >
+      <ol className="cmp-tabs__tablist">
+        {content.map((tab, index) => {
           return (
-            <div className={"cmp-tabs__tabpanel" + active} key={index}>
-              <p>{tabpanel.content}</p>
-            </div>
+            <li
+              className={`cmp-tabs__tab${
+                index === 0 ? " cmp-tabs__tab--active" : ""
+              }`}
+              key={tab.tab}
+            >
+              {tab.label}
+            </li>
           );
         })}
-      </div>
-    </div>
+      </ol>
+      {content.map((tabpanel, index) => {
+        return (
+          <div
+            className={`cmp-tabs__tabpanel${
+              index === 0 ? " cmp-tabs__tabpanel--active" : ""
+            }`}
+            key={index}
+          >
+            <p>{tabpanel.content}</p>
+          </div>
+        );
+      })}
+    </ComponentWrapper>
   );
 };
 
 export const TabsExamples = () => {
   const content = [
     {
-      tab: "Tab 1",
+      label: "Tab 1",
       content:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Eu mi bibendum neque egestas congue quisque egestas. Varius morbi enim nunc faucibus a pellentesque. Scelerisque eleifend donec pretium vulputate sapien nec sagittis.",
     },
     {
-      tab: "Tab 2",
+      label: "Tab 2",
       content:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Eu mi bibendum neque egestas congue quisque egestas. Varius morbi enim nunc faucibus a pellentesque. Scelerisque eleifend donec pretium vulputate sapien nec sagittis.",
     },
     {
-      tab: "Tab 3",
+      label: "Tab 3",
       content:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Eu mi bibendum neque egestas congue quisque egestas. Varius morbi enim nunc faucibus a pellentesque. Scelerisque eleifend donec pretium vulputate sapien nec sagittis.",
     },
