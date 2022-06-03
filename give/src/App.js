@@ -8,7 +8,7 @@ import { BreadcrumbExamples } from "./components/Breadcrumb/Breadcrumb";
 import { ImageExamples } from "./components/Image/Image";
 // import { ListExamples } from "./components/List/List";
 // import { SearchExamples } from "./components/Search/Search";
-// import { SeparatorExamples } from "./components/Separator/Separator";
+import { SeparatorExamples } from "./components/Separator/Separator";
 // import { TabsExamples } from "./components/Tabs/Tabs";
 import { TeaserExamples } from "./components/Teaser/Teaser";
 import { TextExamples } from "./components/Text/Text";
@@ -35,6 +35,9 @@ const Nav = () => {
           </li>
           <li>
             <Link to="/image">Image</Link>
+          </li>
+          <li>
+            <Link to="/separator">Separator</Link>
           </li>
           <li>
             <Link to="/teaser">Teaser</Link>
@@ -71,7 +74,7 @@ function App() {
           <Route path="image" element={<ImageExamples />} />
           {/* <ListExamples /> */}
           {/* <SearchExamples /> */}
-          {/* <SeparatorExamples /> */}
+          <Route path="separator" element={<SeparatorExamples />} />
           {/* <TabsExamples /> */}
           <Route path="teaser" element={<TeaserExamples />} />
           <Route path="text" element={<TextExamples />} />

@@ -1,18 +1,23 @@
+// Based on v1
+// https://www.aemcomponents.dev/content/core-components-examples/library/core-content/separator.html
+// https://github.com/adobe/aem-core-wcm-components/blob/main/content/src/content/jcr_root/apps/core/wcm/components/separator/v1/separator/separator.html
+
+import { ComponentWrapper } from "../shared";
 import "./Separator.css";
 
 export const Separator = ({
   className = "", // string
-  color = "gary-dark", // string - "yellow" | "gray-dark" | "gray-medium" | "gray-light" | "white"
+  color = "", // string - "yellow" | "gray-dark" | "gray-medium" | "gray-light" | "white"
 }) => {
-  const classes = className !== "" ? " " + className : className;
-  const colorClass = color ? " cru-separator-" + color : "";
+  const colors = ["yellow", "gray-dark", "gray-medium", "gray-light", "white"];
+  const colorClass = `cru-separator-${
+    colors.includes(color) ? color : colors[1]
+  }`;
 
   return (
-    <div className={"separator cru-separator" + colorClass + classes}>
-      <div class="cmp-separator">
-        <hr class="cmp-separator__horizontal-rule" />
-      </div>
-    </div>
+    <ComponentWrapper type="separator" className={`${colorClass} ${className}`}>
+      <hr class="cmp-separator__horizontal-rule" />
+    </ComponentWrapper>
   );
 };
 
