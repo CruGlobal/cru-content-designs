@@ -1,71 +1,56 @@
+// Based on v3
+// https://www.aemcomponents.dev/content/core-components-examples/library/core-content/list.html
+// https://github.com/adobe/aem-core-wcm-components/tree/main/content/src/content/jcr_root/apps/core/wcm/components/list/v3/list
+
+import { ComponentWrapper, LinkWrapper } from "../shared";
+import { Teaser } from "../Teaser/Teaser";
 import "./List.css";
 
-const ListType = ({ type, children }) => {
-  if (!children) return null;
-
-  return type === "ordered" ? (
-    <ol className="cmp-list">{children}</ol>
-  ) : (
-    <ul className="cmp-list">{children}</ul>
-  );
-};
-
-const ListItems = ({ items, linked }) => {
+const ListItems = ({ items, linked, teaser }) => {
   if (items.length === 0) return null;
 
   return items.map((item) => (
     <li className="cmp-list__item" key={item.title}>
-      <article>
-        <ListItemLink linked={linked} href={item.href}>
-          <ListItemText className="cmp-list__item-title">
-            {item.title}
-          </ListItemText>
-          <ListItemText className="cmp-list__item-date">
-            {item.date}
-          </ListItemText>
-        </ListItemLink>
-        <ListItemText className="cmp-list__item-description">
-          {item.desc}
-        </ListItemText>
-      </article>
+      {!teaser && (
+        <>
+          <LinkWrapper
+            href={linked && item.href}
+            className="cmp-list__item-link"
+          >
+            <span className="cmp-list__item-title">{item.title}</span>
+            <span className="cmp-list__item-date">{item.date}</span>
+          </LinkWrapper>
+          <span className="cmp-list__item-description">{item.desc}</span>
+        </>
+      )}
+      {teaser && (
+        <Teaser
+          title={item.title}
+          desc={item.desc}
+          link={linked && item.href}
+          hideWrapper
+          fromList
+        />
+      )}
     </li>
   ));
 };
 
-const ListItemLink = ({ linked, href = "", children }) => {
-  return linked && href !== "" ? (
-    <a className="cmp-list__item-link" href={href}>
-      {children}
-    </a>
-  ) : (
-    children
-  );
-};
-
-const ListItemText = ({ className, children }) => {
-  if (!children) return null;
-
-  return <span className={className}>{children}</span>;
-};
-
 export const List = ({
   className = "", // string
-  type = "unordered", // string - "unordered" | "ordered"
   items = [], // array of objects with `title`, `date`, `desc`, and `href` keys, each key containing a string
   spaced = false, // bool
   linked = false, // bool
+  teaser = false, // bool
 }) => {
   if (items.length === 0) return null;
 
-  const classes = className !== "" ? " " + className : className;
-  const spacedClass = spaced ? " cru-list-extra-spacing" : "";
+  const spacedClass = spaced ? "cru-list-extra-spacing" : "";
 
   return (
-    <div className={"list cru-list" + spacedClass + classes}>
-      <ListType type={type}>
-        <ListItems items={items} linked={linked} />
-      </ListType>
-    </div>
+    <ComponentWrapper type="list" className={`${spacedClass} ${className}`}>
+      <ListItems items={items} linked={linked} teaser={teaser} />
+    </ComponentWrapper>
   );
 };
 
@@ -93,8 +78,11 @@ export const ListExamples = () => {
 
   return (
     <>
-      <List type="unordered" items={content} linked></List>
-      <List type="ordered" items={content}></List>
+      <List items={content}></List>
+      <List items={content} linked></List>
+      <List items={content} spaced></List>
+      <List items={content} teaser></List>
+      <List items={content} teaser linked></List>
     </>
   );
 };

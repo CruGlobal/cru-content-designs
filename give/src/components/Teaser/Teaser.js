@@ -16,6 +16,8 @@ export const Teaser = ({
   desc = "", // string
   btns = [], // array of objects with `href` and `text` keys, each key containing a string
   link = "", // string - URL
+  hideWrapper = false, // boolean
+  fromList = false, // boolean
 }) => {
   if (!title) return null;
 
@@ -23,7 +25,11 @@ export const Teaser = ({
   const typeClass = types.includes(type) ? "cru-teaser-" + type : "";
 
   return (
-    <ComponentWrapper type="teaser" className={`${typeClass} ${className}`}>
+    <ComponentWrapper
+      type="teaser"
+      className={`${typeClass} ${className}`}
+      hideWrapper={hideWrapper}
+    >
       <LinkWrapper href={link} className="cmp-teaser__link">
         {/* Content */}
         <div className="cmp-teaser__content">
@@ -32,7 +38,10 @@ export const Teaser = ({
 
           {/* Title */}
           <h2 className="cmp-teaser__title">
-            <LinkWrapper href={link} className="cmp-teaser__title-link">
+            <LinkWrapper
+              href={link && !fromList ? link : false}
+              className="cmp-teaser__title-link"
+            >
               {title}
             </LinkWrapper>
           </h2>

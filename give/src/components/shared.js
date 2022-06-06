@@ -8,11 +8,18 @@ export const ComponentWrapper = ({
 
   const classes = `${type} cru-${type} ${className}`;
 
-  const DynamicInnerTag = type === "breadcrumb" ? "nav" : "div";
+  function whitespaceCleanup(string) {
+    let tmp = string.trim();
+    tmp = tmp.replace(/  +/g, " ");
+    return tmp;
+  }
+
+  const DynamicInnerTag =
+    type === "breadcrumb" ? "nav" : type === "list" ? "ul" : "div";
 
   if (!hideWrapper) {
     return (
-      <div className={classes.trim()}>
+      <div className={whitespaceCleanup(classes)}>
         <DynamicInnerTag className={`cmp-${type}`}>{children}</DynamicInnerTag>
       </div>
     );
