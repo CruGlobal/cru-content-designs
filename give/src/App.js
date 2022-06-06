@@ -2,7 +2,7 @@ import { BrowserRouter, Link, Outlet, Routes, Route } from "react-router-dom";
 // import { ComponentExamples } from "./components/ComponentTemplate";
 // import { AccordionExamples } from "./components/Accordion/Accordion";
 import { BreadcrumbExamples } from "./components/Breadcrumb/Breadcrumb";
-// import { ButtonExamples } from "./components/Button/Button";
+import { ButtonExamples } from "./components/Button/Button";
 // import { CarouselExamples } from "./components/Carousel/Carousel";
 // import { FormExamples } from "./components/Form/Form";
 import { ImageExamples } from "./components/Image/Image";
@@ -32,6 +32,9 @@ const Nav = () => {
           </li>
           <li>
             <Link to="/breadcrumb">Breadcrumb</Link>
+          </li>
+          <li>
+            <Link to="/button">Button</Link>
           </li>
           <li>
             <Link to="/image">Image</Link>
@@ -74,7 +77,7 @@ function App() {
           {/* <ComponentExamples /> */}
           {/* <AccordionExamples /> */}
           <Route path="breadcrumb" element={<BreadcrumbExamples />} />
-          {/* <ButtonExamples /> */}
+          <Route path="button" element={<ButtonExamples />} />
           {/* <CarouselExamples /> */}
           {/* <FormExamples /> */}
           <Route path="image" element={<ImageExamples />} />

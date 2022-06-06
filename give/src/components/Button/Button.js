@@ -1,12 +1,19 @@
+// Based on v2
+// https://www.aemcomponents.dev/content/core-components-examples/library/core-content/button.html
+// https://github.com/adobe/aem-core-wcm-components/tree/main/content/src/content/jcr_root/apps/core/wcm/components/button/v2/button
+
+import { ComponentWrapper } from "../shared";
 import "./Button.css";
 
 const ButtonLink = ({ href, children }) => {
-  return href !== "" ? (
+  return href ? (
     <a className="cmp-button" href={href}>
       {children}
     </a>
   ) : (
-    <button className="cmp-button">{children}</button>
+    <button type="button" className="cmp-button">
+      {children}
+    </button>
   );
 };
 
@@ -22,38 +29,28 @@ export const Button = ({
   shadow = false, // bool - for combo and dot types only
   disabled = false, // bool
 }) => {
-  const classes = className ? " " + className : className;
-  const typeClass = " cru-button-" + type;
-  const stylingClass = " cru-button-" + styling;
-  const colorClass = " cru-button-" + color;
-  const textColorClass = textColor ? " cru-button-" + textColor : "";
-  const shadowClass = shadow ? " cru-button-shadow" : "";
-  const disabledClass = disabled ? " disabled" : "";
+  if (!text && !icon) return null;
+
+  const typeClass = "cru-button-" + type;
+  const stylingClass = "cru-button-" + styling;
+  const colorClass = "cru-button-" + color;
+  const textColorClass = textColor ? "cru-button-" + textColor : "";
+  const shadowClass = shadow ? "cru-button-shadow" : "";
+  const disabledClass = disabled ? "disabled" : "";
 
   return (
-    <>
-      <div
-        className={
-          "button" +
-          typeClass +
-          stylingClass +
-          colorClass +
-          textColorClass +
-          shadowClass +
-          disabledClass +
-          classes
-        }
-      >
-        <ButtonLink href={href}>
-          {text ? <span className="cmp-button__text">{text}</span> : null}
-          {icon ? (
-            <span
-              className={"cmp-button__icon cmp-button__icon--" + icon}
-            ></span>
-          ) : null}
-        </ButtonLink>
-      </div>
-    </>
+    <ComponentWrapper
+      type="button"
+      className={`${className} ${typeClass} ${stylingClass} ${colorClass} ${textColorClass} ${shadowClass} ${disabledClass}`}
+      hideInner
+    >
+      <ButtonLink href={href}>
+        {icon && (
+          <span className={"cmp-button__icon cmp-button__icon--" + icon}></span>
+        )}
+        {text && <span className="cmp-button__text">{text}</span>}
+      </ButtonLink>
+    </ComponentWrapper>
   );
 };
 

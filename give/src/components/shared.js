@@ -2,6 +2,7 @@ export const ComponentWrapper = ({
   type,
   className = "",
   hideWrapper = false,
+  hideInner = false,
   children,
 }) => {
   if (!type) return null;
@@ -17,20 +18,27 @@ export const ComponentWrapper = ({
   const DynamicInnerTag =
     type === "breadcrumb" ? "nav" : type === "list" ? "ul" : "div";
 
-  if (!hideWrapper) {
+  if (hideWrapper) {
+    return (
+      <DynamicInnerTag className={`cmp-${type}`}>{children}</DynamicInnerTag>
+    );
+  } else if (hideInner) {
+    return <div className={whitespaceCleanup(classes)}>{children}</div>;
+  } else {
     return (
       <div className={whitespaceCleanup(classes)}>
         <DynamicInnerTag className={`cmp-${type}`}>{children}</DynamicInnerTag>
       </div>
     );
-  } else {
-    return (
-      <DynamicInnerTag className={`cmp-${type}`}>{children}</DynamicInnerTag>
-    );
   }
 };
 
-export const LinkWrapper = ({ href, unwrap, className, children }) => {
+export const LinkWrapper = ({
+  href,
+  unwrap = false,
+  className = "",
+  children,
+}) => {
   return !unwrap ? (
     <a className={className} href={href}>
       {children}
