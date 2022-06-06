@@ -1,6 +1,6 @@
 import { BrowserRouter, Link, Outlet, Routes, Route } from "react-router-dom";
 // import { ComponentExamples } from "./components/ComponentTemplate";
-// import { AccordionExamples } from "./components/Accordion/Accordion";
+import { AccordionExamples } from "./components/Accordion/Accordion";
 import { BreadcrumbExamples } from "./components/Breadcrumb/Breadcrumb";
 import { ButtonExamples } from "./components/Button/Button";
 // import { CarouselExamples } from "./components/Carousel/Carousel";
@@ -29,6 +29,9 @@ const Nav = () => {
         >
           <li>
             <Link to="/">Home</Link>
+          </li>
+          <li>
+            <Link to="/accordion">Accordion</Link>
           </li>
           <li>
             <Link to="/breadcrumb">Breadcrumb</Link>
@@ -75,7 +78,7 @@ function App() {
         <Route path="/" element={<Nav />}>
           <Route index element={<Home />} />
           {/* <ComponentExamples /> */}
-          {/* <AccordionExamples /> */}
+          <Route path="accordion" element={<AccordionExamples />} />
           <Route path="breadcrumb" element={<BreadcrumbExamples />} />
           <Route path="button" element={<ButtonExamples />} />
           {/* <CarouselExamples /> */}

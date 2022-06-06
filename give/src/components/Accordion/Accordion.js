@@ -1,25 +1,9 @@
+// Based on v1
+// https://www.aemcomponents.dev/content/core-components-examples/library/core-content/accordion.html
+// https://github.com/adobe/aem-core-wcm-components/tree/main/content/src/content/jcr_root/apps/core/wcm/components/accordion/v1/accordion
+
+import { ComponentWrapper } from "../shared";
 import "./Accordion.css";
-
-const AccordionItem = ({ content, first }) => {
-  const expandedButton = first ? " cmp-accordion__button--expanded" : "";
-  const expandedPanel = first ? "expanded" : "hidden";
-
-  return (
-    <div class="cmp-accordion__item">
-      <h3 class="cmp-accordion__header">
-        <button class={"cmp-accordion__button" + expandedButton}>
-          <span class="cmp-accordion__title">{content.title}</span>
-          <span class="cmp-accordion__icon"></span>
-        </button>
-      </h3>
-      <div
-        class={"cmp-accordion__panel cmp-accordion__panel--" + expandedPanel}
-      >
-        {content.content}
-      </div>
-    </div>
-  );
-};
 
 export const Accordion = ({
   className = "", // string
@@ -29,20 +13,36 @@ export const Accordion = ({
 }) => {
   if (content.length === 0) return null;
 
-  const classes = className !== "" ? " " + className : className;
-  const darkClass = dark ? " cru-accordion-dark" : "";
-  const linksClass = links ? " cru-accordion-links" : "";
+  const darkClass = dark ? "cru-accordion-dark" : "";
+  const linksClass = links ? "cru-accordion-links" : "";
 
   return (
-    <div
-      className={"accordion cru-accordion" + darkClass + linksClass + classes}
+    <ComponentWrapper
+      type="accordion"
+      className={`${darkClass} ${linksClass} ${className}`}
     >
-      <div className="cmp-accordion">
-        {content.map((item, index) => (
-          <AccordionItem content={item} first={index === 0} key={item.title} />
-        ))}
-      </div>
-    </div>
+      {content.map((item, index) => (
+        <div className="cmp-accordion__item">
+          <h3 className="cmp-accordion__header">
+            <button
+              className={`cmp-accordion__button${
+                index === 0 ? " cmp-accordion__button--expanded" : ""
+              }`}
+            >
+              <span className="cmp-accordion__title">{item.title}</span>
+              <span className="cmp-accordion__icon"></span>
+            </button>
+          </h3>
+          <div
+            className={`cmp-accordion__panel cmp-accordion__panel--${
+              index === 0 ? "expanded" : "hidden"
+            }`}
+          >
+            {item.content}
+          </div>
+        </div>
+      ))}
+    </ComponentWrapper>
   );
 };
 
