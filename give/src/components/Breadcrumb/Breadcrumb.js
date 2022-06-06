@@ -5,16 +5,18 @@
 import { ComponentWrapper, LinkWrapper } from "../shared";
 import "./Breadcrumb.css";
 
-const BreadcrumbItem = ({ item, last = false }) => {
+const BreadcrumbItem = ({ item, active = false }) => {
   if (!item.title) return null;
 
+  const activeClass = active ? " cmp-breadcrumb__item--active" : "";
+
   return (
-    <li
-      className={`cmp-breadcrumb__item${
-        last ? " cmp-breadcrumb__item--active" : ""
-      }`}
-    >
-      <LinkWrapper href={item.href} className="cmp-breadcrumb__item-link">
+    <li className={`cmp-breadcrumb__item${activeClass}`}>
+      <LinkWrapper
+        href={item.href}
+        unwrap={!item.href || active}
+        className="cmp-breadcrumb__item-link"
+      >
         <span>{item.title}</span>
       </LinkWrapper>
     </li>
@@ -42,7 +44,7 @@ export const Breadcrumb = ({
         {content.map((item, index) => (
           <BreadcrumbItem
             item={item}
-            last={content.length === index + 1}
+            active={content.length === index + 1}
             key={item.title}
           />
         ))}
@@ -56,7 +58,7 @@ export const BreadcrumbExamples = () => {
     { title: "Home", href: "https://google.com" },
     { title: "Level 1", href: "https://facebook.com" },
     { title: "Level 2", href: "https://twitter.com" },
-    { title: "Current", href: "" },
+    { title: "Current", href: "https://microsoft.com" },
   ];
 
   return (

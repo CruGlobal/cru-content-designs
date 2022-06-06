@@ -30,7 +30,11 @@ export const Teaser = ({
       className={`${typeClass} ${className}`}
       hideWrapper={hideWrapper}
     >
-      <LinkWrapper href={link} className="cmp-teaser__link">
+      <LinkWrapper
+        href={link}
+        unwrap={!link || btns.length > 0}
+        className="cmp-teaser__link"
+      >
         {/* Content */}
         <div className="cmp-teaser__content">
           {/* Pre-title */}
@@ -39,7 +43,8 @@ export const Teaser = ({
           {/* Title */}
           <h2 className="cmp-teaser__title">
             <LinkWrapper
-              href={link && !fromList ? link : false}
+              href={link}
+              unwrap={!link || btns.length > 0 || fromList}
               className="cmp-teaser__title-link"
             >
               {title}

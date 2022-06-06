@@ -23,7 +23,7 @@ export const Image = ({
       className={className}
       hideWrapper={hideWrapper}
     >
-      <LinkWrapper href={href} className="cmp-image__link">
+      <LinkWrapper href={href} unwrap={!href} className="cmp-image__link">
         <img
           src={src}
           className="cmp-image__image"

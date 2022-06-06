@@ -30,8 +30,8 @@ export const ComponentWrapper = ({
   }
 };
 
-export const LinkWrapper = ({ href, className, children }) => {
-  return href ? (
+export const LinkWrapper = ({ href, unwrap, className, children }) => {
+  return !unwrap ? (
     <a className={className} href={href}>
       {children}
     </a>

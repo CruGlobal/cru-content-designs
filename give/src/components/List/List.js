@@ -14,7 +14,8 @@ const ListItems = ({ items, linked, teaser }) => {
       {!teaser && (
         <>
           <LinkWrapper
-            href={linked && item.href}
+            href={item.href}
+            unwrap={!item.href || !linked}
             className="cmp-list__item-link"
           >
             <span className="cmp-list__item-title">{item.title}</span>

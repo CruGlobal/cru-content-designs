@@ -20,10 +20,13 @@ export const Title = ({
   const sizes = ["xxl", "xl", "lg", "md", "sm", "xs", "xxs"];
   const sizeClass = `cru-title-${sizes.includes(size) ? size : sizes[3]}`;
 
+  // There's a `linkDisabled` property AEM is looking for in the anchor's `data-sly-unwrap` attribute, but I can't tell what it's used for. The documentation examples all have a value of false.
+  // https://github.com/adobe/aem-core-wcm-components/blob/main/content/src/content/jcr_root/apps/core/wcm/components/title/v3/title/title.html#L23
+
   return (
     <ComponentWrapper type="title" className={`${sizeClass} ${className}`}>
       <DynamicHeadingTag className="cmp-title__text">
-        <LinkWrapper href={href} className="cmp-title__link">
+        <LinkWrapper href={href} unwrap={!href} className="cmp-title__link">
           {children}
         </LinkWrapper>
       </DynamicHeadingTag>
