@@ -1,7 +1,13 @@
+// Based on v1
+// https://www.aemcomponents.dev/content/core-components-examples/library/core-content/carousel.html
+// https://github.com/adobe/aem-core-wcm-components/tree/main/content/src/content/jcr_root/apps/core/wcm/components/carousel/v1/carousel
+
+import { ComponentWrapper } from "../shared";
 import { Image } from "../Image/Image";
 import "./Carousel.css";
 import "../Button/Button.css";
-import epcot from "../../epcot.jpeg";
+import lava1 from "../../assets/lava1.jpeg";
+import lava2 from "../../assets/lava2.jpeg";
 
 export const Carousel = ({
   className = "", // string
@@ -10,57 +16,66 @@ export const Carousel = ({
 }) => {
   if (content.length === 0) return null;
 
-  const classes = className !== "" ? " " + className : className;
-  navButtonClasses =
-    navButtonClasses !== "" ? " " + navButtonClasses : navButtonClasses;
+  const Actions = () => {
+    const actions = [
+      { label: "Previous", classes: "previous" },
+      { label: "Next", classes: "next" },
+      { label: "Pause", classes: "pause" },
+      { label: "Play", classes: "play cmp-carousel__action--disabled" },
+    ];
+
+    return (
+      <div className="cmp-carousel__actions">
+        {actions.map((action, index) => {
+          return (
+            <button
+              className={`cmp-carousel__action cmp-carousel__action--${action.classes}`}
+              key={index}
+            >
+              <span className="cmp-carousel__action-icon"></span>
+              <span className="cmp-carousel__action-text">${action.label}</span>
+            </button>
+          );
+        })}
+      </div>
+    );
+  };
+
+  const Indicators = () => {
+    return (
+      <ol className="cmp-carousel__indicators">
+        {content.map((slide, index) => {
+          const active = slide.active ? " cmp-carousel__indicator--active" : "";
+
+          return (
+            <li className={`cmp-carousel__indicator${active}`} key={index}>
+              {slide.label}
+            </li>
+          );
+        })}
+      </ol>
+    );
+  };
 
   return (
-    <div className={"carousel cru-carousel" + navButtonClasses + classes}>
-      <div className="cmp-carousel">
-        <div className="cmp-carousel__content">
-          {content.map((slide, index) => {
-            const active = slide.active ? " cmp-carousel__item--active" : "";
+    <ComponentWrapper
+      type="carousel"
+      className={`${navButtonClasses} ${className}`}
+    >
+      <div className="cmp-carousel__content">
+        {content.map((slide, index) => {
+          const active = slide.active ? " cmp-carousel__item--active" : "";
 
-            return (
-              <div className={"cmp-carousel__item" + active} key={index}>
-                {slide.slide}
-              </div>
-            );
-          })}
-          <div className="cmp-carousel__actions">
-            <button className="cmp-carousel__action cmp-carousel__action--previous">
-              <span className="cmp-carousel__action-icon"></span>
-              <span className="cmp-carousel__action-text">Previous</span>
-            </button>
-            <button className="cmp-carousel__action cmp-carousel__action--next">
-              <span className="cmp-carousel__action-icon"></span>
-              <span className="cmp-carousel__action-text">Next</span>
-            </button>
-            <button className="cmp-carousel__action cmp-carousel__action--pause">
-              <span className="cmp-carousel__action-icon"></span>
-              <span className="cmp-carousel__action-text">Pause</span>
-            </button>
-            <button className="cmp-carousel__action cmp-carousel__action--play cmp-carousel__action--disabled">
-              <span className="cmp-carousel__action-icon"></span>
-              <span className="cmp-carousel__action-text">Play</span>
-            </button>
-          </div>
-          <ol className="cmp-carousel__indicators">
-            {content.map((slide, index) => {
-              const active = slide.active
-                ? " cmp-carousel__indicator--active"
-                : "";
-
-              return (
-                <li className={"cmp-carousel__indicator" + active} key={index}>
-                  {slide.label}
-                </li>
-              );
-            })}
-          </ol>
-        </div>
+          return (
+            <div className={`cmp-carousel__item${active}`} key={index}>
+              {slide.slide}
+            </div>
+          );
+        })}
+        <Actions />
+        <Indicators />
       </div>
-    </div>
+    </ComponentWrapper>
   );
 };
 
@@ -71,12 +86,12 @@ export const CarouselExamples = () => {
         navButtonClasses="cru-button-dot cru-button-solid cru-button-yellow-gray"
         content={[
           {
-            slide: <Image img={{ src: epcot, alt: "EPCOT" }} />,
+            slide: <Image src={lava1} alt="Lava 1" />,
             label: "Slide 1",
             active: true,
           },
           {
-            slide: <Image img={{ src: epcot, alt: "EPCOT" }} />,
+            slide: <Image src={lava2} alt="Lava 2" />,
             label: "Slide 2",
           },
         ]}

@@ -3,7 +3,7 @@ import { BrowserRouter, Link, Outlet, Routes, Route } from "react-router-dom";
 import { AccordionExamples } from "./components/Accordion/Accordion";
 import { BreadcrumbExamples } from "./components/Breadcrumb/Breadcrumb";
 import { ButtonExamples } from "./components/Button/Button";
-// import { CarouselExamples } from "./components/Carousel/Carousel";
+import { CarouselExamples } from "./components/Carousel/Carousel";
 // import { FormExamples } from "./components/Form/Form";
 import { ImageExamples } from "./components/Image/Image";
 import { ListExamples } from "./components/List/List";
@@ -38,6 +38,9 @@ const Nav = () => {
           </li>
           <li>
             <Link to="/button">Button</Link>
+          </li>
+          <li>
+            <Link to="/carousel">Carousel</Link>
           </li>
           <li>
             <Link to="/image">Image</Link>
@@ -81,7 +84,7 @@ function App() {
           <Route path="accordion" element={<AccordionExamples />} />
           <Route path="breadcrumb" element={<BreadcrumbExamples />} />
           <Route path="button" element={<ButtonExamples />} />
-          {/* <CarouselExamples /> */}
+          <Route path="carousel" element={<CarouselExamples />} />
           {/* <FormExamples /> */}
           <Route path="image" element={<ImageExamples />} />
           <Route path="list" element={<ListExamples />} />
