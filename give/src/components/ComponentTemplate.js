@@ -1,24 +1,28 @@
+import { ComponentWrapper } from "./shared";
 // import "./Component.css"; // Import component stylesheet
 
 export const Component = ({
   className = "", // string
-  str = "Hello world!", // string
-  bool = true, // bool
+  children,
 }) => {
-  if (!bool) return null; // Condition for rendering nothing
+  if (!children) return null; // Condition for rendering nothing
 
-  const classes = className !== "" ? " " + className : className;
-
-  return <p className={"component-class" + classes}>{str}</p>;
+  return (
+    <ComponentWrapper type="test" className={className}>
+      {children}
+    </ComponentWrapper>
+  );
 };
 
 export const ComponentExamples = () => {
   return (
     <>
-      <Component />
-      <Component className="someClass" />
-      <Component str={"New text"} />
-      <Component str={"Hidden text"} bool={false} />
+      <Component className="someClass">
+        <p>
+          This is a simple component to be used as a template for building out
+          larger components.
+        </p>
+      </Component>
     </>
   );
 };

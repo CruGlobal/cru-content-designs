@@ -1,5 +1,5 @@
 import { BrowserRouter, Link, Outlet, Routes, Route } from "react-router-dom";
-// import { ComponentExamples } from "./components/ComponentTemplate";
+import { ComponentExamples } from "./components/ComponentTemplate";
 import { AccordionExamples } from "./components/Accordion/Accordion";
 import { BreadcrumbExamples } from "./components/Breadcrumb/Breadcrumb";
 import { ButtonExamples } from "./components/Button/Button";
@@ -70,17 +70,16 @@ const Nav = () => {
   );
 };
 
-const Home = () => {
-  return <p>Hello world!</p>;
-};
+// const Home = () => {
+//   return <p>Hello world!</p>;
+// };
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Nav />}>
-          <Route index element={<Home />} />
-          {/* <ComponentExamples /> */}
+          <Route index element={<ComponentExamples />} />
           <Route path="accordion" element={<AccordionExamples />} />
           <Route path="breadcrumb" element={<BreadcrumbExamples />} />
           <Route path="button" element={<ButtonExamples />} />
