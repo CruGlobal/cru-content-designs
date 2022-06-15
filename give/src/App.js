@@ -7,7 +7,7 @@ import { CarouselExamples } from "./components/Carousel/Carousel";
 // import { FormExamples } from "./components/Form/Form";
 import { ImageExamples } from "./components/Image/Image";
 import { ListExamples } from "./components/List/List";
-// import { SearchExamples } from "./components/Search/Search";
+import { SearchExamples } from "./components/Search/Search";
 import { SeparatorExamples } from "./components/Separator/Separator";
 import { TabsExamples } from "./components/Tabs/Tabs";
 import { TeaserExamples } from "./components/Teaser/Teaser";
@@ -49,6 +49,9 @@ const Nav = () => {
             <Link to="/list">List</Link>
           </li>
           <li>
+            <Link to="/search">Search</Link>
+          </li>
+          <li>
             <Link to="/separator">Separator</Link>
           </li>
           <li>
@@ -83,7 +86,7 @@ function App() {
           {/* <FormExamples /> */}
           <Route path="image" element={<ImageExamples />} />
           <Route path="list" element={<ListExamples />} />
-          {/* <SearchExamples /> */}
+          <Route path="search" element={<SearchExamples />} />
           <Route path="separator" element={<SeparatorExamples />} />
           <Route path="tabs" element={<TabsExamples />} />
           <Route path="teaser" element={<TeaserExamples />} />

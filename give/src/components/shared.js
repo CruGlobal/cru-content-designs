@@ -15,8 +15,20 @@ export const ComponentWrapper = ({
     return tmp;
   }
 
-  const DynamicInnerTag =
-    type === "breadcrumb" ? "nav" : type === "list" ? "ul" : "div";
+  let DynamicInnerTag;
+  switch (type) {
+    case "breadcrumb":
+      DynamicInnerTag = "nav";
+      break;
+    case "list":
+      DynamicInnerTag = "ul";
+      break;
+    case "search":
+      DynamicInnerTag = "section";
+      break;
+    default:
+      DynamicInnerTag = "div";
+  }
 
   if (hideWrapper) {
     return (
