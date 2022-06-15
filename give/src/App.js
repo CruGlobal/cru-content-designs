@@ -4,7 +4,7 @@ import { AccordionExamples } from "./components/Accordion/Accordion";
 import { BreadcrumbExamples } from "./components/Breadcrumb/Breadcrumb";
 import { ButtonExamples } from "./components/Button/Button";
 import { CarouselExamples } from "./components/Carousel/Carousel";
-// import { FormExamples } from "./components/Form/Form";
+import { FormExamples } from "./components/Form/Form";
 import { ImageExamples } from "./components/Image/Image";
 import { ListExamples } from "./components/List/List";
 import { SearchExamples } from "./components/Search/Search";
@@ -41,6 +41,9 @@ const Nav = () => {
           </li>
           <li>
             <Link to="/carousel">Carousel</Link>
+          </li>
+          <li>
+            <Link to="/form">Form</Link>
           </li>
           <li>
             <Link to="/image">Image</Link>
@@ -83,7 +86,7 @@ function App() {
           <Route path="breadcrumb" element={<BreadcrumbExamples />} />
           <Route path="button" element={<ButtonExamples />} />
           <Route path="carousel" element={<CarouselExamples />} />
-          {/* <FormExamples /> */}
+          <Route path="form" element={<FormExamples />} />
           <Route path="image" element={<ImageExamples />} />
           <Route path="list" element={<ListExamples />} />
           <Route path="search" element={<SearchExamples />} />
