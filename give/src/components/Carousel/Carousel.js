@@ -33,7 +33,7 @@ export const Carousel = ({
               key={index}
             >
               <span className="cmp-carousel__action-icon"></span>
-              <span className="cmp-carousel__action-text">${action.label}</span>
+              <span className="cmp-carousel__action-text">{action.label}</span>
             </button>
           );
         })}
@@ -68,7 +68,7 @@ export const Carousel = ({
 
           return (
             <div className={`cmp-carousel__item${active}`} key={index}>
-              {slide.slide}
+              {slide.content}
             </div>
           );
         })}
@@ -86,12 +86,12 @@ export const CarouselExamples = () => {
         navButtonClasses="cru-button-dot cru-button-solid cru-button-yellow-gray"
         content={[
           {
-            slide: <Image src={lava1} alt="Lava 1" />,
+            content: <Image src={lava1} alt="Lava 1" />,
             label: "Slide 1",
             active: true,
           },
           {
-            slide: <Image src={lava2} alt="Lava 2" />,
+            content: <Image src={lava2} alt="Lava 2" />,
             label: "Slide 2",
           },
         ]}

@@ -70,10 +70,6 @@ const Nav = () => {
   );
 };
 
-// const Home = () => {
-//   return <p>Hello world!</p>;
-// };
-
 function App() {
   return (
     <BrowserRouter>

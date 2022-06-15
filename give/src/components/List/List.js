@@ -9,30 +9,33 @@ import "./List.css";
 const ListItems = ({ items, linked, teaser }) => {
   if (items.length === 0) return null;
 
+  const listItemStandard = (item, linked) => (
+    <>
+      <LinkWrapper
+        href={item.href}
+        unwrap={!item.href || !linked}
+        className="cmp-list__item-link"
+      >
+        <span className="cmp-list__item-title">{item.title}</span>
+        <span className="cmp-list__item-date">{item.date}</span>
+      </LinkWrapper>
+      <span className="cmp-list__item-description">{item.desc}</span>
+    </>
+  );
+
+  const listItemTeaser = (item, linked) => (
+    <Teaser
+      title={item.title}
+      desc={item.desc}
+      link={linked && item.href}
+      hideWrapper
+      fromList
+    />
+  );
+
   return items.map((item) => (
     <li className="cmp-list__item" key={item.title}>
-      {!teaser && (
-        <>
-          <LinkWrapper
-            href={item.href}
-            unwrap={!item.href || !linked}
-            className="cmp-list__item-link"
-          >
-            <span className="cmp-list__item-title">{item.title}</span>
-            <span className="cmp-list__item-date">{item.date}</span>
-          </LinkWrapper>
-          <span className="cmp-list__item-description">{item.desc}</span>
-        </>
-      )}
-      {teaser && (
-        <Teaser
-          title={item.title}
-          desc={item.desc}
-          link={linked && item.href}
-          hideWrapper
-          fromList
-        />
-      )}
+      {teaser ? listItemTeaser(item, linked) : listItemStandard(item, linked)}
     </li>
   ));
 };
