@@ -1,3 +1,7 @@
+// Based on v2
+// https://github.com/adobe/aem-core-wcm-components/blob/main/content/src/content/jcr_root/apps/core/wcm/components/form/container/v2/container/container.html
+
+import { ComponentWrapper } from "../shared";
 import { TextExamples } from "./Text/Text";
 // import { OptionsExamples } from "./Options/Options";
 
@@ -9,23 +13,47 @@ export const Form = ({
 }) => {
   if (!children) return null;
 
-  const classes = className !== "" ? " " + className : className;
-  const underlineClass = underline ? " cru-form--underlined" : "";
-  const darkClass = dark ? " cru-form--dark" : "";
+  const underlineClass = underline ? "cru-form--underlined" : "";
+  const darkClass = dark ? "cru-form--dark" : "";
 
   return (
-    <div
-      className={"container cru-form" + underlineClass + darkClass + classes}
+    <ComponentWrapper
+      type="form"
+      wrapperClass="container"
+      className={`${underlineClass} ${darkClass} ${className}`}
     >
-      <form className="cmp-form">{children}</form>
-    </div>
+      {children}
+    </ComponentWrapper>
   );
+};
+
+const Errors = () => {
+  const messages = [
+    "Error message!",
+    "OMG! Another error!",
+    "What am I doing wrong?!",
+  ];
+
+  if (messages.length > 0) {
+    return (
+      <div className="cmp-form-error">
+        {messages.map((msg, index) => (
+          <p className="cmp-form-error__item" key={index}>
+            {msg}
+          </p>
+        ))}
+      </div>
+    );
+  } else {
+    return null;
+  }
 };
 
 export const FormExamples = () => {
   return (
     <>
       <Form>
+        <Errors />
         <TextExamples />
         {/* <OptionsExamples /> */}
       </Form>

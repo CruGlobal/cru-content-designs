@@ -3,11 +3,15 @@ export const ComponentWrapper = ({
   className = "",
   hideWrapper = false,
   hideInner = false,
+  wrapperClass = "",
   children,
+  ...other
 }) => {
   if (!type) return null;
 
-  const classes = `${type} cru-${type} ${className}`;
+  const classes = `${
+    wrapperClass ? wrapperClass : type
+  } cru-${type} ${className}`;
 
   function whitespaceCleanup(string) {
     let tmp = string.trim();
@@ -19,6 +23,9 @@ export const ComponentWrapper = ({
   switch (type) {
     case "breadcrumb":
       DynamicInnerTag = "nav";
+      break;
+    case "form":
+      DynamicInnerTag = "form";
       break;
     case "list":
       DynamicInnerTag = "ul";
@@ -32,14 +39,18 @@ export const ComponentWrapper = ({
 
   if (hideWrapper) {
     return (
-      <DynamicInnerTag className={`cmp-${type}`}>{children}</DynamicInnerTag>
+      <DynamicInnerTag className={`cmp-${type}`} {...other}>
+        {children}
+      </DynamicInnerTag>
     );
   } else if (hideInner) {
     return <div className={whitespaceCleanup(classes)}>{children}</div>;
   } else {
     return (
       <div className={whitespaceCleanup(classes)}>
-        <DynamicInnerTag className={`cmp-${type}`}>{children}</DynamicInnerTag>
+        <DynamicInnerTag className={`cmp-${type}`} {...other}>
+          {children}
+        </DynamicInnerTag>
       </div>
     );
   }
