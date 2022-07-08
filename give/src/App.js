@@ -14,61 +14,85 @@ import { TeaserExamples } from "./components/Teaser/Teaser";
 import { TextExamples } from "./components/Text/Text";
 import { TitleExamples } from "./components/Title/Title";
 
+const pages = [
+  {
+    name: "Home",
+    path: "",
+    comp: <ComponentExamples />,
+  },
+  {
+    name: "Accordion",
+    comp: <AccordionExamples />,
+  },
+  {
+    name: "Breadcrumb",
+    comp: <BreadcrumbExamples />,
+  },
+  {
+    name: "Button",
+    comp: <ButtonExamples />,
+  },
+  {
+    name: "Carousel",
+    comp: <CarouselExamples />,
+  },
+  {
+    name: "Form",
+    comp: <FormExamples />,
+  },
+  {
+    name: "Image",
+    comp: <ImageExamples />,
+  },
+  {
+    name: "List",
+    comp: <ListExamples />,
+  },
+  {
+    name: "Search",
+    comp: <SearchExamples />,
+  },
+  {
+    name: "Separator",
+    comp: <SeparatorExamples />,
+  },
+  {
+    name: "Tabs",
+    comp: <TabsExamples />,
+  },
+  {
+    name: "Teaser",
+    comp: <TeaserExamples />,
+  },
+  {
+    name: "Text",
+    comp: <TextExamples />,
+  },
+  {
+    name: "Title",
+    comp: <TitleExamples />,
+  },
+];
+
+const getPagePath = (page) => {
+  return page.path || page.path === "" ? page.path : page.name.toLowerCase();
+};
+
 const Nav = () => {
   return (
     <>
-      <nav style={{ marginBottom: 50 }}>
-        <ul
-          style={{
-            display: "flex",
-            flexWrap: "wrap",
-            gap: "10px 40px",
-            listStyleType: "none",
-            padding: 0,
-          }}
-        >
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/accordion">Accordion</Link>
-          </li>
-          <li>
-            <Link to="/breadcrumb">Breadcrumb</Link>
-          </li>
-          <li>
-            <Link to="/button">Button</Link>
-          </li>
-          <li>
-            <Link to="/carousel">Carousel</Link>
-          </li>
-          <li>
-            <Link to="/form">Form</Link>
-          </li>
-          <li>
-            <Link to="/image">Image</Link>
-          </li>
-          <li>
-            <Link to="/list">List</Link>
-          </li>
-          <li>
-            <Link to="/search">Search</Link>
-          </li>
-          <li>
-            <Link to="/separator">Separator</Link>
-          </li>
-          <li>
-            <Link to="/tabs">Tabs</Link>
-          </li>
-          <li>
-            <Link to="/teaser">Teaser</Link>
-          </li>
-          <li>
-            <Link to="/text">Text</Link>
-          </li>
-          <li>
-            <Link to="/title">Title</Link>
-          </li>
+      <nav>
+        <ul>
+          {pages.map((page) => {
+            const path = getPagePath(page);
+            return (
+              <li>
+                <Link to={`/${path}`} key={page.name}>
+                  {page.name}
+                </Link>
+              </li>
+            );
+          })}
         </ul>
       </nav>
       <Outlet />
@@ -76,29 +100,26 @@ const Nav = () => {
   );
 };
 
-function App() {
+const App = () => {
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Nav />}>
-          <Route index element={<ComponentExamples />} />
-          <Route path="accordion" element={<AccordionExamples />} />
-          <Route path="breadcrumb" element={<BreadcrumbExamples />} />
-          <Route path="button" element={<ButtonExamples />} />
-          <Route path="carousel" element={<CarouselExamples />} />
-          <Route path="form" element={<FormExamples />} />
-          <Route path="image" element={<ImageExamples />} />
-          <Route path="list" element={<ListExamples />} />
-          <Route path="search" element={<SearchExamples />} />
-          <Route path="separator" element={<SeparatorExamples />} />
-          <Route path="tabs" element={<TabsExamples />} />
-          <Route path="teaser" element={<TeaserExamples />} />
-          <Route path="text" element={<TextExamples />} />
-          <Route path="title" element={<TitleExamples />} />
+          {pages.map((page, index) => {
+            const path = getPagePath(page);
+            return (
+              <Route
+                index={index === 0}
+                path={path}
+                element={page.comp}
+                key={page.name}
+              />
+            );
+          })}
         </Route>
       </Routes>
     </BrowserRouter>
   );
-}
+};
 
 export default App;
