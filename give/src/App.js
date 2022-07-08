@@ -86,10 +86,8 @@ const Nav = () => {
           {pages.map((page) => {
             const path = getPagePath(page);
             return (
-              <li>
-                <Link to={`/${path}`} key={page.name}>
-                  {page.name}
-                </Link>
+              <li key={page.name}>
+                <Link to={`/${path}`}>{page.name}</Link>
               </li>
             );
           })}
