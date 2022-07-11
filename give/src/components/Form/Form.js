@@ -3,7 +3,7 @@
 
 import { ComponentWrapper } from "../shared";
 import { TextExamples } from "./Text/Text";
-// import { OptionsExamples } from "./Options/Options";
+import { OptionsExamples } from "./Options/Options";
 
 export const Form = ({
   className = "", // string
@@ -55,7 +55,7 @@ export const FormExamples = () => {
       <Form>
         <Errors />
         <TextExamples />
-        {/* <OptionsExamples /> */}
+        <OptionsExamples />
       </Form>
       {/* <Form underline>
         <TextExamples />
