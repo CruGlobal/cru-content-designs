@@ -4,6 +4,7 @@
 import { ComponentWrapper } from "../shared";
 import { TextExamples } from "./Text/Text";
 import { OptionsExamples } from "./Options/Options";
+import { ButtonExamples } from "./Button/Button";
 
 export const Form = ({
   className = "", // string
@@ -56,6 +57,7 @@ export const FormExamples = () => {
         <Errors />
         <TextExamples />
         <OptionsExamples />
+        <ButtonExamples />
       </Form>
       {/* <Form underline>
         <TextExamples />
