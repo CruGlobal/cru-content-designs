@@ -24,17 +24,11 @@ export const Options = ({
   const isMultiSelect = type === "multi-drop-down";
 
   const selectValues = () => {
-    let values = [];
-    options.forEach((option) => {
-      if (option.selected) {
-        values.push(option.value);
-      }
+    const values = options.flatMap((option) => {
+      return option.selected ? option.value : [];
     });
-    if (isMultiSelect) {
-      return values;
-    } else {
-      return values[values.length - 1];
-    }
+
+    return isSelect ? values.pop() : values;
   };
 
   return (
