@@ -142,7 +142,7 @@ export const OptionsExamples = () => {
         title="Favorite Color"
         name="favorite-color"
         helpMessage="You can only choose one."
-        id="123456789"
+        id="234567891"
         options={options}
       />
       <Options
@@ -150,7 +150,7 @@ export const OptionsExamples = () => {
         title="Favorite Color"
         name="favorite-color"
         helpMessage="You can only choose one."
-        id="123456789"
+        id="345678912"
         options={options}
       />
       <Options
@@ -158,7 +158,7 @@ export const OptionsExamples = () => {
         title="Favorite Colors"
         name="favorite-colors"
         helpMessage="Pick as many as you want!"
-        id="123456789"
+        id="456789123"
         options={options}
       />
     </>

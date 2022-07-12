@@ -38,7 +38,7 @@ export const Text = ({
     id: id ? "form-text-" + id : id,
     placeholder: helpMessage && helpAsPlaceholder ? helpMessage : "",
     name: elementName,
-    value: value,
+    defaultValue: value,
     readOnly: readOnly,
     required: required,
     disabled: disabled,
