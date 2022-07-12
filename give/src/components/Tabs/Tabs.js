@@ -24,7 +24,7 @@ export const Tabs = ({
               className={`cmp-tabs__tab${
                 index === 0 ? " cmp-tabs__tab--active" : ""
               }`}
-              key={tab.tab}
+              key={index}
             >
               {tab.label}
             </li>

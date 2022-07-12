@@ -13,18 +13,22 @@ export const Search = ({
 
   return (
     <ComponentWrapper type="search" className={`${darkClass} ${className}`}>
-      <div class="cmp_search__info"></div>
-      <form class="cmp-search__form">
-        <div class="cmp-search__field">
-          <i class="cmp-search__icon"></i>
-          <span class="cmp-search__loading-indicator"></span>
-          <input class="cmp-search__input" type="text" placeholder="Search" />
-          <button class="cmp-search__clear">
-            <i class="cmp-search__clear-icon"></i>
+      <div className="cmp_search__info"></div>
+      <form className="cmp-search__form">
+        <div className="cmp-search__field">
+          <i className="cmp-search__icon"></i>
+          <span className="cmp-search__loading-indicator"></span>
+          <input
+            className="cmp-search__input"
+            type="text"
+            placeholder="Search"
+          />
+          <button className="cmp-search__clear">
+            <i className="cmp-search__clear-icon"></i>
           </button>
         </div>
       </form>
-      <div class="cmp-search__results"></div>
+      <div className="cmp-search__results"></div>
     </ComponentWrapper>
   );
 };

@@ -16,7 +16,7 @@ export const Separator = ({
 
   return (
     <ComponentWrapper type="separator" className={`${colorClass} ${className}`}>
-      <hr class="cmp-separator__horizontal-rule" />
+      <hr className="cmp-separator__horizontal-rule" />
     </ComponentWrapper>
   );
 };

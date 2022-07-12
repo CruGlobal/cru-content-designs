@@ -22,7 +22,7 @@ export const Accordion = ({
       className={`${darkClass} ${linksClass} ${className}`}
     >
       {content.map((item, index) => (
-        <div className="cmp-accordion__item">
+        <div className="cmp-accordion__item" key={index}>
           <h3 className="cmp-accordion__header">
             <button
               className={`cmp-accordion__button${
