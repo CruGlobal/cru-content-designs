@@ -6,71 +6,64 @@ import { ComponentWrapper } from "../shared";
 import "./Accordion.css";
 
 export const Accordion = ({
-  className = "", // string
-  content = [], // array of objects with `title` and `content` keys, each key containing a string
-  dark = false, // bool
-  links = false, // bool
+  className, // string
+  id, // string
+  children,
 }) => {
-  if (content.length === 0) return null;
-
-  const darkClass = dark ? "cru-accordion-dark" : "";
-  const linksClass = links ? "cru-accordion-links" : "";
+  if (!children) return null;
 
   return (
-    <ComponentWrapper
-      type="accordion"
-      className={`${darkClass} ${linksClass} ${className}`}
-    >
-      {content.map((item, index) => (
-        <div className="cmp-accordion__item" key={index}>
-          <h3 className="cmp-accordion__header">
-            <button
-              className={`cmp-accordion__button${
-                index === 0 ? " cmp-accordion__button--expanded" : ""
-              }`}
-            >
-              <span className="cmp-accordion__title">{item.title}</span>
-              <span className="cmp-accordion__icon"></span>
-            </button>
-          </h3>
-          <div
-            className={`cmp-accordion__panel cmp-accordion__panel--${
-              index === 0 ? "expanded" : "hidden"
-            }`}
-          >
-            {item.content}
-          </div>
-        </div>
-      ))}
+    <ComponentWrapper type="accordion" className={className} id={id}>
+      {children}
     </ComponentWrapper>
   );
 };
 
-export const AccordionExamples = () => {
-  const content = [
-    {
-      title: "Title 1",
-      content:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Eu mi bibendum neque egestas congue quisque egestas. Varius morbi enim nunc faucibus a pellentesque. Scelerisque eleifend donec pretium vulputate sapien nec sagittis.",
-    },
-    {
-      title: "Title 2",
-      content:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Eu mi bibendum neque egestas congue quisque egestas. Varius morbi enim nunc faucibus a pellentesque. Scelerisque eleifend donec pretium vulputate sapien nec sagittis.",
-    },
-    {
-      title: "Title 3",
-      content:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Eu mi bibendum neque egestas congue quisque egestas. Varius morbi enim nunc faucibus a pellentesque. Scelerisque eleifend donec pretium vulputate sapien nec sagittis.",
-    },
-  ];
+export const AccordionItem = ({
+  title = "Title", // string
+  expanded = false, // bool
+  id, // string
+  children,
+}) => {
+  if (!children) return null;
 
   return (
-    <>
-      <Accordion content={content} />
-      <Accordion content={content} dark />
-      <Accordion content={content} links />
-      <Accordion content={content} dark links />
-    </>
+    <div className="cmp-accordion__item" id={id}>
+      <h3 className="cmp-accordion__header">
+        <button
+          className={`cmp-accordion__button${
+            expanded ? " cmp-accordion__button--expanded" : ""
+          }`}
+          id={id ? `${id}-button` : null}
+        >
+          <span className="cmp-accordion__title">{title}</span>
+          <span className="cmp-accordion__icon"></span>
+        </button>
+      </h3>
+      <div
+        className={`cmp-accordion__panel cmp-accordion__panel--${
+          expanded ? "expanded" : "hidden"
+        }`}
+        id={id ? `${id}-panel` : null}
+      >
+        {children}
+      </div>
+    </div>
+  );
+};
+
+export const AccordionExamples = () => {
+  return (
+    <Accordion id="accordion1">
+      <AccordionItem title="Item 1" id="item1" expanded>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      </AccordionItem>
+      <AccordionItem title="Item 2" id="item2">
+        Donec ut ex urna. Nullam pretium tortor eu lectus laoreet viverra.
+      </AccordionItem>
+      <AccordionItem title="Item 3" id="item3">
+        Sed gravida consectetur tincidunt. Vestibulum id dignissim eros.
+      </AccordionItem>
+    </Accordion>
   );
 };
