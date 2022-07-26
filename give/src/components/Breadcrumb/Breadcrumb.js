@@ -6,7 +6,7 @@ import { ComponentWrapper, LinkWrapper } from "../shared";
 import "./Breadcrumb.css";
 
 export const Breadcrumb = ({
-  className = "", // string
+  className, // string
   id, // string
   children,
 }) => {
