@@ -1,0 +1,56 @@
+/* Carousel styles */
+.cru-carousel .cmp-carousel__content {
+  position: relative;
+}
+.cru-carousel .cmp-carousel__content::after {
+  display: block;
+  content: "";
+  clear: both;
+}
+.cru-carousel .cmp-carousel__actions, .cru-carousel .cmp-carousel__indicators {
+  margin-top: 16px;
+}
+.cru-carousel .cmp-carousel__actions {
+  float: left;
+}
+.cru-carousel .cmp-carousel__action-text {
+  display: none;
+}
+.cru-carousel .cmp-carousel__action--previous .cmp-carousel__action-icon::before {
+  content: "arrow_back";
+}
+.cru-carousel .cmp-carousel__action--next {
+  position: absolute;
+  right: 0;
+}
+.cru-carousel .cmp-carousel__action--next .cmp-carousel__action-icon::before {
+  content: "arrow_forward";
+}
+.cru-carousel .cmp-carousel__action--pause, .cru-carousel .cmp-carousel__action--play {
+  display: none;
+}
+.cru-carousel .cmp-carousel__indicators {
+  display: block;
+  flex-wrap: unset;
+  justify-content: unset;
+  margin-bottom: 0;
+  padding: 0;
+  text-align: center;
+  font-size: 0;
+}
+.cru-carousel .cmp-carousel__indicator {
+  margin: 14px 4px;
+  padding: 0;
+  list-style-type: none;
+  display: inline-block;
+  width: 4px;
+  height: 4px;
+  border-radius: 2px;
+  background-color: #EBECEC;
+  text-indent: -5000px;
+  position: unset;
+  flex: unset;
+}
+.cru-carousel .cmp-carousel__indicator--active, .cru-carousel .cmp-carousel__indicator:hover {
+  background-color: #383F43;
+}
